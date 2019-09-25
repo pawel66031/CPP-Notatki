@@ -1,223 +1,223 @@
 ﻿
 
-	[std::cout]
-		- predefiniowany obiekt pozwalający nam na umieszczanie 
-		  komunikatów w strumieniu wyjściowym programu. 
-		  [std::cout reprezentuje strumień wyjściowy programu]
+    [std::cout]
+        - predefiniowany obiekt pozwalający nam na umieszczanie 
+          komunikatów w strumieniu wyjściowym programu. 
+          [std::cout reprezentuje strumień wyjściowy programu]
 
-		- Dane wyjściowe cout'a to strumień, ciąg znaków generowany przez program.
-		  Strumienie są przekazywane do oprogramowania obsługującego nasz program.
-		  [np. system operacyjny lub inny program który uruchomił nasz program].
+        - Dane wyjściowe cout'a to strumień, ciąg znaków generowany przez program.
+          Strumienie są przekazywane do oprogramowania obsługującego nasz program.
+          [np. system operacyjny lub inny program który uruchomił nasz program].
 
-		- Operator wstawiania - [<<] - wstawia dane bezpośrednio do strumienia. Operator wstawiania 
-		  to nie jest operator przesunięcia bitowego w lewo. Obiekt cout przeciąża ten operator.
+        - Operator wstawiania - [<<] - wstawia dane bezpośrednio do strumienia. Operator wstawiania 
+          to nie jest operator przesunięcia bitowego w lewo. Obiekt cout przeciąża ten operator.
 
-		- Pełna nazwa to: Character output.
+        - Pełna nazwa to: Character output.
 
 
 
-	1. Manipulatory
-		 ■ parametryczne --------------- <iomanip>
-			 • std::setprecision(int)
-			 • std::setw(int)
-			 • std::setfill(int)
-		 ■ bezargumentowe -------------- <iostream>
-			 • std::left
-			 • std::right
+    1. Manipulatory
+         ■ parametryczne --------------- <iomanip>
+             • std::setprecision(int)
+             • std::setw(int)
+             • std::setfill(int)
+         ■ bezargumentowe -------------- <iostream>
+             • std::left
+             • std::right
 
-			 • std::endl
-			 • std::ends
+             • std::endl
+             • std::ends
 
-			 • std::hex
-			 • std::oct
-			 • std::dec
+             • std::hex
+             • std::oct
+             • std::dec
 
-	2. Metody cout
-		■ parametryczne --------------- <iostream>
-			 • .precision(int)
-			 • .width(int)
-			 • .fill(char)
-		■ bezargumentowe -------------- <ios>
-			 • ios::hex
-			 • ios::oct
-			 • ios::dec
+    2. Metody cout
+        ■ parametryczne --------------- <iostream>
+             • .precision(int)
+             • .width(int)
+             • .fill(char)
+        ■ bezargumentowe -------------- <ios>
+             • ios::hex
+             • ios::oct
+             • ios::dec
 
-			 • ios::scientific
-			 • ios::fixed
-			 • ios::showpoint
-			 • ios::showpos
+             • ios::scientific
+             • ios::fixed
+             • ios::showpoint
+             • ios::showpos
 
-	3. Znaki specjalne cout
-		 • \n
-		 • \t
-		 • \r
-		 • \"
-		 • \\
-		 • \a
+    3. Znaki specjalne cout
+         • \n
+         • \t
+         • \r
+         • \"
+         • \\
+         • \a
 
-	4. Surowy ciąg cout
+    4. Surowy ciąg cout
 
 
 
  ---------------------------------------------------------- ----------------------------------------------------------
  [1. Manipulatory] ---------------------------------------- ----------------------------------------------------------
 
-	Symbole mające dla cout'a specyficzne znaczenie.
-	Umieszczamy je w strumieniu operatorem wstawiania w formie 
-	nie łańcuchowej, czyli bez podwójnych cudzysłowów [" ... "].
+    Symbole mające dla cout'a specyficzne znaczenie.
+    Umieszczamy je w strumieniu operatorem wstawiania w formie 
+    nie łańcuchowej, czyli bez podwójnych cudzysłowów [" ... "].
 
 
 
-	▄ __________________________
-	█ Manipulatory parametryczne:
+    ▄ __________________________
+    █ Manipulatory parametryczne:
 
-	[std::setprecision(int)] 
-		- Pozwala określić dokładność wypisywanych liczb zmiennoprzecinkowych.
-		- Domyślnie jest ustawione na 6 miejsc po przecinku.
-		- Zera na końcu są pomijane.
-		- Pamiętaj aby nie pytać o więcej niż może posiadać dany typ danych.
-	 ─┬─────────────────────────────────────────────────────────────
-	 1│ double pi = 3.141592653589;
-	 2│
-	 3│ cout << "\n  " << setprecision(5) << pi       	// 3.1416	[5]
-	 4│	     << "\n  " << setprecision(1) << pi       	// 3		[1]
-	 5│      << "\n  " << setprecision(4) << 156.12;  	// 156.1	[4]
+    [std::setprecision(int)] 
+        - Pozwala określić dokładność wypisywanych liczb zmiennoprzecinkowych.
+        - Domyślnie jest ustawione na 6 miejsc po przecinku.
+        - Zera na końcu są pomijane.
+        - Pamiętaj aby nie pytać o więcej niż może posiadać dany typ danych.
+     ─┬─────────────────────────────────────────────────────────────
+     1│ double pi = 3.141592653589;
+     2│
+     3│ cout << "\n  " << setprecision(5) << pi           // 3.1416    [5]
+     4│      << "\n  " << setprecision(1) << pi           // 3        [1]
+     5│      << "\n  " << setprecision(4) << 156.12;      // 156.1    [4]
 
-	[std::setw(int)] 
-		- [Set Width] - Określa minimalną ilość znaków, [szerokość],
-		  jaką ma mieć komunikat za następnym operatorem wstawiania.
-		- Wraca do domyślnej wartości za pierwszym napotkanym komunikatem.
-		- Domyślnie ustawione na zero. 
+    [std::setw(int)] 
+        - [Set Width] - Określa minimalną ilość znaków, [szerokość],
+          jaką ma mieć komunikat za następnym operatorem wstawiania.
+        - Wraca do domyślnej wartości za pierwszym napotkanym komunikatem.
+        - Domyślnie ustawione na zero. 
 
-	[std::setfill(char)] 
-		- Zamienia wolną przestrzeń utworzoną 
-		  przez [std::setw] na wybrany znak [char]
-	 ─┬─────────────────────────────────────────────────────────────
-	 1│ cout << "\n [" << setw(5) <<  'x'  << "]"			// [    x]
-	 2│		 << "\n [" << setw(1) <<  "xxxxx"  << "]"		// [xxxxx]
-	 3│
-	 4│ // Linijka[2]: Mimo ustawienia setw(1), szerokość modyfikowanego komunikatu jest równa 5.
-	 5│ // 			   std::setw nie może skrócić długości komunikatu.
-	 6│
-	 7│ cout << "\n [" << setw(15);		// std::setw zadziała na komunikacie z najbliższego operatora wstawiania.
-	 :│
-	19│ cout << 'x' << "]"				// [              x]
-	20│	
-	21│ // ______________________________________________________
-	22│ // [std::setfill] 
-	23│ 
-	24│ cout << "\n [" << setw(10)                 << "< x >]"     	// [     < x >]
-	25│		 << "\n [" << setw(10) << setfill('-') << "< x >]";		// [-----< x >]
-
-
-
-	▄ ___________________________
-	█ Manipulatory bezargumentowe:
-
-	[std::left] 	─┬─ Justowanie tekstu w polu [std::setw]
-	[std::right] 	─┘ 	
-	 ─┬─────────────────────────────────────────────────────────────
-	 1│ cout << "\n [" << setw(5) <<  'x'  << "]";				// [    x]
-	 2│
-	 3│ cout << "\n [" << setw(5) << right <<  'x'  << "]"		// [    x]
-	 4│		 << "\n [" << setw(5) << left  <<  'x'  << "]";		// [x    ]
-	 5│
-	 6│ cout << "\n [" << setw(5) <<  'x'  << "]"				// [x    ]
-	 7│		 << "\n Pamiętam aby przywracać domyślny kierunek:" <<  right;
-	 8│
-	 9│ // Justowanie tekstu zmienia się na stałe [Nie tylko na jedną instrukcję cout].
+    [std::setfill(char)] 
+        - Zamienia wolną przestrzeń utworzoną 
+          przez [std::setw] na wybrany znak [char]
+     ─┬─────────────────────────────────────────────────────────────
+     1│ cout << "\n [" << setw(5) <<  'x'  << "]"            // [    x]
+     2│      << "\n [" << setw(1) <<  "xxxxx"  << "]"        // [xxxxx]
+     3│
+     4│ // Linijka[2]: Mimo ustawienia setw(1), szerokość modyfikowanego komunikatu jest równa 5.
+     5│ //             std::setw nie może skrócić długości komunikatu.
+     6│
+     7│ cout << "\n [" << setw(15);     // std::setw zadziała na komunikacie z najbliższego operatora wstawiania.
+     :│
+    19│ cout << 'x' << "]"              // [              x]
+    20│    
+    21│ // ______________________________________________________
+    22│ // [std::setfill] 
+    23│ 
+    24│ cout << "\n [" << setw(10)                 << "< x >]"         // [     < x >]
+    25│      << "\n [" << setw(10) << setfill('-') << "< x >]";        // [-----< x >]
 
 
-	[std::endl]
-		- Wstawia do strumienia znak nowego wiersza.
-		- Dodatkowo wymusza przekazanie strumienia i jego wyczyszczenie.
-		  Są to dodatkowe operacje do wykonania. Unikać nadmiernego używania.
-	[std::ends] 
-		- Wstawia do strumienia znak NULL
 
-	[std::hex] - System szesnastkowy [hexadecimal]	─┐
-	[std::oct] - System ósemkowy [octal]			 ├─ konwersje systemów liczbowych
-	[std::dec] - System dziesiętny [decimal]		─┘
-	 ─┬─────────────────────────────────────────────────────────────
-	 1│ int x = 64;
-	 2│ 
-	 3│ cout << "\n decimal: " 		<< x		 			// 64
-	 4│		 << "\n hexadecimal: " 	<< hex << x << dec		// 40 [hex(64)]
-	 5│		 << "\n octal: " 		<< oct << x	<< dec		// 100 [oct(64)]
-	 6│		 << "\n Pamiętam aby od razu przywracać system decymalny [dec]"
-	 7│		 << "\n ";
-	 8│	 
-	 9│ // System liczbowy zmienia się na stałe [Nie tylko na jedną instrukcję cout].
+    ▄ ___________________________
+    █ Manipulatory bezargumentowe:
+
+    [std::left]     ─┬─ Justowanie tekstu w polu [std::setw]
+    [std::right]     ─┘     
+     ─┬─────────────────────────────────────────────────────────────
+     1│ cout << "\n [" << setw(5) <<  'x'  << "]";              // [    x]
+     2│
+     3│ cout << "\n [" << setw(5) << right <<  'x'  << "]"      // [    x]
+     4│      << "\n [" << setw(5) << left  <<  'x'  << "]";     // [x    ]
+     5│
+     6│ cout << "\n [" << setw(5) <<  'x'  << "]"               // [x    ]
+     7│      << "\n Pamiętam aby przywracać domyślny kierunek:" <<  right;
+     8│
+     9│ // Justowanie tekstu zmienia się na stałe [Nie tylko na jedną instrukcję cout].
+
+
+    [std::endl]
+        - Wstawia do strumienia znak nowego wiersza.
+        - Dodatkowo wymusza przekazanie strumienia i jego wyczyszczenie.
+          Są to dodatkowe operacje do wykonania. Unikać nadmiernego używania.
+    [std::ends] 
+        - Wstawia do strumienia znak NULL
+
+    [std::hex] - System szesnastkowy [hexadecimal]  ─┐
+    [std::oct] - System ósemkowy [octal]             ├─ konwersje systemów liczbowych
+    [std::dec] - System dziesiętny [decimal]        ─┘
+     ─┬─────────────────────────────────────────────────────────────
+     1│ int x = 64;
+     2│ 
+     3│ cout << "\n decimal: "      << x                    // 64
+     4│      << "\n hexadecimal: "  << hex << x << dec      // 40 [hex(64)]
+     5│      << "\n octal: "        << oct << x << dec      // 100 [oct(64)]
+     6│      << "\n Pamiętam aby od razu przywracać system decymalny [dec]"
+     7│      << "\n ";
+     8│     
+     9│ // System liczbowy zmienia się na stałe [Nie tylko na jedną instrukcję cout].
 
 
 
  ---------------------------------------------------------- ----------------------------------------------------------
  [2. Metody cout] ----------------------------------------- ----------------------------------------------------------
 
-	Do większości metod znajdziesz ich odpowiednik w manipulatorach.
+    Do większości metod znajdziesz ich odpowiednik w manipulatorach.
 
-	 ─┬─────────────────────────────────────────────────────────────
-	 1│ cout.precision(15);		// Odpowiednik [std::setprecision(int)] 
-	 2│ 
-	 3│ cout.width(10);			// Odpowiednik [std::setw(int)] 
-	 4│ cout.fill('-');			// Odpowiednik [std::setfill(char)] 
-	 5│ 
-	 6│ cout.setf(ios::hex, ios::basefield);		// Odpowiednik [std::hex]
-	 7│ cout.setf(ios::oct, ios::basefield);		// Odpowiednik [std::oct]
-	 8│ cout.setf(ios::dec, ios::basefield);		// Odpowiednik [std::dec]
-	 9│	
-	10│ cout.setf(ios::scientific);		// Notacja wykładnicza
-	11│ cout.setf(ios::fixed);			// Notacja domyślna
-	12│	
-	13│ cout.setf(ios::showpoint);		// Dopisuje kropkę dziesiętną i nieznaczące zera które normalnie zostałyby pominione
-	14│ cout.setf(ios::showpos);		// Dopisuje plus przed dodatnimi wartościami
+     ─┬─────────────────────────────────────────────────────────────
+     1│ cout.precision(15);        // Odpowiednik [std::setprecision(int)] 
+     2│ 
+     3│ cout.width(10);            // Odpowiednik [std::setw(int)] 
+     4│ cout.fill('-');            // Odpowiednik [std::setfill(char)] 
+     5│ 
+     6│ cout.setf(ios::hex, ios::basefield);        // Odpowiednik [std::hex]
+     7│ cout.setf(ios::oct, ios::basefield);        // Odpowiednik [std::oct]
+     8│ cout.setf(ios::dec, ios::basefield);        // Odpowiednik [std::dec]
+     9│    
+    10│ cout.setf(ios::scientific);     // Notacja wykładnicza
+    11│ cout.setf(ios::fixed);          // Notacja domyślna
+    12│    
+    13│ cout.setf(ios::showpoint);      // Dopisuje kropkę dziesiętną i nieznaczące zera które normalnie zostałyby pominione
+    14│ cout.setf(ios::showpos);        // Dopisuje plus przed dodatnimi wartościami
 
 
 
  ---------------------------------------------------------- ----------------------------------------------------------
  [3. Znaki specjalne cout] -------------------------------- ----------------------------------------------------------
 
-	Inaczej: Symbole sekwencji specjalnych, to kombinacje znaków o specyficznym znaczeniu dla cout.
-	- W przeciwieństwie do manipulatorów, sekwencje są częścią [łańcucha znaków] - ciągu znaków ujętego w podwójne cudzysłowy [" ... "].
-	- Sekwencje zaczynają się znakiem backslash - [\]. 	
-	- Wszystkie traktowane są jako pojedyńczy znak.
+    Inaczej: Symbole sekwencji specjalnych, to kombinacje znaków o specyficznym znaczeniu dla cout.
+    - W przeciwieństwie do manipulatorów, sekwencje są częścią [łańcucha znaków] - ciągu znaków ujętego w podwójne cudzysłowy [" ... "].
+    - Sekwencje zaczynają się znakiem backslash - [\].     
+    - Wszystkie traktowane są jako pojedyńczy znak.
 
-	Przykłady:
+    Przykłady:
 
-	[" \n "] - Symbol przejścia do nowej lini
-	[" \t "] - Symbol tabulacji
+    [" \n "] - Symbol przejścia do nowej lini
+    [" \t "] - Symbol tabulacji
 
-	[" \r "] - Powrót karetki, ustawienie kursora(karetki) na początku wiersza
-			 - Pozwala na nadpisywanie już zapisanych znaków w konsoli
+    [" \r "] - Powrót karetki, ustawienie kursora(karetki) na początku wiersza
+             - Pozwala na nadpisywanie już zapisanych znaków w konsoli
 
-	[" \" "] - Pozwala napisać znak ["] bez zamykania łańcucha znaków
-	[" \\ "] - Pozwala napisać znak [\] bez traktowania go jako początek specjalnej sekwencji
+    [" \" "] - Pozwala napisać znak ["] bez zamykania łańcucha znaków
+    [" \\ "] - Pozwala napisać znak [\] bez traktowania go jako początek specjalnej sekwencji
 
-	[" \a "] - Beep, pojedyńczy sygnał dźwiękowy
+    [" \a "] - Beep, pojedyńczy sygnał dźwiękowy
 
 
 
  ---------------------------------------------------------- ----------------------------------------------------------
  [4. Surowy ciąg cout] ------------------------------------ ----------------------------------------------------------
 
-	Pozwala na pominięcie działania wszystkich znaków specjalnych / sekwencji specjalnych.
-	Surowy ciąg znaków cout zaczynamy wielką literą [R] - raw.
-	Do strumienia trafiają wszystkie znaki między nawiasami R"( ... )".
-	Domyślne otwarcie/zamknięcie surowego ciągu to "( )" bez dodatkowych znaków.
-	Możliwa jest modyfikacja otwarcia/zamknięcia przez dodawanie dowolnych symboli
-	- nowe symbole muszą być między cudzysłowem a nawiasem, zarówno na początku jak i na końcu. 
-	- symbole muszą być w tej samej kolejności na początku co na końcu.
+    Pozwala na pominięcie działania wszystkich znaków specjalnych / sekwencji specjalnych.
+    Surowy ciąg znaków cout zaczynamy wielką literą [R] - raw.
+    Do strumienia trafiają wszystkie znaki między nawiasami R"( ... )".
+    Domyślne otwarcie/zamknięcie surowego ciągu to "( )" bez dodatkowych znaków.
+    Możliwa jest modyfikacja otwarcia/zamknięcia przez dodawanie dowolnych symboli
+    - nowe symbole muszą być między cudzysłowem a nawiasem, zarówno na początku jak i na końcu. 
+    - symbole muszą być w tej samej kolejności na początku co na końcu.
 
-	 ─┬─────────────────────────────────────────────────────────────
-	 1│ // Domyślne otwarcie/zamknięcie: 
-	 2│ cout << R"( \t \n \b \a \\ :D )";	// Wszystkie symbole odbierane są jako nic nie znaczące znaki
-	 3│	
-	 4│ // Przykłady zmodyfikowanego otwarcia/zamknięcia: 
-	 5│ cout << R"*( "(test)" )*";		// Dzięki temu mogę używać [cudzysłów + nawias] jako zwykłe znaki.
-	 6│ 
-	 7│ cout << R"**( "*(test)*" )**";	// Dzięki temu mogę używać [cudzysłów + nawias + *] jako zwykłe znaki.
-	 8│	
-	 9│ cout << R"*#( ... )*#";			// Symbole w tej samej kolejności na początku co na końcu. Tutaj: [*#]
+     ─┬─────────────────────────────────────────────────────────────
+     1│ // Domyślne otwarcie/zamknięcie: 
+     2│ cout << R"( \t \n \b \a \\ :D )";  // Wszystkie symbole odbierane są jako nic nie znaczące znaki
+     3│    
+     4│ // Przykłady zmodyfikowanego otwarcia/zamknięcia: 
+     5│ cout << R"*( "(test)" )*";         // Dzięki temu mogę używać [cudzysłów + nawias] jako zwykłe znaki.
+     6│ 
+     7│ cout << R"**( "*(test)*" )**";     // Dzięki temu mogę używać [cudzysłów + nawias + *] jako zwykłe znaki.
+     8│    
+     9│ cout << R"*#( ... )*#";            // Symbole w tej samej kolejności na początku co na końcu. Tutaj: [*#]
 
 
 
