@@ -1,7 +1,7 @@
 ﻿
 
     [std::cout]
-        - predefiniowany obiekt pozwalający nam na umieszczanie 
+        - Predefiniowany obiekt pozwalający nam na umieszczanie 
           komunikatów w strumieniu wyjściowym programu. 
           [std::cout reprezentuje strumień wyjściowy programu]
 
@@ -37,7 +37,7 @@
              • .precision(int)
              • .width(int)
              • .fill(char)
-        ■ bezargumentowe -------------- <ios>
+        ■ flagowe --------------------- <ios>
              • ios::hex
              • ios::oct
              • ios::dec
