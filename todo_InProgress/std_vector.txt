@@ -1,0 +1,72 @@
+﻿
+
+    [std::vector] 
+            - Kontener sekwencyjny STL, przechowujący tablice o zmiennej wielkości.
+            - Pojemność vectora jest zarządzana automatycznie, zwiększana bądź zmniejszana w razie potrzeby.
+              Vectory zwykle alokują więcej pamięci niż potrzeba na zapas.
+              Dzięki temu nie muszą realokować całej pamięci przy każdym nowym elemencie.
+            - Realokacje są kosztownymi operacjami pod względem wydajności. Unikać!
+              Kiedy się da, ręcznie rezerwować za wczasu tyle pamięci ile potrzeba!
+			  
+			  
+			  
+			  
+			   
+      Rezerwowanie Pamięci
+     ─┬─────────────────────────────────────────────────────────────
+     1│ vector<int> V;    // Dodawane elementy mapy będą typu <int>
+     2│
+     3│ 
+     3│
+     3│
+     3│
+     3│
+     3│
+     3│
+     3│
+     3│
+     3│
+     3│
+     3│
+
+
+			  
+			  
+			  
+			  
+			  
+			  
+			  
+			  
+
+ by: Kacu
+|                  $$NDDDDDDNDDNDDDN8=
+|               ZZNNDDNNDDDDDDNDDDDNNDND
+|             $Z8NDDNDNNDDNDDNMDDDDDNDNDN
+|           $$DNDDDDNNDDDNDNNDDDNNNDDDNN8?~
+|          $NDNDDDDNNDDDD:''''''''''''''''''
+|         8DDNDDDDDNO++:''''''''''''''''''''
+|         8NNDDDN++=++O''''''''''''''''''''''
+|        ZNNNM+++++++?+:'''''''''''''''''''',
+|        $ND=+++++++++?'''',,,,,,:,'''''+NNDN
+|        $N+++++++++++Z''IMDNNNDND'''''NDD,,,
+|        ?,,,:7+++?::''''''''''''''''''''''''
+|        ,,,:,7+++?,'''''''''''''''''''''''''
+|        :,,,,~7+I,''''''''''''''''''''''''''
+|          ,,,,$:''''''''''''''''''''''''''''
+|           ,,:+:''''''''''''''''''''''''''''
+|             ~Z?''''''''''''''''''''''''''''
+|              +'''''''''''''''''''''''''''''
+|              '$'''''''''''''''''''''''''''
+|              '''Z'''''''''''''''''''''''''
+|              '''''~''''''''''''''''''''''
+|              '''''''=''''''''''''''?DI,''
+|              '''''''''?'''''''''''''''''
+|              '''''''''''=?=''''''''$DDI~
+|               ''''''''''''''=+''DNDDNDN$
+|                '''''''''''''''=:?8$ZZZ$
+|                 '''''''''''''''
+|                  ''''''''''''''
+|                    '''''''''
+|                     '''''
+
