@@ -7,20 +7,140 @@
               Dzięki temu nie muszą realokować całej pamięci przy każdym nowym elemencie.
             - Realokacje są kosztownymi operacjami pod względem wydajności. Unikać!
               Kiedy się da, ręcznie rezerwować za wczasu tyle pamięci ile potrzeba!
-			  
-			  
-			  
-			  
-			   
+
+
+
+
+      Wyświetlanie informacji o vectorze
+     ─┬─────────────────────────────────────────────────────────────
+     1│ void Show(const vector<int>& V){
+     2│     /** - Funkcja którą będę w dalszej części notatek wypisywał 
+     3│	          Podstawowe informacje o wybranym vectorze.
+     4│         - W argumencie znajduje się referencja do jakiegoś vectora trzymającego <int>
+     5│           Korzystamy z referencji aby nie tworzyć kopii danego vectora.
+     6│         - Argument posiada specyfikator const, ponieważ zamierzamy 
+     7│           jedynie odczytać wartości danego vectora.
+     8│	    **/
+     9│	
+    10│	    for (int i=0; i<V.size(); ++i)  // Pętla przez wszystkie elementy vectora [V].
+    11│         std::cout << V[i] << " ";       // Wypisanie wartości elementu na indeksie [i].
+    12│
+    13│	    std::cout << "\n size: "      << V.size()          // Zwraca ilość elementów w vectorze [V].
+    14│	              << "\n capacity: "  << V.capacity();     // Zwraca ilość zarezerwowanego miejsca w pamięci.
+    15│ }
+     :│	
+    56│	// Wywołanie funkcji [Show]
+    57│ vector<int> A;    // Dodawane elementy vectora będą typu <int>
+    58│	
+    59│ // W tym momencie vector [A] jest pusty. Nie posiada elementów, 
+    60│	// i nie ma dla nich zarezerwowanego miejsca w pamięci.
+    61│	Show(A);
+    62│	  // size: 0
+    63│	  // capacity: 0
+
+
+
+
       Rezerwowanie Pamięci
      ─┬─────────────────────────────────────────────────────────────
-     1│ vector<int> V;    // Dodawane elementy mapy będą typu <int>
+     1│ vector<int> B;
      2│
+     3│ // W tym momencie vector [B] jest pusty
+     3│ Show(B);	// size: 0
+     3│             // capacity: 0
+     3│
+     3│ // ______________________________________________________
+     3│ // Dodajemy jeden nowy element do vectora [B] 
+     3│ // - nowy element zostanie dodany na końcu vectora.
+     3│ B.push_back(int(100));
+     3│ Show(B);	// size: 1
+     3│             // capacity: 1
+     3│
+     3│ // Dodajemy kolejny element do vectora [B] 
+     3│ B.push_back(22);
+     3│ Show(B);	// size: 2
+     3│             // capacity: 2
+     3│
+     3│ // Dodajemy jeszcze kolejny element do vectora [B] 
+     3│ B.push_back(-3);
+     3│ Show(B);	// size: 3  !!!
+     3│             // capacity: 4  !!!
+     3│
+     3│ /* - Należy unikać bezpośredniego korzystania z metody [.push_back()],
+     3│      ponieważ wymusza ona [realokacje vectora] za każdym razem
+     3│      gdy brakuje zarezerwowanego miejsca na nowy element.
+     3│    - Automatyczna [realokacja] rezerwuje tyle miejsca w pamieci, ile wynosi 
+     3│      najmniejsza potęga dwójki w której zmieści się ilość elementów vectora. 
+     3│      [Przykład pokazany w tabeli niżej]
+     3│
+     3│    --------------------------- --------------------------- ---------------------------
+     3│   | Ilość zarezerwowanego     | Ilość wykonanych          | Minimalna możliwa         |
+     3│   | miejsca w pamięci         | realokacji pamięci        | ilość wywołań metody      |
+     3│   | [V.capacity()]            |                           | [V.push_back(int(value))] |
+     3│   |---------------------------|---------------------------|---------------------------|
+     3│   |  0                        |  0                        |  -                        |
+     3│   |---------------------------|---------------------------|---------------------------|
+     3│   |  1                        |  1                        |  1                        |
+     3│   |---------------------------|---------------------------|---------------------------|
+     3│   |  2                        |  2                        |  2                        |
+     3│   |---------------------------|---------------------------|---------------------------|
+     3│   |  4                        |  3                        |  3                        |
+     3│   |---------------------------|---------------------------|---------------------------|
+     3│   |  8                        |  4                        |  5                        |
+     3│   |---------------------------|---------------------------|---------------------------|
+     3│   |  16                       |  5                        |  9                        |
+     3│   |---------------------------|---------------------------|---------------------------|
+     3│   |  32                       |  6                        |  17                       |
+     3│   |---------------------------|---------------------------|---------------------------|
+     3│   |  64                       |  7                        |  33                       |
+     3│   |---------------------------|---------------------------|---------------------------|
+     3│   |  128                      |  8                        |  65                       |
+     3│   |---------------------------|---------------------------|---------------------------|
+     3│   |  256                      |  9                        |  129                      |
+     3│   |---------------------------|---------------------------|---------------------------|
+     3│   |  516                      |  10                       |  257                      |
+     3│   |---------------------------|---------------------------|---------------------------|
+     3│   |  1024                     |  11                       |  517                      |
+     3│   |---------------------------|---------------------------|---------------------------|
+     3│   |  2048                     |  12                       |  1025                     |
+     3│   |---------------------------|---------------------------|---------------------------|
+     3│   |  4096                     |  13                       |  2049                     |
+     3│   |---------------------------|---------------------------|---------------------------|
+     3│   |  8192                     |  14                       |  4097                     |
+     3│   |---------------------------|---------------------------|---------------------------|
+     3│   |  16 384                   |  15                       |  8193                     |
+     3│   |---------------------------|---------------------------|---------------------------|
+     3│   |  32 768                   |  16                       |  16 385                   |
+     3│   |---------------------------|---------------------------|---------------------------|
+     3│   |  65 536                   |  17                       |  32 769                   |
+     3│   |---------------------------|---------------------------|---------------------------|
+     3│   |  131 072                  |  18                       |  65 537                   |
+     3│   |---------------------------|---------------------------|---------------------------|
+     3│   |  262 144                  |  19                       |  131 073                  |
+     3│   |---------------------------|---------------------------|---------------------------|
+     3│   |  524 288                  |  20                       |  262 145                  |
+     3│    --------------------------- --------------------------- ---------------------------
+     3│
+     3│      Oznacza to, że wypełnienie vectora o przykładowo [20 000] elementów 
+     3│      używając tylko i wyłącznie metody [.push_back()] będzie wymagało 16 realokacji.
+     3│   */
+     3│
+     3│ // Każda realokacja jest czasochłonną operacją. Należy UNIKAĆ zbyt częstych [realokacji vectora].
+     3│ // Podane w przykładzie pod tabelą [20 000] możemy zarezerwować wykonując jedynie [jedną] realokacje:
      3│ 
-     3│
-     3│
-     3│
-     3│
+     3│ vector<int> C(20000);   // Podejście 1 [Przez konstruktor]
+	 3│ Show(C);	// size: 20000
+     3│             // capacity: 20000
+     3│ // Nie tylko zarezerwowaliśmy miejsce w pamięci dla [20 000] elementów,
+     3│ // jednocześnie utworzyliśmy te elementy, dlatego [size: 20000].
+     3│ // Wszystkie te elementy są równe zero.
+     3│ 
+     3│ 
+     3│ vector<int> D;          // Podejście 2 [Metoda .resize(int)]
+     3│ D.resize(20000);
+	 3│ Show(C);	// size: 20000
+     3│             // capacity: 20000
+     3│ // Ponownie, utworzyliśmy [20 000] elementów o wartości zero.
      3│
      3│
      3│
@@ -30,14 +150,14 @@
      3│
 
 
-			  
-			  
-			  
-			  
-			  
-			  
-			  
-			  
+
+
+
+
+
+
+
+
 
  by: Kacu
 |                  $$NDDDDDDNDDNDDDN8=
