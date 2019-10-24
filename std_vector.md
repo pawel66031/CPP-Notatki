@@ -6,7 +6,7 @@
    Dzięki temu nie muszą realokować całej pamięci przy każdym nowym elemencie.
 - Realokacje są kosztownymi operacjami pod względem wydajności. Unikać!\
    Kiedy się da, ręcznie rezerwować za wczasu tyle pamięci ile potrzeba!
-- Najczęściej stosowany termin w polskich publikacjach to [Kontener], nie [Wektor].
+- Najczęściej stosowany termin w polskich publikacjach to *Kontener*, nie *Wektor*.
 <br/>
 
 1. [Wyświetlanie informacji o wybranym Vectorze](#1-Wyświetlanie-informacji-o-wybranym-Vectorze) 
@@ -81,11 +81,11 @@
              // capacity: 4  !!!
 ```
 
-Przed każdym WIELOKROTNYM użyciem metody [.push_back( )] \
+Przed każdym WIELOKROTNYM użyciem metody `.push_back( )` \
 należy unikać kilkukrotnych realokacji vectora. \
 W kodzie wyżej, automatycznie doszło aż do trzech realokacji vectora.
    
-Automatyczna [realokacja] rezerwuje dwukrotność obecnie zarezerwowanej pamięci. 
+Automatyczna realokacja rezerwuje dwukrotność obecnie zarezerwowanej pamięci. 
    - Przykład 1 \
       Jeżeli w vectorze posiadamy zarezerwowane miejsce dla [500] elementów, \
       wtedy możemy dowolnie dodawać elementy aż do pięcsetnego. \
@@ -97,7 +97,6 @@ Automatyczna [realokacja] rezerwuje dwukrotność obecnie zarezerwowanej pamięc
       Zakładając że nigdy nie alokujemy pamięci ręcznie, wtedy \
       rezerwowane będzie tyle miejsca w pamięci, ile wynosi \
       najmniejsza potęga dwójki w której zmieści się ilość elementów vectora. \
-      [ *Przykład pokazany w tabeli niżej* ] \
       Dzieje się tak ponieważ: 
 
 1 * [2] = 2 | 4 * [2] = 8 | 16 * [2] = 32
@@ -106,7 +105,7 @@ Automatyczna [realokacja] rezerwuje dwukrotność obecnie zarezerwowanej pamięc
 	
 <br/>
 	
-Ilość zarezerwowanego <br/> miejsca w pamięci <br/> [ V.capacity( ) ] | Ilość wykonanych <br/> realokacji pamięci | Minimalna możliwa <br/> ilość wywołań metody <br/> [ V.push_back(int(value)) ]
+Ilość zarezerwowanego <br/> miejsca w pamięci <br/> `V.capacity( )` | Ilość wykonanych <br/> realokacji pamięci | Minimalna możliwa <br/> ilość wywołań metody <br/> `V.push_back(int(value))`
 ------------- | -------------  | ------------- 
 0 | 0 | -
 1 | 1 | 1
@@ -127,11 +126,11 @@ Ilość zarezerwowanego <br/> miejsca w pamięci <br/> [ V.capacity( ) ] | Iloś
 32 768 | 16 | 16 385
 	
 Oznacza to, że wypełnienie vectora o przykładowo [20 000] elementów \
-używając tylko i wyłącznie metody [.push_back( )] będzie wymagało 16 realokacji. \
+używając tylko i wyłącznie metody `.push_back( )` będzie wymagało 16 realokacji. \
 16 realokacji to zdecydowanie za dużo.
 
-Każda realokacja jest czasochłonną operacją. Należy UNIKAĆ zbyt częstych [realokacji vectora]. \
-Podane w przykładzie pod tabelą [20 000] możemy zarezerwować wykonując jedynie [jedną] realokacje:
+Każda realokacja jest czasochłonną operacją. Należy UNIKAĆ zbyt częstych **realokacji vectora**. \
+Podane w przykładzie pod tabelą [20 000] możemy zarezerwować wykonując jedynie **jedną** realokacje:
 
 ###### [Program 2.2] `Podejście 1 - konstruktor(int)`
 ```cpp
