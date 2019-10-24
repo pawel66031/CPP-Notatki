@@ -16,7 +16,7 @@
         
 1. [Rezerwowanie Pamięci](#2-Rezerwowanie-Pamięci)
 	* [.push_back(TypDanych)](#program-21-push_backtypdanych)
-	* [konstruktor(int)](#program-22-podejście-1---konstruktor)
+	* [konstruktor(int)](#program-22-podejście-1---konstruktorint)
 	* [.resize(int)](#program-23-podejście-2---resizeint)
 	* [.reserve(int)](#program-24-podejście-3---reserveint)
 	* [.reserve(int)](#program-25-shrink_to_fit)
@@ -131,7 +131,7 @@ używając tylko i wyłącznie metody [.push_back( )] będzie wymagało 16 realo
 Każda realokacja jest czasochłonną operacją. Należy UNIKAĆ zbyt częstych [realokacji vectora]. \
 Podane w przykładzie pod tabelą [20 000] możemy zarezerwować wykonując jedynie [jedną] realokacje:
 
-###### [Program 2.2] `Podejście 1 - konstruktor`
+###### [Program 2.2] `Podejście 1 - konstruktor(int)`
 ```cpp
  vector<int> C(20000);
  Show(C);    // size: 20000
