@@ -9,9 +9,9 @@
 - Najczęściej stosowany termin w polskich publikacjach to [Kontener], nie [Wektor].
 
 
-1. [Wyświetlanie informacji o wybranym Vectorze](###-1.-Wyświetlanie-informacji-o-wybranym-Vectorze)
-* [Technologies](######--operator[-])
-* [Setup](#####.size(-))
+1. [Wyświetlanie informacji o wybranym Vectorze](#-1.-Wyświetlanie-informacji-o-wybranym-Vectorze)
+* [Technologies](#-operator-)
+* [Setup](#.size-)
 
 ------------
 
