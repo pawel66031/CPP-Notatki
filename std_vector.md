@@ -81,18 +81,19 @@
              // capacity: 4  !!!
 ```
 
- - Przed każdym WIELOKROTNYM użyciem metody [.push_back( )] \
+   Przed każdym WIELOKROTNYM użyciem metody [.push_back( )] \
    należy unikać kilkukrotnych realokacji vectora. \
    W kodzie wyżej, automatycznie doszło aż do trzech realokacji vectora.
- - Automatyczna [realokacja] rezerwuje dwukrotność obecnie zarezerwowanej pamięci. 
-      - Przykład 1 \
+   
+   Automatyczna [realokacja] rezerwuje dwukrotność obecnie zarezerwowanej pamięci. 
+   - Przykład 1 \
       Jeżeli w vectorze posiadamy zarezerwowane miejsce dla [500] elementów, \
       wtedy możemy dowolnie dodawać elementy aż do pięcsetnego. \
       Jeżeli jednak w vectorze już będziemy mieli dane [500] elementów, \
       dodanie pięćset-pierwszego [501] elementu będzie wymagało realokacji pamięci. \
       Nowy rozmiar vectora będzie przystosowany do trzymania [500*2] = [1000] elementów. 
-
-      - Przykład 2 \
+      
+   - Przykład 2 \
       Zakładając że nigdy nie alokujemy pamięci ręcznie, wtedy \
       rezerwowane będzie tyle miejsca w pamięci, ile wynosi \
       najmniejsza potęga dwójki w której zmieści się ilość elementów vectora. \
@@ -123,16 +124,15 @@
 	16 384 | 15 | 8193
 	32 768 | 16 | 16 385
 	
-    Oznacza to, że wypełnienie vectora o przykładowo [20 000] elementów 
-    używając tylko i wyłącznie metody [.push_back( )] będzie wymagało 16 realokacji. 
+    Oznacza to, że wypełnienie vectora o przykładowo [20 000] elementów \
+    używając tylko i wyłącznie metody [.push_back( )] będzie wymagało 16 realokacji. \
     16 realokacji to zdecydowanie za dużo.
 
-    Każda realokacja jest czasochłonną operacją. Należy UNIKAĆ zbyt częstych [realokacji vectora].
+    Każda realokacja jest czasochłonną operacją. Należy UNIKAĆ zbyt częstych [realokacji vectora]. \
     Podane w przykładzie pod tabelą [20 000] możemy zarezerwować wykonując jedynie [jedną] realokacje:
 
-      Podejście 1
-      • [konstruktor]
-     ─┬─────────────────────────────────────────────────────────────
+    ###### [Program 2.2] `Podejście 1 - konstruktor`
+
      1│ vector<int> C(20000);
      2│ Show(C);    // size: 20000
      3│             // capacity: 20000
@@ -153,10 +153,10 @@
     18│ for (int i=0; i<CC.size(); ++i)
     19│     std::cout << " " << CC[i];
 
+      
+    ###### [Program 2.3] `Podejście 2 - .resize(int)`
 
-      Podejście 2
-      • .resize(int)
-     ─┬─────────────────────────────────────────────────────────────
+
      1│ vector<int> D;
      2│ // _____________
      3│ // Scenariusz 1:   Vector D jest pusty, [size=0], [capacity=0].
