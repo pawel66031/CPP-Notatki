@@ -1,12 +1,13 @@
 #  std::vector< TypDanych > 
 
 - Kontener sekwencyjny STL, przechowujący tablice o zmiennej wielkości.
-- Pojemność vectora jest zarządzana automatycznie, zwiększana bądź zmniejszana w razie potrzeby.
-   Vectory zwykle alokują na zapas więcej pamięci niż potrzeba.
+- Pojemność vectora jest zarządzana automatycznie, zwiększana bądź zmniejszana w razie potrzeby.\
+   Vectory zwykle alokują na zapas więcej pamięci niż potrzeba.\
    Dzięki temu nie muszą realokować całej pamięci przy każdym nowym elemencie.
-- Realokacje są kosztownymi operacjami pod względem wydajności. Unikać!
+- Realokacje są kosztownymi operacjami pod względem wydajności. Unikać!\
    Kiedy się da, ręcznie rezerwować za wczasu tyle pamięci ile potrzeba!
 - Najczęściej stosowany termin w polskich publikacjach to [Kontener], nie [Wektor].
+<br/>
 
 1. [Wyświetlanie informacji o wybranym Vectorze](#1-Wyświetlanie-informacji-o-wybranym-Vectorze)
 	* [operator[ ]](#program-11-operator--size--capacity-)
@@ -15,91 +16,92 @@
         
 1. [Rezerwowanie Pamięci](#2-Rezerwowanie-Pamięci)
 	* [.push_back(TypDanych)](#program-21-push_backtypdanych)
-
 ------------
+<br/>
+
 #### 1. Wyświetlanie informacji o wybranym Vectorze
 
 ###### [Program 1.1] `operator[ ]` `.size( )` `.capacity( )`
 
 ```cpp
-void Show(const vector<int>& V){
-	/** - Funkcja którą będę w dalszej części notatek wypisywał 
-	      Podstawowe informacje o wybranym vectorze.
-	    - W argumencie znajduje się referencja do jakiegoś vectora trzymającego <int>
-	      Korzystamy z referencji aby nie tworzyć kopii danego vectora.
-	    - Argument posiada specyfikator const, ponieważ zamierzamy 
-	      jedynie odczytać wartości danego vectora.
-	**/
+ void Show(const vector<int>& V){
+     /** - Funkcja którą będę w dalszej części notatek wypisywał 
+           Podstawowe informacje o wybranym vectorze.
+         - W argumencie znajduje się referencja do jakiegoś vectora trzymającego <int>
+           Korzystamy z referencji aby nie tworzyć kopii danego vectora.
+         - Argument posiada specyfikator const, ponieważ zamierzamy 
+           jedynie odczytać wartości danego vectora.
+     **/
 
-	// Operator [] zwraca REFERENCJĘ na element w określonej pozycji
-	for (int i=0; i<V.size(); ++i)       // Pętla przez wszystkie elementy vectora [V].
-		std::cout << V[i] << " ";       // Wypisanie wartości elementu na indeksie [i].
+    // Operator [] zwraca REFERENCJĘ na element w określonej pozycji
+    for (int i=0; i<V.size(); ++i)  // Pętla przez wszystkie elementy vectora [V].
+         std::cout << V[i] << " ";       // Wypisanie wartości elementu na indeksie [i].
 
-	std::cout 
-		<< "\n size: "      << V.size()          // Zwraca ilość elementów w vectorze [V].
-		<< "\n capacity: "  << V.capacity();     // Zwraca ilość zarezerwowanego miejsca w pamięci.
-}
-
-...
+    std::cout << "\n size: "      << V.size()          // Zwraca ilość elementów w vectorze [V].
+              << "\n capacity: "  << V.capacity();     // Zwraca ilość zarezerwowanego miejsca w pamięci.
+ }
 
 // Wywołanie funkcji [Show]
-vector<int> A;    // Elementy vectora [A] będą typu <int>
+ vector<int> A;    // Dodawane elementy vectora będą typu <int>
 
-// W tym momencie vector [A] jest pusty. Nie posiada elementów, 
-// i nie ma dla nich zarezerwowanego miejsca w pamięci.
-Show(A);
-       // size: 0
-       // capacity: 0
+ // W tym momencie vector [A] jest pusty. Nie posiada elementów, 
+ // i nie ma dla nich zarezerwowanego miejsca w pamięci.
+ Show(A);
+	  // size: 0
+	  // capacity: 0
 ```
-
 ------------
+<br/>
+
+
 #### 2. Rezerwowanie Pamięci
 
 ###### [Program 2.1] `.push_back(TypDanych)`
 
-      •
-     ─┬─────────────────────────────────────────────────────────────
-     1│ vector<int> B;
-     2│
-     3│ // W tym momencie vector [B] jest pusty
-     4│ Show(B);    // size: 0
-     5│             // capacity: 0
-     6│
-     7│ // Dodajemy jeden nowy element do vectora [B] 
-     8│ // - nowy element zostanie dodany na końcu vectora.
-     9│ B.push_back(int(100));
-    10│ Show(B);    // size: 1
-    11│             // capacity: 1
-    12│
-    13│ // Dodajemy kolejny element do vectora [B] 
-    14│ B.push_back(-22);
-    15│ Show(B);    // size: 2
-    16│             // capacity: 2
-    17│
-    18│ // Dodajemy jeszcze kolejny element do vectora [B] 
-    29│ B.push_back(3);
-    20│ Show(B);    // size: 3  !!!
-    21│             // capacity: 4  !!!
+```cpp
+ vector<int> B;
 
-    - Przed każdym WIELOKROTNYM użyciem metody [.push_back()] 
-      należy unikać kilkukrotnych realokacji vectora.
-      W kodzie wyżej, automatycznie doszło aż do trzech realokacji vectora.
-    - Automatyczna [realokacja] rezerwuje dwukrotność obecnie zarezerwowanej pamięci.
-      Przykład 1
-         Jeżeli w vectorze posiadamy zarezerwowane miejsce dla [500] elementów,
-         wtedy możemy dowolnie dodawać elementy aż do pięcsetnego.
-         Jeżeli jednak w vectorze już będziemy mieli dane [500] elementów, 
-         dodanie pięćset-pierwszego [501] elementu będzie wymagało realokacji pamięci. 
-         Nowy rozmiar vectora będzie przystosowany do trzymania [500*2] = [1000] elementów. 
+ // W tym momencie vector [B] jest pusty
+ Show(B);    // size: 0
+             // capacity: 0
 
-      Przykład 2
-         Zakładając że nigdy nie alokujemy pamięci ręcznie, wtedy 
-         rezerwowane będzie tyle miejsca w pamięci, ile wynosi 
-         najmniejsza potęga dwójki w której zmieści się ilość elementów vectora. 
-         [Przykład pokazany w tabeli niżej]
-         Jest tak ponieważ:
-           1*[2] = 2           4*[2] = 8           16*[2] = 32
-           2*[2] = 4           8*[2] = 16          32*[2] = 64 ...
+ // Dodajemy jeden nowy element do vectora [B] 
+ // - nowy element zostanie dodany na końcu vectora.
+ B.push_back(int(100));
+ Show(B);    // size: 1
+             // capacity: 1
+
+ // Dodajemy kolejny element do vectora [B] 
+ B.push_back(-22);
+ Show(B);    // size: 2
+             // capacity: 2
+
+ // Dodajemy jeszcze kolejny element do vectora [B] 
+ B.push_back(3);
+ Show(B);    // size: 3  !!!
+             // capacity: 4  !!!
+```
+
+ - Przed każdym WIELOKROTNYM użyciem metody [.push_back( )] \
+   należy unikać kilkukrotnych realokacji vectora. \
+   W kodzie wyżej, automatycznie doszło aż do trzech realokacji vectora.
+ - Automatyczna [realokacja] rezerwuje dwukrotność obecnie zarezerwowanej pamięci. \
+      - Przykład 1 \
+      Jeżeli w vectorze posiadamy zarezerwowane miejsce dla [500] elementów, \
+      wtedy możemy dowolnie dodawać elementy aż do pięcsetnego. \
+      Jeżeli jednak w vectorze już będziemy mieli dane [500] elementów, \
+      dodanie pięćset-pierwszego [501] elementu będzie wymagało realokacji pamięci. \
+      Nowy rozmiar vectora będzie przystosowany do trzymania [500*2] = [1000] elementów. 
+
+      - Przykład 2 \
+      Zakładając że nigdy nie alokujemy pamięci ręcznie, wtedy \
+      rezerwowane będzie tyle miejsca w pamięci, ile wynosi \
+      najmniejsza potęga dwójki w której zmieści się ilość elementów vectora. \
+      [ *Przykład pokazany w tabeli niżej* ] \
+      Dzieje się tak ponieważ: \
+1 * [2] = 2 | 4 * [2] = 8 | 16 * [2] = 32
+ ------------- | -------------  | ------------- 
+**2 * [2] = 4** | **8 * [2] = 16** | **32 * [2] = 64 ...**
 
      --------------------------- --------------------------- ---------------------------
     | Ilość zarezerwowanego     | Ilość wykonanych          | Minimalna możliwa         |
@@ -142,7 +144,7 @@ Show(A);
      --------------------------- --------------------------- ---------------------------
 
     Oznacza to, że wypełnienie vectora o przykładowo [20 000] elementów 
-    używając tylko i wyłącznie metody [.push_back()] będzie wymagało 16 realokacji. 
+    używając tylko i wyłącznie metody [.push_back( )] będzie wymagało 16 realokacji. 
     16 realokacji to zdecydowanie za dużo.
 
     Każda realokacja jest czasochłonną operacją. Należy UNIKAĆ zbyt częstych [realokacji vectora].
