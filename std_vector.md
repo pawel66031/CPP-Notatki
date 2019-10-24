@@ -19,7 +19,7 @@
 	* [konstruktor(int)](#program-22-podejście-1---konstruktorint)
 	* [.resize(int)](#program-23-podejście-2---resizeint)
 	* [.reserve(int)](#program-24-podejście-3---reserveint)
-	* [.reserve(int)](#program-25-shrink_to_fit)
+	* [.shrink_to_fit( )](#program-25-shrink_to_fit)
 ------------
 <br/>
 
