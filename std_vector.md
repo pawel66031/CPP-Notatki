@@ -250,7 +250,7 @@ Podane w przykładzie pod tabelą [20 000] możemy zarezerwować wykonując jedy
 
 
 
-
+![](/resources/Ver2.PNG)
 
 
 
