@@ -16,13 +16,14 @@
         
 1. [Rezerwowanie Pamięci](#2-Rezerwowanie-Pamięci)
 	* [.push_back(TypDanych)](#program-21-push_backtypdanych)
+	* [konstruktor(int)](#program-22-podejście-1---konstruktor)
+	* [.resize(int)](#program-23-podejście-2---resizeint)
+	* [.reserve(int)](#program-24-podejście-3---reserveint)
 ------------
 <br/>
 
 #### 1. Wyświetlanie informacji o wybranym Vectorze
-
 ###### [Program 1.1] `operator[ ]` `.size( )` `.capacity( )`
-
 ```cpp
  void Show(const vector<int>& V){
      /** - Funkcja którą będę w dalszej części notatek wypisywał 
@@ -153,86 +154,84 @@ Podane w przykładzie pod tabelą [20 000] możemy zarezerwować wykonując jedy
 ```
       
 ###### [Program 2.3] `Podejście 2 - .resize(int)`
+```cpp
+ vector<int> D;
+ // _____________
+ // Scenariusz 1:   Vector D jest pusty, [size=0], [capacity=0].
+ D.resize(20000);
+ Show(D);    // size: 20000
+             // capacity: 20000
+ // Ponownie, utworzyliśmy [20 000] elementów o wartości równej zero.
+ // Powstałe elementy możemy zmodyfikować tak samo jak w podejściu pierwszym z konstruktorem.
+ 
+ // Te [20 000] elementów już teraz istnieje.
+ // Oznacza to że użycie metody [.push_back(typDanych)] w tym 
+ // momencie spowoduje utworzenie [20001] elementu, co spowoduje
+ // ponowną realokacje do rozmiaru [20 000 * 2], czyli [40 000].
 
+ // _____________
+ // Scenariusz 2:   Vector D jest nie pusty, dodajemy do niego więcej miejsca
+ D.resize(55555);
+ /*  - Nie zostaną zmodyfikowane już istniejące elementy.
+     - Zostanie wykonana potrzebna realokacja.
+       Wcześniejsza ilość zarezerwowanego miejsca to było [20 000]
+       Dwukrotność poprzednio zarezerwowanego miejsca wynosi [40 000]
+       Jeżeli chcemy zarezerwować więcej miejsca niż dana dwukrotność, 
+       wtedy zarezerwuje nam dokładnie tyle miejsca, o ile poprosiliśmy. Czyli [55 555].
+       Jeżeli jednak chcemy zarezerwować mniej niż [40 000], wtedy i tak zarezerwuje nam [40 000].
+       W ten sposób vektor minimalizuje ilość automatycznych realokacji w przyszłości.
+     - Nowe miejsce zostanie wypełnione nowymi elementami o wartości zero.  */
 
-     1│ vector<int> D;
-     2│ // _____________
-     3│ // Scenariusz 1:   Vector D jest pusty, [size=0], [capacity=0].
-     4│ D.resize(20000);
-     5│ Show(D);    // size: 20000
-     6│             // capacity: 20000
-     7│ // Ponownie, utworzyliśmy [20 000] elementów o wartości równej zero.
-     8│ // Powstałe elementy możemy zmodyfikować tak samo jak w podejściu pierwszym z konstruktorem.
-     9│ 
-    10│ // Te [20 000] elementów już teraz istnieje.
-    11│ // Oznacza to że użycie metody [.push_back(typDanych)] w tym 
-    12│ // momencie spowoduje utworzenie [20001] elementu, co spowoduje
-    13│ // ponowną realokacje do rozmiaru [20 000 * 2], czyli [40 000].
-    14│
-    15│ // _____________
-    16│ // Scenariusz 2:   Vector D jest nie pusty, dodajemy do niego więcej miejsca
-    17│ D.resize(55555);
-    18│ /*  - Nie zostaną zmodyfikowane już istniejące elementy.
-    19│     - Zostanie wykonana potrzebna realokacja.
-    20│       Wcześniejsza ilość zarezerwowanego miejsca to było [20 000]
-    21│       Dwukrotność poprzednio zarezerwowanego miejsca wynosi [40 000]
-    22│       Jeżeli chcemy zarezerwować więcej miejsca niż dana dwukrotność, 
-    23│       wtedy zarezerwuje nam dokładnie tyle miejsca, o ile poprosiliśmy. Czyli [55 555].
-    24│       Jeżeli jednak chcemy zarezerwować mniej niż [40 000], wtedy i tak zarezerwuje nam [40 000].
-    25│       W ten sposób vektor minimalizuje ilość automatycznych realokacji w przyszłości.
-    26│     - Nowe miejsce zostanie wypełnione nowymi elementami o wartości zero.  */
-    27│
-    28│ // _____________
-    29│ // Scenariusz 3:   Vector D jest nie pusty, Zmniejszamy w nim ilość miejsca
-    30│ D.resize(100);
-    31│ /*  - Nie zostaną zmodyfikowane już istniejące, mieszczące się w przedziale elementy.
-    32│     - Elementy nie mieszczące się w przedziale zostaną bez powrotnie skasowane.
-    33│     - Nie zostanie wykonana realokacja pamięci.
-    34│       Oznacza to że w vectorze będzie [100] elementów - [size = 100]
-    35│       Jednocześnie będzie zarezerwowana ostatnia ilość pamięci - [capacity = 55 555]  */
+ // _____________
+ // Scenariusz 3:   Vector D jest nie pusty, Zmniejszamy w nim ilość miejsca
+ D.resize(100);
+ /*  - Nie zostaną zmodyfikowane już istniejące, mieszczące się w przedziale elementy.
+     - Elementy nie mieszczące się w przedziale zostaną bez powrotnie skasowane.
+     - Nie zostanie wykonana realokacja pamięci.
+       Oznacza to że w vectorze będzie [100] elementów - [size = 100]
+       Jednocześnie będzie zarezerwowana ostatnia ilość pamięci - [capacity = 55 555]  */
+```
 
+###### [Program 2.4] `Podejście 3 - .reserve(int)`
+```cpp
+ vector<int> E;
 
-      Podejście 3
-      • .reserve(int)
-     ─┬─────────────────────────────────────────────────────────────
-     1│ vector<int> E;
-     2│
-     3│ // Zaczynamy, Vector E jest pusty, [size=0], [capacity=0].
-     4│ E.reserve(20000);
-     5│ Show(E);    // size: 0
-     6│             // capacity: 20000
-     7│ // Metoda [.reserve(int)] jedynie rezerwuje podaną ilość miejsca,
-     8│ // nie tworzy przy tym nowych elementów.
-     9│
-    10│ // Dlatego w tym momencie możemy utworzyć nowe elementy metodą [.push_back(typDanych)]
-    11│ for (int i=0; i<E.capacity(); ++i)   // Pamiętaj że [size()] jest równe [zero].
-    12│     E.push_back(i);
-    13│
-    14│ Show(E);    // size: 20000
-    15│             // capacity: 20000
-    16│ 
-    17│ // __________________________________________________________
-    18│ // Argument metody [.reserve(int)] określa minimalną ilość elementów w vectorze.
-    19│ // Nigdy nie ma problemu z zwiększeniem tej ilości.
-    20│ E.reserve(20111);
-    21│ 
-    22│ // Zostanie wykonana realokacja do rozmiaru dokładnie [20 111] elementów. 
-    23│ // Zostaje tutaj pominięta zasada dwukrotności, czyli NIE zostanie 
-    24│ // zarezerwowane miejsce dla [40 000] elementów.
-    25│ 
-    26│ // __________________________________________________________
-    27│ // Nie można zarezerwować mniej miejsca niż obecnie jest zarezerwowane w vectorze.
-    28│ // Obecny stan naszego vectora to:
-    29│ Show(E);    // size: 20000
-    30│             // capacity: 20111
-    31│ 
-    32│ // Podanie mniejszej wartości NIE zmodyfikuje
-    33│ // ilości obiektów, ani ilości zarezerwowanego miejsca. 
-    34│ 
-    35│ E.reserve(50);
-    36│ Show(E);    // size: 20000
-    37│             // capacity: 20111
+ // Zaczynamy, Vector E jest pusty, [size=0], [capacity=0].
+ E.reserve(20000);
+ Show(E);    // size: 0
+             // capacity: 20000
+ // Metoda [.reserve(int)] jedynie rezerwuje podaną ilość miejsca,
+ // nie tworzy przy tym nowych elementów.
 
+// Dlatego w tym momencie możemy utworzyć nowe elementy metodą [.push_back(typDanych)]
+ for (int i=0; i<E.capacity(); ++i)   // Pamiętaj że [size()] jest równe [zero].
+     E.push_back(i);
+
+ Show(E);    // size: 20000
+             // capacity: 20000
+
+ // __________________________________________________________
+ // Argument metody [.reserve(int)] określa minimalną ilość elementów w vectorze.
+ // Nigdy nie ma problemu z zwiększeniem tej ilości.
+ E.reserve(20111);
+
+ // Zostanie wykonana realokacja do rozmiaru dokładnie [20 111] elementów. 
+ // Zostaje tutaj pominięta zasada dwukrotności, czyli NIE zostanie 
+ // zarezerwowane miejsce dla [40 000] elementów.
+ 
+ // __________________________________________________________
+ // Nie można zarezerwować mniej miejsca niż obecnie jest zarezerwowane w vectorze.
+ // Obecny stan naszego vectora to:
+ Show(E);    // size: 20000
+             // capacity: 20111
+ 
+ // Podanie mniejszej wartości NIE zmodyfikuje
+ // ilości obiektów, ani ilości zarezerwowanego miejsca. 
+ 
+ E.reserve(50);
+ Show(E);    // size: 20000
+             // capacity: 20111
+```
 
       Zwalnianie NADMIARU zarezerwowanej pamięci
       • .shrink_to_fit()
