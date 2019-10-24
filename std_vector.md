@@ -104,6 +104,8 @@ Automatyczna [realokacja] rezerwuje dwukrotność obecnie zarezerwowanej pamięc
 ------------- | -------------  | ------------- 
 **2 * [2] = 4** | **8 * [2] = 16** | **32 * [2] = 64 ...**
 	
+<br/>
+	
 Ilość zarezerwowanego <br/> miejsca w pamięci <br/> [ V.capacity( ) ] | Ilość wykonanych <br/> realokacji pamięci | Minimalna możliwa <br/> ilość wywołań metody <br/> [ V.push_back(int(value)) ]
 ------------- | -------------  | ------------- 
 0 | 0 | -
