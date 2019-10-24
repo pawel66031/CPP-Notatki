@@ -15,30 +15,12 @@
 
 ------------
 
-
-` loooooo lo  l  `
-
 #### 1. Wyświetlanie informacji o wybranym Vectorze
 
-#####  operator[ ]   .size( )   .capacity( )
-
->#####  operator[ ]       .size( )      .capacity( )
-
-
-`#####  operator[ ]       .size( )      .capacity( )`
-
-#####  operator[ ]       .size( )      .capacity( )
-
-`  operator[ ]       .size( )      .capacity( )`
-
->##  operator[ ]
->#####  .size( )
->#####  .capacity( )
-
-
-#####  operator[ ]
-#####  .size( )
-#####  .capacity( )
+#####  Program[1.1]
+`operator[ ]`
+`.size( )`
+`.capacity( )`
 
 ```cpp
 void Show(const vector<int>& V){
