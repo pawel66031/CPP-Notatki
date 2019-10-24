@@ -9,7 +9,7 @@
 - Najczęściej stosowany termin w polskich publikacjach to [Kontener], nie [Wektor].
 <br/>
 
-1. [Wyświetlanie informacji o wybranym Vectorze](#1-Wyświetlanie-informacji-o-wybranym-Vectorze)
+1. [Wyświetlanie informacji o wybranym Vectorze](#1-Wyświetlanie-informacji-o-wybranym-Vectorze) 
 	* [operator[ ]](#program-11-operator--size--capacity-)
 	* [.size( )](#program-11-operator--size--capacity-)
 	* [.capacity( )](#program-11-operator--size--capacity-)
@@ -85,7 +85,7 @@
  - Przed każdym WIELOKROTNYM użyciem metody [.push_back( )] \
    należy unikać kilkukrotnych realokacji vectora. \
    W kodzie wyżej, automatycznie doszło aż do trzech realokacji vectora.
- - Automatyczna [realokacja] rezerwuje dwukrotność obecnie zarezerwowanej pamięci. \
+ - Automatyczna [realokacja] rezerwuje dwukrotność obecnie zarezerwowanej pamięci. 
       - Przykład 1 \
       Jeżeli w vectorze posiadamy zarezerwowane miejsce dla [500] elementów, \
       wtedy możemy dowolnie dodawać elementy aż do pięcsetnego. \
@@ -98,10 +98,11 @@
       rezerwowane będzie tyle miejsca w pamięci, ile wynosi \
       najmniejsza potęga dwójki w której zmieści się ilość elementów vectora. \
       [ *Przykład pokazany w tabeli niżej* ] \
-      Dzieje się tak ponieważ: \
-1 * [2] = 2 | 4 * [2] = 8 | 16 * [2] = 32
- ------------- | -------------  | ------------- 
-**2 * [2] = 4** | **8 * [2] = 16** | **32 * [2] = 64 ...**
+      Dzieje się tak ponieważ: 
+
+	1 * [2] = 2 | 4 * [2] = 8 | 16 * [2] = 32
+	------------- | -------------  | ------------- 
+	**2 * [2] = 4** | **8 * [2] = 16** | **32 * [2] = 64 ...**
 
      --------------------------- --------------------------- ---------------------------
     | Ilość zarezerwowanego     | Ilość wykonanych          | Minimalna możliwa         |
