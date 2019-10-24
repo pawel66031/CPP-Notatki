@@ -54,9 +54,7 @@
 <br/>
 
 #### 2. Rezerwowanie Pamięci
-
 ###### [Program 2.1] `.push_back(TypDanych)`
-
 ```cpp
  vector<int> B;
 
@@ -81,11 +79,11 @@
              // capacity: 4  !!!
 ```
 
-   Przed każdym WIELOKROTNYM użyciem metody [.push_back( )] \
-   należy unikać kilkukrotnych realokacji vectora. \
-   W kodzie wyżej, automatycznie doszło aż do trzech realokacji vectora.
+Przed każdym WIELOKROTNYM użyciem metody [.push_back( )] \
+należy unikać kilkukrotnych realokacji vectora. \
+W kodzie wyżej, automatycznie doszło aż do trzech realokacji vectora.
    
-   Automatyczna [realokacja] rezerwuje dwukrotność obecnie zarezerwowanej pamięci. 
+Automatyczna [realokacja] rezerwuje dwukrotność obecnie zarezerwowanej pamięci. 
    - Przykład 1 \
       Jeżeli w vectorze posiadamy zarezerwowane miejsce dla [500] elementów, \
       wtedy możemy dowolnie dodawać elementy aż do pięcsetnego. \
@@ -100,61 +98,61 @@
       [ *Przykład pokazany w tabeli niżej* ] \
       Dzieje się tak ponieważ: 
 
-	1 * [2] = 2 | 4 * [2] = 8 | 16 * [2] = 32
-	------------- | -------------  | ------------- 
-	**2 * [2] = 4** | **8 * [2] = 16** | **32 * [2] = 64 ...**
+1 * [2] = 2 | 4 * [2] = 8 | 16 * [2] = 32
+------------- | -------------  | ------------- 
+**2 * [2] = 4** | **8 * [2] = 16** | **32 * [2] = 64 ...**
 	
-	Ilość zarezerwowanego <br/> miejsca w pamięci <br/> [ V.capacity( ) ] | Ilość wykonanych <br/> realokacji pamięci | Minimalna możliwa <br/> ilość wywołań metody <br/> [ V.push_back(int(value)) ]
-	------------- | -------------  | ------------- 
-	0 | 0 | -
-	1 | 1 | 1
-	2 | 2 | 2
-	4 | 3 | 3
-	8 | 4 | 5
-	16 | 5 | 9
-	32 | 6 | 17
-	64 | 7 | 33
-	128 | 8 | 65
-	256 | 9 | 129
-	516 | 10 | 257
-	1024 | 11 | 517
-	2048 | 12 | 1025
-	4096 | 13 | 2049
-	8192 | 14 | 4097
-	16 384 | 15 | 8193
-	32 768 | 16 | 16 385
+Ilość zarezerwowanego <br/> miejsca w pamięci <br/> [ V.capacity( ) ] | Ilość wykonanych <br/> realokacji pamięci | Minimalna możliwa <br/> ilość wywołań metody <br/> [ V.push_back(int(value)) ]
+------------- | -------------  | ------------- 
+0 | 0 | -
+1 | 1 | 1
+2 | 2 | 2
+4 | 3 | 3
+8 | 4 | 5
+16 | 5 | 9
+32 | 6 | 17
+64 | 7 | 33
+128 | 8 | 65
+256 | 9 | 129
+516 | 10 | 257
+1024 | 11 | 517
+2048 | 12 | 1025
+4096 | 13 | 2049
+8192 | 14 | 4097
+16 384 | 15 | 8193
+32 768 | 16 | 16 385
 	
-    Oznacza to, że wypełnienie vectora o przykładowo [20 000] elementów \
-    używając tylko i wyłącznie metody [.push_back( )] będzie wymagało 16 realokacji. \
-    16 realokacji to zdecydowanie za dużo.
+Oznacza to, że wypełnienie vectora o przykładowo [20 000] elementów \
+używając tylko i wyłącznie metody [.push_back( )] będzie wymagało 16 realokacji. \
+16 realokacji to zdecydowanie za dużo.
 
-    Każda realokacja jest czasochłonną operacją. Należy UNIKAĆ zbyt częstych [realokacji vectora]. \
-    Podane w przykładzie pod tabelą [20 000] możemy zarezerwować wykonując jedynie [jedną] realokacje:
+Każda realokacja jest czasochłonną operacją. Należy UNIKAĆ zbyt częstych [realokacji vectora]. \
+Podane w przykładzie pod tabelą [20 000] możemy zarezerwować wykonując jedynie [jedną] realokacje:
 
-    ###### [Program 2.2] `Podejście 1 - konstruktor`
-
-     1│ vector<int> C(20000);
-     2│ Show(C);    // size: 20000
-     3│             // capacity: 20000
-     4│ // Nie tylko zarezerwowaliśmy miejsce w pamięci dla [20 000] elementów,
-     5│ // jednocześnie utworzyliśmy te elementy, dlatego [size: 20000].
-     6│ // Wszystkie te elementy są równe zero.
-     7│ 
-     8│ // Elementy te możemy zmodyfikować, przykładowo, operatorem[].
-     9│ for (int i=0; i<C.size(); ++i)
-    10│     C[i] = i;
-    11│ 
-    12│ // Inna wersja konstruktora pozwala nam na inicjalizację 
-    13│ // wszystkich elementów inną wartością niż [zero].  
-    14│ vector<int> CC(20000, -6);
-    15│ 
-    16│ // W tym momencie wszystkie utworzone elementy 
-    17│ // vectora [CC] posiadają wartość [-6]:
-    18│ for (int i=0; i<CC.size(); ++i)
-    19│     std::cout << " " << CC[i];
-
+###### [Program 2.2] `Podejście 1 - konstruktor`
+```cpp
+ vector<int> C(20000);
+ Show(C);    // size: 20000
+             // capacity: 20000
+ // Nie tylko zarezerwowaliśmy miejsce w pamięci dla [20 000] elementów,
+ // jednocześnie utworzyliśmy te elementy, dlatego [size: 20000].
+ // Wszystkie te elementy są równe zero.
+ 
+ // Elementy te możemy zmodyfikować, przykładowo, operatorem[].
+ for (int i=0; i<C.size(); ++i)
+     C[i] = i;
+ 
+ // Inna wersja konstruktora pozwala nam na inicjalizację 
+ // wszystkich elementów inną wartością niż [zero].  
+ vector<int> CC(20000, -6);
+ 
+ // W tym momencie wszystkie utworzone elementy 
+ // vectora [CC] posiadają wartość [-6]:
+ for (int i=0; i<CC.size(); ++i)
+     std::cout << " " << CC[i];
+```
       
-    ###### [Program 2.3] `Podejście 2 - .resize(int)`
+###### [Program 2.3] `Podejście 2 - .resize(int)`
 
 
      1│ vector<int> D;
