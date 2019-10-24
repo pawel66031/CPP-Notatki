@@ -253,4 +253,6 @@ Podane w przykładzie pod tabelą [20 000] możemy zarezerwować wykonując jedy
 ------------
 <br/>
 
-![](/resources/Ver2.PNG)
+
+
+![](https://github.com/Ptysiek/resources/Ver2.PNG)
