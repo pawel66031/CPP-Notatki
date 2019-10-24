@@ -12,11 +12,11 @@
 	* [operator[ ]](#program-11-operator--size--capacity-)
 	* [.size( )](#program-11-operator--size--capacity-)
 	* [.capacity( )](#program-11-operator--size--capacity-)
+        
+1. [Rezerwowanie Pamięci](#2-Rezerwowanie-Pamięci)
+	* [.push_back(TypDanych)](#program-21-push_back(TypDanych))
 
 ------------
-
-
-
 #### 1. Wyświetlanie informacji o wybranym Vectorze
 
 ###### [Program 1.1] `operator[ ]` `.size( )` `.capacity( )`
@@ -24,15 +24,15 @@
 ```cpp
 void Show(const vector<int>& V){
 	/** - Funkcja którą będę w dalszej części notatek wypisywał 
-		  Podstawowe informacje o wybranym vectorze.
-		- W argumencie znajduje się referencja do jakiegoś vectora trzymającego <int>
-		  Korzystamy z referencji aby nie tworzyć kopii danego vectora.
-		- Argument posiada specyfikator const, ponieważ zamierzamy 
-		  jedynie odczytać wartości danego vectora.
+	      Podstawowe informacje o wybranym vectorze.
+	    - W argumencie znajduje się referencja do jakiegoś vectora trzymającego <int>
+	      Korzystamy z referencji aby nie tworzyć kopii danego vectora.
+	    - Argument posiada specyfikator const, ponieważ zamierzamy 
+	      jedynie odczytać wartości danego vectora.
 	**/
 
 	// Operator [] zwraca REFERENCJĘ na element w określonej pozycji
-	for (int i=0; i<V.size(); ++i)  // Pętla przez wszystkie elementy vectora [V].
+	for (int i=0; i<V.size(); ++i)       // Pętla przez wszystkie elementy vectora [V].
 		std::cout << V[i] << " ";       // Wypisanie wartości elementu na indeksie [i].
 
 	std::cout 
@@ -43,18 +43,19 @@ void Show(const vector<int>& V){
 ...
 
 // Wywołanie funkcji [Show]
-vector<int> A;    // Dodawane elementy vectora będą typu <int>
+vector<int> A;    // Elementy vectora [A] będą typu <int>
 
 // W tym momencie vector [A] jest pusty. Nie posiada elementów, 
 // i nie ma dla nich zarezerwowanego miejsca w pamięci.
 Show(A);
-// size: 0
-// capacity: 0
+       // size: 0
+       // capacity: 0
 ```
 
-###2. Rezerwowanie Pamięci
+------------
+#### 2. Rezerwowanie Pamięci
 
-##### .push_back(TypDanych)
+###### [Program 2.1] `.push_back(TypDanych)`
 
       •
      ─┬─────────────────────────────────────────────────────────────
