@@ -9,9 +9,9 @@
 - Najczęściej stosowany termin w polskich publikacjach to [Kontener], nie [Wektor].
 
 1. [Wyświetlanie informacji o wybranym Vectorze](#1-Wyświetlanie-informacji-o-wybranym-Vectorze)
-	* [operator[ ]](#Program-1.1)
-	* [.size( )](#size-)
-	* [.capacity( )](#capacity-)
+	* [operator[ ]](#program-11-operator--size--capacity-)
+	* [.size( )](#program-11-operator--size--capacity-)
+	* [.capacity( )](#program-11-operator--size--capacity-)
 
 ------------
 
@@ -35,8 +35,9 @@ void Show(const vector<int>& V){
 	for (int i=0; i<V.size(); ++i)  // Pętla przez wszystkie elementy vectora [V].
 		std::cout << V[i] << " ";       // Wypisanie wartości elementu na indeksie [i].
 
-	std::cout << "\n size: "      << V.size()          // Zwraca ilość elementów w vectorze [V].
-			  << "\n capacity: "  << V.capacity();     // Zwraca ilość zarezerwowanego miejsca w pamięci.
+	std::cout 
+		<< "\n size: "      << V.size()          // Zwraca ilość elementów w vectorze [V].
+		<< "\n capacity: "  << V.capacity();     // Zwraca ilość zarezerwowanego miejsca w pamięci.
 }
 
 ...
