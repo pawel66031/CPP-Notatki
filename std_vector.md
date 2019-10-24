@@ -259,4 +259,6 @@ Podane w przykładzie pod tabelą [20 000] możemy zarezerwować wykonując jedy
 
 ![nope](https://github.com/Ptysiek/resources/Ver2.PNG)
 
+![nope3](https://github.com/Ptysiek/resources/master/Ver2.PNG)
+
 
