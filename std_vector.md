@@ -9,7 +9,7 @@
 - Najczęściej stosowany termin w polskich publikacjach to [Kontener], nie [Wektor].
 
 1. [Wyświetlanie informacji o wybranym Vectorze](#1-Wyświetlanie-informacji-o-wybranym-Vectorze)
-	* [operator[ ]](#operator-)
+	* [operator[ ]](#Program-1.1)
 	* [.size( )](#size-)
 	* [.capacity( )](#capacity-)
 
@@ -19,7 +19,7 @@
 
 #### 1. Wyświetlanie informacji o wybranym Vectorze
 
-#####  Program[1.1] `operator[ ]` `.size( )` `.capacity( )`
+###### [Program 1.1] `operator[ ]` `.size( )` `.capacity( )`
 
 ```cpp
 void Show(const vector<int>& V){
