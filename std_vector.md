@@ -8,7 +8,6 @@
    Kiedy się da, ręcznie rezerwować za wczasu tyle pamięci ile potrzeba!
 - Najczęściej stosowany termin w polskich publikacjach to [Kontener], nie [Wektor].
 
-
 1. [Wyświetlanie informacji o wybranym Vectorze](#1-Wyświetlanie-informacji-o-wybranym-Vectorze)
 	* [operator[ ]](#operator-)
 	* [.size( )](#size-)
@@ -16,7 +15,26 @@
 
 ------------
 
+
+` loooooo lo  l  `
+
 #### 1. Wyświetlanie informacji o wybranym Vectorze
+
+#####  operator[ ]   .size( )   .capacity( )
+
+>#####  operator[ ]       .size( )      .capacity( )
+
+
+`#####  operator[ ]       .size( )      .capacity( )`
+
+#####  operator[ ]       .size( )      .capacity( )
+
+`  operator[ ]       .size( )      .capacity( )`
+
+>##  operator[ ]
+>#####  .size( )
+>#####  .capacity( )
+
 
 #####  operator[ ]
 #####  .size( )
