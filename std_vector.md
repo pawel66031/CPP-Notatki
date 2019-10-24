@@ -14,7 +14,7 @@
 	* [.capacity( )](#program-11-operator--size--capacity-)
         
 1. [Rezerwowanie Pamięci](#2-Rezerwowanie-Pamięci)
-	* [.push_back(TypDanych)](#program-21-push_back(TypDanych))
+	* [.push_back(TypDanych)](#program-21-push_backtypdanych)
 
 ------------
 #### 1. Wyświetlanie informacji o wybranym Vectorze
