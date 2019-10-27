@@ -1,4 +1,4 @@
-#  std::vector< TypDanych > 
+# std::vector< TypDanych > 
 
 - Kontener sekwencyjny STL, przechowujący tablice o zmiennej wielkości.
 - Pojemność vectora jest zarządzana automatycznie, zwiększana bądź zmniejszana w razie potrzeby.\
@@ -7,12 +7,13 @@
 - Realokacje są kosztownymi operacjami pod względem wydajności. Unikać!\
    Kiedy się da, ręcznie rezerwować za wczasu tyle pamięci ile potrzeba!
 - Najczęściej stosowany termin w polskich publikacjach to *Kontener*, nie *Wektor*.
+
 <br/>
 
 1. [Wyświetlanie informacji o wybranym Vectorze](#1-Wyświetlanie-informacji-o-wybranym-Vectorze) 
-	* [operator[ ]](#program-11-operator--size--capacity-)
-	* [.size( )](#program-11-operator--size--capacity-)
-	* [.capacity( )](#program-11-operator--size--capacity-)
+    - [operator[ ]](#program-11-operator--size--capacity-)
+    - [.size( )](#program-11-operator--size--capacity-)
+    - [.capacity( )](#program-11-operator--size--capacity-)
         
 1. [Rezerwowanie Pamięci](#2-Rezerwowanie-Pamięci)
 	* [.push_back(TypDanych)](#program-21-push_backtypdanych)
@@ -20,6 +21,7 @@
 	* [.resize(int)](#program-23-podejście-2---resizeint)
 	* [.reserve(int)](#program-24-podejście-3---reserveint)
 	* [.shrink_to_fit( )](#program-25-shrink_to_fit)
+	
 ------------
 <br/>
 
