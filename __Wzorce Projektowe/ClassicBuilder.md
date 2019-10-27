@@ -22,28 +22,39 @@
 
 <br/>
 
-**CLIENT**
-- Wybiera i tworzy egzemplarz z grupy `Subjects{}`.
-- Tworzy egzemplarz `Director`, \
-któremu przypisuje utworzony wcześniej egzemplarz z grupy `Subjects{}`.
-- Korzystając z `Director`, tworzy obiekt `Subject`.
+**SUBJECT**
+- **Przedmiot** będący wynikiem działania wzorca `Classic Builder` 
+- Niezależny od reszty wzorca. Można rozpruć builder bez uszkodzenia klasy.
 
 **SUBJECTS{ }** 
-- `SUBJECT_verA`, `SUBJECT_verB`, `...`
-- Grupa
-- Każdy wytwarza inną wersję tego samego Przedmiotu.
+- Grupa **Robotników** { \
+`SUBJECT_verA`, \
+`SUBJECT_verB`, \
+`SUBJECT_verC`, `...` }.
+- Każdy **Robotnik** wytwarza własną, niepowtarzalną wersję *przedmiotu* `Subject`. 
+- **Robotnicy** dostają polecenia od kierownika `Director` do którego są przypisani.
+- Utworzony *przedmiot* jest zwracany przez metodę `GetResult() : Subject`.
+- Robotnicy **Nie** posiadają operacji klasy `Subject`**!**
 
 **BUILDER**
-- Interfejs obiektów `Subjects{}`
+- Interfejs obiektów `Subjects{}`.
+- Posiada wszystkie inicjowane pola zbioru `Subject`, \
+oraz wirtualne metody do ich ustawiania. 
+- **Nie** posiadają operacji klasy `Subject`**!**
 
-**DIRECTOR**  - Wywołuje wybranego robotnika. Zwraca Przedmiot 
+**DIRECTOR**  
+- Zarządza obecnie przypisanym mu *robotnikiem*.
+- Wydaje polecenia, w celu utworzenia przedmiotu `Subject`.
+- Może posiadać więcej niż jedną operację wytworzenia przedmiotu.
 
-**SUBJECT**
+**CLIENT**
+- Tworzy jednego *robotnika* z grupy `Subjects{}`.
+- Tworzy egzemplarz `Director`, któremu \
+przypisuje wcześniej wybrany egzemplarz *robotnika*.
+- Korzystając z `Director`, tworzy obiekt wynikowy, `Subject`.
 
 
-
-
-###### [Program 1.1] `operator[ ]` `.size( )` `.capacity( )`
+###### [Program 1.1]
 ```cpp
  
 ```
@@ -51,6 +62,8 @@ któremu przypisuje utworzony wcześniej egzemplarz z grupy `Subjects{}`.
 <br/>
 
 #### 2. Fluent Builder
+
+###### [Program 2.1]
 ```cpp
  
 ```
@@ -59,4 +72,3 @@ któremu przypisuje utworzony wcześniej egzemplarz z grupy `Subjects{}`.
 <br/>
 
 ![](https://github.com/Ptysiek/resources/blob/master/Ver2.PNG)
-
