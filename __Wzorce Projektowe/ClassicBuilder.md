@@ -9,7 +9,7 @@
 
 <br/>
 
-1. [Klasyczny Builder](#1-Klasyczny-Builder) 
+1. [Classic Builder](#1-Classic-Builder) 
         
 1. [Fluent Builder](#2-Fluent-Builder)
 
@@ -19,7 +19,18 @@
 
 SUBJECT
 
-BUILDER - Interfejs Przedmiotu
+
+**CLIENT**
+- Wybiera i tworzy egzemplarz z grupy zbiorów `Subjects`.
+- Tworzy egzemplarz zbioru `Director`, \
+któremu przypisuje utworzony wcześniej egzemplarz z grupy `Subjects`.
+- Korzystając z `Director`, tworzy obiekt `Subject`.
+
+BUILDER 
+- Interfejs przedmiotu `Subject`
+
+SUBJECTS: 
+- `SUBJECT_verA`, `SUBJECT_verB`, `...`
 
 SUBJECT_A  - każdy wykonuje inną wersję tego samego Przedmiotu.
 SUBJECT_B
