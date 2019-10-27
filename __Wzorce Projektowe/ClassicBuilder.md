@@ -5,7 +5,7 @@
 - Tworzenie różnych reprezentacji danego produktu .
 - Odseparowanie konstrukcji złożonego obiektu od jego reprezentacji. 
 - Zmniejszenie ilości argumentów w konstruktorze
-- `Wzorzec Kreacyjny` 
+- Wzorzec z grupy `Creational Patterns` 
 
 <br/>
 
@@ -15,6 +15,8 @@
 
 ------------
 <br/>
+
+#### 1. Classic Builder
 
 ![](https://github.com/Ptysiek/resources/blob/master/WzorceProjektowe/ClassicBuilderHD.png)
 
@@ -41,12 +43,6 @@ któremu przypisuje utworzony wcześniej egzemplarz z grupy `Subjects{}`.
 
 
 
-
-
-
-
-
-#### 1. Classic Builder
 ###### [Program 1.1] `operator[ ]` `.size( )` `.capacity( )`
 ```cpp
  
