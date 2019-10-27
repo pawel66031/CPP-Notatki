@@ -8,6 +8,10 @@
 - `Wzorzec Kreacyjny` 
 
 
+
+![](https://github.com/Ptysiek/resources/blob/master/WzorceProjektowe/ClassicBuilderHD.png)
+
+
 1. [Klasyczny Builder](#1-Klasyczny-Builder) 
         
 1. [Fluent Builder](#2-Fluent-Builder)
