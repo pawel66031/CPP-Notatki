@@ -2,10 +2,10 @@
 
 - Kontener sekwencyjny STL, przechowujący tablice o zmiennej wielkości.
 - Pojemność vectora jest zarządzana automatycznie, zwiększana bądź zmniejszana w razie potrzeby.\
-   Vectory zwykle alokują na zapas więcej pamięci niż potrzeba.\
-   Dzięki temu nie muszą realokować całej pamięci przy każdym nowym elemencie.
+Vectory zwykle alokują na zapas więcej pamięci niż potrzeba.\
+Dzięki temu nie muszą realokować całej pamięci przy każdym nowym elemencie.
 - Realokacje są kosztownymi operacjami pod względem wydajności. Unikać!\
-   Kiedy się da, ręcznie rezerwować za wczasu tyle pamięci ile potrzeba!
+Kiedy się da, ręcznie rezerwować za wczasu tyle pamięci ile potrzeba!
 - Najczęściej stosowany termin w polskich publikacjach to *Kontener*, nie *Wektor*.
 
 <br/>
@@ -13,8 +13,7 @@
 1. [Wyświetlanie informacji o wybranym Vectorze](#1-Wyświetlanie-informacji-o-wybranym-Vectorze) 
     - [operator[ ]](#program-11-operator--size--capacity-)
     - [.size( )](#program-11-operator--size--capacity-)
-    - [.capacity( )](#program-11-operator--size--capacity-)
-        
+    - [.capacity( )](#program-11-operator--size--capacity-)        
 1. [Rezerwowanie Pamięci](#2-Rezerwowanie-Pamięci)
 	* [.push_back(TypDanych)](#program-21-push_backtypdanych)
 	* [konstruktor(int)](#program-22-podejście-1---konstruktorint)
