@@ -10,13 +10,17 @@
 <br/>
 
 1. [Classic Builder](#1-Classic-Builder) 
+    - [Implementacja](#Program-11-Subjectfile) 
         
 1. [Fluent Builder](#2-Fluent-Builder)
+
 
 ------------
 <br/>
 
-#### 1. Classic Builder
+### 1. Classic Builder
+
+<br/>
 
 ![](https://github.com/Ptysiek/resources/blob/master/WzorceProjektowe/ClassicBuilderHD.png)
 
@@ -26,7 +30,13 @@
 - **Przedmiot** będący wynikiem działania wzorca `Classic Builder` 
 - Niezależny od reszty wzorca. Można rozpruć builder bez uszkodzenia klasy.
 
-**SUBJECTS{ }** 
+**BUILDER**
+- Interfejs obiektów `Subjects{}`.
+- Posiada wszystkie inicjowane pola zbioru `Subject`, \
+oraz wirtualne metody do ich ustawiania. 
+- **Nie** posiadaja operacji klasy `Subject`**!**
+
+**SUBJECTS{ }**
 - Grupa **Robotników** { \
 `SUBJECT_verA`, \
 `SUBJECT_verB`, \
@@ -35,12 +45,6 @@
 - **Robotnicy** dostają polecenia od kierownika `Director` do którego są przypisani.
 - Utworzony *przedmiot* jest zwracany przez metodę `GetResult() : Subject`.
 - Robotnicy **Nie** posiadają operacji klasy `Subject`**!**
-
-**BUILDER**
-- Interfejs obiektów `Subjects{}`.
-- Posiada wszystkie inicjowane pola zbioru `Subject`, \
-oraz wirtualne metody do ich ustawiania. 
-- **Nie** posiadają operacji klasy `Subject`**!**
 
 **DIRECTOR**  
 - Zarządza obecnie przypisanym mu *robotnikiem*.
@@ -54,14 +58,31 @@ przypisuje wcześniej wybrany egzemplarz *robotnika*.
 - Korzystając z `Director`, tworzy obiekt wynikowy, `Subject`.
 
 
-###### [Program 1.1]
+###### [Program 1.1]  `Subject.file`
 ```cpp
  
 ```
-
+###### [Program 1.2]  `Builder.file`
+```cpp
+ 
+```
+###### [Program 1.3]  `Subject_verA.file`
+```cpp
+ 
+```
+###### [Program 1.4]  `Director.file`
+```cpp
+ 
+```
+###### [Program 1.5]  `Client.file`
+```cpp
+ 
+```
 <br/>
 
-#### 2. Fluent Builder
+### 2. Fluent Builder
+
+<br/>
 
 ###### [Program 2.1]
 ```cpp
