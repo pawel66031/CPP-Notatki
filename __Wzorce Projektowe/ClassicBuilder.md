@@ -7,6 +7,8 @@
 - Zmniejszenie ilości argumentów w konstruktorze
 - `Wzorzec Kreacyjny` 
 
+<br/>
+
 1. [Klasyczny Builder](#1-Klasyczny-Builder) 
         
 1. [Fluent Builder](#2-Fluent-Builder)
