@@ -16,32 +16,30 @@
 ------------
 <br/>
 
+![](https://github.com/Ptysiek/resources/blob/master/WzorceProjektowe/ClassicBuilderHD.png)
 
-SUBJECT
-
+<br/>
 
 **CLIENT**
-- Wybiera i tworzy egzemplarz z grupy zbiorów `Subjects`.
-- Tworzy egzemplarz zbioru `Director`, \
-któremu przypisuje utworzony wcześniej egzemplarz z grupy `Subjects`.
+- Wybiera i tworzy egzemplarz z grupy `Subjects{}`.
+- Tworzy egzemplarz `Director`, \
+któremu przypisuje utworzony wcześniej egzemplarz z grupy `Subjects{}`.
 - Korzystając z `Director`, tworzy obiekt `Subject`.
 
-BUILDER 
-- Interfejs przedmiotu `Subject`
-
-SUBJECTS: 
+**SUBJECTS{ }** 
 - `SUBJECT_verA`, `SUBJECT_verB`, `...`
+- Grupa
+- Każdy wytwarza inną wersję tego samego Przedmiotu.
 
-SUBJECT_A  - każdy wykonuje inną wersję tego samego Przedmiotu.
-SUBJECT_B
-SUBJECT_C
-SUBJECT_D 
+**BUILDER**
+- Interfejs obiektów `Subjects{}`
 
-DIRECTOR  - Wywołuje wybranego robotnika. Zwraca Przedmiot 
+**DIRECTOR**  - Wywołuje wybranego robotnika. Zwraca Przedmiot 
+
+**SUBJECT**
 
 
 
-![](https://github.com/Ptysiek/resources/blob/master/WzorceProjektowe/ClassicBuilderHD.png)
 
 
 
