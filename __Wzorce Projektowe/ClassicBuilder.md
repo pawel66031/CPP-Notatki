@@ -1,18 +1,15 @@
 # Builder
 
-- Tworzenie tym samym  
-
-- Tworzenie różnych reprezentacji danego produktu .
-- Odseparowanie konstrukcji złożonego obiektu od jego reprezentacji. 
-- Zmniejszenie ilości argumentów w konstruktorze
-- Wzorzec z grupy `Creational Patterns` 
+- Implementacja gotowych schematów do tworzenia różnych reprezentacji danego produktu.
+- Odseparowanie procesu konstrukcji złożonego obiektu od jego reprezentacji. 
+- Zmniejszenie ilości argumentów w konstruktorze.
+- Wzorzec z grupy `Creational Patterns`.
 
 <br/>
 
 1. [Classic Builder](#1-Classic-Builder) 
     - [Implementacja](#program-11--subjectfile) 
 1. [Fluent Builder](#2-Fluent-Builder)
-
 
 ------------
 <br/>
@@ -25,17 +22,17 @@
 
 <br/>
 
-**SUBJECT**
+> **SUBJECT**
 - **Przedmiot** będący wynikiem działania wzorca `Classic Builder` 
 - Niezależny od reszty wzorca. Można rozpruć builder bez uszkodzenia klasy.
 
-**BUILDER**
-- Interfejs obiektów `Subjects{}`.
+> **BUILDER**
+- **Interfejs** obiektów `Subjects{}`.
 - Posiada wszystkie inicjowane pola zbioru `Subject`, \
 oraz wirtualne metody do ich ustawiania. 
 - **Nie** posiadaja operacji klasy `Subject`**!**
 
-**SUBJECTS{ }**
+> **SUBJECTS{ }**
 - Grupa **Robotników** { \
 `SUBJECT_verA`, \
 `SUBJECT_verB`, \
@@ -57,23 +54,23 @@ przypisuje wcześniej wybrany egzemplarz *robotnika*.
 - Korzystając z `Director`, tworzy obiekt wynikowy, `Subject`.
 
 
-###### [Program 1.1]  `Subject.file`
+###### [Program 1.1]  `Subject.file` [*Przedmiot*]
 ```cpp
  
 ```
-###### [Program 1.2]  `Builder.file`
+###### [Program 1.2]  `Builder.file` [*InterfejsRobotników*]
 ```cpp
  
 ```
-###### [Program 1.3]  `Subject_verA.file`
+###### [Program 1.3]  `Subject_verA.file` [*Robotnik*]
 ```cpp
  
 ```
-###### [Program 1.4]  `Director.file`
+###### [Program 1.4]  `Director.file` [*InstruujeRobotników*]
 ```cpp
  
 ```
-###### [Program 1.5]  `Client.file`
+###### [Program 1.5]  `Client.file` [UżywaWzorcaProjektowego*]
 ```cpp
  
 ```
