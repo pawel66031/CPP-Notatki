@@ -8,18 +8,18 @@
 <br/>
 
 1. [Classic Builder](#1-Classic-Builder)
-    - [Implementacja](#program-11--productfile) 
+    - [Implementacja](#program-11--productfile-guitar) 
 1. [Fluent Builder](#2-Fluent-Builder)
 
 ------------
 <br/>
 
-### 1. Classic Builder
+## 1. Classic Builder
 
 <br/>
 
 **PRODUCT**  \
-&nbsp;&nbsp;&nbsp;&nbsp; Klasa obiektu wynikowego, konstruowanego przez wybranego buildera. 
+&nbsp;&nbsp;&nbsp;&nbsp; Klasa obiektu wynikowego, konstruowanego przez wybranego *buildera*. 
 
 &nbsp;&nbsp;&nbsp;&nbsp; *Builder* nie ma wpływu na funkcjonowanie *Produktu*. \
 &nbsp;&nbsp;&nbsp;&nbsp; Możliwość modyfikacji *Produktu* bez ryzyka uszkodzenia *Buildera*.
@@ -30,40 +30,25 @@
 <br/>
 
 **I_BUILDER** \
-&nbsp;&nbsp;&nbsp;&nbsp; Klasa obiektu wynikowego, konstruowanego przez wybranego buildera. 
 
-&nbsp;&nbsp;&nbsp;&nbsp; *Builder* nie ma wpływu na funkcjonowanie *Produktu*. \
-&nbsp;&nbsp;&nbsp;&nbsp; Możliwość modyfikacji *Produktu* bez ryzyka uszkodzenia *Buildera*.
-
-&nbsp;&nbsp;&nbsp;&nbsp; *Porduct* nie posiada operacji konstruowania własnych instancji. \
-&nbsp;&nbsp;&nbsp;&nbsp; Operacje te, p
 
 <br/>
 
 **BUILDER** 
-- Klasa obiektu wynikowego, konstruowanego przez wybranego buildera. 
 
-- *Builder* nie ma wpływu na funkcjonowanie *Produktu*. \
-Możliwość modyfikacji *Produktu* bez ryzyka uszkodzenia *Buildera*.
-
-- *Porduct* nie posiada operacji konstruowania własnych instancji. \
-Operacje te, p
 
 <br/>
 
 **DIRECTOR** \
-Klasa obiektu wynikowego, konstruowanego przez wybranego buildera. 
 
-*Builder* nie ma wpływu na funkcjonowanie *Produktu*. \
-Możliwość modyfikacji *Produktu* bez ryzyka uszkodzenia *Buildera*.
-
-*Porduct* nie posiada operacji konstruowania własnych instancji. \
-Operacje te, p
 
 <br/>
 
 
+**CLIENT**
 
+
+<br/>
 
 
 
@@ -99,53 +84,128 @@ Operacje te, p
     - Korzystając z `Director`, tworzy obiekt wynikowy, `Subject`.
 
 
-###### [Program 1.1]  `Product.file`
+###### [Program 1.1]  `Product.file` **[Guitar]**
 ```cpp
 #pragma once
 
 #include<string>
 using std::string;
 
-
-class Product{
+// [class Product]
+class Guitar{
 public:
-    Product(int width, int height, int depth, string material, string name)
-           : width(width), height(height), depth(depth), material(material), name(name){ }
+    Product(string name, string type, string neckMaterial, string soundboardMaterial)
+           : name(name), type(type), neckMaterial(neckMaterial), soundboardMaterial(soundboardMaterial){ }
 
-private: // [Product] Fields to initialize:
-    int width;
-    int height;
-    int depth;
-    string material;
+private: // [Product] Fields to initialize:    
     string name;
+    string type;
+    string neckMaterial;
+    string soundboardMaterial;
+    
+private: // [Product] other Variables:
+    // ...
 
 public: // [Product] Operations:
-    string Show();
-
-    void Walk();
-    void Fly();
-    void Cook();
-    void Draw();
+    void MakeSound();
+    void CrashSpeaker();
+    void TuneTheStrings();
+    void CheckSound();
 }; 
 ```
 
-###### [Program 1.2]  `Builder.file` [*InterfejsRobotników*]
+###### [Program 1.2]  `I_Builder.file` **[<< interface >>]**
+```cpp
+ #pragma once
+
+#include "Product.file"
+
+
+// [<<interface>> Builder]
+class I_Builder{
+private: // Fields of [Product] to initialize:    
+    string name;
+    string type;
+    string neckMaterial;
+    string soundboardMaterial;
+
+public: // [Builders] operations to construct the [Product]:
+    virtual void GiveName() = 0;
+    virtual void ClassifyType() = 0;
+    virtual void ChooseNeckMaterial() = 0;
+    virtual void ChooseSoundboardMaterial() = 0;
+    
+    virtual Guitar GetResult() = 0;
+}; 
+```
+###### [Program 1.3]  `Builder_A.file` **[BrianMayGuitar_builder]**
+```cpp
+#pragma once
+
+#include "I_Builder.file"
+
+
+// [class Builder_A]
+class BrianMayGuitar_builder : public I_Builder{
+public: // [Builder_A] Operations of [Product] construction:
+    void GiveName(){ name = "
+    void ClassifyType(){ type = "
+    void ChooseNeckMaterial(){ neckMaterial = "
+    void ChooseSoundboardMaterial(){ soundboardMaterial = "
+}; 
+
+ type - "Semi-acoustic"
+ gryf - "Mahogany"
+ korpus - "Remains of an Oak table"
+ nazwa - "Red Special Fireplace"
+ 
+ type - "Bass"
+ gryf - "Oak"
+ korpus - "Oak"
+ nazwa - "Lemmy Signature"
+ 
+```
+
+###### [Program 1.4]  `Builder_B.file` **[LemmyKilmisterGuitar_builder]**
+```cpp
+#pragma once
+
+#include "I_Builder.file"
+
+
+// [class Builder_B]
+class Guitar{
+public:
+    Product(string name, string type, string neckMaterial, string soundboardMaterial)
+           : name(name), type(type), neckMaterial(neckMaterial), soundboardMaterial(soundboardMaterial){ }
+
+private: // [Product] Fields to initialize:    
+    string name;
+    string type;
+    string neckMaterial;
+    string soundboardMaterial;
+
+public: // [Product] Operations:
+    void MakeSound();
+    void CrashSpeaker();
+    void TuneTheStrings();
+    void CheckSound();
+}; 
+```
+###### [Program 1.5]  `Director.file`
 ```cpp
  
 ```
-###### [Program 1.3]  `Subject_verA.file` [*Robotnik*]
-```cpp
- 
-```
-###### [Program 1.4]  `Director.file` [*InstruujeRobotników*]
-```cpp
- 
-```
-###### [Program 1.5]  `Client.file` [UżywaWzorcaProjektowego*]
+###### [Program 1.6]  `Client.file`
 ```cpp
  
 ```
 <br/>
+
+
+
+
+
 
 ### 2. Fluent Builder
 
