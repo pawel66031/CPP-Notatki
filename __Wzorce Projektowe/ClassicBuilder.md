@@ -179,11 +179,52 @@ public: // [Builder_B] operations of [Product] construction:
 ```
 ###### [Program 1.5]  `Director.file`
 ```cpp
- 
+#pragma once
+#include "I_Builder.file"
+
+
+class Director{
+public: 
+    Director(I_Builder* _builder)
+            : _builder(_builder){ }
+      
+public: // Variable:
+    I_Builder* _builder;
+    
+public: // Methods:
+    Guitar* ConstructGuitar(){
+        _builder->GiveName();        
+        _builder->ClassifyType();
+        _builder->ChooseNeckMaterial();
+        _builder->ChooseSoundboardMaterial();
+
+        return _builder->GetResult();
+    }
+};
 ```
 ###### [Program 1.6]  `Client.file`
 ```cpp
- 
+#include "Product.file:     // Guitar
+#include "Director.file:
+#include "Builder_A.file:   // BrianMayGuitar_builder
+#include "Builder_B.file:   // LemmyKilmisterGuitar_builder
+
+
+int main(){
+
+    Director BrianM(new FatASS);
+    Director LemmyK(new(VegeASS));
+
+    Guitar* myguitar;
+
+    // Make guitar for Queen band:
+    myguitar = BrianM.ConstructZestaw();
+    
+    // Make guitar for Motorhead band:
+    myguitar = LemmyK.ConstructZestaw();
+
+    return 0;
+}
 ```
 <br/>
 
