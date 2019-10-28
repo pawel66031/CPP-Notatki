@@ -18,8 +18,6 @@
 
 <br/>
 
-![](https://github.com/Ptysiek/resources/blob/master/WzorceProjektowe/ClassicBuilderHD.png)
-
 <br/>
 
 - **SUBJECT**
