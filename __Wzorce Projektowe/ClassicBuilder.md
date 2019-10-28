@@ -25,7 +25,7 @@
 &nbsp;&nbsp;&nbsp;&nbsp; Możliwość modyfikacji *Produktu* bez ryzyka uszkodzenia *Buildera*.
 
 &nbsp;&nbsp;&nbsp;&nbsp; *Product* nie posiada operacji konstruowania własnych instancji. \
-&nbsp;&nbsp;&nbsp;&nbsp; Operacje te, posiada *Builder*. *Builder* tworzy instancje klasy *Product*.
+&nbsp;&nbsp;&nbsp;&nbsp; Operacje te posiada *Builder*. *Builder* tworzy instancje klasy *Product*.
 
 <br/>
 
@@ -84,14 +84,18 @@
     - Korzystając z `Director`, tworzy obiekt wynikowy, `Subject`.
 
 
-###### [Program 1.1]  `Product.file` **[Guitar]**
+
+
+
+
+
+
+###### [Program 1.1]  `Product.file` &nbsp;&nbsp;&nbsp;&nbsp; **[Guitar]**
 ```cpp
 #pragma once
 
-#include<string>
-using std::string;
 
-// [class Product]
+/** [class Product] **/
 class Guitar{
 public:
     Product(string name, string type, string neckMaterial, string soundboardMaterial)
@@ -114,14 +118,13 @@ public: // [Product] Operations:
 }; 
 ```
 
-###### [Program 1.2]  `I_Builder.file` **[<< interface >>]**
+###### [Program 1.2]  `I_Builder.file` &nbsp;&nbsp;&nbsp;&nbsp; **[<< interface >>]**
 ```cpp
- #pragma once
-
+#pragma once
 #include "Product.file"
 
 
-// [<<interface>> Builder]
+/** [<<interface>> Builder] **/
 class I_Builder{
 private: // Fields of [Product] to initialize:    
     string name;
@@ -135,61 +138,43 @@ public: // [Builders] operations to construct the [Product]:
     virtual void ChooseNeckMaterial() = 0;
     virtual void ChooseSoundboardMaterial() = 0;
     
-    virtual Guitar GetResult() = 0;
+    virtual Guitar* GetResult() = 0;
 }; 
 ```
 ###### [Program 1.3]  `Builder_A.file` **[BrianMayGuitar_builder]**
 ```cpp
 #pragma once
-
 #include "I_Builder.file"
 
 
-// [class Builder_A]
+/** [class Builder_A] **/
 class BrianMayGuitar_builder : public I_Builder{
-public: // [Builder_A] Operations of [Product] construction:
-    void GiveName(){ name = "
-    void ClassifyType(){ type = "
-    void ChooseNeckMaterial(){ neckMaterial = "
-    void ChooseSoundboardMaterial(){ soundboardMaterial = "
-}; 
 
- type - "Semi-acoustic"
- gryf - "Mahogany"
- korpus - "Remains of an Oak table"
- nazwa - "Red Special Fireplace"
- 
- type - "Bass"
- gryf - "Oak"
- korpus - "Oak"
- nazwa - "Lemmy Signature"
- 
+public: // [Builder_A] operations of [Product] construction:
+    void GiveName(){ name = "Red Special Fireplace"; }
+    void ClassifyType(){ type = "Semi-acoustic"; }
+    void ChooseNeckMaterial(){ neckMaterial = "Mahogany"; }
+    void ChooseSoundboardMaterial(){ soundboardMaterial = "Remains of an Oak table"; }    
+    
+    Guitar* GetResult(){ return new Guitar(name, type, neckMaterial, soundboardMaterial); }
+};  
 ```
-
-###### [Program 1.4]  `Builder_B.file` **[LemmyKilmisterGuitar_builder]**
+###### [Program 1.4]  `Builder_B.file` &nbsp;&nbsp;&nbsp;&nbsp; **[LemmyKilmisterGuitar_builder]**
 ```cpp
 #pragma once
-
 #include "I_Builder.file"
 
 
-// [class Builder_B]
-class Guitar{
-public:
-    Product(string name, string type, string neckMaterial, string soundboardMaterial)
-           : name(name), type(type), neckMaterial(neckMaterial), soundboardMaterial(soundboardMaterial){ }
+/** [class Builder_B] **/
+class LemmyKilmisterGuitar_builder : public I_Builder{
 
-private: // [Product] Fields to initialize:    
-    string name;
-    string type;
-    string neckMaterial;
-    string soundboardMaterial;
-
-public: // [Product] Operations:
-    void MakeSound();
-    void CrashSpeaker();
-    void TuneTheStrings();
-    void CheckSound();
+public: // [Builder_B] operations of [Product] construction:
+    void GiveName(){ name = "Lemmy Signature"; }
+    void ClassifyType(){ type = "Bass"; }
+    void ChooseNeckMaterial(){ neckMaterial = "Oak"; }
+    void ChooseSoundboardMaterial(){ soundboardMaterial = "Oak"; }
+    
+    Guitar* GetResult(){ return new Guitar(name, type, neckMaterial, soundboardMaterial); }
 }; 
 ```
 ###### [Program 1.5]  `Director.file`
