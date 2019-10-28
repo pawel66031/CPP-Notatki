@@ -8,7 +8,7 @@
 <br/>
 
 1. [Classic Builder](#1-Classic-Builder)
-    - [Implementacja](#program-11--productfile-guitar) 
+    - [Implementacja](#program-11--productfile--guitar) 
 1. [Fluent Builder](#2-Fluent-Builder)
 
 ------------
@@ -90,7 +90,7 @@
 
 
 
-###### [Program 1.1]  `Product.file` &nbsp;&nbsp;&nbsp;&nbsp; **[Guitar]**
+###### [Program 1.1]  `Product.file` &nbsp;&nbsp;&nbsp;&nbsp; [Guitar]
 ```cpp
 #pragma once
 
@@ -141,7 +141,7 @@ public: // [Builders] operations to construct the [Product]:
     virtual Guitar* GetResult() = 0;
 }; 
 ```
-###### [Program 1.3]  `Builder_A.file` **[BrianMayGuitar_builder]**
+###### [Program 1.3]  `Builder_A.file` &nbsp;&nbsp;&nbsp;&nbsp; "*BrianMayGuitar_builder*"
 ```cpp
 #pragma once
 #include "I_Builder.file"
