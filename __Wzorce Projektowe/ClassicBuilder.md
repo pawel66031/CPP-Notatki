@@ -8,7 +8,7 @@
 <br/>
 
 1. [Classic Builder](#1-Classic-Builder)
-    - [Implementacja](#program-11--subjectfile-przedmiot) 
+    - [Implementacja](#program-11--productfile) 
 1. [Fluent Builder](#2-Fluent-Builder)
 
 ------------
@@ -18,6 +18,16 @@
 
 <br/>
 
+---
+**Product** \
+*pola:* \
+    - q \
+    - a \
+*operacje:* \
+    - q \
+    - a
+
+ 
 <br/>
 
 - **SUBJECT**
@@ -48,9 +58,34 @@
     - Korzystając z `Director`, tworzy obiekt wynikowy, `Subject`.
 
 
-###### [Program 1.1]  `Subject.file` [*Przedmiot*]
+###### [Program 1.1]  `Product.file`
 ```cpp
- 
+#pragma once
+
+#include<string>
+using std::string;
+
+
+class Product{
+public:
+    Product(int width, int height, int depth, string material, string name)
+           : width(width), height(height), depth(depth), material(material), name(name){ }
+
+private: // [Product] Fields to initialize:
+    int width;
+    int height;
+    int depth;
+    string material;
+    string name;
+
+public: // [Product] Operations:
+    string Show();
+
+    void Walk();
+    void Fly();
+    void Cook();
+    void Draw();
+};
 ```
 ###### [Program 1.2]  `Builder.file` [*InterfejsRobotników*]
 ```cpp
