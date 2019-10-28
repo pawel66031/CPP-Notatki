@@ -15,30 +15,43 @@
 <br/>
 
 ### 1. Classic Builder
-    
-* **Product** \
-    Klasa obiektu wynikowego, konstruowanego przez wybranego buildera. 
-
-    *Builder* nie ma wpływu na funkcjonowanie *Produktu*. \
-    Możliwość modyfikacji *Produktu* bez ryzyka uszkodzenia *Buildera*.
-
-    *Porduct* nie posiada operacji konstruowania własnych instancji. \
-    Operacje te, posiada *Builder*. *Builder* tworzy instancje klasy *Product*.
-
-
-
-* **I_Builder** \
-    Klasa obiektu wynikowego, konstruowanego przez wybranego buildera. 
-
-    *Builder* nie ma wpływu na funkcjonowanie *Produktu*. \
-    Możliwość modyfikacji *Produktu* bez ryzyka uszkodzenia *Buildera*.
-
-    *Porduct* nie posiada operacji konstruowania własnych instancji. \
-    Operacje te, p
 
 <br/>
 
-**Builder** \
+**PRODUCT**  \
+&nbsp;&nbsp;&nbsp;&nbsp; Klasa obiektu wynikowego, konstruowanego przez wybranego buildera. 
+
+&nbsp;&nbsp;&nbsp;&nbsp; *Builder* nie ma wpływu na funkcjonowanie *Produktu*. \
+&nbsp;&nbsp;&nbsp;&nbsp; Możliwość modyfikacji *Produktu* bez ryzyka uszkodzenia *Buildera*.
+
+&nbsp;&nbsp;&nbsp;&nbsp; *Product* nie posiada operacji konstruowania własnych instancji. \
+&nbsp;&nbsp;&nbsp;&nbsp; Operacje te, posiada *Builder*. *Builder* tworzy instancje klasy *Product*.
+
+<br/>
+
+**I_BUILDER** \
+&nbsp;&nbsp;&nbsp;&nbsp; Klasa obiektu wynikowego, konstruowanego przez wybranego buildera. 
+
+&nbsp;&nbsp;&nbsp;&nbsp; *Builder* nie ma wpływu na funkcjonowanie *Produktu*. \
+&nbsp;&nbsp;&nbsp;&nbsp; Możliwość modyfikacji *Produktu* bez ryzyka uszkodzenia *Buildera*.
+
+&nbsp;&nbsp;&nbsp;&nbsp; *Porduct* nie posiada operacji konstruowania własnych instancji. \
+&nbsp;&nbsp;&nbsp;&nbsp; Operacje te, p
+
+<br/>
+
+**BUILDER** 
+- Klasa obiektu wynikowego, konstruowanego przez wybranego buildera. 
+
+- *Builder* nie ma wpływu na funkcjonowanie *Produktu*. \
+Możliwość modyfikacji *Produktu* bez ryzyka uszkodzenia *Buildera*.
+
+- *Porduct* nie posiada operacji konstruowania własnych instancji. \
+Operacje te, p
+
+<br/>
+
+**DIRECTOR** \
 Klasa obiektu wynikowego, konstruowanego przez wybranego buildera. 
 
 *Builder* nie ma wpływu na funkcjonowanie *Produktu*. \
@@ -49,16 +62,14 @@ Operacje te, p
 
 <br/>
 
-**Director** \
-Klasa obiektu wynikowego, konstruowanego przez wybranego buildera. 
 
-*Builder* nie ma wpływu na funkcjonowanie *Produktu*. \
-Możliwość modyfikacji *Produktu* bez ryzyka uszkodzenia *Buildera*.
 
-*Porduct* nie posiada operacji konstruowania własnych instancji. \
-Operacje te, p
 
-<br/>
+
+
+
+
+
 
 - **SUBJECT**
     - **Przedmiot** będący wynikiem działania wzorca `Classic Builder` 
