@@ -118,7 +118,7 @@ public: // [Product] Operations:
 }; 
 ```
 
-###### [Program 1.2]  `I_Builder.file` &nbsp;&nbsp;&nbsp;&nbsp; **[<< interface >>]**
+###### [Program 1.2]  `I_Builder.file` &nbsp;&nbsp;&nbsp;&nbsp; [<< interface >>]
 ```cpp
 #pragma once
 #include "Product.file"
@@ -141,7 +141,7 @@ public: // [Builders] operations to construct the [Product]:
     virtual Guitar* GetResult() = 0;
 }; 
 ```
-###### [Program 1.3]  `Builder_A.file` &nbsp;&nbsp;&nbsp;&nbsp; "*BrianMayGuitar_builder*"
+###### [Program 1.3]  `Builder_A.file` &nbsp;&nbsp;&nbsp;&nbsp; [BrianMayGuitar_builder]
 ```cpp
 #pragma once
 #include "I_Builder.file"
@@ -159,7 +159,7 @@ public: // [Builder_A] operations of [Product] construction:
     Guitar* GetResult(){ return new Guitar(name, type, neckMaterial, soundboardMaterial); }
 };  
 ```
-###### [Program 1.4]  `Builder_B.file` &nbsp;&nbsp;&nbsp;&nbsp; **[LemmyKilmisterGuitar_builder]**
+###### [Program 1.4]  `Builder_B.file` &nbsp;&nbsp;&nbsp;&nbsp; [LemmyKilmisterGuitar_builder]
 ```cpp
 #pragma once
 #include "I_Builder.file"
