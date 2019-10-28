@@ -98,8 +98,8 @@
 /** [class Product] **/
 class Guitar{
 public:
-    Product(string name, string type, string neckMaterial, string soundboardMaterial)
-           : name(name), type(type), neckMaterial(neckMaterial), soundboardMaterial(soundboardMaterial){ }
+    Guitar(string name, string type, string neckMaterial, string soundboardMaterial)
+          : name(name), type(type), neckMaterial(neckMaterial), soundboardMaterial(soundboardMaterial){ }
 
 private: // [Product] Fields to initialize:    
     string name;
@@ -126,7 +126,10 @@ public: // [Product] Operations:
 
 /** [<<interface>> Builder] **/
 class I_Builder{
-private: // Fields of [Product] to initialize:    
+public:
+    virtual ~I_Builder(){ }
+    
+protected: // Fields of [Product] to initialize:    
     string name;
     string type;
     string neckMaterial;
@@ -184,13 +187,24 @@ public: // [Builder_B] operations of [Product] construction:
 
 
 class Director{
-public: 
-    Director(I_Builder* _builder)
-            : _builder(_builder){ }
-      
+public: // Constructor / Destructor
+    Director(){ }
+
+    Director(I_Builder* _builder): _builder(_builder){ }
+
+    ~Director(){ delete (this->_builder); }
+
+public: // Operator () override
+    void operator() (I_Builder* _builder){
+        if (_builder){
+            delete (this->_builder);
+            this->_builder = _builder;
+        }
+    }
+
 public: // Variable:
-    I_Builder* _builder;
-    
+    I_Builder* _builder = 0;
+
 public: // Methods:
     Guitar* ConstructGuitar(){
         _builder->GiveName();        
@@ -212,19 +226,20 @@ public: // Methods:
 
 int main(){
 
-    Director BrianM(new FatASS);
-    Director LemmyK(new(VegeASS));
-
+    Director director;
     Guitar* myguitar;
 
     // Make guitar for Queen band:
-    myguitar = BrianM.ConstructZestaw();
-    
+    director(new BrianMayGuitar_builder);
+    myguitar = director.ConstructGuitar();
+
     // Make guitar for Motorhead band:
-    myguitar = LemmyK.ConstructZestaw();
+    director(new LemmyKilmisterGuitar_builder);
+    myguitar = director.ConstructGuitar();
 
     return 0;
 }
+
 ```
 <br/>
 
