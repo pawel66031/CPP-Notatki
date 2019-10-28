@@ -204,10 +204,10 @@ public: // Methods:
 ```
 ###### [Program 1.6]  `Client.file`
 ```cpp
-#include "Product.file:     // Guitar
-#include "Director.file:
-#include "Builder_A.file:   // BrianMayGuitar_builder
-#include "Builder_B.file:   // LemmyKilmisterGuitar_builder
+#include "Product.file"     // Guitar
+#include "Director.file"
+#include "Builder_A.file"   // BrianMayGuitar_builder
+#include "Builder_B.file"   // LemmyKilmisterGuitar_builder
 
 
 int main(){
