@@ -244,12 +244,8 @@ int main(){
 }
 
 ```
+------------
 <br/>
-
-
-
-
-
 
 ### 2. Fluent Builder
 
