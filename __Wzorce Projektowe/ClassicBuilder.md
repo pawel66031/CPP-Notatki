@@ -15,34 +15,26 @@
 <br/>
 
 ### 1. Classic Builder
-
-**Product** \
-*pola:* \
-    - q \
-    - a \
-*operacje:* \
-    - q \
-    - a 
     
-**Product** \
-Klasa obiektu wynikowego, konstruowanego przez wybranego buildera. 
+* **Product** \
+    Klasa obiektu wynikowego, konstruowanego przez wybranego buildera. 
 
-*Builder* nie ma wpływu na funkcjonowanie *Produktu*. \
-Możliwość modyfikacji *Produktu* bez ryzyka uszkodzenia *Buildera*.
+    *Builder* nie ma wpływu na funkcjonowanie *Produktu*. \
+    Możliwość modyfikacji *Produktu* bez ryzyka uszkodzenia *Buildera*.
 
-*Porduct* nie posiada operacji konstruowania własnych instancji. \
-Operacje te, posiada *Builder*. *Builder* tworzy instancje klasy *Product*.
+    *Porduct* nie posiada operacji konstruowania własnych instancji. \
+    Operacje te, posiada *Builder*. *Builder* tworzy instancje klasy *Product*.
 
-<br/>
 
-**I_Builder** \
-Klasa obiektu wynikowego, konstruowanego przez wybranego buildera. 
 
-*Builder* nie ma wpływu na funkcjonowanie *Produktu*. \
-Możliwość modyfikacji *Produktu* bez ryzyka uszkodzenia *Buildera*.
+* **I_Builder** \
+    Klasa obiektu wynikowego, konstruowanego przez wybranego buildera. 
 
-*Porduct* nie posiada operacji konstruowania własnych instancji. \
-Operacje te, p
+    *Builder* nie ma wpływu na funkcjonowanie *Produktu*. \
+    Możliwość modyfikacji *Produktu* bez ryzyka uszkodzenia *Buildera*.
+
+    *Porduct* nie posiada operacji konstruowania własnych instancji. \
+    Operacje te, p
 
 <br/>
 
