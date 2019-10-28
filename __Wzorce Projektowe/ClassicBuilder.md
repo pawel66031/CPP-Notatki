@@ -16,17 +16,21 @@
 
 ### 1. Classic Builder
 
-<br/>
-
----
 **Product** \
 *pola:* \
     - q \
     - a \
 *operacje:* \
     - q \
-    - a
+    - a 
+    
+Klasa obiektu wynikowego, konstruowanego przez wybranego buildera. 
 
+Posiada w sobie wszystkie typowe dla siebie pola oraz operacje. \
+*Builder* nie ma wpływu na funkcjonowanie *Produktu*. \
+Możliwość modyfikacji *Produktu* bez ryzyka uszkodzenia *Buildera*.
+
+Nie jest niczym powiązana z resztą wzorca. Można rozpruć builder bez ryzyka
  
 <br/>
 
@@ -85,8 +89,9 @@ public: // [Product] Operations:
     void Fly();
     void Cook();
     void Draw();
-};
+}; 
 ```
+
 ###### [Program 1.2]  `Builder.file` [*InterfejsRobotników*]
 ```cpp
  
