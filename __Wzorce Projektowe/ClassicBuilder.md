@@ -24,14 +24,48 @@
     - q \
     - a 
     
+**Product** \
 Klasa obiektu wynikowego, konstruowanego przez wybranego buildera. 
 
-Posiada w sobie wszystkie typowe dla siebie pola oraz operacje. \
 *Builder* nie ma wpływu na funkcjonowanie *Produktu*. \
 Możliwość modyfikacji *Produktu* bez ryzyka uszkodzenia *Buildera*.
 
-Nie jest niczym powiązana z resztą wzorca. Można rozpruć builder bez ryzyka
- 
+*Porduct* nie posiada operacji konstruowania własnych instancji. \
+Operacje te, posiada *Builder*. *Builder* tworzy instancje klasy *Product*.
+
+<br/>
+
+**I_Builder** \
+Klasa obiektu wynikowego, konstruowanego przez wybranego buildera. 
+
+*Builder* nie ma wpływu na funkcjonowanie *Produktu*. \
+Możliwość modyfikacji *Produktu* bez ryzyka uszkodzenia *Buildera*.
+
+*Porduct* nie posiada operacji konstruowania własnych instancji. \
+Operacje te, p
+
+<br/>
+
+**Builder** \
+Klasa obiektu wynikowego, konstruowanego przez wybranego buildera. 
+
+*Builder* nie ma wpływu na funkcjonowanie *Produktu*. \
+Możliwość modyfikacji *Produktu* bez ryzyka uszkodzenia *Buildera*.
+
+*Porduct* nie posiada operacji konstruowania własnych instancji. \
+Operacje te, p
+
+<br/>
+
+**Director** \
+Klasa obiektu wynikowego, konstruowanego przez wybranego buildera. 
+
+*Builder* nie ma wpływu na funkcjonowanie *Produktu*. \
+Możliwość modyfikacji *Produktu* bez ryzyka uszkodzenia *Buildera*.
+
+*Porduct* nie posiada operacji konstruowania własnych instancji. \
+Operacje te, p
+
 <br/>
 
 - **SUBJECT**
