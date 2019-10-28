@@ -231,12 +231,15 @@ int main(){
 
     // Make guitar for Queen band:
     director(new BrianMayGuitar_builder);
-    myguitar = director.ConstructGuitar();
+    Guitar* rockmanGuitar = director.ConstructGuitar();
 
     // Make guitar for Motorhead band:
     director(new LemmyKilmisterGuitar_builder);
+    Guitar* metalheadGuitar = director.ConstructGuitar();
+    
+    // And one for me:
     myguitar = director.ConstructGuitar();
-
+    
     return 0;
 }
 
