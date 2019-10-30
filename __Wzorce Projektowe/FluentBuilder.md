@@ -1,9 +1,5 @@
 # Fluent Builder 
-&nbsp;&nbsp;&nbsp;&nbsp; - *Creational Patterns* \
-
-<br/><br/><br/>
-
-------------
+&nbsp;&nbsp;&nbsp;&nbsp; - *Creational Patterns*
 
 <br/>
 
@@ -221,7 +217,7 @@ int main(){
 <br/>
 
 **Powiązane Patterny:**  
-   - [ ] [Fluent Builder](#2-Fluent-Builder) 
+   - [X] [Classic Builder](https://github.com/Ptysiek/CPP-Notatki/blob/master/__Wzorce%20Projektowe/ClassicBuilder.md) 
    - [ ] [Singleton](#2-Fluent-Builder) 
    - [ ] [Bridge](#2-Fluent-Builder)
 
