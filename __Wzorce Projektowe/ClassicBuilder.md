@@ -25,7 +25,6 @@
 **Wady**:
 * Rozrastanie się struktury projektu o nowe pliki.
 
-<br/><br/><br/>
 ------------
 
 <br/>
