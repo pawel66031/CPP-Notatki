@@ -26,6 +26,9 @@
 * Rozrastanie się struktury projektu o nowe pliki.
 
 <br/><br/><br/>
+------------
+
+<br/>
 
 **Powiązane Patterny:**  
    - [ ] [Fluent Builder](#2-Fluent-Builder) 
