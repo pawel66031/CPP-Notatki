@@ -1,10 +1,22 @@
-# Builder
+# Builder 
+&nbsp;&nbsp;&nbsp;&nbsp; - *Creational Patterns* \
+&nbsp;&nbsp;&nbsp;&nbsp; - Odseparowanie kodu konstruującego *Produkt* od deklaracji klasy *Produktu*. \
+&nbsp;&nbsp;&nbsp;&nbsp; - Podzielenie kodu konstruującego *Produkt* na *Etapy*.
 
-- Implementacja gotowych schematów do tworzenia różnych reprezentacji danego produktu.
-- Odseparowanie procesu konstrukcji złożonego obiektu od jego reprezentacji. 
-- Zmniejszenie ilości argumentów w konstruktorze.
-- Wzorzec z grupy `Creational Patterns`.
+<br/><br/><br/>
 
+**Zalety**:
+* Hermetyczność:
+    * Odseparowanie konstruowanego *Produktu*, do momentu aż będzie gotowy i wykończony.
+* Odseparowanie procesu konstruowania *Produktów* od *Produktów*, tworzenie builderów: 
+    * Możliwość tworzenia nowych, odmiennych reprezentacji danego produktu.
+    * Wielokrotne wykorzystanie kodu konstruowania *Produktów*.
+    * Zmniejszenie ilości argumentów w konstruktorze *Produktu*.
+* Dzielenie procesu konstruowania *Produktów* na *Etapy*: 
+    * Bezpieczne modyfikowanie kodu wybranych *etapów*. 
+    * Zmiane kolejności wywoływania etapów, w tym pomijanie i dodawanie etapów. 
+    * Możliwość wywoływania wybranych etapów rekurencyjnie.
+    
 <br/>
 
 1. [Classic Builder](#1-Classic-Builder)
@@ -30,7 +42,7 @@
 <br/>
 
 **I_BUILDER** \
-
+&nbsp;&nbsp;&nbsp;&nbsp; Interfejs
 
 <br/>
 
