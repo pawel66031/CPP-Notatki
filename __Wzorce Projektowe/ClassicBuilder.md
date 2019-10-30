@@ -4,7 +4,7 @@
 &nbsp;&nbsp;&nbsp;&nbsp; - Podzielenie kodu *konstruującego produkt* na *Etapy*. \
 &nbsp;&nbsp;&nbsp;&nbsp; - [[Do Implementacji]](#program-11--productfile--guitar) 
 
-<br/><br/>
+<br/>
 
 **Powiązane Patterny:**  
    - [X] [Fluent Builder](https://github.com/Ptysiek/CPP-Notatki/blob/master/__Wzorce%20Projektowe/FluentBuilder.md) 
