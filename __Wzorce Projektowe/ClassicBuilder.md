@@ -71,7 +71,7 @@
 &nbsp;&nbsp;&nbsp;&nbsp; Wie jak wywoływać operacje *Buildera*, aby powstał *Produkt*.
 
 &nbsp;&nbsp;&nbsp;&nbsp; Pozwala na dodatkowe konfiguracje konstruowania *Produktu*. \
-&nbsp;&nbsp;&nbsp;&nbsp; Może posiadać więcej niż jedną operację wytworzenia *Produktu*. \
+&nbsp;&nbsp;&nbsp;&nbsp; Może posiadać więcej niż jedną operację wytworzenia *Produktu*. 
 
 &nbsp;&nbsp;&nbsp;&nbsp; Ukrywa szczegóły konstruowania *Produktu*. \
 &nbsp;&nbsp;&nbsp;&nbsp; Nie jest wymagany.
