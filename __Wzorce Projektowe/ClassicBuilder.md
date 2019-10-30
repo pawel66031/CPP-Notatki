@@ -1,7 +1,7 @@
 # Classic Builder 
 &nbsp;&nbsp;&nbsp;&nbsp; - *Creational Patterns* \
-&nbsp;&nbsp;&nbsp;&nbsp; - Odseparowanie kodu konstruującego *Produkt* od deklaracji klasy *Produktu*. \
-&nbsp;&nbsp;&nbsp;&nbsp; - Podzielenie kodu konstruującego *Produkt* na *Etapy*.
+&nbsp;&nbsp;&nbsp;&nbsp; - Odseparowanie kodu *konstruującego produkt* od deklaracji klasy *Produktu*. \
+&nbsp;&nbsp;&nbsp;&nbsp; - Podzielenie kodu *konstruującego produkt* na *Etapy*.
 
 <br/><br/><br/>
 
@@ -28,7 +28,6 @@
 
 **Powiązane Patterny:**  
 - [ ] [Fluent Builder](#2-Fluent-Builder) 
-
 - [ ] [Singleton](#2-Fluent-Builder) 
 - [ ] [Bridge](#2-Fluent-Builder)
 
