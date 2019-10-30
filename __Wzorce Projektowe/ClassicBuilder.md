@@ -30,7 +30,7 @@
 <br/>
 
 **Powiązane Patterny:**  
-   - [ ] [Fluent Builder](#2-Fluent-Builder) 
+   - [X] [Fluent Builder](https://github.com/Ptysiek/CPP-Notatki/blob/master/__Wzorce%20Projektowe/FluentBuilder.md) 
    - [ ] [Singleton](#2-Fluent-Builder) 
    - [ ] [Bridge](#2-Fluent-Builder)
 
