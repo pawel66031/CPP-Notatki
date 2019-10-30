@@ -1,43 +1,19 @@
-# Classic Builder 
+# Fluent Builder 
 &nbsp;&nbsp;&nbsp;&nbsp; - *Creational Patterns* \
-&nbsp;&nbsp;&nbsp;&nbsp; - Odseparowanie kodu *konstruującego produkt* od deklaracji klasy *Produktu*. \
-&nbsp;&nbsp;&nbsp;&nbsp; - Podzielenie kodu *konstruującego produkt* na *Etapy*. \
-&nbsp;&nbsp;&nbsp;&nbsp; - [[Do Implementacji]](#program-11--productfile--guitar) 
 
 <br/><br/><br/>
-
-**Zalety**:
-* Odseparowanie *Procesu konstruowania produktów* od *Produktów*:
-    * Możliwość tworzenia nowych konfiguracji danego produktu.
-    * Wielokrotne wykorzystanie kodu konstruowania *Produktów*.
-    * Zmniejszenie monstrualnej ilości argumentów w konstruktorze *Produktu*.
-    <br/>
-* Dzielenie *procesu konstruowania Produktów* na *Etapy*: 
-    * Schludne konstruowanie złożonych *produktów* krok po kroku.
-    * Bezpieczne modyfikowanie kodu wybranych *etapów*. 
-    * Możliwość zmiany kolejności wywoływania etapów, w tym pomijanie i dodawanie etapów. 
-    * Możliwość wywoływania wybranych etapów rekurencyjnie.
-    <br/>
-* Hermetyczność:
-    * Odseparowanie *Procesu* konstruowania *Produktu*.
-    * Odseparowanie konstruowanego *Produktu*, do momentu aż będzie gotowy i wykończony.
-    
-**Wady**:
-* Rozrastanie się struktury projektu o nowe pliki.
 
 ------------
 
 <br/>
 
 **Powiązane Patterny:**  
-   - [ ] [Fluent Builder](#2-Fluent-Builder) 
-   - [ ] [Singleton](#2-Fluent-Builder) 
-   - [ ] [Bridge](#2-Fluent-Builder)
+   - [X] [Classic Builder](https://github.com/Ptysiek/CPP-Notatki/blob/master/__Wzorce%20Projektowe/ClassicBuilder.md) 
 
 ------------
 <br/>
 
-**PRODUCT**  \
+**Inner Static Fluent Builder**  \
 &nbsp;&nbsp;&nbsp;&nbsp; Klasa obiektu wynikowego, konstruowanego przez wybranego *buildera*. 
 
 &nbsp;&nbsp;&nbsp;&nbsp; *Builder* nie ma wpływu na funkcjonowanie *Produktu*. \
