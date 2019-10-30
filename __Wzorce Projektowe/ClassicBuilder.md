@@ -6,18 +6,24 @@
 <br/><br/><br/>
 
 **Zalety**:
-* Hermetyczność:
-    * Odseparowanie konstruowanego *Produktu*, do momentu aż będzie gotowy i wykończony.
-* Odseparowanie procesu konstruowania *Produktów* od *Produktów*, tworzenie builderów: 
-    * Możliwość tworzenia nowych, odmiennych reprezentacji danego produktu.
+
+* Odseparowanie *Procesu konstruowania produktów* od *Produktów*:
+    * Możliwość tworzenia nowych konfiguracji danego produktu.
     * Wielokrotne wykorzystanie kodu konstruowania *Produktów*.
-    * Zmniejszenie ilości argumentów w konstruktorze *Produktu*.
-* Dzielenie procesu konstruowania *Produktów* na *Etapy*: 
+    * Zmniejszenie monstrualnej ilości argumentów w konstruktorze *Produktu*.
+    <br/>
+* Dzielenie *procesu konstruowania Produktów* na *Etapy*: 
+    * Schludne konstruowanie złożonych *produktów* krok po kroku.
     * Bezpieczne modyfikowanie kodu wybranych *etapów*. 
-    * Zmiane kolejności wywoływania etapów, w tym pomijanie i dodawanie etapów. 
+    * Możliwość zmiany kolejności wywoływania etapów, w tym pomijanie i dodawanie etapów. 
     * Możliwość wywoływania wybranych etapów rekurencyjnie.
-    
+    <br/>
+* Hermetyczność:
+    * Odseparowanie *Procesu* konstruowania *Produktu*.
+    * Odseparowanie konstruowanego *Produktu*, do momentu aż będzie gotowy i wykończony.
+
 <br/>
+
 
 1. [Classic Builder](#1-Classic-Builder)
     - [Implementacja](#program-11--productfile--guitar) 
@@ -37,17 +43,22 @@
 &nbsp;&nbsp;&nbsp;&nbsp; Możliwość modyfikacji *Produktu* bez ryzyka uszkodzenia *Buildera*.
 
 &nbsp;&nbsp;&nbsp;&nbsp; *Product* nie posiada operacji konstruowania własnych instancji. \
-&nbsp;&nbsp;&nbsp;&nbsp; Operacje te posiada *Builder*. *Builder* tworzy instancje klasy *Product*.
+&nbsp;&nbsp;&nbsp;&nbsp; Operacje te posiada *Builder*. Operacje *Buildera* tworzą instancje klasy *Product*.
+
+&nbsp;&nbsp;&nbsp;&nbsp; *Produkty* tworzone przez różne *Buildery* nie muszą przynależeć do tej samej klasy.
 
 <br/>
 
 **I_BUILDER** \
-&nbsp;&nbsp;&nbsp;&nbsp; Interfejs
+&nbsp;&nbsp;&nbsp;&nbsp; Interfejs wszystkich builderów konstruujących *Produkt*. \
+&nbsp;&nbsp;&nbsp;&nbsp; Posiada wirtualne operacje tworzenia *Produktu*. \
+&nbsp;&nbsp;&nbsp;&nbsp; Najważniejszą z nich jest `virtual Product GetResult() = 0;`.
 
 <br/>
 
 **BUILDER** 
-
+&nbsp;&nbsp;&nbsp;&nbsp; Każdy *Builder* posiada implementacje własnych etapów konstruowania *Produktu*. \
+&nbsp;&nbsp;&nbsp;&nbsp; Implementacje tych etapów nie muszą pokrywać się z operacjami interfejsu `I_Builder`.
 
 <br/>
 
@@ -68,14 +79,6 @@
 
 
 
-- **SUBJECT**
-    - **Przedmiot** będący wynikiem działania wzorca `Classic Builder` 
-    - Niezależny od reszty wzorca. Można rozpruć builder bez uszkodzenia klasy.
-- **BUILDER**
-    - **Interfejs** obiektów `Subjects{}`.
-    - Posiada wszystkie inicjowane pola zbioru `Subject`, \
-    oraz wirtualne metody do ich ustawiania. 
-    - **Nie** posiadaja operacji klasy `Subject`**!**
 - **SUBJECTS { }**
     - Grupa **Robotników** { \
     `SUBJECT_verA`, \
