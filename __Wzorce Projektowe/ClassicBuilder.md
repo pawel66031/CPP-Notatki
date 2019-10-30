@@ -1,4 +1,4 @@
-# Builder 
+# Classic Builder 
 &nbsp;&nbsp;&nbsp;&nbsp; - *Creational Patterns* \
 &nbsp;&nbsp;&nbsp;&nbsp; - Odseparowanie kodu konstruującego *Produkt* od deklaracji klasy *Produktu*. \
 &nbsp;&nbsp;&nbsp;&nbsp; - Podzielenie kodu konstruującego *Produkt* na *Etapy*.
@@ -24,16 +24,15 @@
 
 <br/>
 
+[Do Implementacji ->](#program-11--productfile--guitar) 
 
-1. [Classic Builder](#1-Classic-Builder)
-    - [Implementacja](#program-11--productfile--guitar) 
-1. [Fluent Builder](#2-Fluent-Builder)
+**Powiązane Patterny:**  \
+&nbsp;&nbsp;&nbsp;&nbsp; - [Fluent Builder](#2-Fluent-Builder) 
+
+&nbsp;&nbsp;&nbsp;&nbsp; - [Singleton](#2-Fluent-Builder) \
+&nbsp;&nbsp;&nbsp;&nbsp; - [Bridge](#2-Fluent-Builder)
 
 ------------
-<br/>
-
-## 1. Classic Builder
-
 <br/>
 
 **PRODUCT**  \
@@ -77,12 +76,12 @@
 
 <br/>
 
-
-**CLIENT**
+**CLIENT** \
 &nbsp;&nbsp;&nbsp;&nbsp; Przypisuje *Buildera* do *Directora*. \
 &nbsp;&nbsp;&nbsp;&nbsp; Wywołuje jedną z operacji konstruowania produktu *Directora*. \
 &nbsp;&nbsp;&nbsp;&nbsp; Odbiera *Produkt Wynikowy* od *Buildera*.
 
+------------
 <br/>
 
 ###### [Program 1.1]  `Product.file` &nbsp;&nbsp;&nbsp;&nbsp; [Guitar]
@@ -239,18 +238,6 @@ int main(){
 }
 
 ```
-------------
-<br/>
-
-### 2. Fluent Builder
-
-<br/>
-
-###### [Program 2.1]
-```cpp
- 
-```
-
 ------------
 <br/>
 
