@@ -25,9 +25,9 @@
 **Wady**:
 * Rozrastanie się struktury projektu o nowe pliki.
 
-<br/>
+<br/><br/><br/>
 
-- **Powiązane Patterny:**  
+**Powiązane Patterny:**  
    - [ ] [Fluent Builder](#2-Fluent-Builder) 
    - [ ] [Singleton](#2-Fluent-Builder) 
    - [ ] [Bridge](#2-Fluent-Builder)
@@ -237,8 +237,16 @@ int main(){
     return 0;
 }
 
-```
+```  
 ------------
+
+<br/>
+
+**Powiązane Patterny:**  
+   - [ ] [Fluent Builder](#2-Fluent-Builder) 
+   - [ ] [Singleton](#2-Fluent-Builder) 
+   - [ ] [Bridge](#2-Fluent-Builder)
+
 <br/>
 
 ![](https://github.com/Ptysiek/resources/blob/master/Ver2.PNG)
