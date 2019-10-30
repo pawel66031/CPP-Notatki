@@ -6,6 +6,15 @@
 
 <br/><br/><br/>
 
+**Powiązane Patterny:**  
+   - [X] [Fluent Builder](https://github.com/Ptysiek/CPP-Notatki/blob/master/__Wzorce%20Projektowe/FluentBuilder.md) 
+   - [ ] [Singleton](#2-Fluent-Builder) 
+   - [ ] [Bridge](#2-Fluent-Builder)
+
+------------
+
+<br/>
+
 **Zalety**:
 * Odseparowanie *Procesu konstruowania produktów* od *Produktów*:
     * Możliwość tworzenia nowych konfiguracji danego produktu.
@@ -24,15 +33,6 @@
     
 **Wady**:
 * Rozrastanie się struktury projektu o nowe pliki.
-
-------------
-
-<br/>
-
-**Powiązane Patterny:**  
-   - [X] [Fluent Builder](https://github.com/Ptysiek/CPP-Notatki/blob/master/__Wzorce%20Projektowe/FluentBuilder.md) 
-   - [ ] [Singleton](#2-Fluent-Builder) 
-   - [ ] [Bridge](#2-Fluent-Builder)
 
 ------------
 <br/>
