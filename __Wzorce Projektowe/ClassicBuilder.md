@@ -24,13 +24,13 @@
 
 <br/>
 
-[Do Implementacji ->](#program-11--productfile--guitar) 
+[[Do Implementacji]](#program-11--productfile--guitar) 
 
-**Powiązane Patterny:**  \
-&nbsp;&nbsp;&nbsp;&nbsp; - [Fluent Builder](#2-Fluent-Builder) 
+**Powiązane Patterny:**  
+- [ ] [Fluent Builder](#2-Fluent-Builder) 
 
-&nbsp;&nbsp;&nbsp;&nbsp; - [Singleton](#2-Fluent-Builder) \
-&nbsp;&nbsp;&nbsp;&nbsp; - [Bridge](#2-Fluent-Builder)
+- [ ] [Singleton](#2-Fluent-Builder) 
+- [ ] [Bridge](#2-Fluent-Builder)
 
 ------------
 <br/>
