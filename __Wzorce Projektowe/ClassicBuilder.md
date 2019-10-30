@@ -56,54 +56,34 @@
 
 <br/>
 
-**BUILDER** 
+**BUILDER** \
 &nbsp;&nbsp;&nbsp;&nbsp; Każdy *Builder* posiada implementacje własnych etapów konstruowania *Produktu*. \
-&nbsp;&nbsp;&nbsp;&nbsp; Implementacje tych etapów nie muszą pokrywać się z operacjami interfejsu `I_Builder`.
+&nbsp;&nbsp;&nbsp;&nbsp; Mogą tworzyć różne *Produkty* tymi samymi etapami konstrukcji.
+
+&nbsp;&nbsp;&nbsp;&nbsp; Implementacje tych etapów nie muszą pokrywać się z operacjami interfejsu `I_Builder`. \
+&nbsp;&nbsp;&nbsp;&nbsp; *Buildery* nie wywołują własnych operacji. Zajmuje się tym *Director* lub *Client*.
 
 <br/>
 
 **DIRECTOR** \
+&nbsp;&nbsp;&nbsp;&nbsp; Zarządza obecnie przypisanym mu *Builderem*. \
+&nbsp;&nbsp;&nbsp;&nbsp; Wie jak wywoływać operacje *Buildera*, aby powstał *Produkt*.
 
+&nbsp;&nbsp;&nbsp;&nbsp; Pozwala na dodatkowe konfiguracje konstruowania *Produktu*. \
+&nbsp;&nbsp;&nbsp;&nbsp; Może posiadać więcej niż jedną operację wytworzenia *Produktu*. \
+
+&nbsp;&nbsp;&nbsp;&nbsp; Ukrywa szczegóły konstruowania *Produktu*. \
+&nbsp;&nbsp;&nbsp;&nbsp; Nie jest wymagany.
 
 <br/>
 
 
 **CLIENT**
-
+&nbsp;&nbsp;&nbsp;&nbsp; Przypisuje *Buildera* do *Directora*. \
+&nbsp;&nbsp;&nbsp;&nbsp; Wywołuje jedną z operacji konstruowania produktu *Directora*. \
+&nbsp;&nbsp;&nbsp;&nbsp; Odbiera *Produkt Wynikowy* od *Buildera*.
 
 <br/>
-
-
-
-
-
-
-
-- **SUBJECTS { }**
-    - Grupa **Robotników** { \
-    `SUBJECT_verA`, \
-    `SUBJECT_verB`, \
-    `SUBJECT_verC`, `...` }.
-    - Każdy **Robotnik** wytwarza własną, niepowtarzalną wersję *przedmiotu* `Subject`. 
-    - **Robotnicy** dostają polecenia od kierownika `Director` do którego są przypisani.
-    - Utworzony *przedmiot* jest zwracany przez metodę `GetResult() : Subject`.
-    - Robotnicy **Nie** posiadają operacji klasy `Subject`**!**
-- **DIRECTOR**  
-    - Zarządza obecnie przypisanym mu *robotnikiem*.
-    - Wydaje polecenia, w celu utworzenia przedmiotu `Subject`.
-    - Może posiadać więcej niż jedną operację wytworzenia przedmiotu.
-- **CLIENT**
-    - Tworzy jednego *robotnika* z grupy `Subjects{}`.
-    - Tworzy egzemplarz `Director`, któremu \
-    przypisuje wcześniej wybrany egzemplarz *robotnika*.
-    - Korzystając z `Director`, tworzy obiekt wynikowy, `Subject`.
-
-
-
-
-
-
-
 
 ###### [Program 1.1]  `Product.file` &nbsp;&nbsp;&nbsp;&nbsp; [Guitar]
 ```cpp
