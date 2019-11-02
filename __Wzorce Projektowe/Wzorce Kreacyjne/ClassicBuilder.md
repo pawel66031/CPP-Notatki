@@ -221,7 +221,6 @@ public: // Methods:
 
 
 int main(){
-
     Director director;
 
     // Make guitar for Queen band:
