@@ -223,7 +223,6 @@ public: // Methods:
 int main(){
 
     Director director;
-    Guitar* myguitar;
 
     // Make guitar for Queen band:
     director(new BrianMayGuitar_builder);
@@ -234,7 +233,7 @@ int main(){
     Guitar* metalheadGuitar = director.ConstructGuitar();
     
     // And one for me:
-    myguitar = director.ConstructGuitar();
+    Guitar* myguitar = director.ConstructGuitar();
     
     return 0;
 }
