@@ -35,7 +35,7 @@
 
 #### Object Adapter "Wrapper"
 
-![](https://github.com/Ptysiek/resources/blob/master/WzorceProjektowe/Adapter_Wraper.png)
+![](https://github.com/Ptysiek/resources/blob/master/WzorceProjektowe/Adapter_Wrapper.png)
 
 
 
