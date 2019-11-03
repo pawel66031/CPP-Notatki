@@ -1,7 +1,7 @@
 # Adapter
 &nbsp;&nbsp;&nbsp;&nbsp; - *Structural Patterns* \
 &nbsp;&nbsp;&nbsp;&nbsp; - Tworzenie interfejsu między dwoma nie kolaboratywnymi obiektami. \
-&nbsp;&nbsp;&nbsp;&nbsp; - [[Do Implementacji] - Object Adapter](#program-11--productfile--guitar) \
+&nbsp;&nbsp;&nbsp;&nbsp; - [[Do Implementacji] - Object Adapter](#Object-Adapter-Wrapper) \
 &nbsp;&nbsp;&nbsp;&nbsp; - [[Do Implementacji] - Class Adapter](#program-11--productfile--guitar) 
 
 <br/>
@@ -31,6 +31,13 @@
 
 ------------
 <br/>
+
+
+#### Object Adapter "Wrapper"
+
+![](https://github.com/Ptysiek/resources/blob/master/WzorceProjektowe/Adapter_Wraper.png)
+
+
 
 **PRODUCT**  \
 &nbsp;&nbsp;&nbsp;&nbsp; Klasa obiektu wynikowego, konstruowanego przez wybranego *buildera*. 
