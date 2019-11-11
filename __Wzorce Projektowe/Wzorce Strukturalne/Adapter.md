@@ -1,8 +1,9 @@
 # Adapter
 &nbsp;&nbsp;&nbsp;&nbsp; - *Structural Patterns* \
 &nbsp;&nbsp;&nbsp;&nbsp; - Tworzenie interfejsu między dwoma nie kolaboratywnymi obiektami. \
-&nbsp;&nbsp;&nbsp;&nbsp; - [[Do Implementacji] - Object Adapter](#1-Object-Adapter-Wrapper) \
-&nbsp;&nbsp;&nbsp;&nbsp; - [[Do Implementacji] - Class Adapter](#2-Class-Adapter) 
+&nbsp;&nbsp;&nbsp;&nbsp; - [[Do Implementacji] - Adapter](#1-Adapter-Wrapper) \
+&nbsp;&nbsp;&nbsp;&nbsp; - [[Do Implementacji] - Object Adapter](#2-Object-Adapter) \
+&nbsp;&nbsp;&nbsp;&nbsp; - [[Do Implementacji] - Class Adapter](#3-Class-Adapter) 
 
 <br/>
 
@@ -28,212 +29,133 @@
 <br/>
 
 
-### 1. Object Adapter "Wrapper"
+### 1. Adapter "Wrapper"
 
 ![](https://github.com/Ptysiek/resources/blob/master/WzorceProjektowe/Adapter_Wrapper.png)
 
 
-
-**PRODUCT**  \
-&nbsp;&nbsp;&nbsp;&nbsp; Klasa obiektu wynikowego, konstruowanego przez wybranego *buildera*. 
-
-&nbsp;&nbsp;&nbsp;&nbsp; *Builder* nie ma wpływu na funkcjonowanie *Produktu*. \
-&nbsp;&nbsp;&nbsp;&nbsp; Możliwość modyfikacji *Produktu* bez ryzyka uszkodzenia *Buildera*.
-
-&nbsp;&nbsp;&nbsp;&nbsp; *Product* nie posiada operacji konstruowania własnych instancji. \
-&nbsp;&nbsp;&nbsp;&nbsp; Operacje te posiada *Builder*. Operacje *Buildera* tworzą instancje klasy *Product*.
-
-&nbsp;&nbsp;&nbsp;&nbsp; *Produkty* tworzone przez różne *Buildery* nie muszą przynależeć do tej samej klasy.
-
-<br/>
-
-**I_BUILDER** \
-&nbsp;&nbsp;&nbsp;&nbsp; Interfejs wszystkich builderów konstruujących *Produkt*. \
-&nbsp;&nbsp;&nbsp;&nbsp; Posiada wirtualne operacje tworzenia *Produktu*. \
-&nbsp;&nbsp;&nbsp;&nbsp; Najważniejszą z nich jest `virtual Product GetResult() = 0;`.
-
-<br/>
-
-**BUILDER** \
-&nbsp;&nbsp;&nbsp;&nbsp; Każdy *Builder* posiada implementacje własnych etapów konstruowania *Produktu*. \
-&nbsp;&nbsp;&nbsp;&nbsp; Mogą tworzyć różne *Produkty* tymi samymi etapami konstrukcji.
-
-&nbsp;&nbsp;&nbsp;&nbsp; Implementacje tych etapów nie muszą pokrywać się z operacjami interfejsu `I_Builder`. \
-&nbsp;&nbsp;&nbsp;&nbsp; *Buildery* nie wywołują własnych operacji. Zajmuje się tym *Director* lub *Client*.
-
-<br/>
-
-**DIRECTOR** \
-&nbsp;&nbsp;&nbsp;&nbsp; Zarządza obecnie przypisanym mu *Builderem*. \
-&nbsp;&nbsp;&nbsp;&nbsp; Wie jak wywoływać operacje *Buildera*, aby powstał *Produkt*.
-
-&nbsp;&nbsp;&nbsp;&nbsp; Pozwala na dodatkowe konfiguracje konstruowania *Produktu*. \
-&nbsp;&nbsp;&nbsp;&nbsp; Może posiadać więcej niż jedną operację wytworzenia *Produktu*. 
-
-&nbsp;&nbsp;&nbsp;&nbsp; Ukrywa szczegóły konstruowania *Produktu*. \
-&nbsp;&nbsp;&nbsp;&nbsp; Nie jest wymagany.
-
-<br/>
-
-**CLIENT** \
-&nbsp;&nbsp;&nbsp;&nbsp; Przypisuje *Buildera* do *Directora*. \
-&nbsp;&nbsp;&nbsp;&nbsp; Wywołuje jedną z operacji konstruowania produktu *Directora*. \
-&nbsp;&nbsp;&nbsp;&nbsp; Odbiera *Produkt Wynikowy* od *Buildera*.
-
 ------------
 <br/>
 
-###### [Program 1.1]  `Product.file` &nbsp;&nbsp;&nbsp;&nbsp; [Guitar]
+###### [Program 1.1]  `Class_A.file`
+```cpp
+#pragma once
+#include "i_ClassA.file"
+
+
+class A : public i_ClassA{
+public: // CONSTRUCTOR:
+    A(int x){
+        this->x = x;
+    }
+
+
+public: // [Class_A] OPERATIONS:
+    int GetX() { return this->x; }
+    int GetSomeoneX(i_ClassA* someone) { return someone->GetX(); }
+
+
+private: // PUBLIC/PRIVATE STATES AND OPERATIONS - of [Class_A]:
+    // ...
+    
+
+};
+
+```
+
+###### [Program 1.2]  `Class_B.file`
 ```cpp
 #pragma once
 
 
-/** [class Product] **/
-class Guitar{
-public:
-    Guitar(string name, string type, string neckMaterial, string soundboardMaterial)
-          : name(name), type(type), neckMaterial(neckMaterial), soundboardMaterial(soundboardMaterial){ }
+class B{
+public: // CONSTRUCTOR:
+    B(int x1, int x2, int x3)
+     :x1(x1), x2(x2), x3(x3){}
 
-private: // [Product] Fields to initialize:    
-    string name;
-    string type;
-    string neckMaterial;
-    string soundboardMaterial;
-    
-private: // [Product] other Variables:
+
+public: // [Class_B] OPERATIONS
+        // that [Class_A] want to use:
+    int  Operation() { return x1 + x2 + x3; }
+
+
+public: // PUBLIC/PRIVATE STATES - of [Class_B]:
+    int x1;
+    int x2;
+    int x3;
     // ...
 
-public: // [Product] Operations:
-    void MakeSound();
-    void CrashSpeaker();
-    void TuneTheStrings();
-    void CheckSound();
-}; 
-```
 
-###### [Program 1.2]  `I_Builder.file` &nbsp;&nbsp;&nbsp;&nbsp; [<< interface >>]
+// PUBLIC/PRIVATE OPERATIONS - of [Class_B]:
+    // ...
+
+
+};
+
+```
+###### [Program 1.3]  `i_ClassA.file` &nbsp;&nbsp;&nbsp;&nbsp; [Interface of Class_A]
 ```cpp
 #pragma once
-#include "Product.file"
 
 
-/** [<<interface>> Builder] **/
-class I_Builder{
-public:
-    virtual ~I_Builder(){ }
-    
-protected: // Fields of [Product] to initialize:    
-    string name;
-    string type;
-    string neckMaterial;
-    string soundboardMaterial;
+class i_ClassA{
+public: // STATES
+    int x;
 
-public: // [Builders] operations to construct the [Product]:
-    virtual void GiveName() = 0;
-    virtual void ClassifyType() = 0;
-    virtual void ChooseNeckMaterial() = 0;
-    virtual void ChooseSoundboardMaterial() = 0;
-    
-    virtual Guitar* GetResult() = 0;
-}; 
+public: // OPERATIONS
+    virtual int GetX(){};
+
+};
+
 ```
-###### [Program 1.3]  `Builder_A.file` &nbsp;&nbsp;&nbsp;&nbsp; [BrianMayGuitar_builder]
+###### [Program 1.4]  `a_ClassB.file` &nbsp;&nbsp;&nbsp;&nbsp; [Adapter of Class_B]
 ```cpp
 #pragma once
-#include "I_Builder.file"
+#include "i_ClassA.file"
+#include "Class_B.file"
 
 
-/** [class Builder_A] **/
-class BrianMayGuitar_builder : public I_Builder{
-
-public: // [Builder_A] operations of [Product] construction:
-    void GiveName(){ name = "Red Special Fireplace"; }
-    void ClassifyType(){ type = "Semi-acoustic"; }
-    void ChooseNeckMaterial(){ neckMaterial = "Mahogany"; }
-    void ChooseSoundboardMaterial(){ soundboardMaterial = "Remains of an Oak table"; }    
-    
-    Guitar* GetResult(){ return new Guitar(name, type, neckMaterial, soundboardMaterial); }
-};  
-```
-###### [Program 1.4]  `Builder_B.file` &nbsp;&nbsp;&nbsp;&nbsp; [LemmyKilmisterGuitar_builder]
-```cpp
-#pragma once
-#include "I_Builder.file"
+class ClassB_Adapter : public i_ClassA{
+public: // ADAPTER CONSTRUCTOR
+    ClassB_Adapter(B* b): b_class(b){ }
 
 
-/** [class Builder_B] **/
-class LemmyKilmisterGuitar_builder : public I_Builder{
-
-public: // [Builder_B] operations of [Product] construction:
-    void GiveName(){ name = "Lemmy Signature"; }
-    void ClassifyType(){ type = "Bass"; }
-    void ChooseNeckMaterial(){ neckMaterial = "Oak"; }
-    void ChooseSoundboardMaterial(){ soundboardMaterial = "Oak"; }
-    
-    Guitar* GetResult(){ return new Guitar(name, type, neckMaterial, soundboardMaterial); }
-}; 
-```
-###### [Program 1.5]  `Director.file`
-```cpp
-#pragma once
-#include "I_Builder.file"
+private: // AGGREGATION:
+    B* b_class;
 
 
-class Director{
-public: // Constructor / Destructor
-    Director(){ }
-
-    Director(I_Builder* _builder): _builder(_builder){ }
-
-    ~Director(){ delete (this->_builder); }
-
-public: // Operator () override
-    void operator() (I_Builder* _builder){
-        if (_builder){
-            delete (this->_builder);
-            this->_builder = _builder;
-        }
-    }
-
-public: // Variable:
-    I_Builder* _builder = 0;
-
-public: // Methods:
-    Guitar* ConstructGuitar(){
-        _builder->GiveName();        
-        _builder->ClassifyType();
-        _builder->ChooseNeckMaterial();
-        _builder->ChooseSoundboardMaterial();
-
-        return _builder->GetResult();
+public: // [Class_A] virtual method
+        // for [Class_B] operation usage:
+     int GetX(){
+        return b_class->Operation();   // <- [Class_B] Operation
     }
 };
+
 ```
 ###### [Program 1.6]  `Client.file`
 ```cpp
-#include "Product.file"     // Guitar
-#include "Director.file"
-#include "Builder_A.file"   // BrianMayGuitar_builder
-#include "Builder_B.file"   // LemmyKilmisterGuitar_builder
+#include <iostream>
+using std::cout;
+
+#include "Class_A.file"  
+#include "a_ClassB.file" // Adapter for [Class_B]
 
 
 int main(){
+    // _________________________________________________________
+    // Using [Class_A] Operations on [Class_A] Instance:
+    A a(5);                                     // Class_A
+    cout << a.GetSomeoneX(&a) << "\n\n";
 
-    Director director;
-    Guitar* myguitar;
+    // _________________________________________________________
+    // Using [Class_A] Operations on wrapped [Class_B] Instance:
+    B b(10, 12, -1);                            // Class_B
 
-    // Make guitar for Queen band:
-    director(new BrianMayGuitar_builder);
-    Guitar* rockmanGuitar = director.ConstructGuitar();
-
-    // Make guitar for Motorhead band:
-    director(new LemmyKilmisterGuitar_builder);
-    Guitar* metalheadGuitar = director.ConstructGuitar();
-    
-    // And one for me:
-    myguitar = director.ConstructGuitar();
-    
-    return 0;
+    // _________________________________________________________
+    // Because we cannot do that:   a.GetSomeoneX(&b)
+    // We need to wrapp [Class_B] Instance with the adapter:
+    ClassB_Adapter* wrapped_b = new ClassB_Adapter(&b);
+    cout << a.GetSomeoneX(wrapped_b) << "\n\n";
 }
 
 ```  
@@ -243,7 +165,15 @@ int main(){
 
 
 
-### 2. Class Adapter
+### 2. Object Adapter
+
+
+
+------------
+<br/>
+
+
+### 3. Class Adapter
 
 ![](https://github.com/Ptysiek/resources/blob/master/WzorceProjektowe/ClassAdapter.png)
 
@@ -252,7 +182,7 @@ int main(){
 ------------
 <br/>
 
-###### [Program 2.1]  `Class_A.file`
+###### [Program 3.1]  `Class_A.file`
 ```cpp
 #pragma once
 #include<iostream>
@@ -277,7 +207,7 @@ public: // Virtual methods for [Class_B] operations
 };
 ```
 
-###### [Program 2.2]  `Class_B.file`
+###### [Program 3.2]  `Class_B.file`
 ```cpp
 #pragma once
 #include<iostream>
@@ -308,7 +238,7 @@ private: // PUBLIC/PRIVATE STATES - of [Class_B]:
 
 };
 ```
-###### [Program 2.3]  `ClassA__Adapter.file`
+###### [Program 3.3]  `ClassA__Adapter.file`
 ```cpp
 #pragma once
 #include<iostream>
@@ -336,7 +266,7 @@ public: // [Class_A] virtual methods
     }
 };
 ```
-###### [Program 2.4]  `Client.file` &nbsp;&nbsp;&nbsp;&nbsp; [main.cpp]
+###### [Program 3.4]  `Client.file` &nbsp;&nbsp;&nbsp;&nbsp; [main.cpp]
 ```cpp
 #include <iostream>
 using std::cout;
