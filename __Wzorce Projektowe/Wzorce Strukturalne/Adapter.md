@@ -2,7 +2,7 @@
 &nbsp;&nbsp;&nbsp;&nbsp; - *Structural Patterns* \
 &nbsp;&nbsp;&nbsp;&nbsp; - Tworzenie interfejsu między dwoma nie kolaboratywnymi obiektami. \
 &nbsp;&nbsp;&nbsp;&nbsp; - [[Do Implementacji] - Object Adapter](#1-Object-Adapter-Wrapper) \
-&nbsp;&nbsp;&nbsp;&nbsp; - [[Do Implementacji] - Class Adapter](#program-11--productfile--guitar) 
+&nbsp;&nbsp;&nbsp;&nbsp; - [[Do Implementacji] - Class Adapter](#2-Class-Adapter-Wrapper) 
 
 <br/>
 
@@ -242,6 +242,134 @@ int main(){
 }
 
 ```  
+
+------------
+<br/>
+
+
+
+### 2. Class Adapter
+
+![](https://github.com/Ptysiek/resources/blob/master/WzorceProjektowe/ClassAdapter.png)
+
+
+
+------------
+<br/>
+
+###### [Program 2.1]  `Class_A.file`
+```cpp
+#pragma once
+#include<iostream>
+using std::cout;
+
+
+class A{
+// _________________________________________________
+// PUBLIC/PRIVATE STATES - of [Class_A]:
+    // ...
+
+// _________________________________________________
+public: // Virtual methods for [Class_B] operations
+        // that we want to use from this [Class_A]:
+    virtual void v_Operation_1(){ cout << "[Class_A] operation1"; };
+    virtual void v_Operation_2(){ cout << "[Class_A] operation2"; };
+
+// _________________________________________________
+// PUBLIC/PRIVATE OPERATIONS - of [Class_A]:
+    // ...
+
+};
+```
+
+###### [Program 2.2]  `Class_B.file`
+```cpp
+#pragma once
+#include<iostream>
+using std::cout;
+
+
+class B{
+public: // CONSTRUCTOR:
+    B(int x1, int x2, int x3)
+     :x1(x1), x2(x2), x3(x3){ cout << "\n[Class_B] Constructor"; }
+
+
+public: // [Class_B] OPERATIONS
+        // that [Class_A] want to use:
+    void Operation1() { cout << "\n" << x1 << "  " << x2 << "  " << x3; }
+    void Operation2() { ++x1; ++x2; ++x3; }
+
+
+private: // PUBLIC/PRIVATE STATES - of [Class_B]:
+    int x1;
+    int x2;
+    int x3;
+    // ...
+
+
+// PUBLIC/PRIVATE OPERATIONS - of [Class_B]:
+    // ...
+
+};
+```
+###### [Program 2.3]  `ClassA__Adapter.file`
+```cpp
+#pragma once
+#include<iostream>
+using std::cout;
+
+#include "Class_A"
+#include "Class_B"
+
+
+class ClassA__Adapter : public A, private B{
+
+public: // ADAPTER CONSTRUCTOR:
+    ClassA__Adapter(int x1, int x2, int x3): B(x1, x2, x3){
+         cout << "\n[ClassA__Adapter] Constructor";
+    }
+
+
+public: // [Class_A] virtual methods
+        // for [Class_B] operations:
+    virtual void v_Operation_1(){
+        Operation1();   // <- [Class_B] Operation
+    }
+    virtual void v_Operation_2(){
+        Operation2();   // <- [Class_B] Operation
+    }
+};
+```
+###### [Program 2.4]  `Client.file` &nbsp;&nbsp;&nbsp;&nbsp; [main.cpp]
+```cpp
+#include <iostream>
+using std::cout;
+
+#include "Class_A"
+#include "ClassA__Adapter"
+
+
+int main(){
+    // _________________________________________________________
+    // Using [Class_A] Instance with only [Class_A] Operations:
+    A a;
+    a.v_Operation_1();
+    cout << "\n\n";
+
+    // _________________________________________________________
+    // Using [Class_A] Instance with extra [Class_B] Operations:
+    A* a_with_b = new ClassA__Adapter(5, 2, -1);
+    cout << "\n\n";
+
+    a_with_b->v_Operation_1();  // Show [Class_B] States
+    a_with_b->v_Operation_2();  // Increment [Class_B] States
+    a_with_b->v_Operation_2();  // Increment [Class_B] States
+    a_with_b->v_Operation_1();  // Show [Class_B] States
+    cout << "\n\n";
+
+}
+```
 ------------
 
 <br/>
