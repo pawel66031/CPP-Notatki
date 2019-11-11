@@ -2,14 +2,9 @@
 &nbsp;&nbsp;&nbsp;&nbsp; - *Structural Patterns* \
 &nbsp;&nbsp;&nbsp;&nbsp; - Tworzenie interfejsu między dwoma nie kolaboratywnymi obiektami. \
 &nbsp;&nbsp;&nbsp;&nbsp; - [[Do Implementacji] - Object Adapter](#1-Object-Adapter-Wrapper) \
-&nbsp;&nbsp;&nbsp;&nbsp; - [[Do Implementacji] - Class Adapter](#2-Class-Adapter-Wrapper) 
+&nbsp;&nbsp;&nbsp;&nbsp; - [[Do Implementacji] - Class Adapter](#2-Class-Adapter) 
 
 <br/>
-
-**Powiązane Patterny:**  
-   - [X] [Fluent Builder](https://github.com/Ptysiek/CPP-Notatki/blob/master/__Wzorce%20Projektowe/FluentBuilder.md) 
-   - [ ] [Singleton](#2-Fluent-Builder) 
-   - [ ] [Bridge](#2-Fluent-Builder)
 
 ------------
 
