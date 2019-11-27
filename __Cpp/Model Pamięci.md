@@ -11,7 +11,7 @@
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - zasięg nazwy [scope] \
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - sposób współużytkowania [linkage]
 
-------------
+<br/>
 <br/>
 
 ![](https://github.com/Ptysiek/resources/blob/master/Orn.png)
@@ -63,17 +63,24 @@ Zastosowanie specyfikatora __register__ ograniczyło się do podkreślenia przez
 &nbsp;&nbsp;&nbsp;&nbsp; - ten obiekt jest - pod względem optymalności - punktem krytycznym danego bloku instrukcji.
 
 <br/>
+<br/>
 
+![](https://github.com/Ptysiek/resources/blob/master/Orn.png)
 ### 2. Pamięć statyczna
 
 <br/>
+<br/>
 
+![](https://github.com/Ptysiek/resources/blob/master/Orn.png)
 ### 3. Pamięć wątku
 
 <br/>
+<br/>
 
+![](https://github.com/Ptysiek/resources/blob/master/Orn.png)
 ### 4. Pamięć dynamiczna
 
+<br/>
 
 ------------
 <br/>
