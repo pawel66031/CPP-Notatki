@@ -20,8 +20,8 @@ powstających wewnątrz **bloku instrukcji:** \
 &nbsp;&nbsp;&nbsp;&nbsp; - Czyli fragmentu kodu zamkniętego klamrami [brackets]. \
 &nbsp;&nbsp;&nbsp;&nbsp; - Jest to funkcja, pętla, samodzielny blok, etc. 
 
-Przykładem obiektów automatycznych są argumenty \
-funkcji oraz inne zmienne zadeklarowane w bloku instrukcji.
+Przykładem obiektów automatycznych mogą być \
+argumenty funkcji oraz inne zmienne zadeklarowane w jakimś bloku instrukcji.
 
 <br/>
 
