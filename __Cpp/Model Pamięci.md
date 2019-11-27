@@ -29,7 +29,7 @@ argumenty funkcji oraz inne zmienne zadeklarowane w jakimś bloku instrukcji.
 Pamięć automatyczna działa za pomocą stosu. [LIFO] \
 Oznacza to że obiekty powstają w momencie kiedy program wchodzi do bloku instrukcji. \
 A następnie są niszczone w momencie gdy program go opuszcza. \
-> Zwolnienie zarezerwowanej pamięci nie oznacza jej wyczyszczenia. 
+`Zwolnienie zarezerwowanej pamięci nie oznacza jej wyczyszczenia.`
 
 <br/>
 
@@ -52,11 +52,10 @@ Oznacza to że mogą być używane tylko i wyłącznie lokalnie.
 ***zmienne rejestrowe*** \
 Zmienne rejestrowe to drugi rodzaj zmiennych automatycznych. \
 Obecnie - w wyniku rozwoju oraz optymalizacji języka - przestarzały. \
-Specyfikator __register__  określał jawne zdefiniowanie obiektu w pamięci automatycznej. 
-
-> Dzisiaj - o ile nie nakażemy inaczej - wszystkie obiekty zdefiniowane wewnątrz \
-> bloku instrukcji zostaną utworzone w pamięci automatycznej. \
-> Sam specyfikator niemalże przestał mieć wpływ na działanie kompilatora.
+Specyfikator __register__  określał jawne zdefiniowanie obiektu w pamięci automatycznej. \
+`Dzisiaj - o ile nie nakażemy inaczej - wszystkie obiekty zdefiniowane wewnątrz` \
+`bloku instrukcji zostaną utworzone w pamięci automatycznej.` \
+`Sam specyfikator niemalże przestał mieć wpływ na działanie kompilatora.`
 
 Zastosowanie specyfikatora __register__ ograniczyło się do podkreślenia przez programistę informacji: \
 &nbsp;&nbsp;&nbsp;&nbsp; - istnieje inny obiekt zewnętrzny o takiej samej nazwie. \
