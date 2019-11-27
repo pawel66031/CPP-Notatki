@@ -13,6 +13,7 @@
 
 <br/>
 <br/>
+<br/>
 
 ![](https://github.com/Ptysiek/resources/blob/master/Orn.png)
 ### 1. Pamięć automatyczna
@@ -64,16 +65,19 @@ Zastosowanie specyfikatora __register__ ograniczyło się do podkreślenia przez
 
 <br/>
 <br/>
+<br/>
 
 ![](https://github.com/Ptysiek/resources/blob/master/Orn.png)
 ### 2. Pamięć statyczna
 
 <br/>
 <br/>
+<br/>
 
 ![](https://github.com/Ptysiek/resources/blob/master/Orn.png)
 ### 3. Pamięć wątku
 
+<br/>
 <br/>
 <br/>
 
