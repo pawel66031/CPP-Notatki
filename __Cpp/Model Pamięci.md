@@ -74,4 +74,8 @@ Zastosowanie specyfikatora __register__ ograniczyło się do podkreślenia przez
 ### 4. Pamięć dynamiczna
 
 
+------------
+<br/>
+
+![](https://github.com/Ptysiek/resources/blob/master/Ver2.PNG)
 
