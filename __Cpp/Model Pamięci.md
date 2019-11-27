@@ -14,6 +14,7 @@
 ------------
 <br/>
 
+![](https://github.com/Ptysiek/resources/blob/master/Orn.png)
 ### 1. Pamięć automatyczna
 Pamięć automatyczna dotyczy obiektów \
 powstających wewnątrz **bloku instrukcji:** \
