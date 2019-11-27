@@ -17,8 +17,8 @@
 ### 1. Pamięć automatyczna
 Pamięć automatyczna dotyczy obiektów \
 powstających wewnątrz **bloku instrukcji:** \
-&nbsp;&nbsp;&nbsp;&nbsp; - czyli fragmentu kodu zamkniętego klamrami [brackets]. \
-&nbsp;&nbsp;&nbsp;&nbsp; - funkcja, pętla, samodzielny blok, etc. 
+&nbsp;&nbsp;&nbsp;&nbsp; - Czyli fragmentu kodu zamkniętego klamrami [brackets]. \
+&nbsp;&nbsp;&nbsp;&nbsp; - Jest to funkcja, pętla, samodzielny blok, etc. 
 
 Przykładem obiektów automatycznych są argumenty \
 funkcji oraz inne zmienne zadeklarowane w bloku instrukcji.
