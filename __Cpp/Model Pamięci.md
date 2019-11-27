@@ -28,7 +28,7 @@ argumenty funkcji oraz inne zmienne zadeklarowane w jakimś bloku instrukcji.
 ***czas życia*** \
 Pamięć automatyczna działa za pomocą stosu. [LIFO] \
 Oznacza to że obiekty powstają w momencie kiedy program wchodzi do bloku instrukcji. \
-A następnie są niszczone w momencie gdy program go opuszcza. \
+A następnie są niszczone w momencie gdy program go opuszcza. [czas życia bloku instrukcji] \
 `Zwolnienie zarezerwowanej pamięci nie oznacza jej wyczyszczenia.`
 
 <br/>
