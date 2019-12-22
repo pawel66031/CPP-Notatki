@@ -27,25 +27,24 @@ Kiedy się da, ręcznie rezerwować za wczasu tyle pamięci ile potrzeba!
 #### 1. Wyświetlanie informacji o wybranym Vectorze
 ###### [Program 1.1] `operator[ ]` `.size( )` `.capacity( )`
 ```cpp
-void Show(const vector<int>& V){
+template<typename T>
+void Show(const vector<T>& V){
     /** Funkcja wypisująca informacje o vectorze **/
-    // Operator [] zwraca REFERENCJĘ na element w określonej pozycji
-    for (int i=0; i<V.size(); ++i)  	// Pętla przez wszystkie elementy vectora [V].
-        std::cout << V[i] << " ";		// Wypisanie wartości elementu na indeksie [i].
-
+    
+    // Operator[] zwraca REFERENCJĘ na element w określonej pozycji
+    for (int i=0; i<V.size(); ++i)	// Pętla przez wszystkie elementy vectora [V].
+        std::cout << V[i] << " ";	// Wypisanie wartości elementu na indeksie [i].
+	
     std::cout << "\n size: "      << V.size()          // Zwraca ilość elementów w vectorze [V].
               << "\n capacity: "  << V.capacity();     // Zwraca ilość zarezerwowanego miejsca w pamięci.
  }
 ```
 ```cpp
-vector<int> A;    // Elementy vectora typu <int>
-
-// Wywołanie funkcji [Show]
-// W tym momencie vector [A] jest pusty. Nie posiada elementów, 
-// i nie ma dla nich zarezerwowanego miejsca w pamięci.
-Show(A);
-	  // size: 0
-	  // capacity: 0
+vector<int> A;
+// _________________________
+// Wywołanie funkcji [Show]:
+Show(A);    // size: 0        // W tym momencie vector [A] jest pusty. Nie posiada elementów.
+            // capacity: 0    // Oraz nie ma dla nich zarezerwowanego miejsca w pamięci.
 ```
 
 <br/>
