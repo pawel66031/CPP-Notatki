@@ -9,7 +9,7 @@
 <br/>
 
 ![](https://github.com/Ptysiek/resources/blob/master/Orn.png)
-### 1. Szablony Funkcji (Templates)
+### 1. Szablony Funkcji (Template Functions)
 ###### [Program 1.1]
 ```cpp
 // Deklaracja Funkcji => Nagłówek Funkcji:
@@ -17,7 +17,7 @@ template<typename T> T SPower(T);
 
 // Definicja Funkcji => Nagłówek + BlokInstrukcji:
 template<typename T>
-T SPower(T value){
+T SPower(T value) {
     /** Funkcja zwracająca podane [value] do kwadratu. **/
     return (value*value);
 }
