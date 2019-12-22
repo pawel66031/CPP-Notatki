@@ -1,9 +1,5 @@
 # Generyki cpp
 
-
-
-
-
 <br/>
 <br/>
 <br/>
@@ -31,17 +27,18 @@ cout << "\n a: " << a << "\t a^2: " << SPower(a)
      << "\n b: " << b << "\t b^2: " << SPower(b)
      << "\n c: " << c << "\t c^2: " << SPower(c);
 ``` 
+
 <br/>
 
-###### [Program 1.2] `Przeciążanie Funkcji`
+###### [Program 1.2] `Jawne Przeciążanie Funkcji`
 ```cpp
 template<typename T>
-void SPower(T value) {
+void Power(T value) {
     /** Funkcja wypisująca podane [value] do kwadratu. **/
     cout << (value*value);
 }
 template<typename T>
-void SPower(T value, int exponent) {
+void Power(T value, int exponent) {
     /** Funkcja przeciążająca [SPower] dodatkowym argumentem. **/
     T tmp = value;
     for (int i=1; i<exponent; ++i)
@@ -49,22 +46,33 @@ void SPower(T value, int exponent) {
     
     cout << tmp;
 }
-void SPower(char value) {
+void Power(char value) {
     /** Funkcja przeciążająca [SPower] dla typu [char]. **/
     cout << "Nie mozna podniesc " << value << " do potegi";
 }
-
 ```
 ```cpp
 // Funkcja Generyczna:
-SPower(2);
-SPower(2.25);
+Power(2);
+Power(2.25);
 
 // Funkcja Generyczna o Dodatkowym Argumencie:
-SPower(2, 6);
-SPower(5.654, 3);   // Funkcja o Dodatkowym Argumencie
+Power(2, 6);
+Power(5.654, 3);
 
 // Funkcja o Jawnie określonych parametrach:
-SPower('K');
-SPower('O');
-```      
+Power('K');
+Power('O');
+```
+
+<br/>
+
+###### [Program 1.3] `Przeciążanie Funkcji`
+```cpp
+
+
+
+```
+
+
+
