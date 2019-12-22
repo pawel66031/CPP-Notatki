@@ -27,29 +27,23 @@ Kiedy się da, ręcznie rezerwować za wczasu tyle pamięci ile potrzeba!
 #### 1. Wyświetlanie informacji o wybranym Vectorze
 ###### [Program 1.1] `operator[ ]` `.size( )` `.capacity( )`
 ```cpp
- void Show(const vector<int>& V){
-     /** - Funkcja którą będę w dalszej części notatek wypisywał 
-           Podstawowe informacje o wybranym vectorze.
-         - W argumencie znajduje się referencja do jakiegoś vectora trzymającego <int>
-           Korzystamy z referencji aby nie tworzyć kopii danego vectora.
-         - Argument posiada specyfikator const, ponieważ zamierzamy 
-           jedynie odczytać wartości danego vectora.
-     **/
-
+void Show(const vector<int>& V){
+    /** Funkcja wypisująca informacje o vectorze **/
     // Operator [] zwraca REFERENCJĘ na element w określonej pozycji
-    for (int i=0; i<V.size(); ++i)  // Pętla przez wszystkie elementy vectora [V].
-         std::cout << V[i] << " ";       // Wypisanie wartości elementu na indeksie [i].
+    for (int i=0; i<V.size(); ++i)  	// Pętla przez wszystkie elementy vectora [V].
+        std::cout << V[i] << " ";		// Wypisanie wartości elementu na indeksie [i].
 
     std::cout << "\n size: "      << V.size()          // Zwraca ilość elementów w vectorze [V].
               << "\n capacity: "  << V.capacity();     // Zwraca ilość zarezerwowanego miejsca w pamięci.
  }
+```
+```cpp
+vector<int> A;    // Elementy vectora typu <int>
 
 // Wywołanie funkcji [Show]
- vector<int> A;    // Dodawane elementy vectora będą typu <int>
-
- // W tym momencie vector [A] jest pusty. Nie posiada elementów, 
- // i nie ma dla nich zarezerwowanego miejsca w pamięci.
- Show(A);
+// W tym momencie vector [A] jest pusty. Nie posiada elementów, 
+// i nie ma dla nich zarezerwowanego miejsca w pamięci.
+Show(A);
 	  // size: 0
 	  // capacity: 0
 ```
