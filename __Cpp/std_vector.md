@@ -11,9 +11,9 @@ Kiedy się da, ręcznie rezerwować za wczasu tyle pamięci ile potrzeba!
 <br/>
 
 1. [Wyświetlanie informacji o wybranym Vectorze](#1-Wyświetlanie-informacji-o-wybranym-Vectorze) 
-    - [operator[ ]](#program-11-operator--size--capacity-)
-    - [.size( )](#program-11-operator--size--capacity-)
-    - [.capacity( )](#program-11-operator--size--capacity-)        
+    - [operator[ ]](#program-11-operator-size--capacity-)
+    - [.size( )](#program-11-operator-size--capacity-)
+    - [.capacity( )](#program-11-operator-size--capacity-)        
 1. [Rezerwowanie Pamięci](#2-Rezerwowanie-Pamięci)
 	* [.push_back(TypDanych)](#program-21-push_backtypdanych)
 	* [konstruktor(int)](#program-22-podejście-1---konstruktorint)
@@ -25,7 +25,7 @@ Kiedy się da, ręcznie rezerwować za wczasu tyle pamięci ile potrzeba!
 <br/>
 
 #### 1. Wyświetlanie informacji o wybranym Vectorze
-###### [Program 1.1] `operator[ ]` `.size( )` `.capacity( )`
+###### [Program 1.1] `operator[]` `.size( )` `.capacity( )`
 ```cpp
 template<typename T>
 void Show(const vector<T>& V){
