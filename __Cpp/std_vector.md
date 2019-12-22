@@ -21,10 +21,13 @@ Kiedy się da, ręcznie rezerwować za wczasu tyle pamięci ile potrzeba!
 	* [.reserve(int)](#program-24-podejście-3---reserveint)
 	* [.shrink_to_fit( )](#program-25-shrink_to_fit)
 	
-------------
+
+<br/>
+<br/>
 <br/>
 
-#### 1. Wyświetlanie informacji o wybranym Vectorze
+![](https://github.com/Ptysiek/resources/blob/master/Orn.png)
+### 1. Wyświetlanie informacji o wybranym Vectorze
 ###### [Program 1.1] `operator[]` `.size( )` `.capacity( )`
 ```cpp
 template<typename T>
@@ -48,8 +51,11 @@ Show(A);    // size: 0        // W tym momencie vector [A] jest pusty. Nie posia
 ```
 
 <br/>
+<br/>
+<br/>
 
-#### 2. Rezerwowanie Pamięci
+![](https://github.com/Ptysiek/resources/blob/master/Orn.png)
+### 2. Rezerwowanie Pamięci
 ###### [Program 2.1] `.push_back(TypDanych)`
 ```cpp
  vector<int> B;
