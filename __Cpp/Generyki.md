@@ -39,7 +39,8 @@ void Power(T value) {
 }
 template<typename T>
 void Power(T value, int exponent) {
-    /** Funkcja przeciążająca [SPower] dodatkowym argumentem. **/
+    /** Funkcja przeciążająca [Power] dodatkowym argumentem. 
+        Podnosi [value] do potęgi [exponent]. **/
     T tmp = value;
     for (int i=1; i<exponent; ++i)
         tmp *= value;
@@ -47,7 +48,7 @@ void Power(T value, int exponent) {
     cout << tmp;
 }
 void Power(char value) {
-    /** Funkcja przeciążająca [SPower] dla typu [char]. **/
+    /** Funkcja przeciążająca [Power] dla typu [char]. **/
     cout << "Nie mozna podniesc " << value << " do potegi";
 }
 ```
