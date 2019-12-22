@@ -27,9 +27,9 @@ int a = 5015;
 float b = 6.25;
 double c = 7.333;
 
-std::cout << "\n a: " << a << "\t a^2: " << SPower(a)
-          << "\n b: " << b << "\t b^2: " << SPower(b)
-          << "\n c: " << c << "\t c^2: " << SPower(c);
+cout << "\n a: " << a << "\t a^2: " << SPower(a)
+     << "\n b: " << b << "\t b^2: " << SPower(b)
+     << "\n c: " << c << "\t c^2: " << SPower(c);
 ``` 
 <br/>
 
@@ -40,13 +40,31 @@ void SPower(T value) {
     /** Funkcja wypisująca podane [value] do kwadratu. **/
     cout << (value*value);
 }
+template<typename T>
+void SPower(T value, int exponent) {
+    /** Funkcja przeciążająca [SPower] dodatkowym argumentem. **/
+    T tmp = value;
+    for (int i=1; i<exponent; ++i)
+        tmp *= value;
+    
+    cout << tmp;
+}
 void SPower(char value) {
     /** Funkcja przeciążająca [SPower] dla typu [char]. **/
     cout << "Nie mozna podniesc " << value << " do potegi";
 }
+
 ```
 ```cpp
-SPower(2);      // Funkcja Generyczna
-SPower('K');    // Funkcja o Jawnie określonych parametrach
-SPower(2.25);   // Funkcja Generyczna
+// Funkcja Generyczna:
+SPower(2);
+SPower(2.25);
+
+// Funkcja Generyczna o Dodatkowym Argumencie:
+SPower(2, 6);
+SPower(5.654, 3);   // Funkcja o Dodatkowym Argumencie
+
+// Funkcja o Jawnie określonych parametrach:
+SPower('K');
+SPower('O');
 ```      
