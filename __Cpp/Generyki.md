@@ -12,6 +12,10 @@
 ### 1. Szablony Funkcji (Templates)
 ###### [Program 1.1]
 ```cpp
+// Deklaracja Funkcji => Nagłówek Funkcji:
+template<typename T> T SPower(T);
+
+// Definicja Funkcji => Nagłówek + BlokInstrukcji:
 template<typename T>
 T SPower(T value){
     /** Funkcja zwracająca podane [value] do kwadratu. **/
