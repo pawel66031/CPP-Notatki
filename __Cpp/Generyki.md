@@ -154,6 +154,23 @@ b.Show();   // Oryginalna klasa generyczna <bool>
 c.Show();   // Specjalizacja klasy, dla typu <char>
 ```
 
+<br/>
+<br/>
+<br/>
+
+![](https://github.com/Ptysiek/resources/blob/master/Orn.png)
+### 3. Szablony Wariadyczne (Variadic Templates)
+###### [Program 3.1]
+```cpp
+/** Pozwalają na wprowadzenie wielu argumentów **/
+template<typename ... Args>
+void Function() {
+...
+}
+```
+
+
+
 
 ------------
 <br/>
