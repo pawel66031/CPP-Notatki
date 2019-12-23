@@ -71,7 +71,7 @@ Power('O');
 <br/>
 
 ![](https://github.com/Ptysiek/resources/blob/master/Orn.png)
-### 1. Szablony Klas
+### 2. Szablony Klas
 ###### [Program 2.1] 
 ```cpp
 template <typename T1, typename T2>
@@ -124,7 +124,7 @@ c.Show();
 
 <br/>
 
-###### [Program 2.2] `Specjalizacja Klas`
+###### [Program 2.3] `Specjalizacja Klas`
 ```cpp
 // -----------------------------------------------------------
 template <typename T>
