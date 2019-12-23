@@ -83,7 +83,7 @@ public:
     ExemplaryClass(T1 var1, T2 var2): var1(var1),var2(var2) { }
 
     void Show() {
-        cout "\n " << << variable1 << "  " << variable2;
+        cout "\n " << << var1 << "  " << var2;
     }
 };
 ```
@@ -108,7 +108,7 @@ public:
     ExemplaryClass(T1 var1, T2 var2): var1(var1),var2(var2) { }
 
     void Show() {
-        cout << "\n " << variable1 << "  " << variable2;
+        cout << "\n " << var1 << "  " << var2;
     }
 };
 ```
