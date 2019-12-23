@@ -1,4 +1,4 @@
-# Generyki cpp
+# Generyki
 
 <br/>
 <br/>
@@ -30,7 +30,7 @@ cout << "\n a: " << a << "\t a^2: " << SPower(a)
 
 <br/>
 
-###### [Program 1.2] `Jawne Przeciążanie Funkcji`
+###### [Program 1.2] `Przeciążanie Funkcji`
 ```cpp
 template<typename T>
 void Power(T value) {
@@ -67,13 +67,31 @@ Power('O');
 ```
 
 <br/>
+<br/>
+<br/>
 
-###### [Program 1.3] `Przeciążanie Funkcji`
+![](https://github.com/Ptysiek/resources/blob/master/Orn.png)
+### 1. Szablony Klas
+###### [Program 2.1] 
 ```cpp
+template <typename T1, typename T2>
+class ExemplaryClass {
+    T1 variable1;
+    T2 variable2;
 
+public:
+    ExemplaryClass(T1 var1, T2 var2)
+        : variable1(var1), variable2(var2) { }
 
-
+    void Show() {
+        cout << variable1 << "  " << variable2;
+    }
+};
 ```
+```cpp
+ExemplaryClass<int,int>    a(2, 3);
+ExemplaryClass<float,char> b(6.55, 'K');
 
-
-
+a.Show();
+b.Show();
+```
