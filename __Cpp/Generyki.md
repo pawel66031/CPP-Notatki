@@ -126,6 +126,7 @@ c.Show();
 
 ###### [Program 2.2] `Jawna Specjalizacja Klas`
 ```cpp
+// -----------------------------------------------------------
 template <typename T>
 class ExemplaryClass {
     T var;
@@ -134,6 +135,7 @@ public:
     void Show() { cout << "\n " << var; }
 };
 
+// -----------------------------------------------------------
 template<> 
 class ExemplaryClass<char> {
     char var;
@@ -145,7 +147,7 @@ public:
 ```cpp
 ExemplaryClass<int>     a(32);
 ExemplaryClass<bool>    b(false);
-ExemplaryClass<char>    c('O');
+ExemplaryClass<char>    c('V');
 
 a.Show();   // Oryginalna klasa generyczna <int>
 b.Show();   // Oryginalna klasa generyczna <bool>
