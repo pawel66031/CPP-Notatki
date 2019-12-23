@@ -76,15 +76,14 @@ Power('O');
 ```cpp
 template <typename T1, typename T2>
 class ExemplaryClass {
-    T1 variable1;
-    T2 variable2;
+    T1 var1;
+    T2 var2;
 
 public:
-    ExemplaryClass(T1 var1, T2 var2)
-        : variable1(var1), variable2(var2) { }
+    ExemplaryClass(T1 var1, T2 var2): var1(var1),var2(var2) { }
 
     void Show() {
-        cout << variable1 << "  " << variable2;
+        cout "\n " << << variable1 << "  " << variable2;
     }
 };
 ```
@@ -95,3 +94,35 @@ ExemplaryClass<float,char> b(6.55, 'K');
 a.Show();
 b.Show();
 ```
+
+<br/>
+
+###### [Program 2.2] `Typy Domyślne`
+```cpp
+template <typename T1=bool, typename T2=bool>
+class ExemplaryClass {
+    T1 var1;
+    T2 var2;
+
+public:
+    ExemplaryClass(T1 var1, T2 var2): var1(var1),var2(var2) { }
+
+    void Show() {
+        cout << "\n " << variable1 << "  " << variable2;
+    }
+};
+```
+```cpp
+ExemplaryClass<>        a(true, true);
+ExemplaryClass<float>   b(2.24, true);
+ExemplaryClass<int,int> c(1014, 2548);
+
+a.Show();
+b.Show();
+c.Show();
+```
+
+------------
+<br/>
+
+![](https://github.com/Ptysiek/resources/blob/master/Ver2.PNG)
