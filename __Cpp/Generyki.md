@@ -122,6 +122,37 @@ b.Show();
 c.Show();
 ```
 
+<br/>
+
+###### [Program 2.2] `Jawna Specjalizacja Klas`
+```cpp
+template <typename T>
+class ExemplaryClass {
+    T var;
+public:
+    ExemplaryClass(T var): var(var) { }
+    void Show() { cout << "\n " << var; }
+};
+
+template<> 
+class ExemplaryClass<char> {
+    char var;
+public:
+    ExemplaryClass(char var): var(var) { }
+    void Show() { cout << "\n The letter is: " << var; }
+};
+```
+```cpp
+ExemplaryClass<int>     a(32);
+ExemplaryClass<bool>    b(false);
+ExemplaryClass<char>    c('O');
+
+a.Show();   // Oryginalna klasa generyczna <int>
+b.Show();   // Oryginalna klasa generyczna <bool>
+c.Show();   // Specjalizacja klasy, dla typu <char>
+```
+
+
 ------------
 <br/>
 
