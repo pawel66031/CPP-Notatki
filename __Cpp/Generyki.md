@@ -124,7 +124,7 @@ c.Show();
 
 <br/>
 
-###### [Program 2.2] `Jawna Specjalizacja Klas`
+###### [Program 2.2] `Specjalizacja Klas`
 ```cpp
 // -----------------------------------------------------------
 template <typename T>
