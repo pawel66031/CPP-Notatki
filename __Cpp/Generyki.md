@@ -1,4 +1,10 @@
-# Generyki
+# Templates
+
+
+
+&nbsp;&nbsp;&nbsp;&nbsp; - Powiązane hasła to: `generics`, `compile-time polymorphism`, `parametric polymorphism`.
+
+
 
 <br/>
 <br/>
