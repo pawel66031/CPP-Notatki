@@ -2,9 +2,9 @@
 
 
 
-&nbsp;&nbsp;&nbsp;&nbsp; - Powiązane hasła to: `generics`, `compile-time polymorphism`, `parametric polymorphism`.
-
-
+&nbsp;&nbsp;&nbsp;&nbsp; - Powiązane hasła: `generics`, `compile-time polymorphism`, `parametric polymorphism`. \
+&nbsp;&nbsp;&nbsp;&nbsp; - [Template Specialization](#1-pamięć-automatyczna) \
+&nbsp;&nbsp;&nbsp;&nbsp; - [Tag Dispatch](#1-pamięć-automatyczna)
 
 <br/>
 <br/>
@@ -36,7 +36,7 @@ cout << "\n a: " << a << "\t a^2: " << SPower(a)
 
 <br/>
 
-###### [Program 1.2] `Przeciążanie Funkcji`
+###### [Program 1.2] `Przeciążanie Szablonów Funkcji`, `Specjalizacja Szablonów`
 ```cpp
 template<typename T>
 void Power(T value) {
@@ -53,7 +53,10 @@ void Power(T value, int exponent) {
     
     cout << tmp;
 }
-void Power(char value) {
+// ________________________
+// Template Specialization:
+template<>
+void Power<char>(char value) {
     /** Funkcja przeciążająca [Power] dla typu [char]. **/
     cout << "Nie mozna podniesc " << value << " do potegi";
 }
