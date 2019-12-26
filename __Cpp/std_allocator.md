@@ -1,4 +1,4 @@
-#std::allocator< TypDanych > 
+# std::allocator< TypDanych > 
 
 
 
