@@ -60,6 +60,17 @@ void Power<char>(char value) {
     /** Funkcja przeciążająca [Power] dla typu [char]. **/
     cout << "Nie mozna podniesc " << value << " do potegi";
 }
+
+
+
+TODO:
+// _____________
+// Tag Dispatch - older way to go about it
+
+
+
+// SFINAE - Substitutuion Failure Is Not An Error
+}
 ```
 ```cpp
 // Funkcja Generyczna:
