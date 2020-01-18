@@ -1,4 +1,4 @@
-# Model Pamięci
+# Rodzaje Pamięci - Kategoryzacja Obiektów
 
 &nbsp;&nbsp;&nbsp;&nbsp; - Pamięć programu trzymającą dane dzielimy na cztery rodzaje: \
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - [Pamięć automatyczna](#1-pamięć-automatyczna) \
@@ -7,7 +7,7 @@
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - [Pamięć dynamiczna](#4-pamięć-dynamiczna) 
 
 &nbsp;&nbsp;&nbsp;&nbsp; - Od sposobu trzymania danych zależy ich: \
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - czas życia \
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - czas życia [lifetime] \
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - zasięg nazwy [scope] \
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - sposób współużytkowania [linkage]
 
@@ -23,7 +23,7 @@ Dotyczy to również argumentów funkcji. Wszystkie argumenty zawsze są obiekta
 
 <br/>
 
-***czas życia*** \
+***czas życia [lifetime]*** \
 Pamięć automatyczna działa za pomocą stosu. [LIFO] \
 Oznacza to że obiekty powstające w danym bloku instrukcji \
 są niszczone w momencie gdy program go opuszcza. [czas życia bloku instrukcji] \
@@ -56,7 +56,7 @@ Specyfikator __register__  określał jawne zdefiniowanie obiektu w pamięci aut
 `bloku instrukcji zostaną utworzone w pamięci automatycznej.` \
 `Sam specyfikator niemalże przestał mieć wpływ na działanie kompilatora.` \
 &nbsp;&nbsp;&nbsp;&nbsp; Kiedyś opisane wyżej działanie posiadał specyfikator __auto__. \
-&nbsp;&nbsp;&nbsp;&nbsp; Nowe, zupełnie inne zastosowanie: [[specyfikatora auto]]().
+&nbsp;&nbsp;&nbsp;&nbsp; Nowe, zupełnie inne zastosowanie specyfikatora: [[auto]]().
 
 Obecnie, zastosowanie specyfikatora __register__ ograniczyło się do podkreślenia przez programistę informacji: \
 &nbsp;&nbsp;&nbsp;&nbsp; - istnieje inny obiekt zewnętrzny o takiej samej nazwie. \
