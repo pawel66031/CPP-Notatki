@@ -18,9 +18,9 @@
 ![](https://github.com/Ptysiek/resources/blob/master/Orn.png)
 ### 1. Pamięć automatyczna
 Pamięć automatyczna dotyczy obiektów \
-powstających wewnątrz **bloku instrukcji:** \
-&nbsp;&nbsp;&nbsp;&nbsp; - Czyli fragmentu kodu zamkniętego klamrami [brackets]. \
-&nbsp;&nbsp;&nbsp;&nbsp; - Jest to funkcja, pętla, samodzielny blok, etc. 
+powstających wewnątrz **bloku instrukcji**, \
+Czyli fragmentu kodu zamkniętego klamrami [brackets], \
+Funkcje, pętle, samodzielny blok, etc. 
 
 Przykładem obiektów automatycznych mogą być \
 argumenty funkcji oraz inne zmienne zadeklarowane w jakimś bloku instrukcji.
