@@ -59,7 +59,7 @@ Specyfikator __register__  określał jawne zdefiniowanie obiektu w pamięci aut
 &nbsp;&nbsp;&nbsp;&nbsp; Nowe, zupełnie inne zastosowanie specyfikatora: [[auto]]().
 
 Obecnie, zastosowanie specyfikatora __register__ ograniczyło się do podkreślenia przez programistę informacji: \
-&nbsp;&nbsp;&nbsp;&nbsp; - istnieje inny obiekt zewnętrzny o takiej samej nazwie. \
+&nbsp;&nbsp;&nbsp;&nbsp; - istnieje inny obiekt zewnętrzny(nie lokalny) o takiej samej nazwie. \
 &nbsp;&nbsp;&nbsp;&nbsp; - ten obiekt jest, pod względem optymalności, punktem krytycznym danego bloku instrukcji.
 
 
