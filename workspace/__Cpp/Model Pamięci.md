@@ -35,7 +35,7 @@ są niszczone w momencie gdy program go opuszcza. [czas życia bloku instrukcji]
 Lokalny, widoczny jedynie w bloku zawierającym \
 definicję danego obiektu, od miejsca deklaracji obiektu.
 
-Pojęcie: *ukrycia nazwy* / *przesłonięcia nazwy* \
+Pojęcie:  *przesłonięcia nazw* / *ukrycia nazw* \
 &nbsp;&nbsp;&nbsp;&nbsp; Zasięg lokalny posiada pierwszeństwo przed innymi zasięgami.\
 &nbsp;&nbsp;&nbsp;&nbsp; Oznacza to że w sytuacji gdy występują dwa obiekty o takiej samej nazwie, \
 &nbsp;&nbsp;&nbsp;&nbsp; to kompilator albo cię ostrzeże o niejednoznaczności nazw, albo skorzysta z lokalnego obiektu.
