@@ -17,20 +17,16 @@
 
 ![](https://github.com/Ptysiek/resources/blob/master/Orn.png)
 ### 1. Pamięć automatyczna
-Pamięć automatyczna dotyczy obiektów \
-powstających wewnątrz **bloku instrukcji**, \
-Czyli fragmentu kodu zamkniętego klamrami [brackets], \
-Funkcje, pętle, samodzielny blok, etc. 
-
-Przykładem obiektów automatycznych mogą być \
-argumenty funkcji oraz inne zmienne zadeklarowane w jakimś bloku instrukcji.
+Pamięć automatyczna dotyczy obiektów powstających wewnątrz **bloku instrukcji**, \
+czyli fragmentu kodu zamkniętego klamrami [brackets]. Funkcje, pętle, samodzielny blok, etc. \
+Dotyczy to również argumentów funkcji. Wszystkie argumenty zawsze są obiektami automatycznymi.
 
 <br/>
 
 ***czas życia*** \
 Pamięć automatyczna działa za pomocą stosu. [LIFO] \
-Oznacza to że obiekty powstają w momencie kiedy program wchodzi do bloku instrukcji. \
-A następnie są niszczone w momencie gdy program go opuszcza. [czas życia bloku instrukcji] \
+Oznacza to że obiekty powstające w danym bloku instrukcji \
+są niszczone w momencie gdy program go opuszcza. [czas życia bloku instrukcji] \
 `Zwolnienie zarezerwowanej pamięci nie oznacza jej wyczyszczenia.`
 
 <br/>
@@ -39,9 +35,10 @@ A następnie są niszczone w momencie gdy program go opuszcza. [czas życia blok
 Lokalny, widoczny jedynie w bloku zawierającym \
 definicję danego obiektu, od miejsca deklaracji obiektu.
 
-Zasięg lokalny posiada pierwszeństwo przed innymi zasięgami.\
-Oznacza to że w sytuacji gdy występują dwa obiekty o takiej samej nazwie, \
-to kompilator albo cię ostrzeże o niejednoznaczności nazwy, albo skorzysta z lokalnego obiektu.
+Pojęcie: *ukrycia nazwy* / *przesłonięcia nazwy* \
+&nbsp;&nbsp;&nbsp;&nbsp; Zasięg lokalny posiada pierwszeństwo przed innymi zasięgami.\
+&nbsp;&nbsp;&nbsp;&nbsp; Oznacza to że w sytuacji gdy występują dwa obiekty o takiej samej nazwie, \
+&nbsp;&nbsp;&nbsp;&nbsp; to kompilator albo cię ostrzeże o niejednoznaczności nazw, albo skorzysta z lokalnego obiektu.
 
 <br/>
 
@@ -59,9 +56,9 @@ Specyfikator __register__  określał jawne zdefiniowanie obiektu w pamięci aut
 `bloku instrukcji zostaną utworzone w pamięci automatycznej.` \
 `Sam specyfikator niemalże przestał mieć wpływ na działanie kompilatora.`
 
-Zastosowanie specyfikatora __register__ ograniczyło się do podkreślenia przez programistę informacji: \
+Obecnie, zastosowanie specyfikatora __register__ ograniczyło się do podkreślenia przez programistę informacji: \
 &nbsp;&nbsp;&nbsp;&nbsp; - istnieje inny obiekt zewnętrzny o takiej samej nazwie. \
-&nbsp;&nbsp;&nbsp;&nbsp; - ten obiekt jest - pod względem optymalności - punktem krytycznym danego bloku instrukcji.
+&nbsp;&nbsp;&nbsp;&nbsp; - ten obiekt jest, pod względem optymalności, punktem krytycznym danego bloku instrukcji.
 
 <br/>
 <br/>
