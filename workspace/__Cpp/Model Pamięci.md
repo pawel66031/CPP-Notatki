@@ -35,7 +35,7 @@ są niszczone w momencie gdy program go opuszcza. [czas życia bloku instrukcji]
 Lokalny, widoczny jedynie w bloku zawierającym \
 definicję danego obiektu, od miejsca deklaracji obiektu.
 
-Pojęcie:  *przesłonięcia nazw* / *ukrycia nazw* \
+Pojęcie: *przesłonięcia nazw* / *ukrycia nazw* \
 &nbsp;&nbsp;&nbsp;&nbsp; Zasięg lokalny posiada pierwszeństwo przed innymi zasięgami.\
 &nbsp;&nbsp;&nbsp;&nbsp; Oznacza to że w sytuacji gdy występują dwa obiekty o takiej samej nazwie, \
 &nbsp;&nbsp;&nbsp;&nbsp; to kompilator albo cię ostrzeże o niejednoznaczności nazw, albo skorzysta z lokalnego obiektu.
@@ -54,11 +54,15 @@ Obecnie - w wyniku rozwoju oraz optymalizacji języka - przestarzały. \
 Specyfikator __register__  określał jawne zdefiniowanie obiektu w pamięci automatycznej. \
 `Dzisiaj - o ile nie nakażemy inaczej - wszystkie obiekty zdefiniowane wewnątrz` \
 `bloku instrukcji zostaną utworzone w pamięci automatycznej.` \
-`Sam specyfikator niemalże przestał mieć wpływ na działanie kompilatora.`
+`Sam specyfikator niemalże przestał mieć wpływ na działanie kompilatora.` \
+&nbsp;&nbsp;&nbsp;&nbsp; Kiedyś opisane wyżej działanie posiadał specyfikator __auto__. \
+&nbsp;&nbsp;&nbsp;&nbsp; Nowe, zupełnie inne zastosowanie: [[specyfikatora auto]]().
 
 Obecnie, zastosowanie specyfikatora __register__ ograniczyło się do podkreślenia przez programistę informacji: \
 &nbsp;&nbsp;&nbsp;&nbsp; - istnieje inny obiekt zewnętrzny o takiej samej nazwie. \
 &nbsp;&nbsp;&nbsp;&nbsp; - ten obiekt jest, pod względem optymalności, punktem krytycznym danego bloku instrukcji.
+
+
 
 <br/>
 <br/>
