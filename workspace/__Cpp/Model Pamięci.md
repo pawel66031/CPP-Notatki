@@ -89,14 +89,14 @@ Czas życia równy czasowi wykonywania programu: \
 Rozróżniamy trzy odmiany łączenia obiektów statycznych. \
 Obiekty z każdej z odmian posiadają inny ***zasięg nazwy [scope]***.
 
-&nbsp;&nbsp;&nbsp;&nbsp; ***łączenie zewnętrzne*** - zmienne zewnętrzne \
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  ***łączenie zewnętrzne*** - zmienne zewnętrzne \
 &nbsp;&nbsp;&nbsp;&nbsp; - Obiekt zadeklarowany poza blokiem kodu instrukcji. \
 &nbsp;&nbsp;&nbsp;&nbsp; - Nazwa obiektu posiada __zasięg pliku__ od miejsca deklaracji. \
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Jest dostępna w każdym bloku kodu poniżej deklaracji obiektu. 
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Gdy dany blok posiada zmienną lokalną o takiej samej nazwie, \
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; która _przesłania_ nam nazwę naszego globalnego obiektu, \
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; wtedy możemy wskazać jawnie na obiekt globalny: [*operator zasięgu ::*]()
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; wtedy możemy wskazać jawnie na obiekt globalny. &nbsp;&nbsp;&nbsp;&nbsp; [*operator zasięgu : :*]()
 ``` cpp
     int val = -1;
     // ... more code
@@ -110,10 +110,10 @@ Obiekty z każdej z odmian posiadają inny ***zasięg nazwy [scope]***.
 dostęp między plikami \
 &nbsp;&nbsp;&nbsp;&nbsp; Obiekt zadeklarowany 
 
-&nbsp;&nbsp;&nbsp;&nbsp; ***łączenie wewnętrzne*** - dostęp z funkcji \
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  ***łączenie wewnętrzne*** - dostęp z funkcji \
 &nbsp;&nbsp;&nbsp;&nbsp; Obiekt zadeklarowany poza blokiem kodu z specyfikatorem _static_. 
 
-&nbsp;&nbsp;&nbsp;&nbsp; ***brak łączenia*** \
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  ***brak łączenia*** \
 &nbsp;&nbsp;&nbsp;&nbsp; - Obiekt zadeklarowany wewnątrz bloku instrukcji z specyfikatorem _static_. \
 &nbsp;&nbsp;&nbsp;&nbsp; - Nazwa obiektu posiada __zasięg lokalny__ bloku instrukcji od miejsca deklaracji. \
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; W przeciwieństwie do zmiennych automatycznych, wartość tego obiektu nie ulegnie \
