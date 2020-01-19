@@ -41,20 +41,21 @@ Oznacza to że mogą być używane tylko i wyłącznie lokalnie.
 Lokalny - widoczny jedynie w bloku zawierającym \
 definicję danego obiektu, od miejsca deklaracji obiektu.
 
-Pojęcie: *przesłonięcia nazw* / *ukrycia nazw* \
-&nbsp;&nbsp;&nbsp;&nbsp; Zasięg lokalny posiada pierwszeństwo przed innymi zasięgami.\
-&nbsp;&nbsp;&nbsp;&nbsp; Oznacza to że w sytuacji gdy występują dwa obiekty o takiej samej nazwie, \
-&nbsp;&nbsp;&nbsp;&nbsp; to kompilator albo cię ostrzeże o niejednoznaczności nazw, albo skorzysta z lokalnego obiektu.
+Pojęcie: *przesłonięcia nazw* / *ukrycia nazw* : \
+`    Zasięg lokalny posiada pierwszeństwo przed innymi zasięgami.` \
+`    Oznacza to że w sytuacji gdy występują dwa obiekty o takiej samej nazwie,` \
+`    to kompilator albo cię ostrzeże o niejednoznaczności nazw, albo skorzysta z lokalnego obiektu.` 
 
 <br/>
 
 ***zmienne rejestrowe*** \
 Zmienne rejestrowe to drugi rodzaj zmiennych automatycznych. \
 Obecnie - w wyniku rozwoju oraz optymalizacji języka - przestarzały. \
-Specyfikator __register__  określał jawne zdefiniowanie obiektu w pamięci automatycznej. \
-`Dzisiaj - o ile nie nakażemy inaczej - wszystkie obiekty zdefiniowane wewnątrz` \
-`bloku instrukcji zostaną utworzone w pamięci automatycznej.` \
-`Sam specyfikator niemalże przestał mieć wpływ na działanie kompilatora.` \
+Specyfikator __register__  określał jawne zdefiniowanie obiektu w pamięci automatycznej. 
+
+Dzisiaj - o ile nie nakażemy inaczej - wszystkie obiekty zdefiniowane wewnątrz \
+bloku instrukcji zostaną utworzone w pamięci automatycznej. \
+Sam specyfikator niemalże przestał mieć wpływ na działanie kompilatora. \
 &nbsp;&nbsp;&nbsp;&nbsp; Kiedyś opisane wyżej działanie posiadał specyfikator __auto__. \
 &nbsp;&nbsp;&nbsp;&nbsp; Nowe, zupełnie inne zastosowanie specyfikatora: [*auto*]().
 
