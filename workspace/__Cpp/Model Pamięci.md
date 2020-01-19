@@ -56,7 +56,7 @@ Specyfikator __register__  określał jawne zdefiniowanie obiektu w pamięci aut
 `bloku instrukcji zostaną utworzone w pamięci automatycznej.` \
 `Sam specyfikator niemalże przestał mieć wpływ na działanie kompilatora.` \
 &nbsp;&nbsp;&nbsp;&nbsp; Kiedyś opisane wyżej działanie posiadał specyfikator __auto__. \
-&nbsp;&nbsp;&nbsp;&nbsp; Nowe, zupełnie inne zastosowanie specyfikatora: [[auto]]().
+&nbsp;&nbsp;&nbsp;&nbsp; Nowe, zupełnie inne zastosowanie specyfikatora: [*auto*]().
 
 Obecnie, zastosowanie specyfikatora __register__ ograniczyło się do podkreślenia przez programistę informacji: \
 &nbsp;&nbsp;&nbsp;&nbsp; - istnieje inny obiekt zewnętrzny(nie lokalny) o takiej samej nazwie. \
@@ -68,18 +68,19 @@ Obecnie, zastosowanie specyfikatora __register__ ograniczyło się do podkreśle
 
 ![](https://github.com/Ptysiek/resources/blob/master/Orn.png)
 ### 2. Pamięć statyczna
-Przy braku jawnej inicjalizacji obiektów statycznych kompilator inicjalizuje je wartością _Zero_.
-Dotyczy to również typów złożonych np tablica, struktura.
+Obiekty statyczne istnieją w specjalnie przygotowanym bloku pamięci o stałym rozmiarze. \
+Liczba obiektów statycznych nie zmienia się w trakcie działania programu. 
+
+Pojęcie: *inicjalizacji zerami* [*zero-initialized*] \
+&nbsp;&nbsp;&nbsp;&nbsp; - Przy braku jawnej inicjalizacji obiektów statycznych kompilator inicjalizuje je wartością _Zero_. \
+&nbsp;&nbsp;&nbsp;&nbsp; - Dotyczy to również typów złożonych np tablica, struktura. Wszystkie bity obiektu są ustawiane na _Zero_.
 
 <br/>
 
 ***czas życia [lifetime]*** \
 Czas życia równy czasowi wykonywania programu: \
-&nbsp;&nbsp;&nbsp;&nbsp; Obiekty statyczne powstają na etapie uruchamiania programu. \
-&nbsp;&nbsp;&nbsp;&nbsp; Zostają niszczone w momencie jego zamknięcia. 
-
-Obiekty statyczne istnieją w specjalnie przygotowanym bloku pamięci o stałym rozmiarze. \
-Liczba obiektów statycznych nie zmienia się w trakcie działania programu. 
+&nbsp;&nbsp;&nbsp;&nbsp; - obiekty statyczne powstają na etapie uruchamiania programu. \
+&nbsp;&nbsp;&nbsp;&nbsp; - zostają niszczone w momencie jego zamknięcia. 
 
 <br/>
 
@@ -87,12 +88,49 @@ Liczba obiektów statycznych nie zmienia się w trakcie działania programu.
 Rozróżniamy trzy odmiany łączenia obiektów statycznych. \
 Obiekty z każdej z odmian posiadają inny ***zasięg nazwy [scope]***.
 
-&nbsp;&nbsp;&nbsp;&nbsp; ***łączenie zewnętrzne*** - dostęp między plikami
+&nbsp;&nbsp;&nbsp;&nbsp; ***łączenie zewnętrzne*** - zmienne zewnętrzne \
+&nbsp;&nbsp;&nbsp;&nbsp; - Obiekt zadeklarowany poza blokiem kodu instrukcji. \
+&nbsp;&nbsp;&nbsp;&nbsp; - Nazwa obiektu posiada __zasięg pliku__ od miejsca deklaracji. \
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Jest dostępna w każdym bloku kodu poniżej deklaracji obiektu. 
 
-&nbsp;&nbsp;&nbsp;&nbsp; ***łączenie wewnętrzne*** - dostęp z funkcji
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Gdy dany blok posiada zmienną lokalną o takiej samej nazwie, \
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; która _przesłania_ nam nazwę naszego globalnego obiektu, \
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; wtedy możemy wskazać jawnie na obiekt globalny: [*operator zasięgu ::*]()
+``` cpp
+    int val = -1;
+    // ... more code
 
-&nbsp;&nbsp;&nbsp;&nbsp; ***brak łączenia*** - dostęp tylko dla bloku
+    void Fun(int val){    
+        val *= 2;       // Local object modification
+        ::val += 10;    // Global object modification
+    }
+```
 
+dostęp między plikami \
+&nbsp;&nbsp;&nbsp;&nbsp; Obiekt zadeklarowany 
+
+&nbsp;&nbsp;&nbsp;&nbsp; ***łączenie wewnętrzne*** - dostęp z funkcji \
+&nbsp;&nbsp;&nbsp;&nbsp; Obiekt zadeklarowany poza blokiem kodu z specyfikatorem _static_. 
+
+&nbsp;&nbsp;&nbsp;&nbsp; ***brak łączenia*** \
+&nbsp;&nbsp;&nbsp;&nbsp; - Obiekt zadeklarowany wewnątrz bloku instrukcji z specyfikatorem _static_. \
+&nbsp;&nbsp;&nbsp;&nbsp; - Nazwa obiektu posiada __zasięg lokalny__ bloku instrukcji od miejsca deklaracji. \
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; W przeciwieństwie do zmiennych automatycznych, wartość tego obiektu nie ulegnie \
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; zniszczeniu po przekroczeniu danego bloku. Przykładowo, zmienna statyczna int _counter_, \
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; inkrementująca swoją wartość ilekroć wywołamy funkcję w której się znajduje, \
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; będzie zwiększać o jeden wartość zachowaną z poprzedniego wywołania funkcji. \
+``` cpp
+    void Fun(){
+        static int counter = 0;     // Initialization with zero value occurs only 
+                                    // once while starting the program. 
+        // ... more code
+
+        // COUNTER stores the number of times that 
+        // this Fun() function has been completed to the end: 
+        ++counter;
+        return;
+    }
+```
 <br/>
 <br/>
 <br/>
