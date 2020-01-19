@@ -8,8 +8,8 @@
 
 &nbsp;&nbsp;&nbsp;&nbsp; - Od sposobu trzymania danych zależy ich: \
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - czas życia [lifetime] \
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - zasięg nazwy [scope] \
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - sposób współużytkowania [linkage]
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - sposób współużytkowania [linkage] \
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - zasięg nazwy [scope]
 
 <br/>
 <br/>
@@ -74,14 +74,17 @@ Dotyczy to również typów złożonych np tablica, struktura.
 <br/>
 
 ***czas życia [lifetime]*** \
-Wszystkie rodzaje obiektów statycznych cechują się czasem życia równym czasowi wykonywania programu.
-Liczba obiektów statycznych nie zmienia się w trakcie działania programu.
-Kompilator przydziela dla wszystkich zmiennych statycznych blok pamięcci o stałym rozmiarze.
+Czas życia równy czasowi wykonywania programu: \
+&nbsp;&nbsp;&nbsp;&nbsp; Obiekty statyczne powstają na etapie uruchamiania programu. \
+&nbsp;&nbsp;&nbsp;&nbsp; Zostają niszczone w momencie jego zamknięcia. 
+
+Obiekty statyczne istnieją w specjalnie przygotowanym bloku pamięci o stałym rozmiarze. \
+Liczba obiektów statycznych nie zmienia się w trakcie działania programu. 
 
 <br/>
 
 ***sposób współużytkowania [linkage]*** \
-Rozróżniamy trzy odmiany łączenia obiektów statycznych.
+Rozróżniamy trzy odmiany łączenia obiektów statycznych. \
 Obiekty z każdej z odmian posiadają inny ***zasięg nazwy [scope]***.
 
 &nbsp;&nbsp;&nbsp;&nbsp; ***łączenie zewnętrzne*** - dostęp między plikami
