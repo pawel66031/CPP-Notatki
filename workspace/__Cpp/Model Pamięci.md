@@ -1,15 +1,33 @@
 # Rodzaje Pamięci - Kategoryzacja Obiektów
 
-&nbsp;&nbsp;&nbsp;&nbsp; - Pamięć programu trzymającą dane dzielimy na cztery rodzaje: \
+&nbsp;&nbsp;&nbsp;&nbsp; - Rozróżniamy cztery sposoby trzymania danych przez program: \
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - [Pamięć automatyczna](#1-pamięć-automatyczna) \
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - [Pamięć statyczna](#2-pamięć-statyczna) \
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - [Pamięć wątku](#3-pamięć-wątku) \
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - [Pamięć dynamiczna](#4-pamięć-dynamiczna) 
 
 &nbsp;&nbsp;&nbsp;&nbsp; - Od sposobu trzymania danych zależy ich: \
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - czas życia [lifetime] \
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - sposób współużytkowania [linkage] \
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - zasięg nazwy [scope]
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - czas życia [ang. lifetime] \
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - sposób współużytkowania [ang. linkage] \
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - zasięg nazwy [ang. scope]
+
+<br/>
+<br/>
+<br/>
+
+![](https://github.com/Ptysiek/resources/blob/master/Orn.png)
+##### Zwolnienie zarezerwowanej pamięci nie oznacza jej wyczyszczenia. 
+Tworząc nowy obiekt program rezerwuje dla niego przedział pamięci o określonym rozmiarze. \
+W danym przedziale trzymana jest obecna wartość danego obiektu. \
+Zniszczenie obiektu polega na zwolnieniu przez program zarezerwowanej dla obiektu pamięci. \
+Wartości trzymane w danym miejscu nie są modyfikowane podczas zwalaniania. \
+Oznacza to że w danym przedziale, albo jego fragmencie, program może tworzyć nowe obiekty. \
+Nie zainicjalizowanie wartości nowych obiektów skutkuje trzymaniem \
+przez dany przedział starych wartości już nie istniejących obiektów. \
+Program dobiera przedziały na nowe obiekty bez naszej wiedzy. \
+Dlatego zakładamy że obiekty bez zainicjalizowanej wartości trzymają w sobie \
+nieprzewidywalne dane z których nie możemy korzystać.
+
 
 <br/>
 <br/>
@@ -18,7 +36,7 @@
 ![](https://github.com/Ptysiek/resources/blob/master/Orn.png)
 ### 1. Pamięć automatyczna
 Pamięć automatyczna dotyczy obiektów powstających wewnątrz **bloku instrukcji**, \
-czyli fragmentu kodu zamkniętego klamrami [brackets]. Funkcje, pętle, samodzielny blok, etc. \
+czyli fragmentu kodu zamkniętego klamrami [ang. brackets]. Funkcje, pętle, samodzielny blok, etc. \
 Dotyczy to również argumentów funkcji. Wszystkie argumenty zawsze są obiektami automatycznymi.
 
 <br/>
@@ -26,8 +44,9 @@ Dotyczy to również argumentów funkcji. Wszystkie argumenty zawsze są obiekta
 ***czas życia [lifetime]*** \
 Pamięć automatyczna działa za pomocą stosu. [LIFO] \
 Oznacza to że obiekty powstające w danym bloku instrukcji \
-są niszczone w momencie gdy program go opuszcza. [czas życia bloku instrukcji] \
-`Zwolnienie zarezerwowanej pamięci nie oznacza jej wyczyszczenia.`
+są niszczone w momencie gdy program go opuszcza. [czas życia bloku instrukcji] 
+`Zwolnienie zarezerwowanej pamięci nie oznacza jej wyczyszczenia.` [Up] \
+
 
 <br/>
 
