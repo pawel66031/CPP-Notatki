@@ -6,8 +6,8 @@
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - [Pamięć wątku](#3-pamięć-wątku) \
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - [Pamięć dynamiczna](#4-pamięć-dynamiczna) 
 
-&nbsp;&nbsp;&nbsp;&nbsp; - Od sposobu trzymania danych zależy ich: \
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - czas życia [ang. lifetime] \
+&nbsp;&nbsp;&nbsp;&nbsp; - Od sposobu trzymania danych zależy: \
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - czas życia danych [ang. lifetime] \
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - sposób współużytkowania [ang. linkage] \
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - zasięg nazwy [ang. scope]
 
@@ -44,7 +44,7 @@ Dotyczy to również argumentów funkcji. Wszystkie argumenty zawsze są obiekta
 <br/>
 
 ***czas życia [lifetime]*** \
-Pamięć automatyczna działa za pomocą stosu. [LIFO] \
+Pamięć automatyczna działa za pomocą stosu. [LIFO - ang. LastInFirstOut] \
 Oznacza to że obiekty powstające w danym bloku instrukcji \
 są niszczone w momencie gdy program go opuszcza. [czas życia bloku instrukcji] \
 `Zwolnienie zarezerwowanej pamięci nie oznacza jej wyczyszczenia.` [|Up|](#tworzenie-i-niszczenie-obiektow-w-modelu-pamieci) 
@@ -62,9 +62,9 @@ Lokalny - widoczny jedynie w bloku zawierającym \
 definicję danego obiektu, od miejsca deklaracji obiektu.
 
 Pojęcie: *`przesłonięcia nazw`* / *`ukrycia nazw`* : \
-&nbsp;&nbsp;&nbsp;&nbsp; Zasięg lokalny posiada pierwszeństwo przed innymi zasięgami. \
-&nbsp;&nbsp;&nbsp;&nbsp; Oznacza to że w sytuacji gdy występują dwa obiekty o takiej samej nazwie, \
-&nbsp;&nbsp;&nbsp;&nbsp; to kompilator albo cię ostrzeże o niejednoznaczności nazw, albo skorzysta z lokalnego obiektu.
+&nbsp;&nbsp;&nbsp;&nbsp; __Zasięg lokalny posiada pierwszeństwo przed innymi zasięgami__. \
+&nbsp;&nbsp;&nbsp;&nbsp; W sytuacji gdy występują dwa obiekty o takiej samej nazwie \
+&nbsp;&nbsp;&nbsp;&nbsp; kompilator albo ostrzeże o niejednoznaczności nazw, albo skorzysta z lokalnego obiektu.
 
 <br/>
 
