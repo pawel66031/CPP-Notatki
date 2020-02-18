@@ -16,21 +16,20 @@
 <br/>
 
 ![](https://github.com/Ptysiek/resources/blob/master/Orn.png)
-##### Zwolnienie zarezerwowanej pamięci nie oznacza jej wyczyszczenia. 
+### Tworzenie i Niszczenie Obiektów w Modelu Pamięci 
 Tworząc nowy obiekt program rezerwuje dla niego przedział pamięci o określonym rozmiarze. \
 W danym przedziale trzymana jest obecna wartość danego obiektu. 
 
 Zniszczenie obiektu polega na zwolnieniu przez program zarezerwowanej dla obiektu pamięci. 
 
 Wartości trzymane w danym miejscu nie są modyfikowane podczas zwalaniania. \
-Oznacza to że w danym przedziale, albo jego fragmencie, program może tworzyć nowe obiekty. 
+Oznacza to że w danym przedziale, albo w jego fragmencie, program może tworzyć nowe obiekty. 
 
-Nie zainicjalizowanie wartości nowych obiektów skutkuje trzymaniem \
-przez dany przedział starych wartości już nie istniejących obiektów. 
-
-Program dobiera przedziały na nowe obiekty bez naszej wiedzy. \
+Nie zainicjalizowanie wartości nowych obiektów skutkuje \
+trzymaniem starych wartości już nie istniejących obiektów. \
+Przy czym program dobiera przedziały na nowe obiekty bez naszej wiedzy. \
 Dlatego zakładamy że obiekty bez zainicjalizowanej wartości trzymają \
-w sobie nieprzewidywalne dane z których nie możemy korzystać.
+w sobie nieprzewidywalne dane z których nie ma sensu korzystać.
 
 <br/>
 <br/>
@@ -48,7 +47,7 @@ Dotyczy to również argumentów funkcji. Wszystkie argumenty zawsze są obiekta
 Pamięć automatyczna działa za pomocą stosu. [LIFO] \
 Oznacza to że obiekty powstające w danym bloku instrukcji \
 są niszczone w momencie gdy program go opuszcza. [czas życia bloku instrukcji] \
-`Zwolnienie zarezerwowanej pamięci nie oznacza jej wyczyszczenia.` [|Up|](#zwolnienie-zarezerwowanej-pamięci-nie-oznacza-jej-wyczyszczenia) 
+`Zwolnienie zarezerwowanej pamięci nie oznacza jej wyczyszczenia.` [|Up|](#tworzenie-i-niszczenie-obiektow-w-modelu-pamieci) 
 
 <br/>
 
