@@ -28,8 +28,8 @@ Wartości trzymane w danym miejscu nie są modyfikowane podczas zwalaniania.
 Dlatego tworzenie nowych obiektów bez inicjalizacji ich wartości \
 skutkuje trzymaniem przez nie starych wartości już nie istniejących obiektów. \
 Przy czym program dobiera przedziały na nowe obiekty bez naszej wiedzy. \
-**Zakładamy że obiekty bez zainicjalizowanej wartości trzymają \
-w sobie nieprzewidywalne dane z których nie ma sensu korzystać. **
+__Zakładamy że obiekty bez zainicjalizowanej wartości trzymają \
+w sobie nieprzewidywalne dane z których nie ma sensu korzystać.__
 
 
 <br/>
