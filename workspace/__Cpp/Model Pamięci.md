@@ -23,7 +23,7 @@ W danym przedziale trzymana jest obecna wartość danego obiektu.
 
 Zniszczenie obiektu polega na zwolnieniu przez program zarezerwowanej dla tego obiektu pamięci. \
 Oznacza to że w danym przedziale pamięci, albo w jego fragmencie, program może tworzyć nowe obiekty. \
-Wartości trzymane w danym miejscu nie są modyfikowane podczas zwalaniania. 
+Wartości trzymane w danym miejscu nie są modyfikowane podczas jej zwalaniania - niszczenia obiektu. 
 
 Dlatego tworzenie nowych obiektów bez inicjalizacji ich wartości \
 skutkuje trzymaniem przez nie starych wartości już nie istniejących obiektów. \
