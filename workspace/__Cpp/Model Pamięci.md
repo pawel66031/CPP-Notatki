@@ -17,19 +17,20 @@
 
 ![](https://github.com/Ptysiek/resources/blob/master/Orn.png)
 ### Tworzenie i Niszczenie Obiektów w Modelu Pamięci 
-Tworząc nowy obiekt program rezerwuje dla niego przedział pamięci o określonym rozmiarze. \
+Tworząc nowy obiekt program rezerwuje dla niego przedział pamięci \
+o określonym rozmiarze. Rozmiar przedziału zależy od __Typu__ obiektu. \
 W danym przedziale trzymana jest obecna wartość danego obiektu. 
 
-Zniszczenie obiektu polega na zwolnieniu przez program zarezerwowanej dla obiektu pamięci. 
+Zniszczenie obiektu polega na zwolnieniu przez program zarezerwowanej dla tego obiektu pamięci. \
+Oznacza to że w danym przedziale pamięci, albo w jego fragmencie, program może tworzyć nowe obiekty. \
+Wartości trzymane w danym miejscu nie są modyfikowane podczas zwalaniania. 
 
-Wartości trzymane w danym miejscu nie są modyfikowane podczas zwalaniania. \
-Oznacza to że w danym przedziale, albo w jego fragmencie, program może tworzyć nowe obiekty. 
-
-Nie zainicjalizowanie wartości nowych obiektów skutkuje \
-trzymaniem starych wartości już nie istniejących obiektów. \
+Dlatego tworzenie nowych obiektów bez inicjalizacji ich wartości \
+skutkuje trzymaniem przez nie starych wartości już nie istniejących obiektów. \
 Przy czym program dobiera przedziały na nowe obiekty bez naszej wiedzy. \
-Dlatego zakładamy że obiekty bez zainicjalizowanej wartości trzymają \
-w sobie nieprzewidywalne dane z których nie ma sensu korzystać.
+**Zakładamy że obiekty bez zainicjalizowanej wartości trzymają \
+w sobie nieprzewidywalne dane z których nie ma sensu korzystać. **
+
 
 <br/>
 <br/>
@@ -47,7 +48,7 @@ Dotyczy to również argumentów funkcji. Wszystkie argumenty zawsze są obiekta
 Pamięć automatyczna działa za pomocą stosu. [LIFO - ang. LastInFirstOut] \
 Oznacza to że obiekty powstające w danym bloku instrukcji \
 są niszczone w momencie gdy program go opuszcza. [czas życia bloku instrukcji] \
-`Zwolnienie zarezerwowanej pamięci nie oznacza jej wyczyszczenia.` [|Up|](#tworzenie-i-niszczenie-obiektow-w-modelu-pamieci) 
+`Zwolnienie zarezerwowanej pamięci nie oznacza jej wyczyszczenia.` [|Up|](#tworzenie-i-niszczenie-obiektów-w-modelu-pamięci) 
 
 <br/>
 
