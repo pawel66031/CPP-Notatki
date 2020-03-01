@@ -15,6 +15,57 @@
 
 <br/>
 
+
+
+
+
+
+
+Builder jest klasą służącą do konstruowania obiektów innych klas. \ 
+Dzięki niemu _Odseparowujemy Proces Konstruowania Obiektów_ od ich implementacji. \
+`Unikamy sytuacji w których obiekty tworzą same siebie.`
+
+_Konstruowanie Obiektów_ polega na wykonywaniu ustalonej sekwecji _Etapów_. \
+Podział _Procesu Konstrukcji_ na _Etapy_ pozwala na: \
+&nbsp;&nbsp;&nbsp;&nbsp; - Napisanie nowych etapów bez wpływu na istniejące. \
+&nbsp;&nbsp;&nbsp;&nbsp; - Modyfikację etapów bez wpływu na inne etapy. \
+&nbsp;&nbsp;&nbsp;&nbsp; - Zmianę ilości wykonywanych etapów. \
+&nbsp;&nbsp;&nbsp;&nbsp; - Zmianę kolejności wykonywania etapów. \
+`Wszystkie te cechy pozwalają na zmianę konfiguracji tworzonych obiektów.`
+
+
+
+
+
+
+
+![](https://github.com/Ptysiek/resources/blob/master/Orn.png)
+### Podsumowanie
+
+**Zalety**: \
+&nbsp;&nbsp;&nbsp;&nbsp; - Znaczne zwiększenie **elastyczności kodu**. 
+
+
+<br/>
+<br/>
+
+
+**Zalety**: \
+Odseparowanie *Procesu konstruowania produktów* od *Produktów*: \
+&nbsp;&nbsp;&nbsp;&nbsp; - Możliwość tworzenia nowych konfiguracji danego produktu. \
+&nbsp;&nbsp;&nbsp;&nbsp; - Wielokrotne wykorzystanie kodu konstruowania *Produktów*. \
+&nbsp;&nbsp;&nbsp;&nbsp; - Zmniejszenie monstrualnej ilości argumentów w konstruktorze *Produktu*.
+
+Dzielenie *procesu konstruowania Produktów* na *Etapy*: \
+&nbsp;&nbsp;&nbsp;&nbsp; - Schludne konstruowanie złożonych *produktów* krok po kroku. \
+&nbsp;&nbsp;&nbsp;&nbsp; - Bezpieczne modyfikowanie kodu wybranych *etapów*. \
+&nbsp;&nbsp;&nbsp;&nbsp; - Możliwość zmiany kolejności wywoływania etapów, w tym pomijanie i dodawanie etapów. \
+&nbsp;&nbsp;&nbsp;&nbsp; - Możliwość wywoływania wybranych etapów rekurencyjnie.
+
+
+<br/>
+<br/>
+
 **Zalety**:
 * Odseparowanie *Procesu konstruowania produktów* od *Produktów*:
     * Możliwość tworzenia nowych konfiguracji danego produktu.
