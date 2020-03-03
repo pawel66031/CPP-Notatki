@@ -13,7 +13,7 @@
 
 Builder jest klasą służącą do konstruowania obiektów innych klas. \
 Dzięki niemu _Odseparowujemy Proces Konstruowania Obiektów_ od ich implementacji. \
-`Unikamy sytuacji w których obiekty tworzą same siebie.`
+`Dzięki temu unikamy sytuacji w których obiekty tworzą same siebie.`
 
 _Konstruowanie Obiektów_ polega na wykonywaniu ustalonej sekwecji _Etapów_. \
 Podział _Procesu Konstrukcji_ na _Etapy_ pozwala na: \
