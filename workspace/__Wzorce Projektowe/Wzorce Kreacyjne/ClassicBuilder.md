@@ -17,11 +17,7 @@
 
 
 
-
-
-
-
-Builder jest klasą służącą do konstruowania obiektów innych klas. \ 
+Builder jest klasą służącą do konstruowania obiektów innych klas. \
 Dzięki niemu _Odseparowujemy Proces Konstruowania Obiektów_ od ich implementacji. \
 `Unikamy sytuacji w których obiekty tworzą same siebie.`
 
@@ -31,59 +27,31 @@ Podział _Procesu Konstrukcji_ na _Etapy_ pozwala na: \
 &nbsp;&nbsp;&nbsp;&nbsp; - Modyfikację etapów bez wpływu na inne etapy. \
 &nbsp;&nbsp;&nbsp;&nbsp; - Zmianę ilości wykonywanych etapów. \
 &nbsp;&nbsp;&nbsp;&nbsp; - Zmianę kolejności wykonywania etapów. \
-`Wszystkie te cechy pozwalają na zmianę konfiguracji tworzonych obiektów.`
+`Wszystkie te cechy pozwalają na łatwą zmianę konfiguracji powstających obiektów.`
 
-
+Dodatkowe zastosowania: \
+- Możliwość zmniejszenia ilości argumentów w konstruktorze.
+- Możliwość wykonywania wybranych _Etapów_ rekurencyjnie.
 
 
 
 
 
 ![](https://github.com/Ptysiek/resources/blob/master/Orn.png)
-### Podsumowanie
+### Podsumowanie [Builder]
+&nbsp;&nbsp;&nbsp;&nbsp; - Odseparowanie *Procesu konstruowania produktów* od *Produktów* \
+&nbsp;&nbsp;&nbsp;&nbsp; - Podział _Procesu konstruowania produktów* na *Etapy*. \
+&nbsp;&nbsp;&nbsp;&nbsp; - Pozwala na zmniejszenie monstrualnej ilości argumentów w konstruktorze _Produktu_.
 
 **Zalety**: \
-&nbsp;&nbsp;&nbsp;&nbsp; - Znaczne zwiększenie **elastyczności kodu**. 
+&nbsp;&nbsp;&nbsp;&nbsp; - Znaczne zwiększenie **elastyczności kodu**. \
+&nbsp;&nbsp;&nbsp;&nbsp; - Zachowanie **Hermetyczności**. \
+&nbsp;&nbsp;&nbsp;&nbsp; - Wielokrotne wykorzystanie kodu. \
+&nbsp;&nbsp;&nbsp;&nbsp; - Zwiększenie czytelności kodu. \
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (Możliwość schludnego konstruowania złożonych _produktów_ etap po etapie). 
 
-
-<br/>
-<br/>
-
-
-**Zalety**: \
-Odseparowanie *Procesu konstruowania produktów* od *Produktów*: \
-&nbsp;&nbsp;&nbsp;&nbsp; - Możliwość tworzenia nowych konfiguracji danego produktu. \
-&nbsp;&nbsp;&nbsp;&nbsp; - Wielokrotne wykorzystanie kodu konstruowania *Produktów*. \
-&nbsp;&nbsp;&nbsp;&nbsp; - Zmniejszenie monstrualnej ilości argumentów w konstruktorze *Produktu*.
-
-Dzielenie *procesu konstruowania Produktów* na *Etapy*: \
-&nbsp;&nbsp;&nbsp;&nbsp; - Schludne konstruowanie złożonych *produktów* krok po kroku. \
-&nbsp;&nbsp;&nbsp;&nbsp; - Bezpieczne modyfikowanie kodu wybranych *etapów*. \
-&nbsp;&nbsp;&nbsp;&nbsp; - Możliwość zmiany kolejności wywoływania etapów, w tym pomijanie i dodawanie etapów. \
-&nbsp;&nbsp;&nbsp;&nbsp; - Możliwość wywoływania wybranych etapów rekurencyjnie.
-
-
-<br/>
-<br/>
-
-**Zalety**:
-* Odseparowanie *Procesu konstruowania produktów* od *Produktów*:
-    * Możliwość tworzenia nowych konfiguracji danego produktu.
-    * Wielokrotne wykorzystanie kodu konstruowania *Produktów*.
-    * Zmniejszenie monstrualnej ilości argumentów w konstruktorze *Produktu*.
-    <br/>
-* Dzielenie *procesu konstruowania Produktów* na *Etapy*: 
-    * Schludne konstruowanie złożonych *produktów* krok po kroku.
-    * Bezpieczne modyfikowanie kodu wybranych *etapów*. 
-    * Możliwość zmiany kolejności wywoływania etapów, w tym pomijanie i dodawanie etapów. 
-    * Możliwość wywoływania wybranych etapów rekurencyjnie.
-    <br/>
-* Hermetyczność:
-    * Odseparowanie *Procesu* konstruowania *Produktu*.
-    * Odseparowanie konstruowanego *Produktu*, do momentu aż będzie gotowy i wykończony.
-    
-**Wady**:
-* Rozrastanie się struktury projektu o nowe pliki.
+**Wady**: \
+&nbsp;&nbsp;&nbsp;&nbsp; - Rozrastanie się struktury projektu o nowe pliki.
 
 ------------
 <br/>
