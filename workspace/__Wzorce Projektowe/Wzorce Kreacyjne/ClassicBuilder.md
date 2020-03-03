@@ -1,7 +1,5 @@
 # Classic Builder 
-&nbsp;&nbsp;&nbsp;&nbsp; - *Creational Patterns* \
-&nbsp;&nbsp;&nbsp;&nbsp; - Odseparowanie kodu *konstruującego produkt* od deklaracji klasy *Produktu*. \
-&nbsp;&nbsp;&nbsp;&nbsp; - Podzielenie kodu *konstruującego produkt* na *Etapy*. \
+&nbsp;&nbsp;&nbsp;&nbsp; - [[Do Podsumowania]](#podsumowanie-classic-builder) 
 &nbsp;&nbsp;&nbsp;&nbsp; - [[Do Implementacji]](#program-11--productfile--guitar) 
 
 **Powiązane Patterny:**  
@@ -242,9 +240,10 @@ int main(){
 
 ![](https://github.com/Ptysiek/resources/blob/master/Orn.png)
 ### Podsumowanie [Classic Builder]
+&nbsp;&nbsp;&nbsp;&nbsp; - _Wzorzec Kreacyjny_ [ang. Creational Patterns] \
 &nbsp;&nbsp;&nbsp;&nbsp; - Odseparowanie *Procesu konstruowania produktów* od *Produktów* \
-&nbsp;&nbsp;&nbsp;&nbsp; - Podział _Procesu konstruowania produktów* na *Etapy*. \
-&nbsp;&nbsp;&nbsp;&nbsp; - Pozwala na zmniejszenie monstrualnej ilości argumentów w konstruktorze _Produktu_.
+&nbsp;&nbsp;&nbsp;&nbsp; - Podział _Procesu konstruowania produktów_ na _Etapy_. \
+&nbsp;&nbsp;&nbsp;&nbsp; - Zmniejszenie monstrualnej ilości argumentów w konstruktorze _Produktu_.
 
 **Zalety**: \
 &nbsp;&nbsp;&nbsp;&nbsp; - Znaczne zwiększenie **elastyczności kodu**. \
@@ -256,12 +255,7 @@ int main(){
 **Wady**: \
 &nbsp;&nbsp;&nbsp;&nbsp; - Rozrastanie się struktury projektu o nowe pliki.
 
-
-**Powiązane Patterny:**  
-&nbsp;&nbsp;&nbsp;&nbsp; - [Fluent Builder](https://github.com/Ptysiek/CPP-Notatki/blob/master/__Wzorce%20Projektowe/FluentBuilder.md) \
-&nbsp;&nbsp;&nbsp;&nbsp; - [Singleton](#2-Fluent-Builder) \
-&nbsp;&nbsp;&nbsp;&nbsp; - [Bridge](#2-Fluent-Builder)
-
 <br/>
 
+![](https://github.com/Ptysiek/resources/blob/master/Orn.png)
 ![](https://github.com/Ptysiek/resources/blob/master/Ver2.PNG)
