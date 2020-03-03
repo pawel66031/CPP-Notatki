@@ -63,8 +63,13 @@ Podział _Procesu Konstrukcji_ na _Etapy_ pozwala na: \
 <br/>
 
 **DIRECTOR** \
-&nbsp;&nbsp;&nbsp;&nbsp; Zarządza obecnie przypisanym mu *Builderem*. \
-&nbsp;&nbsp;&nbsp;&nbsp; Wie jak wywoływać operacje *Buildera*, aby powstał *Produkt*.
+
+&nbsp;&nbsp;&nbsp;&nbsp; Zna sekwencje tworzenia **Produktu**. \
+&nbsp;&nbsp;&nbsp;&nbsp; Wie jakie, i w jakiej kolejności wywoływać **Etapy** tworzenia **Produktu**.
+
+&nbsp;&nbsp;&nbsp;&nbsp; Nie Wie na czym polegają etapy. \
+&nbsp;&nbsp;&nbsp;&nbsp; Nie musi wiedzieć ponieważ przypisujemy mu **Buildera** o własnej wiedzy jak wykonywać dany etap. 
+
 
 &nbsp;&nbsp;&nbsp;&nbsp; Pozwala na dodatkowe konfiguracje konstruowania *Produktu*. \
 &nbsp;&nbsp;&nbsp;&nbsp; Może posiadać więcej niż jedną operację wytworzenia *Produktu*. 
@@ -229,7 +234,7 @@ int main(){
     director(new LemmyKilmisterGuitar_builder);
     Guitar* metalheadGuitar = director.ConstructGuitar();
     
-    // And one for me:
+    // And one for me: [same as for motorhead]
     Guitar* myguitar = director.ConstructGuitar();
     
     return 0;
