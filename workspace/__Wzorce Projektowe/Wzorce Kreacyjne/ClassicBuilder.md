@@ -1,5 +1,5 @@
 # Classic Builder 
-&nbsp;&nbsp;&nbsp;&nbsp; - [[Do Podsumowania]](#podsumowanie-classic-builder) 
+&nbsp;&nbsp;&nbsp;&nbsp; - [[Do Podsumowania]](#podsumowanie-classic-builder) \
 &nbsp;&nbsp;&nbsp;&nbsp; - [[Do Implementacji]](#program-11--productfile--guitar) 
 
 **Powiązane Patterny:**  
@@ -7,8 +7,11 @@
 &nbsp;&nbsp;&nbsp;&nbsp; - [Singleton](#2-Fluent-Builder) \
 &nbsp;&nbsp;&nbsp;&nbsp; - [Bridge](#2-Fluent-Builder)
 
-------------
+<br/>
+<br/>
+<br/>
 
+![](https://github.com/Ptysiek/resources/blob/master/Orn.png)
 Builder jest klasą służącą do konstruowania obiektów innych klas. \
 Dzięki niemu _Odseparowujemy Proces Konstruowania Obiektów_ od ich implementacji. \
 `Dzięki temu unikamy sytuacji w których obiekty tworzą same siebie.`
@@ -245,6 +248,8 @@ int main(){
 &nbsp;&nbsp;&nbsp;&nbsp; - Podział _Procesu konstruowania produktów_ na _Etapy_. \
 &nbsp;&nbsp;&nbsp;&nbsp; - Zmniejszenie monstrualnej ilości argumentów w konstruktorze _Produktu_.
 
+<br/>
+
 **Zalety**: \
 &nbsp;&nbsp;&nbsp;&nbsp; - Znaczne zwiększenie **elastyczności kodu**. \
 &nbsp;&nbsp;&nbsp;&nbsp; - Zachowanie **Hermetyczności**. \
@@ -252,9 +257,13 @@ int main(){
 &nbsp;&nbsp;&nbsp;&nbsp; - Zwiększenie czytelności kodu. \
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (Możliwość schludnego konstruowania złożonych _produktów_ etap po etapie). 
 
+<br/>
+
 **Wady**: \
 &nbsp;&nbsp;&nbsp;&nbsp; - Rozrastanie się struktury projektu o nowe pliki.
 
+<br/>
+<br/>
 <br/>
 
 ![](https://github.com/Ptysiek/resources/blob/master/Orn.png)
