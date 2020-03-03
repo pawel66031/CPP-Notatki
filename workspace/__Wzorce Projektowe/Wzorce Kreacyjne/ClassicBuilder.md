@@ -4,18 +4,12 @@
 &nbsp;&nbsp;&nbsp;&nbsp; - Podzielenie kodu *konstruującego produkt* na *Etapy*. \
 &nbsp;&nbsp;&nbsp;&nbsp; - [[Do Implementacji]](#program-11--productfile--guitar) 
 
-<br/>
-
 **Powiązane Patterny:**  
-   - [X] [Fluent Builder](https://github.com/Ptysiek/CPP-Notatki/blob/master/__Wzorce%20Projektowe/FluentBuilder.md) 
-   - [ ] [Singleton](#2-Fluent-Builder) 
-   - [ ] [Bridge](#2-Fluent-Builder)
+&nbsp;&nbsp;&nbsp;&nbsp; - [Fluent Builder](https://github.com/Ptysiek/CPP-Notatki/blob/master/__Wzorce%20Projektowe/FluentBuilder.md) \
+&nbsp;&nbsp;&nbsp;&nbsp; - [Singleton](#2-Fluent-Builder) \
+&nbsp;&nbsp;&nbsp;&nbsp; - [Bridge](#2-Fluent-Builder)
 
 ------------
-
-<br/>
-
-
 
 Builder jest klasą służącą do konstruowania obiektów innych klas. \
 Dzięki niemu _Odseparowujemy Proces Konstruowania Obiektów_ od ich implementacji. \
@@ -29,33 +23,15 @@ Podział _Procesu Konstrukcji_ na _Etapy_ pozwala na: \
 &nbsp;&nbsp;&nbsp;&nbsp; - Zmianę kolejności wykonywania etapów. \
 `Wszystkie te cechy pozwalają na łatwą zmianę konfiguracji powstających obiektów.`
 
-Dodatkowe zastosowania: \
-- Możliwość zmniejszenia ilości argumentów w konstruktorze.
-- Możliwość wykonywania wybranych _Etapów_ rekurencyjnie.
+**Dodatkowe zastosowania**: \
+&nbsp;&nbsp;&nbsp;&nbsp; - Możliwość zmniejszenia ilości argumentów w konstruktorze. \
+&nbsp;&nbsp;&nbsp;&nbsp; - Możliwość wykonywania wybranych _Etapów_ rekurencyjnie.
 
-
-
-
-
-![](https://github.com/Ptysiek/resources/blob/master/Orn.png)
-### Podsumowanie [Builder]
-&nbsp;&nbsp;&nbsp;&nbsp; - Odseparowanie *Procesu konstruowania produktów* od *Produktów* \
-&nbsp;&nbsp;&nbsp;&nbsp; - Podział _Procesu konstruowania produktów* na *Etapy*. \
-&nbsp;&nbsp;&nbsp;&nbsp; - Pozwala na zmniejszenie monstrualnej ilości argumentów w konstruktorze _Produktu_.
-
-**Zalety**: \
-&nbsp;&nbsp;&nbsp;&nbsp; - Znaczne zwiększenie **elastyczności kodu**. \
-&nbsp;&nbsp;&nbsp;&nbsp; - Zachowanie **Hermetyczności**. \
-&nbsp;&nbsp;&nbsp;&nbsp; - Wielokrotne wykorzystanie kodu. \
-&nbsp;&nbsp;&nbsp;&nbsp; - Zwiększenie czytelności kodu. \
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (Możliwość schludnego konstruowania złożonych _produktów_ etap po etapie). 
-
-**Wady**: \
-&nbsp;&nbsp;&nbsp;&nbsp; - Rozrastanie się struktury projektu o nowe pliki.
-
-------------
+<br/>
+<br/>
 <br/>
 
+![](https://github.com/Ptysiek/resources/blob/master/Orn.png)
 **PRODUCT**  \
 &nbsp;&nbsp;&nbsp;&nbsp; Klasa obiektu wynikowego, konstruowanego przez wybranego *buildera*. 
 
@@ -102,9 +78,11 @@ Dodatkowe zastosowania: \
 &nbsp;&nbsp;&nbsp;&nbsp; Wywołuje jedną z operacji konstruowania produktu *Directora*. \
 &nbsp;&nbsp;&nbsp;&nbsp; Odbiera *Produkt Wynikowy* od *Buildera*.
 
-------------
+<br/>
+<br/>
 <br/>
 
+![](https://github.com/Ptysiek/resources/blob/master/Orn.png)
 ###### [Program 1.1]  `Product.file` &nbsp;&nbsp;&nbsp;&nbsp; [Guitar]
 ```cpp
 #pragma once
@@ -257,14 +235,32 @@ int main(){
 }
 
 ```  
-------------
 
 <br/>
+<br/>
+<br/>
+
+![](https://github.com/Ptysiek/resources/blob/master/Orn.png)
+### Podsumowanie [Classic Builder]
+&nbsp;&nbsp;&nbsp;&nbsp; - Odseparowanie *Procesu konstruowania produktów* od *Produktów* \
+&nbsp;&nbsp;&nbsp;&nbsp; - Podział _Procesu konstruowania produktów* na *Etapy*. \
+&nbsp;&nbsp;&nbsp;&nbsp; - Pozwala na zmniejszenie monstrualnej ilości argumentów w konstruktorze _Produktu_.
+
+**Zalety**: \
+&nbsp;&nbsp;&nbsp;&nbsp; - Znaczne zwiększenie **elastyczności kodu**. \
+&nbsp;&nbsp;&nbsp;&nbsp; - Zachowanie **Hermetyczności**. \
+&nbsp;&nbsp;&nbsp;&nbsp; - Wielokrotne wykorzystanie kodu. \
+&nbsp;&nbsp;&nbsp;&nbsp; - Zwiększenie czytelności kodu. \
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (Możliwość schludnego konstruowania złożonych _produktów_ etap po etapie). 
+
+**Wady**: \
+&nbsp;&nbsp;&nbsp;&nbsp; - Rozrastanie się struktury projektu o nowe pliki.
+
 
 **Powiązane Patterny:**  
-   - [X] [Fluent Builder](https://github.com/Ptysiek/CPP-Notatki/blob/master/__Wzorce%20Projektowe/FluentBuilder.md) 
-   - [ ] [Singleton](#2-Fluent-Builder) 
-   - [ ] [Bridge](#2-Fluent-Builder)
+&nbsp;&nbsp;&nbsp;&nbsp; - [Fluent Builder](https://github.com/Ptysiek/CPP-Notatki/blob/master/__Wzorce%20Projektowe/FluentBuilder.md) \
+&nbsp;&nbsp;&nbsp;&nbsp; - [Singleton](#2-Fluent-Builder) \
+&nbsp;&nbsp;&nbsp;&nbsp; - [Bridge](#2-Fluent-Builder)
 
 <br/>
 
