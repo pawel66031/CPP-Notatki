@@ -12,9 +12,13 @@
 <br/>
 
 ![](https://github.com/Ptysiek/resources/blob/master/Orn.png)
-Builder jest klasą służącą do konstruowania obiektów innych klas. \
-Dzięki niemu _Odseparowujemy Proces Konstruowania Obiektów_ od ich implementacji. \
-`Dzięki temu unikamy sytuacji w których obiekty tworzą same siebie.`
+![](https://github.com/Ptysiek/resources/blob/master/WzorceProjektowe/ClassicBuilder/ClassicBuilder.png)
+
+<br/>
+
+Builder jest wzorcem do tworzenia obiektów o złożonej budowie oraz różnorodnych konfiguracjach powstawania. \
+Polega on na odseparowaniu _Procesu Konstruowania Obiektów_ od ich implementacji. \
+`Dodatkowo dzięki temu unikamy sytuacji w których obiekty tworzą same siebie.`
 
 _Konstruowanie Obiektów_ polega na wykonywaniu ustalonej sekwecji _Etapów_. \
 Podział _Procesu Konstrukcji_ na _Etapy_ pozwala na: \
@@ -33,7 +37,7 @@ Podział _Procesu Konstrukcji_ na _Etapy_ pozwala na: \
 <br/>
 
 ![](https://github.com/Ptysiek/resources/blob/master/Orn.png)
-![](https://github.com/Ptysiek/resources/blob/master/WzorceProjektowe/ClassicBuilder.png)
+![](https://github.com/Ptysiek/resources/blob/master/WzorceProjektowe/ClassicBuilder/Product.png)
 
 <br/>
 
@@ -260,11 +264,12 @@ int main(){
 <br/>
 
 **Zalety**: \
-&nbsp;&nbsp;&nbsp;&nbsp; - Znaczne zwiększenie **elastyczności kodu**. \
-&nbsp;&nbsp;&nbsp;&nbsp; - Zachowanie **Hermetyczności**. \
+&nbsp;&nbsp;&nbsp;&nbsp; - Hermetyczność kodu. \
 &nbsp;&nbsp;&nbsp;&nbsp; - Wielokrotne wykorzystanie kodu. \
 &nbsp;&nbsp;&nbsp;&nbsp; - Zwiększenie czytelności kodu. \
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (Możliwość schludnego konstruowania złożonych _produktów_ etap po etapie). 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (Możliwość schludnego konstruowania złożonych _produktów_ etap po etapie). \
+&nbsp;&nbsp;&nbsp;&nbsp; - Znaczne zwiększenie elastyczności kodu. \
+&nbsp;&nbsp;&nbsp;&nbsp; - Unikamy aby obiekty tworzyły same siebie.
 
 <br/>
 
