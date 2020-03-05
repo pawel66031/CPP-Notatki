@@ -36,7 +36,7 @@ Podział _Procesu Konstrukcji_ na _Etapy_ pozwala na: \
 <br/>
 
 ![](https://github.com/Ptysiek/resources/blob/master/Orn.png)
-![](https://github.com/Ptysiek/resources/blob/master/WzorceProjektowe/ClassicBuilder/Product%20-%20noname.png) \
+
 **PRODUCT**  \
 &nbsp;&nbsp;&nbsp;&nbsp; Klasa obiektu wynikowego, konstruowanego przez wybranego *buildera*. 
 
@@ -46,29 +46,31 @@ Podział _Procesu Konstrukcji_ na _Etapy_ pozwala na: \
 &nbsp;&nbsp;&nbsp;&nbsp; *Product* nie posiada operacji konstruowania własnych instancji. \
 &nbsp;&nbsp;&nbsp;&nbsp; Operacje te posiada *Builder*. Operacje *Buildera* tworzą instancje klasy *Product*.
 
-&nbsp;&nbsp;&nbsp;&nbsp; *Produkty* tworzone przez różne *Buildery* nie muszą przynależeć do tej samej klasy.
+&nbsp;&nbsp;&nbsp;&nbsp; *Produkty* tworzone przez różne *Buildery* nie muszą przynależeć do tej samej klasy. \
+![](https://github.com/Ptysiek/resources/blob/master/WzorceProjektowe/ClassicBuilder/Product.png)
 
 <br/>
 
-![](https://github.com/Ptysiek/resources/blob/master/WzorceProjektowe/ClassicBuilder/I_Builder%20-%20noname.png) \
 **I_BUILDER** \
 &nbsp;&nbsp;&nbsp;&nbsp; Interfejs wszystkich builderów konstruujących *Produkt*. \
 &nbsp;&nbsp;&nbsp;&nbsp; Posiada wirtualne operacje tworzenia *Produktu*. \
-&nbsp;&nbsp;&nbsp;&nbsp; Najważniejszą z nich jest `virtual Product GetResult() = 0;`.
+&nbsp;&nbsp;&nbsp;&nbsp; Najważniejszą z nich jest `virtual Product GetResult() = 0;`. \
+![](https://github.com/Ptysiek/resources/blob/master/WzorceProjektowe/ClassicBuilder/I_Builder.png)
 
 <br/>
 
-![](https://github.com/Ptysiek/resources/blob/master/WzorceProjektowe/ClassicBuilder/Builders%20-%20fency.png) \
+
 **BUILDER** \
 &nbsp;&nbsp;&nbsp;&nbsp; Każdy *Builder* posiada implementacje własnych etapów konstruowania *Produktu*. \
 &nbsp;&nbsp;&nbsp;&nbsp; Mogą tworzyć różne *Produkty* tymi samymi etapami konstrukcji.
 
 &nbsp;&nbsp;&nbsp;&nbsp; Implementacje tych etapów nie muszą pokrywać się z operacjami interfejsu `I_Builder`. \
-&nbsp;&nbsp;&nbsp;&nbsp; *Buildery* nie wywołują własnych operacji. Zajmuje się tym *Director* lub *Client*.
+&nbsp;&nbsp;&nbsp;&nbsp; *Buildery* nie wywołują własnych operacji. Zajmuje się tym *Director* lub *Client*. \
+![](https://github.com/Ptysiek/resources/blob/master/WzorceProjektowe/ClassicBuilder/Builders.png) 
 
 <br/>
 
-![](https://github.com/Ptysiek/resources/blob/master/WzorceProjektowe/ClassicBuilder/Director%20-%20fency.png) \
+
 **DIRECTOR** \
 &nbsp;&nbsp;&nbsp;&nbsp; Zna sekwencje tworzenia **Produktu**. \
 &nbsp;&nbsp;&nbsp;&nbsp; Wie jakie, i w jakiej kolejności wywoływać **Etapy** tworzenia **Produktu**.
@@ -80,15 +82,17 @@ Podział _Procesu Konstrukcji_ na _Etapy_ pozwala na: \
 &nbsp;&nbsp;&nbsp;&nbsp; Może posiadać więcej niż jedną operację wytworzenia *Produktu*. 
 
 &nbsp;&nbsp;&nbsp;&nbsp; Ukrywa szczegóły konstruowania *Produktu*. \
-&nbsp;&nbsp;&nbsp;&nbsp; Nie jest wymagany.
+&nbsp;&nbsp;&nbsp;&nbsp; Nie jest wymagany. \
+![](https://github.com/Ptysiek/resources/blob/master/WzorceProjektowe/ClassicBuilder/Director.png) 
 
 <br/>
 
-![](https://github.com/Ptysiek/resources/blob/master/WzorceProjektowe/ClassicBuilder/Client_noname.png) \
+
 **CLIENT** \
 &nbsp;&nbsp;&nbsp;&nbsp; Przypisuje *Buildera* do *Directora*. \
 &nbsp;&nbsp;&nbsp;&nbsp; Wywołuje jedną z operacji konstruowania produktu *Directora*. \
-&nbsp;&nbsp;&nbsp;&nbsp; Odbiera *Produkt Wynikowy* od *Buildera*.
+&nbsp;&nbsp;&nbsp;&nbsp; Odbiera *Produkt Wynikowy* od *Buildera*. \
+![](https://github.com/Ptysiek/resources/blob/master/WzorceProjektowe/ClassicBuilder/Client.png) 
 
 <br/>
 <br/>
