@@ -1,3 +1,6 @@
+
+![](https://github.com/Ptysiek/resources/blob/master/WzorceProjektowe/ClassicBuilder/ClassicBuilder.png)
+
 # Classic Builder 
 &nbsp;&nbsp;&nbsp;&nbsp; - [[Do Podsumowania]](#podsumowanie-classic-builder) \
 &nbsp;&nbsp;&nbsp;&nbsp; - [[Do Implementacji]](#program-11--productfile--guitar) 
@@ -12,10 +15,6 @@
 <br/>
 
 ![](https://github.com/Ptysiek/resources/blob/master/Orn.png)
-![](https://github.com/Ptysiek/resources/blob/master/WzorceProjektowe/ClassicBuilder/ClassicBuilder.png)
-
-<br/>
-
 Builder jest wzorcem do tworzenia obiektów o złożonej budowie oraz różnorodnych konfiguracjach powstawania. \
 Polega on na odseparowaniu _Procesu Konstruowania Obiektów_ od ich implementacji. \
 `Dodatkowo dzięki temu unikamy sytuacji w których obiekty tworzą same siebie.`
@@ -37,10 +36,7 @@ Podział _Procesu Konstrukcji_ na _Etapy_ pozwala na: \
 <br/>
 
 ![](https://github.com/Ptysiek/resources/blob/master/Orn.png)
-![](https://github.com/Ptysiek/resources/blob/master/WzorceProjektowe/ClassicBuilder/Product.png)
-
-<br/>
-
+![](https://github.com/Ptysiek/resources/blob/master/WzorceProjektowe/ClassicBuilder/Product%20-%20noname.png) \
 **PRODUCT**  \
 &nbsp;&nbsp;&nbsp;&nbsp; Klasa obiektu wynikowego, konstruowanego przez wybranego *buildera*. 
 
@@ -54,6 +50,7 @@ Podział _Procesu Konstrukcji_ na _Etapy_ pozwala na: \
 
 <br/>
 
+![](https://github.com/Ptysiek/resources/blob/master/WzorceProjektowe/ClassicBuilder/I_Builder%20-%20noname.png) \
 **I_BUILDER** \
 &nbsp;&nbsp;&nbsp;&nbsp; Interfejs wszystkich builderów konstruujących *Produkt*. \
 &nbsp;&nbsp;&nbsp;&nbsp; Posiada wirtualne operacje tworzenia *Produktu*. \
@@ -61,6 +58,7 @@ Podział _Procesu Konstrukcji_ na _Etapy_ pozwala na: \
 
 <br/>
 
+![](https://github.com/Ptysiek/resources/blob/master/WzorceProjektowe/ClassicBuilder/Builders%20-%20fency.png) \
 **BUILDER** \
 &nbsp;&nbsp;&nbsp;&nbsp; Każdy *Builder* posiada implementacje własnych etapów konstruowania *Produktu*. \
 &nbsp;&nbsp;&nbsp;&nbsp; Mogą tworzyć różne *Produkty* tymi samymi etapami konstrukcji.
@@ -70,14 +68,13 @@ Podział _Procesu Konstrukcji_ na _Etapy_ pozwala na: \
 
 <br/>
 
+![](https://github.com/Ptysiek/resources/blob/master/WzorceProjektowe/ClassicBuilder/Director%20-%20fency.png) \
 **DIRECTOR** \
-
 &nbsp;&nbsp;&nbsp;&nbsp; Zna sekwencje tworzenia **Produktu**. \
 &nbsp;&nbsp;&nbsp;&nbsp; Wie jakie, i w jakiej kolejności wywoływać **Etapy** tworzenia **Produktu**.
 
 &nbsp;&nbsp;&nbsp;&nbsp; Nie Wie na czym polegają etapy. \
 &nbsp;&nbsp;&nbsp;&nbsp; Nie musi wiedzieć ponieważ przypisujemy mu **Buildera** o własnej wiedzy jak wykonywać dany etap. 
-
 
 &nbsp;&nbsp;&nbsp;&nbsp; Pozwala na dodatkowe konfiguracje konstruowania *Produktu*. \
 &nbsp;&nbsp;&nbsp;&nbsp; Może posiadać więcej niż jedną operację wytworzenia *Produktu*. 
@@ -87,6 +84,7 @@ Podział _Procesu Konstrukcji_ na _Etapy_ pozwala na: \
 
 <br/>
 
+![](https://github.com/Ptysiek/resources/blob/master/WzorceProjektowe/ClassicBuilder/Client_noname.png) \
 **CLIENT** \
 &nbsp;&nbsp;&nbsp;&nbsp; Przypisuje *Buildera* do *Directora*. \
 &nbsp;&nbsp;&nbsp;&nbsp; Wywołuje jedną z operacji konstruowania produktu *Directora*. \
