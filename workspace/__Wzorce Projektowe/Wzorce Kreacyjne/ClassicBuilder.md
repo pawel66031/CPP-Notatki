@@ -1,5 +1,8 @@
-
 ![](https://github.com/Ptysiek/resources/blob/master/WzorceProjektowe/ClassicBuilder/ClassicBuilder.png)
+
+<br/>
+<br/>
+<br/>
 
 # Classic Builder 
 &nbsp;&nbsp;&nbsp;&nbsp; - [[Do Podsumowania]](#podsumowanie-classic-builder) \
@@ -36,7 +39,6 @@ Podział _Procesu Konstrukcji_ na _Etapy_ pozwala na: \
 <br/>
 
 ![](https://github.com/Ptysiek/resources/blob/master/Orn.png)
-
 **PRODUCT**  \
 &nbsp;&nbsp;&nbsp;&nbsp; Klasa obiektu wynikowego, konstruowanego przez wybranego *buildera*. 
 
@@ -50,6 +52,7 @@ Podział _Procesu Konstrukcji_ na _Etapy_ pozwala na: \
 ![](https://github.com/Ptysiek/resources/blob/master/WzorceProjektowe/ClassicBuilder/Product.png)
 
 <br/>
+<br/>
 
 **I_BUILDER** \
 &nbsp;&nbsp;&nbsp;&nbsp; Interfejs wszystkich builderów konstruujących *Produkt*. \
@@ -58,7 +61,7 @@ Podział _Procesu Konstrukcji_ na _Etapy_ pozwala na: \
 ![](https://github.com/Ptysiek/resources/blob/master/WzorceProjektowe/ClassicBuilder/I_Builder.png)
 
 <br/>
-
+<br/>
 
 **BUILDER** \
 &nbsp;&nbsp;&nbsp;&nbsp; Każdy *Builder* posiada implementacje własnych etapów konstruowania *Produktu*. \
@@ -69,7 +72,7 @@ Podział _Procesu Konstrukcji_ na _Etapy_ pozwala na: \
 ![](https://github.com/Ptysiek/resources/blob/master/WzorceProjektowe/ClassicBuilder/Builders.png) 
 
 <br/>
-
+<br/>
 
 **DIRECTOR** \
 &nbsp;&nbsp;&nbsp;&nbsp; Zna sekwencje tworzenia **Produktu**. \
@@ -86,7 +89,7 @@ Podział _Procesu Konstrukcji_ na _Etapy_ pozwala na: \
 ![](https://github.com/Ptysiek/resources/blob/master/WzorceProjektowe/ClassicBuilder/Director.png) 
 
 <br/>
-
+<br/>
 
 **CLIENT** \
 &nbsp;&nbsp;&nbsp;&nbsp; Przypisuje *Buildera* do *Directora*. \
