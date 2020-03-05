@@ -33,6 +33,10 @@ Podział _Procesu Konstrukcji_ na _Etapy_ pozwala na: \
 <br/>
 
 ![](https://github.com/Ptysiek/resources/blob/master/Orn.png)
+![](https://github.com/Ptysiek/resources/blob/master/WzorceProjektowe/ClassicBuilder.png)
+
+<br/>
+
 **PRODUCT**  \
 &nbsp;&nbsp;&nbsp;&nbsp; Klasa obiektu wynikowego, konstruowanego przez wybranego *buildera*. 
 
