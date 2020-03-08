@@ -48,7 +48,7 @@ Podział _Procesu Konstrukcji_ na _Etapy_ pozwala na: \
 &nbsp;&nbsp;&nbsp;&nbsp; *Product* nie posiada operacji konstruowania własnych instancji. \
 &nbsp;&nbsp;&nbsp;&nbsp; Operacje te posiada *Builder*. Operacje *Buildera* tworzą instancje klasy *Product*.
 
-&nbsp;&nbsp;&nbsp;&nbsp; *Produkty* tworzone przez różne *Buildery* nie muszą przynależeć do tej samej klasy. \
+&nbsp;&nbsp;&nbsp;&nbsp; *Produkty* tworzone przez różne *Buildery* nie muszą przynależeć do tej samej klasy. 
 
 <br/>
 <br/>
@@ -84,7 +84,7 @@ Podział _Procesu Konstrukcji_ na _Etapy_ pozwala na: \
 &nbsp;&nbsp;&nbsp;&nbsp; Może posiadać więcej niż jedną operację wytworzenia *Produktu*. 
 
 &nbsp;&nbsp;&nbsp;&nbsp; Ukrywa szczegóły konstruowania *Produktu*. \
-&nbsp;&nbsp;&nbsp;&nbsp; Nie jest wymagany. \
+&nbsp;&nbsp;&nbsp;&nbsp; Nie jest wymagany. 
 
 <br/>
 <br/>
