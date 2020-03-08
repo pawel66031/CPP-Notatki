@@ -49,7 +49,6 @@ Podział _Procesu Konstrukcji_ na _Etapy_ pozwala na: \
 &nbsp;&nbsp;&nbsp;&nbsp; Operacje te posiada *Builder*. Operacje *Buildera* tworzą instancje klasy *Product*.
 
 &nbsp;&nbsp;&nbsp;&nbsp; *Produkty* tworzone przez różne *Buildery* nie muszą przynależeć do tej samej klasy. \
-![](https://github.com/Ptysiek/resources/blob/master/WzorceProjektowe/ClassicBuilder/Product.png)
 
 <br/>
 <br/>
@@ -86,7 +85,6 @@ Podział _Procesu Konstrukcji_ na _Etapy_ pozwala na: \
 
 &nbsp;&nbsp;&nbsp;&nbsp; Ukrywa szczegóły konstruowania *Produktu*. \
 &nbsp;&nbsp;&nbsp;&nbsp; Nie jest wymagany. \
-![](https://github.com/Ptysiek/resources/blob/master/WzorceProjektowe/ClassicBuilder/Director.png) 
 
 <br/>
 <br/>
@@ -274,7 +272,7 @@ int main(){
 &nbsp;&nbsp;&nbsp;&nbsp; - Zwiększenie czytelności kodu. \
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (Możliwość schludnego konstruowania złożonych _produktów_ etap po etapie). \
 &nbsp;&nbsp;&nbsp;&nbsp; - Znaczne zwiększenie elastyczności kodu. \
-&nbsp;&nbsp;&nbsp;&nbsp; - Unikamy aby obiekty tworzyły same siebie.
+&nbsp;&nbsp;&nbsp;&nbsp; - Unikamy obiektów tworzących samych siebie.
 
 <br/>
 
