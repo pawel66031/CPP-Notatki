@@ -1,7 +1,5 @@
 # Konwencje Formatowania
 
-
-
 <br/><br/>
 
 ### Przyjęte konwencje repozytorium
@@ -13,5 +11,8 @@
 <br/>
 
 ### Tłumaczenia
-- Poprzedzamy nawiasami kwadratowymi.
-- Umieszczamy odniesienie do strony: [AlternatywyNazewnicze](https://github.com/Ptysiek/CPP-Notatki/blob/master/workspace/NewApproach/AlternatywyNazewnicze.md)
+&nbsp;&nbsp;&nbsp;&nbsp; - Poprzedzamy nawiasami kwadratowymi. \
+&nbsp;&nbsp;&nbsp;&nbsp; - Umieszczamy odniesienie do strony: [AlternatywyNazewnicze](https://github.com/Ptysiek/CPP-Notatki/blob/master/workspace/NewApproach/AlternatywyNazewnicze.md)
+&nbsp;&nbsp;&nbsp;&nbsp; - Przykład: 
+
+<br/><br/>
