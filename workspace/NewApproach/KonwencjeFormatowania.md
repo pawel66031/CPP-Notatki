@@ -42,8 +42,12 @@
 &nbsp;&nbsp;&nbsp;&nbsp; - Jedna spacja przed nawiasem instrukcji sterującej. `if`, `else if`, `for`, `while`, itd..
 
 &nbsp;&nbsp;&nbsp;&nbsp; - Nazwy Typów, Aliasów, Klas: `CamelCase`. \
-&nbsp;&nbsp;&nbsp;&nbsp; - Funkcje, Metody i nazwy zmiennych: rozpoczęty małą literą `camelCase`.
+&nbsp;&nbsp;&nbsp;&nbsp; - Funkcje, Metody i Zmienne: rozpoczęty małą literą `camelCase`. \
+&nbsp;&nbsp;&nbsp;&nbsp; - Stałe i Makra: `UPPER_CASE`, przykład: PI, INT_MIN, INT_MAX. \
+&nbsp;&nbsp;&nbsp;&nbsp; - Wszystkie inne rzeczy: `snake_case`
 
+&nbsp;&nbsp;&nbsp;&nbsp; - Prywatne pola wewnątrz klasy poprzedamy `m_`, przykład: m_data. \
+&nbsp;&nbsp;&nbsp;&nbsp; - Podłoga `_` na początku wyrazu jest zarezerwowana dla kompilatora.
 ```Cpp
 int example() {
 
