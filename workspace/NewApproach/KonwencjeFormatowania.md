@@ -17,9 +17,9 @@
 <br/>
 
 ### Budowa Strony
-&nbsp;&nbsp;&nbsp;&nbsp; - Akapity rozpoczynamy tytułem z potrójnym hashem `###`.
-&nbsp;&nbsp;&nbsp;&nbsp; - Tytuł akapitu piszemy w Camel_spacja_Case. Rozpoczynamy każde słowo wielką literą.
-&nbsp;&nbsp;&nbsp;&nbsp; - Unikamy pod-akapitów, pod-tytułów, rozbudowywania hierarchii pliku.
+&nbsp;&nbsp;&nbsp;&nbsp; - Akapity rozpoczynamy tytułem z potrójnym hashem `###`. \
+&nbsp;&nbsp;&nbsp;&nbsp; - Tytuł akapitu piszemy w Camel_spacja_Case. Rozpoczynamy każde słowo wielką literą. \
+&nbsp;&nbsp;&nbsp;&nbsp; - Unikamy pod-akapitów, pod-tytułów, rozbudowywania hierarchii pliku. \
 &nbsp;&nbsp;&nbsp;&nbsp; - Przykład:  [PustySzablon.md](https://github.com/Ptysiek/CPP-Notatki/blob/master/workspace/NewApproach/PustySzablon.md)
 
 <br/>
@@ -34,8 +34,27 @@
 **&nbsp;&nbsp;&nbsp;&nbsp; - Język pisany:** &nbsp; Angielski 
 
 &nbsp;&nbsp;&nbsp;&nbsp; - Egyptian braces - Klamra otwierająca w tej samej lini co jej nagłówek. \
-&nbsp;&nbsp;&nbsp;&nbsp; - Zawsze jedna spacja przed klamrą otwierającą. \
-&nbsp;&nbsp;&nbsp;&nbsp; - Pisanie klamr również przy bloku jednej instrukcji. \
+&nbsp;&nbsp;&nbsp;&nbsp; - Zawsze piszemy klamry, również przy bloku jednej instrukcji. \
 &nbsp;&nbsp;&nbsp;&nbsp; - `Not cuddled else`. Pisanie `else` w osobnej lini niż poprzednia klamra zamykająca.
+
+&nbsp;&nbsp;&nbsp;&nbsp; - Zawsze jedna spacja przed klamrą otwierającą. \
+&nbsp;&nbsp;&nbsp;&nbsp; - Brak spacji przed nawiasem funkcji lub metody. \
+&nbsp;&nbsp;&nbsp;&nbsp; - Jedna spacja przed nawiasem instrukcji sterującej. `if`, `else if`, `for`, `while`, itd..
+
+&nbsp;&nbsp;&nbsp;&nbsp; - Nazwy Typów, Aliasów, Klas: `CamelCase`. \
+&nbsp;&nbsp;&nbsp;&nbsp; - Funkcje, Metody i nazwy zmiennych: rozpoczęty małą literą `camelCase`.
+
+```Cpp
+int example() {
+
+    if (condition) {
+        doSth();
+    }
+    else {
+        doSthElse();
+    }
+    return -1;
+}
+```
 
 <br/><br/><br/><br/>
