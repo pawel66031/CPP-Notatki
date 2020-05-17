@@ -4,8 +4,10 @@
 
 &nbsp;
 ------------- 
-###### [ang.] Declaration
-&nbsp;&nbsp;&nbsp;&nbsp; == &nbsp; Deklaracja
+###### [ang.] Braces
+&nbsp;&nbsp;&nbsp;&nbsp; == &nbsp; Nawiasy Klamrowe \
+&nbsp;&nbsp;&nbsp;&nbsp; == &nbsp; Blok instrukcji \
+&nbsp;&nbsp;&nbsp;&nbsp; == &nbsp; Ciało Funkcji/Metody/Klasy \
 
 
 &nbsp;
