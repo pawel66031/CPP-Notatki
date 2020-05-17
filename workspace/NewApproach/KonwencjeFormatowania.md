@@ -37,6 +37,7 @@
 &nbsp;&nbsp;&nbsp;&nbsp; - Zawsze piszemy klamry, również przy bloku jednej instrukcji. \
 &nbsp;&nbsp;&nbsp;&nbsp; - `Not cuddled else`. Pisanie `else` w osobnej lini niż poprzednia klamra zamykająca.
 
+&nbsp;&nbsp;&nbsp;&nbsp; - Jedna spacja po makrodefinicji: `#include` \
 &nbsp;&nbsp;&nbsp;&nbsp; - Zawsze jedna spacja przed klamrą otwierającą. \
 &nbsp;&nbsp;&nbsp;&nbsp; - Brak spacji przed nawiasem funkcji lub metody. \
 &nbsp;&nbsp;&nbsp;&nbsp; - Jedna spacja przed nawiasem instrukcji sterującej. `if`, `else if`, `for`, `while`, itd..
