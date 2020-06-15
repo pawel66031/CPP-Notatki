@@ -10,8 +10,23 @@
 
 <br/><br/>
 -------------
-### Typy Podstawowe 
+### Typy Podstawowe - Całkowitoliczbowe
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **short** \
+&nbsp;&nbsp;&nbsp;&nbsp; - przynajmniej 16bitów, 2bajty. \
+&nbsp;&nbsp;&nbsp;&nbsp; - pełna nazwa: [ang.] Short Integer - Krótka liczba całkowita.
 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **int** \
+&nbsp;&nbsp;&nbsp;&nbsp; - rozmiar nie mniejszy niż short oraz nie większy niż long. short <= int <= long \
+&nbsp;&nbsp;&nbsp;&nbsp; - pełna nazwa: [ang.] Integer - Liczba całkowita.
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **long** \
+&nbsp;&nbsp;&nbsp;&nbsp; - przynajmniej 32bity, 4bajty. \
+&nbsp;&nbsp;&nbsp;&nbsp; - rozmiar nie mniejszy niż typ int. int <= long \
+&nbsp;&nbsp;&nbsp;&nbsp; - pełna nazwa: [ang.] Long Integer - Długa liczba całkowita.
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **long long** \
+&nbsp;&nbsp;&nbsp;&nbsp; - przynajmniej 64bity, 8bajtów. \
+&nbsp;&nbsp;&nbsp;&nbsp; - rozmiar nie mniejszy niż typ long. long <= long long.
 
 <br/><br/>
 -------------
