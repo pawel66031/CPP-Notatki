@@ -21,6 +21,13 @@
 
 &nbsp;
 ------------- 
+Typy Podstawowe \
+&nbsp;&nbsp;&nbsp;&nbsp; == &nbsp; Typy Wbudowane \
+&nbsp;&nbsp;&nbsp;&nbsp; == &nbsp; Typy Fundamentalne
+
+
+&nbsp;
+------------- 
 ###### [ang.] Definition
 &nbsp;&nbsp;&nbsp;&nbsp; == &nbsp; Definicja
 
