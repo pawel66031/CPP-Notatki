@@ -21,7 +21,7 @@
 
 &nbsp;
 ------------- 
-###### Typy Podstawowe \
+###### Typy Podstawowe
 &nbsp;&nbsp;&nbsp;&nbsp; == &nbsp; Typy Wbudowane \
 &nbsp;&nbsp;&nbsp;&nbsp; == &nbsp; Typy Fundamentalne
 
