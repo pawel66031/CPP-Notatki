@@ -38,7 +38,7 @@
 ### Typ Pusty - Void
 &nbsp;&nbsp;&nbsp;&nbsp; - Wykorzystywany głównie przy funkcjach nie zwracających wartości. \
 &nbsp;&nbsp;&nbsp;&nbsp; - Pozwala na tworzenie wskaźników zdolnych do trzymania adresu zmiennej każdego typu.
-```Cpp
+```cpp
     int variable_a {5};
     double variable_b {2.};
     void* void_pointer;
@@ -74,7 +74,7 @@
 &nbsp;&nbsp;&nbsp;&nbsp; - **Wskaźnik na typ pusty Jest Złą Praktyką.** \
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Należy jej unikać ponieważ zmniejsza czytelność kodu \
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; oraz odbiera kompilatorowi możliwość wykrywania błędów.
-```Cpp
+```cpp
     double variable_c {6.37};
     void* void_pointer = &variable_c;
 
