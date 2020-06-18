@@ -11,7 +11,7 @@
 
 <br/><br/>
 -------------
-### Sposobów inicjalizacji zmiennych
+### Sposoby inicjalizacji zmiennych
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **a] &nbsp; Brak inicjalizacji, przypisanie wartości później:** \
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **`int a;`** \
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **`a = 5;`**
