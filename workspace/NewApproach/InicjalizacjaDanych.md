@@ -66,7 +66,8 @@
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Wnioski z czasów wykonania programów skompilowanych z optymalizacją O3:** \
 &nbsp;&nbsp;&nbsp;&nbsp; - najsprawniejszym sposobem inicjalizacji jest inicjalizacja klamrowa. \
 &nbsp;&nbsp;&nbsp;&nbsp; - najwolniejszym sposobem inicjalizacji jest wykorzystanie operatora przypisania. \
-&nbsp;&nbsp;&nbsp;&nbsp; - inicjalizacja klamrowa potrafi być 8.6 razy szybsza od inicjalizacji nawiasowej z klasycznego C.
+&nbsp;&nbsp;&nbsp;&nbsp; - inicjalizacja klamrowa potrafi być 8.6 razy szybsza od inicjalizacji nawiasowej z klasycznego C. \
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Nie będzie to jednak prawdą w wszystkich sytuacjach.
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **UWAGA:** W zależności od wybranego kompilatora oraz jego konfiguracji można uzyskać \
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; bardzo odmienne rezultaty. Wybierając konkretny sposób inicjalizacji należy \
