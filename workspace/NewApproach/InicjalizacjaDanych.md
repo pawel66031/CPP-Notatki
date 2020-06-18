@@ -30,10 +30,10 @@
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **e] int e = {0};** 
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **f] int f{ };** \
-&nbsp;&nbsp;&nbsp;&nbsp; - nadaje wartości f wartość zero.
+&nbsp;&nbsp;&nbsp;&nbsp; - nadaje zmiennej f wartość zero.
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **g] int g = { };** \
-&nbsp;&nbsp;&nbsp;&nbsp; - nadaje wartości g wartość zero.
+&nbsp;&nbsp;&nbsp;&nbsp; - nadaje zmiennej g wartość zero.
 
 <br/><br/>
 -------------
