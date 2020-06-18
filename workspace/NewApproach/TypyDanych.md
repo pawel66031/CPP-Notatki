@@ -37,7 +37,7 @@
 -------------
 ### Typ Pusty - Void
 &nbsp;&nbsp;&nbsp;&nbsp; - Wykorzystywany głównie przy funkcjach nie zwracających wartości. \
-&nbsp;&nbsp;&nbsp;&nbsp; - Pozwala na tworzenie wskaźników zdolnych do trzymania adresu do obiektu każdego typu.
+&nbsp;&nbsp;&nbsp;&nbsp; - Pozwala na tworzenie wskaźników zdolnych do trzymania adresu zmiennej każdego typu.
 ```Cpp
     int variable_a {5};
     double variable_b {2.};
@@ -53,12 +53,12 @@
     void_pointer = &variable_b;
 
     std::cout << "\n"
-              << " " << variable_b
-              << " " << *(static_cast<double*>(void_pointer));
+              << "  " << variable_b
+              << "  " << *(static_cast<double*>(void_pointer));
 ```
 ``` OUTPUT:
- 5 5
- 2 2
+  5  5
+  2  2
 ```
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Aby wyłuskać wartość z wskaźnika pustego typu, należy najpierw \
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; przekonwertować go na wskaźnik typu który chcemy odebrać. \
@@ -79,13 +79,11 @@
     void* void_pointer = &variable_c;
 
     // _____________________________________________________
-    std::cout << "\n"
-              << " " << variable_c << "\n"
-              << " " << *(static_cast<int*>(void_pointer));
+    std::cout << "  " << variable_c
+              << "  " << *(static_cast<int*>(void_pointer));
 ```
 ``` OUTPUT:
- 6.37
- [losowa wartość]
+  6.37  [losowa wartość]
 ```
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; W powyższym przykładzie [losowa wartość], przykładowo: 125463346, \
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; wynika z błędnej konwersji zmiennej *void_pointer* na typ **int\***. \
