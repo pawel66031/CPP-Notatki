@@ -62,6 +62,18 @@
 | int c(5);             | [3] 11589.55   | [4] 0.41272e-4   |
 | int d{5};             | [2] 11586.76   | [1] 0.47772e-5   |
 
+<br/> \
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Wnioski z czasów wykonania programów skompilowanych z optymalizacją O3:** \
+&nbsp;&nbsp;&nbsp;&nbsp; - najsprawniejszym sposobem inicjalizacji jest inicjalizacja klamrowa. \
+&nbsp;&nbsp;&nbsp;&nbsp; - najwolniejszym sposobem inicjalizacji jest wykorzystanie operatora przypisania. \
+&nbsp;&nbsp;&nbsp;&nbsp; - inicjalizacja klamrowa potrafi być 8.6 razy szybsza od inicjalizacji nawiasowej z klasycznego C.
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **UWAGA:** W zależności od wybranego kompilatora oraz jego konfiguracji można uzyskać \
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; bardzo odmienne rezultaty. Wybierając konkretny sposób inicjalizacji należy \
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; mieć na uwadze inne aspekty takie jak czytelność i jednolitość kodu wewnątrz \
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; projektu oraz ogólne tendencje rozwoju języka i kompilatorów.
+
+<br/>
 <br/>
 
 > **<sup>[1]</sup> Poziom Optymalizacji O3 dla kompilatora Clang:** \
@@ -76,16 +88,6 @@
 > Wydłuża czas kompilacji (compile time), zmniejsza czas wykonania (execution time). \
 > <ins>`www.rapidtables.com/code/linux/gcc/gcc-o.html`</ins>
 
-<br/> \
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Wnioski z czasów wykonania programów skompilowanych z optymalizacją O3:** \
-&nbsp;&nbsp;&nbsp;&nbsp; - najsprawniejszym sposobem inicjalizacji jest inicjalizacja klamrowa. \
-&nbsp;&nbsp;&nbsp;&nbsp; - najwolniejszym sposobem inicjalizacji jest wykorzystanie operatora przypisania. \
-&nbsp;&nbsp;&nbsp;&nbsp; - inicjalizacja klamrowa potrafi być 8.6 razy szybsza od inicjalizacji nawiasowej z klasycznego C.
-
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **UWAGA:** W zależności od wybranego kompilatora oraz jego konfiguracji można uzyskać \
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; bardzo odmienne rezultaty. Wybierając konkretny sposób inicjalizacji należy \
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; mieć na uwadze inne aspekty takie jak czytelność i jednolitość kodu wewnątrz \
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; projektu oraz ogólne tendencje rozwoju języka i kompilatorów.
 
 <br/><br/>
 -------------
