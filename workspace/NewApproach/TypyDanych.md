@@ -36,7 +36,7 @@
 <br/><br/>
 -------------
 ### Typ Pusty - Void
-&nbsp;&nbsp;&nbsp;&nbsp; - Wykorzystywany głównie przy funkcjach nie zwracających wartości. \
+&nbsp;&nbsp;&nbsp;&nbsp; - Wykorzystywany jedynie do napisania funkcji nie zwracających wartości. \
 &nbsp;&nbsp;&nbsp;&nbsp; - Typem void w języku C oznacza się funkcje nie przyjmujące argumentów. Przykładowo: `int function(void) { }`. \
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; W cpp tego nie robimy. Poprawny przykład dla cpp: `int function() { }`. \
 &nbsp;&nbsp;&nbsp;&nbsp; - Pozwala na tworzenie wskaźników zdolnych do trzymania adresu zmiennej każdego typu.
