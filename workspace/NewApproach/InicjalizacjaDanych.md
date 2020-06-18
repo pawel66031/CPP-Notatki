@@ -8,32 +8,37 @@
 &nbsp;&nbsp;&nbsp;&nbsp; - [link 3]()
 
 
+
 <br/><br/>
 -------------
 ### Zestawienie sposobów inicjalizacji zmiennych
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **a] &nbsp; Brak inicjalizacji, przypisanie wartości później:** \
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **int a;** \
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **a = 5;**
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **`int a;`** \
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **`a = 5;`**
  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **b] &nbsp; Inicjalizacja operatorem przypisania:** \
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **int b = 5;**
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **b] &nbsp; Inicjalizacja operatorem przypisania: &nbsp; `int b = 5;`**
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **c] &nbsp; Inicjalizacja z klasycznego języka C:** \
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **int c (5);**
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **c] &nbsp; Inicjalizacja z klasycznego języka C: &nbsp;  `int c (5);`** 
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **d] &nbsp; Użycie inicjalizatora klamrowego** \
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **int d {5};** \
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **d] &nbsp; Użycie inicjalizatora klamrowego:  &nbsp;  `int d {5};`** \
 &nbsp;&nbsp;&nbsp;&nbsp; - względem poprzednich sposobów nowoczesne. \
 &nbsp;&nbsp;&nbsp;&nbsp; - możliwe od wersji Cpp11. \
 &nbsp;&nbsp;&nbsp;&nbsp; - pozwala lepiej się zabezpieczyć przed błędami konwersji typów.
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **e] &nbsp; int e = {0};** 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **e] &nbsp; `int e = {0};`**
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **f] &nbsp; int f { };** \
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **f] &nbsp; `int f { };`** \
 &nbsp;&nbsp;&nbsp;&nbsp; - nadaje zmiennej f wartość zero.
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **g] &nbsp; int g = { };** \
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **g] &nbsp; `int g = { };`** \
 &nbsp;&nbsp;&nbsp;&nbsp; - nadaje zmiennej g wartość zero.
+
+
+
+
+
+
+
 
 <br/><br/>
 -------------
