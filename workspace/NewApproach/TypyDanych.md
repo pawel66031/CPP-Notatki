@@ -57,11 +57,13 @@
 
 &nbsp;&nbsp;&nbsp;&nbsp; - Nan - (Not A Number) - występuje występuje najczęściej gdy zrobimy coś nielegalnego, jak: \
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - pierwiastek z liczby ujemnej \
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - podzielenie wartości przez zero 
-
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - podzielenie wartości przez zero \
 &nbsp;&nbsp;&nbsp;&nbsp; - Porównanie dwóch wartości Nan zawsze zwróci **false**. \
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (Nan == Nan) => false
 
+<br/>
+
+&nbsp;&nbsp;&nbsp;&nbsp; - Todo: napisać o utracie precyzji.
 
 <br/><br/>
 -------------
