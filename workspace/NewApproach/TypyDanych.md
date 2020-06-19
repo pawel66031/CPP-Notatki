@@ -16,6 +16,7 @@
 &nbsp;&nbsp;&nbsp;&nbsp; - pełna nazwa: [ang.] Short Integer - Krótka liczba całkowita.
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **int** \
+&nbsp;&nbsp;&nbsp;&nbsp; - przynajmniej 16bitów, 2bajty. \
 &nbsp;&nbsp;&nbsp;&nbsp; - rozmiar nie mniejszy niż short oraz nie większy niż long. short <= int <= long \
 &nbsp;&nbsp;&nbsp;&nbsp; - pełna nazwa: [ang.] Integer - Liczba całkowita.
 
@@ -27,6 +28,60 @@
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **long long** \
 &nbsp;&nbsp;&nbsp;&nbsp; - przynajmniej 64bity, 8bajtów. \
 &nbsp;&nbsp;&nbsp;&nbsp; - rozmiar nie mniejszy niż typ long. long <= long long.
+
+<br/><br/>
+-------------
+### Typy Podstawowe - Zmiennoprzecinkowe
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **float** \
+&nbsp;&nbsp;&nbsp;&nbsp; - zwykle 32bity, 4bajty.
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **double** \
+&nbsp;&nbsp;&nbsp;&nbsp; - zwykle 64bity, 8bajtów. \
+&nbsp;&nbsp;&nbsp;&nbsp; - pełna nazwa: [ang.] Double Precision.
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **long double** \
+&nbsp;&nbsp;&nbsp;&nbsp; - zwykle 80bitów, 10bajtów. 
+
+&nbsp;&nbsp;&nbsp;&nbsp; - Typy zmiennoprzecinkowe nie posiadają wersji z specyfikatorem ***unsigned***. \
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Zawsze mogą trzymać ujemne wartości. \
+&nbsp;&nbsp;&nbsp;&nbsp; - Zmienne typów zmiennoprzecinkowych mogą trzymać jedną z 4 specjalnych wartości: \
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0 (zero) \
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -0 (ujemne zero) \
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; inf \
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -inf \
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Nan (<sup>[1]</sup>Not A Number)
+
+<br/>
+
+> **<sup>[1]</sup>** Nan - (Not A Number) - występuje występuje najczęściej gdy zrobimy coś nielegalnego, jak: \
+> &nbsp;&nbsp;&nbsp;&nbsp; - pierwiastek z liczby ujemnej \
+> &nbsp;&nbsp;&nbsp;&nbsp; - podzielenie wartości przez zero 
+>
+> Porównanie dwóch wartości Nan zawsze zwróci **false** \
+> (Nan == Nan) => false
+
+
+<br/><br/>
+-------------
+### Typy Podstawowe - Typ Logiczny
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **bool** \
+&nbsp;&nbsp;&nbsp;&nbsp; - Wystaczyłby mu jeden bit na określenie stanu *true* / *false*. \
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Przyjęło się jednak że w cpp pracujemy na pełnych Bajtach, \
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; dlatego rozmiar typu bool wymaga minimum jednego Bajta, 8 bitów. \
+&nbsp;&nbsp;&nbsp;&nbsp; - Pełna nazwa to [ang.] Boolean - Zmienna binarna, lub Zmienna dwójkowa.
+
+<br/><br/>
+-------------
+### Typy Podstawowe - Typ Znakowy
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **char** \
+&nbsp;&nbsp;&nbsp;&nbsp; - Wymaga minimum 1 Bajt pamięci. \
+&nbsp;&nbsp;&nbsp;&nbsp; - Przyjmuje wartości od -128 do 127, \
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; lub z specyfikatorem ***unsigned***: od 0 do 255.v\
+&nbsp;&nbsp;&nbsp;&nbsp; - pełna nazwa: [ang.] Character - znak, lub symbol.
+
+
+
+
 
 <br/><br/>
 -------------
