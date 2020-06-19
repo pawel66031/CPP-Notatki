@@ -3,10 +3,13 @@
 &nbsp;&nbsp;&nbsp;&nbsp; - [[Strona Praktyki]]() 
 
 **Alternatywna Nawigacja:**  
-&nbsp;&nbsp;&nbsp;&nbsp; - [link 1]() \
-&nbsp;&nbsp;&nbsp;&nbsp; - [link 2]() \
-&nbsp;&nbsp;&nbsp;&nbsp; - [link 3]()
-
+&nbsp;&nbsp;&nbsp;&nbsp; - [Typy Podstawowe](https://github.com/Ptysiek/CPP-Notatki/blob/master/workspace/NewApproach/TypyDanych.md#typy-podstawowe---całkowitoliczbowe) \
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - [Całkowitoliczbowe](https://github.com/Ptysiek/CPP-Notatki/blob/master/workspace/NewApproach/TypyDanych.md#typy-podstawowe---całkowitoliczbowe) \
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - [Zmiennoprzecinkowe](https://github.com/Ptysiek/CPP-Notatki/blob/master/workspace/NewApproach/TypyDanych.md#typy-podstawowe---zmiennoprzecinkowe) \
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - [Typ Logiczny - Bool](https://github.com/Ptysiek/CPP-Notatki/blob/master/workspace/NewApproach/TypyDanych.md#typy-podstawowe---typ-logiczny) \
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - [Typ Znakowy - Char](https://github.com/Ptysiek/CPP-Notatki/blob/master/workspace/NewApproach/TypyDanych.md#typy-podstawowe---typ-znakowy) \
+&nbsp;&nbsp;&nbsp;&nbsp; - [Typy Złożone](https://github.com/Ptysiek/CPP-Notatki/blob/master/workspace/NewApproach/TypyDanych.md#typy-złożone) \
+&nbsp;&nbsp;&nbsp;&nbsp; - [Typ Pusty - Void](https://github.com/Ptysiek/CPP-Notatki/blob/master/workspace/NewApproach/TypyDanych.md#typ-pusty---void) 
 
 <br/><br/>
 -------------
@@ -152,13 +155,6 @@
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Tego rodzaju błędy w kodzie bywają bardzo ciężkie do znalezienia. \
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Kompilator zwykle ich nie wykrywa**. 
-
-
-
-<br/><br/>
--------------
-### Akapit 3
-
 
 <br/><br/>
 -------------
