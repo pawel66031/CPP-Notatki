@@ -58,9 +58,8 @@
 
 <br/>
 
-&nbsp;&nbsp;&nbsp;&nbsp; - Nan - występuje najczęściej gdy zrobimy coś nieodpowiedniego, jak: \
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - pierwiastek z liczby ujemnej \
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - podzielenie wartości przez zero \
+&nbsp;&nbsp;&nbsp;&nbsp; - Nan - występuje najczęściej gdy zrobimy coś nieodpowiedniego \
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; jak wyciągnięcie pierwiastka z liczby ujemnej lub podzielenie wartości przez zero. \
 &nbsp;&nbsp;&nbsp;&nbsp; - Porównanie dwóch wartości Nan zawsze zwróci **false**. \
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (Nan == Nan) => false
 
