@@ -42,6 +42,8 @@
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **long double** \
 &nbsp;&nbsp;&nbsp;&nbsp; - zwykle 80bitów, 10bajtów. 
 
+<br/>
+
 &nbsp;&nbsp;&nbsp;&nbsp; - Typy zmiennoprzecinkowe nie posiadają wersji z specyfikatorem ***unsigned***. \
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Zawsze mogą trzymać ujemne wartości. \
 &nbsp;&nbsp;&nbsp;&nbsp; - Zmienne typów zmiennoprzecinkowych mogą trzymać jedną z 4 specjalnych wartości: \
@@ -53,12 +55,12 @@
 
 <br/>
 
-> **<sup>[1]</sup>** Nan - (Not A Number) - występuje występuje najczęściej gdy zrobimy coś nielegalnego, jak: \
-> &nbsp;&nbsp;&nbsp;&nbsp; - pierwiastek z liczby ujemnej \
-> &nbsp;&nbsp;&nbsp;&nbsp; - podzielenie wartości przez zero 
->
-> Porównanie dwóch wartości Nan zawsze zwróci **false** \
-> (Nan == Nan) => false
+&nbsp;&nbsp;&nbsp;&nbsp; - Nan - (Not A Number) - występuje występuje najczęściej gdy zrobimy coś nielegalnego, jak: \
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - pierwiastek z liczby ujemnej \
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - podzielenie wartości przez zero 
+
+&nbsp;&nbsp;&nbsp;&nbsp; - Porównanie dwóch wartości Nan zawsze zwróci **false**. \
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (Nan == Nan) => false
 
 
 <br/><br/>
