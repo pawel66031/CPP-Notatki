@@ -56,7 +56,9 @@
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -inf \
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Nan (Not A Number)
 
-&nbsp;&nbsp;&nbsp;&nbsp; - Nan - (Not A Number) - występuje występuje najczęściej gdy zrobimy coś nielegalnego, jak: \
+<br/>
+
+&nbsp;&nbsp;&nbsp;&nbsp; - Nan - występuje najczęściej gdy zrobimy coś nieodpowiedniego, jak: \
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - pierwiastek z liczby ujemnej \
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - podzielenie wartości przez zero \
 &nbsp;&nbsp;&nbsp;&nbsp; - Porównanie dwóch wartości Nan zawsze zwróci **false**. \
