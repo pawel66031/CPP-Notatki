@@ -9,9 +9,13 @@
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - [Typ Logiczny - Bool](https://github.com/Ptysiek/CPP-Notatki/blob/master/workspace/NewApproach/TypyDanych.md#typy-podstawowe---typ-logiczny) \
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - [Typ Znakowy - Char](https://github.com/Ptysiek/CPP-Notatki/blob/master/workspace/NewApproach/TypyDanych.md#typy-podstawowe---typ-znakowy) \
 &nbsp;&nbsp;&nbsp;&nbsp; - [Typy Złożone](https://github.com/Ptysiek/CPP-Notatki/blob/master/workspace/NewApproach/TypyDanych.md#typy-złożone) \
+&nbsp;&nbsp;&nbsp;&nbsp; - [Typ Dedukowany - Auto](https://github.com/Ptysiek/CPP-Notatki/blob/master/workspace/NewApproach/TypyDanych.md#typ-dedukowany---auto) \
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - [Literały Znakowe](https://github.com/Ptysiek/CPP-Notatki/blob/master/workspace/NewApproach/TypyDanych.md#typ-dedukowany---auto) \
 &nbsp;&nbsp;&nbsp;&nbsp; - [Typ Pusty - Void](https://github.com/Ptysiek/CPP-Notatki/blob/master/workspace/NewApproach/TypyDanych.md#typ-pusty---void) \
 &nbsp;&nbsp;&nbsp;&nbsp; - [Inne Typy Wbudowane](https://github.com/Ptysiek/CPP-Notatki/blob/master/workspace/NewApproach/TypyDanych.md#inne-typy-wbudowane) \
 &nbsp;&nbsp;&nbsp;&nbsp; - [Aliasowanie Typów](https://github.com/Ptysiek/CPP-Notatki/blob/master/workspace/NewApproach/TypyDanych.md#aliasowanie-typów) 
+
+
 
 <br/><br/>
 -------------
@@ -91,6 +95,21 @@
 -------------
 ### Typy Złożone
 
+
+<br/><br/>
+-------------
+### Typ Dedukowany - Auto
+&nbsp;&nbsp;&nbsp;&nbsp; - Typ jest określany przez kompilator na etapie kompilacji. \
+&nbsp;&nbsp;&nbsp;&nbsp; - Można określać typ wprowadzanej wartości za pomocą literałów znakowych: **U**, **F**, **L**, ... \
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Literały nie są case-sensitive, mały znak jest równoznaczny dużemu: (u == U), (f == F), ... \
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Kolejność literałów obok siebie jest dowolna. (UL == LU). \
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Literały nie mogą występować przed opisywaną wartością.
+```cpp
+    auto num_a = 5;
+    auto num_b = 5u;
+    auto num_c = 5.5;
+    auto num_d = 5.5f;
+```
 
 <br/><br/>
 -------------
