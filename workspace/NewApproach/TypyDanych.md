@@ -9,7 +9,11 @@
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - [Typ Logiczny - Bool](https://github.com/Ptysiek/CPP-Notatki/blob/master/workspace/NewApproach/TypyDanych.md#typy-podstawowe---typ-logiczny) \
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - [Typ Znakowy - Char](https://github.com/Ptysiek/CPP-Notatki/blob/master/workspace/NewApproach/TypyDanych.md#typy-podstawowe---typ-znakowy) \
 &nbsp;&nbsp;&nbsp;&nbsp; - [Typy Złożone](https://github.com/Ptysiek/CPP-Notatki/blob/master/workspace/NewApproach/TypyDanych.md#typy-złożone) \
-&nbsp;&nbsp;&nbsp;&nbsp; - [Typ Pusty - Void](https://github.com/Ptysiek/CPP-Notatki/blob/master/workspace/NewApproach/TypyDanych.md#typ-pusty---void) 
+&nbsp;&nbsp;&nbsp;&nbsp; - [Typ Pusty - Void](https://github.com/Ptysiek/CPP-Notatki/blob/master/workspace/NewApproach/TypyDanych.md#typ-pusty---void) \
+
+&nbsp;&nbsp;&nbsp;&nbsp; - [Inne Typy Wbudowane](https://github.com/Ptysiek/CPP-Notatki/blob/master/workspace/NewApproach/TypyDanych.md#inne-typy-wbudowane) \
+
+&nbsp;&nbsp;&nbsp;&nbsp; - [Aliasowanie Typów](https://github.com/Ptysiek/CPP-Notatki/blob/master/workspace/NewApproach/TypyDanych.md#aliasowanie-typów) 
 
 <br/><br/>
 -------------
@@ -154,7 +158,7 @@
 
 <br/><br/>
 -------------
-### Inne Typy Występujące W Języku CPP
+### Inne Typy Wbudowane
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **std::size_t** \
 &nbsp;&nbsp;&nbsp;&nbsp; - najczęściej jest to alias dla typu **unsigned int** \
 &nbsp;&nbsp;&nbsp;&nbsp; - wielkość nie jest mniejsza niż 16bitów, 2Bajty 
