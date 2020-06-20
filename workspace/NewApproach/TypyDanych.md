@@ -85,10 +85,6 @@
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; lub z specyfikatorem ***unsigned***: od 0 do 255.v\
 &nbsp;&nbsp;&nbsp;&nbsp; - pełna nazwa: [ang.] Character - znak, lub symbol.
 
-
-
-
-
 <br/><br/>
 -------------
 ### Typy Złożone
@@ -154,6 +150,45 @@
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Tego rodzaju błędy w kodzie bywają bardzo ciężkie do znalezienia. \
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Kompilator zwykle ich nie wykrywa**. 
+
+
+<br/><br/>
+-------------
+### Inne Typy Występujące W Języku CPP
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **std::size_t** \
+&nbsp;&nbsp;&nbsp;&nbsp; - najczęściej jest to alias dla typu **unsigned int** \
+&nbsp;&nbsp;&nbsp;&nbsp; - wielkość nie jest mniejsza niż 16bitów, 2Bajty 
+
+
+<br/><br/>
+-------------
+### Aliasowanie Typów
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Czyli nadawanie własnych, dodatkowych nazw dla wybranego typu. \
+&nbsp;&nbsp;&nbsp;&nbsp; - Tworzenie aliasów pozwala na skrócenie ilości kodu oraz zwiększenie poziomu jego czytelności. \
+&nbsp;&nbsp;&nbsp;&nbsp; - Aliasowanie robi różnicę jedynie dla programistów. Dla kompilatora typ **int** jest tym samym co **alias na typ int**. \
+&nbsp;&nbsp;&nbsp;&nbsp; - Kiedyś wykorzystywano do tego słowo kluczowe **typedef**, obecnie zaleca się używać **using**. \
+&nbsp;&nbsp;&nbsp;&nbsp; - Na zasięg aliasu wpływają te same czynniki co na zasięg nazwy zmiennej. \
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Alias powstały wewnątrz bloku instrukcji będzie miał zasięg bloku instrukcji od miejsca jego utworzenia. \
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; To samo tyczy się pozostałych rodzai zasięgów.
+```cpp
+    typedef int WholeNumber;                // Old, Deprecated Practice
+    using PositiveNumber = unsigned int;    // The Appropriate One
+    
+    WholeNumber variable_a;
+    PositiveNumber variable_a;
+```
+```cpp
+    std::vector<std::string> strVector;
+    std::vector<std::string>::iterator strVectorPointer = strVector.begin();
+
+    // _____________________________________________________ 
+    // Alternative version with alias usage:
+    using StrVector = std::vector<std::string>;
+    using VectorIterator = std::vector<std::string>::iterator;
+
+    StrVector strVector;
+    VectorIterator strVectorPointer = strVector.begin();
+```
 
 <br/><br/>
 -------------
