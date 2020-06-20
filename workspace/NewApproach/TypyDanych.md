@@ -178,6 +178,7 @@
     PositiveNumber variable_a;
 ```
 ```cpp
+    // Here is some code that creates one vector and one iterator:
     std::vector<std::string> strVector;
     std::vector<std::string>::iterator strVectorPointer = strVector.begin();
 
