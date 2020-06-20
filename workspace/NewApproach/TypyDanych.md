@@ -105,10 +105,40 @@
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Kolejność literałów obok siebie jest dowolna. (UL == LU). \
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Literały nie mogą występować przed opisywaną wartością.
 ```cpp
-    auto num_a = 5;
-    auto num_b = 5u;
-    auto num_c = 5.5;
-    auto num_d = 5.5f;
+    auto number_a1 = 5;     // int
+    auto number_a2 = 5U;    // unsigned int
+
+    auto number_b1 = 5L;    // long int
+    auto number_b2 = 5LU;   // long unsigned int
+
+    auto number_c1 = 5LL;   // long long int
+    auto number_c2 = 5LLU;  // long long unsigned int
+
+    auto number_d = 5.;            // double  = 5
+    auto number_d2 = 100E-1;       // double  100 * (10^(-1))      = 10
+    auto number_d3 = 100.55E-2;    // double  100.55 * (10^(-2))   = 1.0055
+    auto number_d4 = 100E1;        // double  100 * (10^1)         = 1000
+    auto number_d5 = 100.22E3;     // double  100.22 * (10^3)      = 100220
+
+    auto number_e = 5.L;    // long double
+    auto number_f = 5.F;    // float
+```
+
+<br/>
+
+&nbsp;&nbsp;&nbsp;&nbsp; - Typ **auto** nadaje się idealnie do uproszczenia bardziej złożonych instrukcji:
+```cpp    
+    std::vector<std::pair<std::string, std::string>> someVector;
+
+    // Stretched out long version:
+    for (std::pair<std::string, std::string> value : someVector) {
+        // ...
+    }   
+    
+    // Nice and short simplification:
+    for (auto value : someVector) {
+        // ...
+    }
 ```
 
 <br/><br/>
