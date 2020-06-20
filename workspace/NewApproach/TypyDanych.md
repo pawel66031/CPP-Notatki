@@ -10,9 +10,7 @@
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - [Typ Znakowy - Char](https://github.com/Ptysiek/CPP-Notatki/blob/master/workspace/NewApproach/TypyDanych.md#typy-podstawowe---typ-znakowy) \
 &nbsp;&nbsp;&nbsp;&nbsp; - [Typy Złożone](https://github.com/Ptysiek/CPP-Notatki/blob/master/workspace/NewApproach/TypyDanych.md#typy-złożone) \
 &nbsp;&nbsp;&nbsp;&nbsp; - [Typ Pusty - Void](https://github.com/Ptysiek/CPP-Notatki/blob/master/workspace/NewApproach/TypyDanych.md#typ-pusty---void) \
-
 &nbsp;&nbsp;&nbsp;&nbsp; - [Inne Typy Wbudowane](https://github.com/Ptysiek/CPP-Notatki/blob/master/workspace/NewApproach/TypyDanych.md#inne-typy-wbudowane) \
-
 &nbsp;&nbsp;&nbsp;&nbsp; - [Aliasowanie Typów](https://github.com/Ptysiek/CPP-Notatki/blob/master/workspace/NewApproach/TypyDanych.md#aliasowanie-typów) 
 
 <br/><br/>
