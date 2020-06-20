@@ -182,7 +182,7 @@
     std::vector<std::string>::iterator strVectorPointer = strVector.begin();
 
     // _____________________________________________________ 
-    // Alternative version with alias usage:
+    // The same code but with alias usage:
     using StrVector = std::vector<std::string>;
     using VectorIterator = std::vector<std::string>::iterator;
 
