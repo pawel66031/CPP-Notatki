@@ -10,12 +10,15 @@
 
 <br/><br/>
 -------------
-### Akapit 1
+### Blok Instrukcji
+&nbsp;&nbsp;&nbsp;&nbsp; - Określany za pomocą dwóch klamer **{ ... }**. \
+&nbsp;&nbsp;&nbsp;&nbsp; - Pozwala wskazać linijki kodu należące do funkcji, klasy, przestrzeni nazw, innych instrukcji sterujących. \
+&nbsp;&nbsp;&nbsp;&nbsp; - Narzuca własne zasady na zasięg nazw obiektów.
 
 
 <br/><br/>
 -------------
-### Akapit 2
+### Funkcje
 
 
 <br/><br/>
