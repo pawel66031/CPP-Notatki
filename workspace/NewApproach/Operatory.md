@@ -22,7 +22,7 @@
 -------------
 ### Operatory Logiczne - Negacja
 &nbsp;&nbsp;&nbsp;&nbsp; - Jeden z trzech podstawowych operatorów logicznych. \
-&nbsp;&nbsp;&nbsp;&nbsp; - Używamy za jednego z dwóch możliwych operatorów: \
+&nbsp;&nbsp;&nbsp;&nbsp; - Używamy jednym z dwóch możliwych operatorów: \
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **(operator !)** lub **(operator not)**. 
 
 &nbsp;&nbsp;&nbsp;&nbsp; - Właściwość logiczna: \
@@ -31,7 +31,6 @@
 |:-------------:|:-------------:|
 | 0 | 1 |
 | 1 | 0 |
-
 ```cpp
     bool a = true;
 
@@ -52,24 +51,62 @@
     }
 ```
 
-<br/> \
-**Alternatywa (operator ||) (operator or)**
+
+<br/><br/>
+-------------
+### Operatory Logiczne - Alternatywa
+&nbsp;&nbsp;&nbsp;&nbsp; - Jeden z trzech podstawowych operatorów logicznych. \
+&nbsp;&nbsp;&nbsp;&nbsp; - Używamy jednym z dwóch możliwych operatorów: \
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **(operator ||)** lub **(operator or)**. 
+
+&nbsp;&nbsp;&nbsp;&nbsp; - Właściwość logiczna: \
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; `Przynajmniej jeden z warunków musi być spełniony.`
 | a | b | a \|\| b |
 |:-------------:|:-------------:|:-------------:|
 | 0 | 0 | 0 |
 | 0 | 1 | 1 |
 | 1 | 0 | 1 |
 | 1 | 1 | 1 |
+```cpp
+    bool a = true;
+    bool b = false;
 
-<br/> \
-**Koniunkcja (operator &&) (operator and)**
+    if (a || b){
+        // ...
+    }
+
+    if (a or b){
+        // ...
+    }
+```
+
+<br/><br/>
+-------------
+### Operatory Logiczne - Koniunkcja
+&nbsp;&nbsp;&nbsp;&nbsp; - Jeden z trzech podstawowych operatorów logicznych. \
+&nbsp;&nbsp;&nbsp;&nbsp; - Używamy jednym z dwóch możliwych operatorów: \
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **(operator &&)** lub **(operator and)**. 
+
+&nbsp;&nbsp;&nbsp;&nbsp; - Właściwość logiczna: \
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; `Obydwa warunki muszą być spełnione jednocześnie.`
 | a | b | a && b |
 |:-------------:|:-------------:|:-------------:|
 | 0 | 0 | 0 |
 | 0 | 1 | 0 |
 | 1 | 0 | 0 |
 | 1 | 1 | 1 |
+```cpp
+    bool a = true;
+    bool b = false;
 
+    if (a && b){
+        // ...
+    }
+
+    if (a and b){
+        // ...
+    }
+```
 
 
 <br/><br/>
