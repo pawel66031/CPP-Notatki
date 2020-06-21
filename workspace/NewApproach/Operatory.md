@@ -8,6 +8,62 @@
 &nbsp;&nbsp;&nbsp;&nbsp; - [link 3]()
 
 
+
+
+<br/><br/>
+-------------
+### Operatory Logiczne
+&nbsp;&nbsp;&nbsp;&nbsp; - Wykorzystywane przy zapytaniach warunkowych \
+&nbsp;&nbsp;&nbsp;&nbsp; - Istnieją trzy operatory logiczne: **!**, **||**, **&&**. \
+&nbsp;&nbsp;&nbsp;&nbsp; - Wszystkie trzy posiadają alternatywy nazewnicze w postaci: **not**, **or**, **and**.
+
+<br/> \
+**Negacja (operator !) (operator not)**
+| a | !a |
+|:-------------:|:-------------:|
+| 0 | 1 |
+| 1 | 0 |
+
+```cpp
+    bool a = true;
+
+    if (a){
+        // execute when a == true
+    }
+
+    if (!a){
+        // execute when a == false
+    }
+
+    if (not a){
+        // execute when a == false
+    }
+
+    if (not not a){
+        // execute when a == true
+    }
+```
+
+<br/> \
+**Alternatywa (operator ||) (operator or)**
+| a | b | a \|\| b |
+|:-------------:|:-------------:|:-------------:|
+| 0 | 0 | 0 |
+| 0 | 1 | 1 |
+| 1 | 0 | 1 |
+| 1 | 1 | 1 |
+
+<br/> \
+**Koniunkcja (operator &&) (operator and)**
+| a | b | a && b |
+|:-------------:|:-------------:|:-------------:|
+| 0 | 0 | 0 |
+| 0 | 1 | 0 |
+| 1 | 0 | 0 |
+| 1 | 1 | 1 |
+
+
+
 <br/><br/>
 -------------
 ### Akapit 1
