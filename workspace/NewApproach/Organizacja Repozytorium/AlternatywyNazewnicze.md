@@ -28,6 +28,15 @@
 
 &nbsp;
 ------------- 
+###### Nagłówek Funkcji
+&nbsp;&nbsp;&nbsp;&nbsp; == &nbsp; Sygnatura \
+&nbsp;&nbsp;&nbsp;&nbsp; == &nbsp; Prototyp \
+&nbsp;&nbsp;&nbsp;&nbsp; == &nbsp; Deklaracja Funkcji 
+
+
+
+&nbsp;
+------------- 
 ###### [ang.] Definition
 &nbsp;&nbsp;&nbsp;&nbsp; == &nbsp; Definicja
 
