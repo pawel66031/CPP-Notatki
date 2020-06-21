@@ -17,8 +17,16 @@
 &nbsp;&nbsp;&nbsp;&nbsp; - Istnieją trzy operatory logiczne: **!**, **||**, **&&**. \
 &nbsp;&nbsp;&nbsp;&nbsp; - Wszystkie trzy posiadają alternatywy nazewnicze w postaci: **not**, **or**, **and**.
 
-<br/> \
-**Negacja (operator !) (operator not)**
+
+<br/><br/>
+-------------
+### Operatory Logiczne - Negacja
+&nbsp;&nbsp;&nbsp;&nbsp; - Jeden z trzech podstawowych operatorów logicznych. \
+&nbsp;&nbsp;&nbsp;&nbsp; - Używamy za jednego z dwóch możliwych operatorów: \
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **(operator !)** lub **(operator not)**. 
+
+&nbsp;&nbsp;&nbsp;&nbsp; - Właściwość logiczna: \
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; `Zwraca wartość **Przeciwną** do podanej.`
 | a | !a |
 |:-------------:|:-------------:|
 | 0 | 1 |
