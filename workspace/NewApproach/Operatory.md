@@ -26,7 +26,7 @@
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **(operator !)** lub **(operator not)**. 
 
 &nbsp;&nbsp;&nbsp;&nbsp; - Właściwość logiczna: \
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; `Zwraca wartość **Przeciwną** do podanej.`
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; `Zwraca wartość` **`Przeciwną`** `do podanej.`
 | a | !a |
 |:-------------:|:-------------:|
 | 0 | 1 |
