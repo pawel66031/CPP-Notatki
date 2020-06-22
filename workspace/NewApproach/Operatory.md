@@ -15,7 +15,9 @@
 ### Operatory Logiczne
 &nbsp;&nbsp;&nbsp;&nbsp; - Wykorzystywane przy zapytaniach warunkowych \
 &nbsp;&nbsp;&nbsp;&nbsp; - Istnieją trzy operatory logiczne: **!**, **||**, **&&**. \
-&nbsp;&nbsp;&nbsp;&nbsp; - Wszystkie trzy posiadają alternatywy nazewnicze w postaci: **not**, **or**, **and**.
+&nbsp;&nbsp;&nbsp;&nbsp; - Wszystkie trzy posiadają alternatywy nazewnicze w postaci: **not**, **or**, **and**. \
+&nbsp;&nbsp;&nbsp;&nbsp; - Wyrażenia logiczne takie jak równowartość wykonujemy za pomocą operatora przyrównania, **(operator ==)**. \
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Do sprawdzenia nierównowartości argumentów używamy **(operator !=)** lub **(operator xor)**. 
 
 
 <br/><br/>
