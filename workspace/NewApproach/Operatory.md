@@ -26,7 +26,9 @@
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **(operator !)** lub **(operator not)**. 
 
 &nbsp;&nbsp;&nbsp;&nbsp; - Właściwość logiczna: \
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; `Zwraca wartość` **`Przeciwną`** `do podanej.`
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; `Zwraca wartość` **`Przeciwną`** `do podanej.` \
+&nbsp;&nbsp;&nbsp;&nbsp; - Odzwierciedlenie logiki w działaniach arytmetycznych: \
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; `Przemnożenie wartości -1`
 | a | !a |
 |:-------------:|:-------------:|
 | 0 | 1 |
@@ -34,19 +36,19 @@
 ```cpp
     bool a = true;
 
-    if (a){
+    if (a) {
         // execute when a == true
     }
 
-    if (!a){
+    if (!a) {
         // execute when a == false
     }
 
-    if (not a){
+    if (not a) {
         // execute when a == false
     }
 
-    if (not not a){
+    if (not not a) {
         // execute when a == true
     }
 ```
@@ -60,7 +62,9 @@
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **(operator ||)** lub **(operator or)**. 
 
 &nbsp;&nbsp;&nbsp;&nbsp; - Właściwość logiczna: \
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; `Przynajmniej jeden z warunków musi być spełniony.`
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; `Przynajmniej jeden z warunków musi być spełniony.` \
+&nbsp;&nbsp;&nbsp;&nbsp; - Odzwierciedlenie logiki w działaniach arytmetycznych: \
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; `Dodawanie +`
 | a | b | a \|\| b |
 |:-------------:|:-------------:|:-------------:|
 | 0 | 0 | 0 |
@@ -71,11 +75,11 @@
     bool a = true;
     bool b = false;
 
-    if (a || b){
+    if (a || b) {
         // ...
     }
 
-    if (a or b){
+    if (a or b) {
         // ...
     }
 ```
@@ -88,7 +92,9 @@
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **(operator &&)** lub **(operator and)**. 
 
 &nbsp;&nbsp;&nbsp;&nbsp; - Właściwość logiczna: \
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; `Obydwa warunki muszą być spełnione jednocześnie.`
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; `Obydwa warunki muszą być spełnione jednocześnie.` \
+&nbsp;&nbsp;&nbsp;&nbsp; - Odzwierciedlenie logiki w działaniach arytmetycznych: \
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; `Mnożenie *`
 | a | b | a && b |
 |:-------------:|:-------------:|:-------------:|
 | 0 | 0 | 0 |
@@ -99,13 +105,46 @@
     bool a = true;
     bool b = false;
 
-    if (a && b){
+    if (a && b) {
         // ...
     }
 
-    if (a and b){
+    if (a and b) {
         // ...
     }
+```
+
+
+
+<br/><br/>
+-------------
+### Operatory Logiczne - Implikacja
+&nbsp;&nbsp;&nbsp;&nbsp; - W języku cpp nie istnieje operator implikacji. Możemy go jednak sami zbudować \
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; za pomocą **koniunkcji**: `!(a && !b)`, \
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; lub za pomocą **alternatywy**: `(!a || b)`.
+
+
+&nbsp;&nbsp;&nbsp;&nbsp; - Właściwość logiczna: \
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; `Jeżeli pierwszy warunek działa, to drugi też musi działać.`
+
+| a | b | a implikacja b |
+|:-------------:|:-------------:|:-------------:|
+| 0 | 0 | 1 |
+| 0 | 1 | 1 |
+| 1 | 0 | 0 |
+| 1 | 1 | 1 |
+```cpp
+    bool a = true;
+    bool b = false;
+
+    if (!(a && !b)) {
+        // ...
+    }
+    
+    if (!a || b) {
+        // ...
+    }
+    
 ```
 
 
