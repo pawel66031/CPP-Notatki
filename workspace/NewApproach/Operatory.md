@@ -114,15 +114,44 @@
     }
 ```
 
+<br/><br/>
+-------------
+### Operatory Logiczne - Alternatywa Rozłączna Xor
+&nbsp;&nbsp;&nbsp;&nbsp; - Bramke xor możemy uzyskać poprzez zaprzeczenie przyrównania (operator !=). \
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Istnieje jednak ciekawsza alternatywa w postaci faktycznego operatora **xor**.
+
+&nbsp;&nbsp;&nbsp;&nbsp; - Właściwość logiczna: \
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; `Gdy warunki są różne` 
+| a | b | a xor b |
+|:-------------:|:-------------:|:-------------:|
+| 0 | 0 | 0 |
+| 0 | 1 | 1 |
+| 1 | 0 | 1 |
+| 1 | 1 | 0 |
+```cpp
+    bool a = true;
+    bool b = false;
+
+    if (a != b) {
+        // ...
+    }
+    if (!(a == b)) {
+        // ...
+    }
+    
+    if (a xor b) {
+        // ...
+    }    
+```
 
 
 <br/><br/>
 -------------
-### Operatory Logiczne - Implikacja
+### Operatory Logiczne - Wyrażenia Nie Wspierane
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Implikacja** \
 &nbsp;&nbsp;&nbsp;&nbsp; - W języku cpp nie istnieje operator implikacji. Możemy go jednak sami zbudować \
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; za pomocą **koniunkcji**: `!(a && !b)`, \
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; lub za pomocą **alternatywy**: `(!a || b)`.
-
 
 &nbsp;&nbsp;&nbsp;&nbsp; - Właściwość logiczna: \
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; `Jeżeli pierwszy warunek działa, to drugi też musi działać.`
@@ -143,9 +172,27 @@
     
     if (!a || b) {
         // ...
-    }
-    
+    }    
 ```
+
+<br/>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Xand** \
+&nbsp;&nbsp;&nbsp;&nbsp; - Przeciwieństwo bramki Xor. Sprawdza czy wartości są jednakowe. \
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Do zbudowania bramki Xor wystarczy operator przyrównania **(operator ==)**
+
+&nbsp;&nbsp;&nbsp;&nbsp; - Właściwość logiczna: \
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; `Gdy warunki są jednakowe`
+
+| a | b | a xand b |
+|:-------------:|:-------------:|:-------------:|
+| 0 | 0 | 1 |
+| 0 | 1 | 0 |
+| 1 | 0 | 0 |
+| 1 | 1 | 1 |
+
+
+
 
 
 <br/><br/>
