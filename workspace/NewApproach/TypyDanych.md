@@ -7,10 +7,12 @@
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - [Całkowitoliczbowe](https://github.com/Ptysiek/CPP-Notatki/blob/master/workspace/NewApproach/TypyDanych.md#typy-podstawowe---całkowitoliczbowe) \
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - [Zmiennoprzecinkowe](https://github.com/Ptysiek/CPP-Notatki/blob/master/workspace/NewApproach/TypyDanych.md#typy-podstawowe---zmiennoprzecinkowe) \
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - [Typ Logiczny - Bool](https://github.com/Ptysiek/CPP-Notatki/blob/master/workspace/NewApproach/TypyDanych.md#typy-podstawowe---typ-logiczny) \
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - [Typ Znakowy - Char](https://github.com/Ptysiek/CPP-Notatki/blob/master/workspace/NewApproach/TypyDanych.md#typy-podstawowe---typ-znakowy) \
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - [Typ Znakowy - Char](https://github.com/Ptysiek/CPP-Notatki/blob/master/workspace/NewApproach/TypyDanych.md#typy-podstawowe---typ-znakowy) 
+
 &nbsp;&nbsp;&nbsp;&nbsp; - [Typy Złożone](https://github.com/Ptysiek/CPP-Notatki/blob/master/workspace/NewApproach/TypyDanych.md#typy-złożone) \
 &nbsp;&nbsp;&nbsp;&nbsp; - [Typ Dedukowany - Auto](https://github.com/Ptysiek/CPP-Notatki/blob/master/workspace/NewApproach/TypyDanych.md#typ-dedukowany---auto) \
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - [Literały Znakowe](https://github.com/Ptysiek/CPP-Notatki/blob/master/workspace/NewApproach/TypyDanych.md#typ-dedukowany---auto) \
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - [Literały Znakowe](https://github.com/Ptysiek/CPP-Notatki/blob/master/workspace/NewApproach/TypyDanych.md#typ-dedukowany---auto) 
+
 &nbsp;&nbsp;&nbsp;&nbsp; - [Typ Pusty - Void](https://github.com/Ptysiek/CPP-Notatki/blob/master/workspace/NewApproach/TypyDanych.md#typ-pusty---void) \
 &nbsp;&nbsp;&nbsp;&nbsp; - [Inne Typy Wbudowane](https://github.com/Ptysiek/CPP-Notatki/blob/master/workspace/NewApproach/TypyDanych.md#inne-typy-wbudowane) \
 &nbsp;&nbsp;&nbsp;&nbsp; - [Aliasowanie Typów](https://github.com/Ptysiek/CPP-Notatki/blob/master/workspace/NewApproach/TypyDanych.md#aliasowanie-typów) 
