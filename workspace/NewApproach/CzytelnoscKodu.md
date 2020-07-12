@@ -23,7 +23,7 @@
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Tak długo jak program jest wykorzystywany tak długo ktoś będzie go modyfikował. \
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Nikt nie będzie pamiętał o odśweżaniu komentarzy. \
 &nbsp;&nbsp;&nbsp;&nbsp; - W każdym miejscu w którym chciałbyś wstawić zastanów się czy nie napisać nowej funkcji. \
-&nbsp;&nbsp;&nbsp;&nbsp; - Nie wolno komentować co dany kod robi. \ 
+&nbsp;&nbsp;&nbsp;&nbsp; - Nie wolno komentować co dany kod robi. \
 &nbsp;&nbsp;&nbsp;&nbsp; - Jeżeli sytuacja tego wymaga, napisz dlaczego robi to w taki, a nie inny sposób. 
 
 <br/><br/>
