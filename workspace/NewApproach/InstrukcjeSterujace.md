@@ -15,6 +15,32 @@
 &nbsp;&nbsp;&nbsp;&nbsp; - Pozwala wskazać linijki kodu należące do funkcji, klasy, przestrzeni nazw, innych instrukcji sterujących. \
 &nbsp;&nbsp;&nbsp;&nbsp; - Narzuca własne zasady na zasięg nazw obiektów.
 
+<br/><br/>
+-------------
+### Instrukcje Warunkowe - If
+&nbsp;&nbsp;&nbsp;&nbsp; - Sprawdzają warunki od lewej strony. \
+&nbsp;&nbsp;&nbsp;&nbsp; - Pozwalają na wykorzystanie nowych zapisów operatorów `not`, `or`, `and`, `xor`.
+
+<br/><br/>
+-------------
+### Pętle - For
+&nbsp;&nbsp;&nbsp;&nbsp; - Pętla wykonywana przez znaną ilość kroków. \
+&nbsp;&nbsp;&nbsp;&nbsp; - Posiada w swojej budowie trzy części:   ```for (inicjalizacja; warunek; instrukcja kroku)```. \
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **inicjalizacja** \
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - Pozwala na nadawanie wartości utworzonym zmiennym:
+```cpp
+    int i;
+    for (i = 0; i < 5; ++i) {
+    }
+    
+    int e;
+    for (i = 0, e = 5; i < e; ++i) {
+    }
+```
+
+&nbsp;&nbsp;&nbsp;&nbsp; - Instrukcja For pozwala na używanie składni "ForEach".
+
+
 
 <br/><br/>
 -------------
