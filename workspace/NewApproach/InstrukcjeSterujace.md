@@ -19,7 +19,17 @@
 -------------
 ### Instrukcje Warunkowe - If
 &nbsp;&nbsp;&nbsp;&nbsp; - Sprawdzają warunki od lewej strony. \
-&nbsp;&nbsp;&nbsp;&nbsp; - Pozwalają na wykorzystanie nowych zapisów operatorów `not`, `or`, `and`, `xor`.
+&nbsp;&nbsp;&nbsp;&nbsp; - Pozwalają na wykorzystanie nowych zapisów operatorów `not`, `or`, `and`, `xor`. \
+&nbsp;&nbsp;&nbsp;&nbsp; - Możliwe jest deklarowanie zmiennych w instrukcji if. \
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Takie zmienne posiadają zasięg bloku instrukcji warunkowej if.
+```cpp
+    if (int a = getA(); a > 7) {
+    }
+    
+    if (double b = 2.; b == compareB()) {
+        // instructions that use and modify variable b.    
+    }   
+```
 
 <br/><br/>
 -------------
