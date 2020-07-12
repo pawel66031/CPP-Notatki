@@ -26,36 +26,79 @@
 ### Pętle - For
 &nbsp;&nbsp;&nbsp;&nbsp; - Pętla wykonywana przez znaną ilość kroków. \
 &nbsp;&nbsp;&nbsp;&nbsp; - Posiada w swojej budowie trzy części:   ```for (inicjalizacja; warunek; instrukcja kroku)```. \
+&nbsp;&nbsp;&nbsp;&nbsp; - Wypełnianie wszystkich trzech części jest dobrowolne.
+```cpp
+    // correct syntax:
+    for (int i = 0; i < 5; ++i) {
+    }
+    
+    // correct syntax:
+    for ( ; ; ) {
+    }
+    
+    // correct syntax:
+    for (int i = 0;   ; ++i) {
+    }
+```
+
+<br/>
+
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **inicjalizacja** \
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - Pozwala na nadawanie wartości utworzonym zmiennym:
 ```cpp
     int i;
-    for (i = 0; i < 5; ++i) {
+    for (i = 0;   ;   ) {
     }
     
     int e;
-    for (i = 0, e = 5; i < e; ++i) {
+    for (i = 0, e = 5;   ;   ) {
     }
 ```
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - Pozwala na tworzenie zmiennych o zasięgu bloku pętli. \
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - Tak powstałe zmienne muszą mieć jednakowy typ:
 ```cpp
     // One variable with INT type:
-    for (int i = 0; i < 5; ++i) {
+    for (int i = 0;   ;   ) {
     }
     
     // Two variables with INT type:
-    for (int i = 0, e = 5; i < e; ++i) {
+    for (int i = 0, e = 5;   ;   ) {
     }
         
     // Two variables with DOUBLE type:
-    for (double i = 0, e = 5; i < e; ++i) {
+    for (double i = 0, e = 5;   ;   ) {
     }
    
-    // Error: wrong 'for' syntax
-    for (double i = 0, int e = 5; i < e; ++i) {
+    // Error: 'for' instruction wrong syntax:
+    for (double i = 0, int e = 5;   ;   ) {
     }
 ```
+
+<br/>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **warunek** \
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - Jeżeli spełniony to wykonuje instrukcje zawarte w bloku instrukcji pętli for. \
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - Gdy nie wypełniony przyjmuje wartość `true`. Pętla nieskończona do pojawienia się instrukcji `break` lub `return`. \
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - Pozwala na użycie zmiennej zadeklarowanej wewnątrz części **inicjalizacyjnej** pętli. \
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - Pozwala na wykorzystanie nowych zapisów operatorów `not`, `or`, `and`, `xor`.
+
+<br/>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **instrukcja kroku** \
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - Wykonywana jest za drugim i każdym następnym razem gdy **warunek** posiada wartość `true`. \
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Oznacza to że za pierwszym sprawdzeniem **warunku** instrukcje kroku się nie wykonają. \
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; A za każdym następnym, gdy **warunek** == `true`, zostaną wykonane. \
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - Instrukcją kroku może być wykonanie operacji każdego operatora na zmiennej. \
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - Instrukcją kroku może być wykonanie dowolnej funkcji.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - Nazwa **instrukcja kroku** pochodzi od określenia że każde jednorazowe wykonanie bloku pętli jest **jednym krokiem pętli**. \
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Tak więc **instrukcja kroku** jest instrukcją wykonywaną każdorazowo gdy zakończy się jeden krok pętli. \
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - Możliwe jest wykonanie kilku instrukcji. Każdą następną instrukcję oddzielamy operatorem przecinka `,`. 
+
+
+
+
+
+
 
 <br/>
 
