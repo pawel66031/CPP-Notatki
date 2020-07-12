@@ -9,6 +9,11 @@
 &nbsp;&nbsp;&nbsp;&nbsp; == &nbsp; Blok instrukcji \
 &nbsp;&nbsp;&nbsp;&nbsp; == &nbsp; Ciało Funkcji / Ciało Metody / Ciało Klasy
 
+&nbsp;
+------------- 
+###### [ang.] Recursion
+&nbsp;&nbsp;&nbsp;&nbsp; == &nbsp; Rekurencja \
+&nbsp;&nbsp;&nbsp;&nbsp; == &nbsp; Rekursja
 
 &nbsp;
 ------------- 
