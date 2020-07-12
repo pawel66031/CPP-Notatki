@@ -132,7 +132,7 @@
 ```cpp    
     std::vector<std::pair<std::string, std::string>> someVector;
 
-    // Long stretched out version:
+    // Intricate, stretched out version:
     for (std::pair<std::string, std::string> value : someVector) {
         // ...
     }   
