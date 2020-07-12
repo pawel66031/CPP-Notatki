@@ -37,6 +37,27 @@
     for (i = 0, e = 5; i < e; ++i) {
     }
 ```
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - Pozwala na tworzenie zmiennych o zasięgu bloku pętli. \
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - Tak powstałe zmienne muszą mieć jednakowy typ:
+```cpp
+    // One variable with INT type:
+    for (int i = 0; i < 5; ++i) {
+    }
+    
+    // Two variables with INT type:
+    for (int i = 0, e = 5; i < e; ++i) {
+    }
+        
+    // Two variables with DOUBLE type:
+    for (double i = 0, e = 5; i < e; ++i) {
+    }
+   
+    // Error: wrong 'for' syntax
+    for (double i = 0, int e = 5; i < e; ++i) {
+    }
+```
+
+<br/>
 
 &nbsp;&nbsp;&nbsp;&nbsp; - Instrukcja For pozwala na używanie składni "ForEach".
 
