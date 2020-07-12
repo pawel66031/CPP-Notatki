@@ -74,36 +74,50 @@
     }
 ```
 
-<br/>
-
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **warunek** \
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - Jeżeli spełniony to wykonuje instrukcje zawarte w bloku instrukcji pętli for. \
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - Gdy nie wypełniony przyjmuje wartość `true`. Pętla nieskończona do pojawienia się instrukcji `break` lub `return`. \
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - Pozwala na użycie zmiennej zadeklarowanej wewnątrz części **inicjalizacyjnej** pętli. \
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - Pozwala na wykorzystanie nowych zapisów operatorów `not`, `or`, `and`, `xor`.
 
-<br/>
-
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **instrukcja kroku** \
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - Wykonywana jest za drugim i każdym następnym razem gdy **warunek** posiada wartość `true`. \
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Oznacza to że za pierwszym sprawdzeniem **warunku** instrukcje kroku się nie wykonają. \
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; A za każdym następnym, gdy **warunek** == `true`, zostaną wykonane. \
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - Instrukcją kroku może być wykonanie operacji każdego operatora na zmiennej. \
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - Instrukcją kroku może być wykonanie dowolnej funkcji.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - Instrukcją kroku może być wykonanie dowolnej funkcji. \
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - Nazwa **instrukcja kroku** pochodzi od określenia że każde jednorazowe wykonanie bloku pętli jest **jednym krokiem pętli**. \
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Tak więc **instrukcja kroku** jest instrukcją wykonywaną każdorazowo gdy zakończy się jeden krok pętli. \
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - Możliwe jest wykonanie kilku instrukcji. Każdą następną instrukcję oddzielamy operatorem przecinka `,`. 
 
-
-
-
-
-
-
 <br/>
 
-&nbsp;&nbsp;&nbsp;&nbsp; - Instrukcja For pozwala na używanie składni "ForEach".
+&nbsp;&nbsp;&nbsp;&nbsp; - Instrukcja For pozwala na używanie składni "ForEach", czyli dla każdego elementu. \
+&nbsp;&nbsp;&nbsp;&nbsp; - Ten rodzaj składni for posiada dwie części ```for (zmienna iterująca : dowolny rodzaj indeksowanej tablicy)```. \
+&nbsp;&nbsp;&nbsp;&nbsp; - W poniższym przykładzie zmienna `value` nie jest indeksem jak to było w poprzednich pętlach for. \
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; `value` trzyma wartość tablicy `someVector` na której w obecnym kroku ustawił się iterator. \
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; W następnym kroku pętli zmienna `value` będzie trzymała następny element tablicy `someVector`.
+```cpp
+    std::vector<int> someVector;
 
+    for (int value : someVector) {
+    }   
+```
+```cpp
+    std::vector<char> someVector;
+
+    for (char value : someVector) {
+    }   
+```
+```cpp
+    std::vector<std::string> someVector;
+
+    for (std::string value : someVector) {
+    }   
+    
+    for (auto value : someVector) {
+    }  
+```
 
 
 <br/><br/>
