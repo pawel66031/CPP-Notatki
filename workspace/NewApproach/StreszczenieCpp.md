@@ -14,6 +14,7 @@
 
 &nbsp;&nbsp;&nbsp;&nbsp; - Język silnie typowany.
 
+&nbsp;&nbsp;&nbsp;&nbsp; - Wieloparadygmatowy. 
 
 
 <br/><br/>
