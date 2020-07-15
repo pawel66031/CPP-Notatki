@@ -19,7 +19,7 @@
 &nbsp;&nbsp;&nbsp;&nbsp; - Wieloparadygmatowy. 
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **STL** \
-&nbsp;&nbsp;&nbsp;&nbsp; - Standard Template Library - biblioteka szablonów.
+&nbsp;&nbsp;&nbsp;&nbsp; - Standard Template Library - biblioteka szablonów. \
 &nbsp;&nbsp;&nbsp;&nbsp; - Cache friendly 
 
 &nbsp;&nbsp;&nbsp;&nbsp; - STD - przestrzeń nazw narzędzi standardowej biblioteki cpp.
