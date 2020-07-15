@@ -9,17 +9,19 @@
 
 
 
+
 <br/><br/>
 -------------
+### Akapit 1
 
 &nbsp;&nbsp;&nbsp;&nbsp; - Język silnie typowany.
 
 &nbsp;&nbsp;&nbsp;&nbsp; - Wieloparadygmatowy. 
 
+&nbsp;&nbsp;&nbsp;&nbsp; - Standard Template Library - biblioteka szablonów std dostępna w standardzie jeżeyka cpp. 
 
-<br/><br/>
--------------
-### Akapit 3
+
+
 
 
 <br/><br/>
