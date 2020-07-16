@@ -1,6 +1,8 @@
 # Praktyczne Zastosowania <br/> std::vector< TypDanych >
-&nbsp;&nbsp;&nbsp;&nbsp; - [[Strona Teorii]](#podsumowanie-classic-builder) \
-&nbsp;&nbsp;&nbsp;&nbsp; - [[Strona Praktyki]](#program-11--productfile--guitar) 
+&nbsp;&nbsp;&nbsp;&nbsp; - [[Strona Teorii]](https://github.com/Ptysiek/CPP-Notatki/blob/master/workspace/NewApproach/std_vector.md) \
+&nbsp;&nbsp;&nbsp;&nbsp; - [[Strona Praktyki]]() 
+
+
 
 **Alternatywna Nawigacja:**  
 &nbsp;&nbsp;&nbsp;&nbsp; - [Wyświetlanie informacji o wybranym Vectorze](#1-Wyświetlanie-informacji-o-wybranym-Vectorze) \
