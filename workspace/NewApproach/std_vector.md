@@ -1,6 +1,6 @@
 # std::vector< TypDanych > 
-&nbsp;&nbsp;&nbsp;&nbsp; - [[Strona Teorii]](#podsumowanie-classic-builder) \
-&nbsp;&nbsp;&nbsp;&nbsp; - [[Strona Praktyki]](#program-11--productfile--guitar) 
+&nbsp;&nbsp;&nbsp;&nbsp; - [Strona Teorii] \
+&nbsp;&nbsp;&nbsp;&nbsp; - [[Strona Praktyki]](https://github.com/Ptysiek/CPP-Notatki/blob/master/workspace/NewApproach/praktyka_std_vector.md) 
 
 **Alternatywna Nawigacja:**  
 &nbsp;&nbsp;&nbsp;&nbsp; - [Wyświetlanie informacji o wybranym Vectorze](#1-Wyświetlanie-informacji-o-wybranym-Vectorze) \
