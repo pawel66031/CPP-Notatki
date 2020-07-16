@@ -100,10 +100,11 @@
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Tak więc **instrukcja kroku** jest instrukcją wykonywaną każdorazowo gdy zakończy się jeden krok pętli. \
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - Możliwe jest wykonanie kilku instrukcji. Każdą następną instrukcję oddzielamy operatorem przecinka `,`. 
 
-<br/>
-
-&nbsp;&nbsp;&nbsp;&nbsp; - Instrukcja For pozwala na używanie składni "ForEach", czyli dla każdego elementu. \
-&nbsp;&nbsp;&nbsp;&nbsp; - Ten rodzaj składni for posiada dwie części ```for (zmienna iterująca : dowolny rodzaj indeksowanej tablicy)```. \
+<br/><br/>
+-------------
+### Pętle - For Po Kolekcji
+&nbsp;&nbsp;&nbsp;&nbsp; - Instrukcja For pozwala na używanie składni "ForEach", dla każdego elementu zakresu. \
+&nbsp;&nbsp;&nbsp;&nbsp; - Ten rodzaj składni posiada dwie części ```for (zmienna iterująca : dowolny rodzaj indeksowanej tablicy)```. \
 &nbsp;&nbsp;&nbsp;&nbsp; - W poniższym przykładzie zmienna `value` nie jest indeksem jak to było w poprzednich pętlach for. \
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; `value` trzyma wartość tablicy `someVector` na której w obecnym kroku ustawił się iterator. \
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; W następnym kroku pętli zmienna `value` będzie trzymała następny element tablicy `someVector`.
