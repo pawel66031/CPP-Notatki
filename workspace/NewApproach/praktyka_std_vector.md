@@ -26,21 +26,18 @@
 ```cpp
 template<typename T>
 void showVector(const std::vector<T>& givenVector) {
-    // It prints in all current values of givenVector elements, 
-    // number of elements, amount of reserved space and amout of space left before next realocation.
+    // It prints all current values of givenVector, 
+    // number of existing elements, 
+    // the amount of reserved space,
+    // the number of items that can be added before next realocation.
 
     for (const auto& element : givenVector) {
         std::cout << element << " ";
     }
 
     std::cout << "\n"
-              // Amount of existing elements:
               << "size: "       << givenVector.size()      << "\n"
-              
-              // Amount of reserved space:
               << "capacity: "   << givenVector.capacity()  << "\n"
-              
-              // Amount of elements that can be added before next realocation:
               << "free space left: " << givenVector.capacity() - givenVector.size();
  }
 ```
