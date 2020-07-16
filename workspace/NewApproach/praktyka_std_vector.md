@@ -36,8 +36,8 @@ void showVector(const std::vector<T>& givenVector) {
     }
 
     std::cout << "\n"
-              << "size: "       << givenVector.size()      << "\n"
-              << "capacity: "   << givenVector.capacity()  << "\n"
+              << "size: "            << givenVector.size()      << "\n"
+              << "capacity: "        << givenVector.capacity()  << "\n"
               << "free space left: " << givenVector.capacity() - givenVector.size();
  }
 ```
