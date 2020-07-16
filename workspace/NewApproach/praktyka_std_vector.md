@@ -26,8 +26,8 @@
 ```cpp
 template<typename T>
 void showVector(const std::vector<T>& givenVector) {
-    // It prints in vector values, 
-    // number of elements and amount of reserved space.
+    // It prints in all current values of givenVector elements, 
+    // number of elements, amount of reserved space and amout of space left before next realocation.
 
     for (const auto& element : givenVector) {
         std::cout << element << " ";
@@ -43,13 +43,6 @@ void showVector(const std::vector<T>& givenVector) {
               // Amount of elements that can be added before next realocation:
               << "free space left: " << givenVector.capacity() - givenVector.size();
  }
-```
-```cpp
-vector<int> A;
-// _________________________
-// Wywołanie funkcji [Show]:
-Show(A);    // size: 0        // W tym momencie vector [A] jest pusty. Nie posiada elementów.
-            // capacity: 0    // Oraz nie ma dla nich zarezerwowanego miejsca w pamięci.
 ```
 
 <br/><br/>
