@@ -3,11 +3,6 @@
 &nbsp;&nbsp;&nbsp;&nbsp; - [[Strona Praktyki]](#program-11--productfile--guitar) 
 
 **Alternatywna Nawigacja:**  
-&nbsp;&nbsp;&nbsp;&nbsp; - [link 1]() \
-&nbsp;&nbsp;&nbsp;&nbsp; - [link 2]() \
-&nbsp;&nbsp;&nbsp;&nbsp; - [link 3]()
-
-
 &nbsp;&nbsp;&nbsp;&nbsp; - [Wyświetlanie informacji o wybranym Vectorze](#1-Wyświetlanie-informacji-o-wybranym-Vectorze) \
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - [operator[ ]](#program-11-operator-size--capacity-) \
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - [.size( )](#program-11-operator-size--capacity-) \
