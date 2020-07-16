@@ -1,4 +1,4 @@
-# Praktyczne Zastosowania <br/> std::vector< TypDanych >
+# std::vector< TypDanych > <br/> Praktyczne Zastosowania
 &nbsp;&nbsp;&nbsp;&nbsp; - [[Strona Teorii]](https://github.com/Ptysiek/CPP-Notatki/blob/master/workspace/NewApproach/std_vector.md) \
 &nbsp;&nbsp;&nbsp;&nbsp; - [Strona Praktyki]
 
