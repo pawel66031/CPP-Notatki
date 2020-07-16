@@ -1,4 +1,4 @@
-# Zadania Praktyczne <br/> std::vector< TypDanych >
+# Praktyczne Zastosowania <br/> std::vector< TypDanych >
 &nbsp;&nbsp;&nbsp;&nbsp; - [[Strona Teorii]](#podsumowanie-classic-builder) \
 &nbsp;&nbsp;&nbsp;&nbsp; - [[Strona Praktyki]](#program-11--productfile--guitar) 
 
