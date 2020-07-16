@@ -34,9 +34,14 @@ void showVector(const std::vector<T>& givenVector) {
     }
 
     std::cout << "\n"
-              << "size: "       << givenVector.size()      << "\n"              // Amount of existing elements
-              << "capacity: "   << givenVector.capacity()  << "\n"              // Amount of reserved space
-              << "space free: " << givenVector.capacity() - givenVector.size(); // Amount of elements that can add before next realocation.     
+              // Amount of existing elements:
+              << "size: "       << givenVector.size()      << "\n"
+              
+              // Amount of reserved space:
+              << "capacity: "   << givenVector.capacity()  << "\n"
+              
+              // Amount of elements that can be added before next realocation:
+              << "free space left: " << givenVector.capacity() - givenVector.size();
  }
 ```
 ```cpp
