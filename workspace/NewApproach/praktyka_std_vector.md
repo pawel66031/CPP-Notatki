@@ -25,15 +25,18 @@
 ###### [Program 1.1] `operator[]` `.size( )` `.capacity( )`
 ```cpp
 template<typename T>
-void Show(const vector<T>& V){
-    /** Funkcja wypisująca informacje o vectorze **/
-    
-    // Operator[] zwraca REFERENCJĘ na element w określonej pozycji
-    for (int i=0; i<V.size(); ++i)	// Pętla przez wszystkie elementy vectora [V].
-        std::cout << V[i] << " ";	// Wypisanie wartości elementu na indeksie [i].
-	
-    std::cout << "\n size: "      << V.size()          // Zwraca ilość elementów w vectorze [V].
-              << "\n capacity: "  << V.capacity();     // Zwraca ilość zarezerwowanego miejsca w pamięci.
+void showVector(const std::vector<T>& givenVector) {
+    // It prints in vector values, 
+    // number of elements and amount of reserved space.
+
+    for (const auto& element : givenVector) {
+        std::cout << element << " ";
+    }
+
+    std::cout << "\n"
+              << "size: "       << givenVector.size()      << "\n"              // Amount of existing elements
+              << "capacity: "   << givenVector.capacity()  << "\n"              // Amount of reserved space
+              << "space free: " << givenVector.capacity() - givenVector.size(); // Amount of elements that can add before next realocation.     
  }
 ```
 ```cpp
