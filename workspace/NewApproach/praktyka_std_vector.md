@@ -1,6 +1,6 @@
 # Praktyczne Zastosowania <br/> std::vector< TypDanych >
 &nbsp;&nbsp;&nbsp;&nbsp; - [[Strona Teorii]](https://github.com/Ptysiek/CPP-Notatki/blob/master/workspace/NewApproach/std_vector.md) \
-&nbsp;&nbsp;&nbsp;&nbsp; - [[Strona Praktyki]]() 
+&nbsp;&nbsp;&nbsp;&nbsp; - [[Strona Praktyki]](#NONE) 
 
 
 
