@@ -28,57 +28,7 @@
 
 <br/><br/>
 -------------
-### 1. Wyświetlanie informacji o wybranym Vectorze
-###### [Program 1.1] `operator[]` `.size( )` `.capacity( )`
-```cpp
-template<typename T>
-void Show(const vector<T>& V){
-    /** Funkcja wypisująca informacje o vectorze **/
-    
-    // Operator[] zwraca REFERENCJĘ na element w określonej pozycji
-    for (int i=0; i<V.size(); ++i)	// Pętla przez wszystkie elementy vectora [V].
-        std::cout << V[i] << " ";	// Wypisanie wartości elementu na indeksie [i].
-	
-    std::cout << "\n size: "      << V.size()          // Zwraca ilość elementów w vectorze [V].
-              << "\n capacity: "  << V.capacity();     // Zwraca ilość zarezerwowanego miejsca w pamięci.
- }
-```
-```cpp
-vector<int> A;
-// _________________________
-// Wywołanie funkcji [Show]:
-Show(A);    // size: 0        // W tym momencie vector [A] jest pusty. Nie posiada elementów.
-            // capacity: 0    // Oraz nie ma dla nich zarezerwowanego miejsca w pamięci.
-```
-
-<br/><br/>
--------------
 ### 2. Rezerwowanie Pamięci
-###### [Program 2.1] `.push_back(TypDanych)`
-```cpp
- vector<int> B;
-
- // W tym momencie vector [B] jest pusty
- Show(B);    // size: 0
-             // capacity: 0
-
- // Dodajemy jeden nowy element do vectora [B] 
- // - nowy element zostanie dodany na końcu vectora.
- B.push_back(int(100));
- Show(B);    // size: 1
-             // capacity: 1
-
- // Dodajemy kolejny element do vectora [B] 
- B.push_back(-22);
- Show(B);    // size: 2
-             // capacity: 2
-
- // Dodajemy jeszcze kolejny element do vectora [B] 
- B.push_back(3);
- Show(B);    // size: 3  !!!
-             // capacity: 4  !!!
-```
-
 Przed każdym WIELOKROTNYM użyciem metody `.push_back( )` \
 należy unikać kilkukrotnych realokacji vectora. \
 W kodzie wyżej, automatycznie doszło aż do trzech realokacji vectora.
