@@ -45,11 +45,10 @@ void showVector(const std::vector<T>& givenVector) {
 <br/><br/>
 -------------
 ### Rezerwowanie Pamięci  
+**`konstruktor(int)`**, **`konstruktor(int, TypDanych)`** \ 
 &nbsp;&nbsp;&nbsp;&nbsp; - Rezerwuje miejsce w pamięci na określoną ilość elementów, \
 &nbsp;&nbsp;&nbsp;&nbsp; - Tworzy określoną ilość elementów domyślnie nadając im początkową wartość zero. \
 &nbsp;&nbsp;&nbsp;&nbsp; - Pozwala na inicjalizacje wartością inną od zera, drugi argument.
-
-**`konstruktor(int)`**, **`konstruktor(int, TypDanych)`** \ 
 ```cpp
 vector<int> vector_A(4);
     // 0 0 0 0
@@ -63,6 +62,9 @@ vector<int> vector_AA(6, -12);
     // capacity: 6
     // free space left: 0
 ```
+
+
+<br/>
 
 
 **`.reserve(int)`** \
@@ -119,7 +121,9 @@ nie należy jednak zakładać że takowe usprawnienia zostaną zastosowane w ka�
 Dlatego zamiast wykonywać 26 lub więcej automatycznych realokacji zaleca się \
 wykonać jednokrotną, ręczną realokację przed wprowadzaniem nowych elementów.
 
+
 <br/>
+
 
 ###### [Program 2.1] `.push_back(TypDanych)`
 ```cpp
