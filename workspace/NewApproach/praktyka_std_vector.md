@@ -44,14 +44,19 @@ void showVector(const std::vector<T>& givenVector) {
 
 <br/><br/>
 -------------
-### 2. Rezerwowanie Pamięci - `.reserve(int)`
+### 2. Rezerwowanie Pamięci  
+**`.reserve(int)`** \
+&nbsp;&nbsp;&nbsp;&nbsp; - Nie tworzy elementów, \
+&nbsp;&nbsp;&nbsp;&nbsp; - Rezerwuje miejsce w pamięci na określoną ilość elementów, \
+&nbsp;&nbsp;&nbsp;&nbsp; - Nie może zmniejszyć ilości zarezerwowanego miejsca, \
+&nbsp;&nbsp;&nbsp;&nbsp; - Pozwala uniknąć wielokrotnych automatycznych realokacji pamięci.
 ```cpp
 vector<int> vector_A;
     // size: 0
     // capacity: 0
     // free space left: 0
 
-E.reserve(200);
+vector_A.reserve(200);
     // No elements were created.
     // But now you can create two hundred elements without multiple reallocations.
     // size: 0
@@ -62,37 +67,42 @@ E.reserve(200);
 Metoda `.reserve(int)` nie pozwala nam na zmniejszenie ilości zarezerwowanego miejsca. \
 W sytuacji podania mniejszej wartości niż obecna kontener nie jest modyfikowany.
 ```cpp
-E.reserve(120);         // 120 is less than the current 200
+vector_A.reserve(120);         // 120 is less than the current 200
     // The method does nothing if it receives a smaller argument than the currently reserved space.
     // It cannot reduce the reserved space of the vector.
     // size: 0
     // capacity: 200
     // free space left: 200
+ ```
  
- 
- 
- // __________________________________________________________
- // Argument metody [.reserve(int)] określa minimalną ilość elementów w vectorze.
- // Nigdy nie ma problemu z zwiększeniem tej ilości.
- E.reserve(20111);
+Metodą `.reserve(int)` możemy zwiększyć ilość zarezerwowanej pamięci do konkretnego rozmiaru, \
+który nie musi być wielokrotnością dwójki lub dwukrotnością poprzedzającego rozmiaru.
+ ```cpp
+ vector_A.reserve(233);  
+    // the reserved space will contain 233 elements. Not 256(2^8), Not 400(200*2).
+    // size: 0
+    // capacity: 233
+    // free space left: 233
+``` 
 
- // Zostanie wykonana realokacja do rozmiaru dokładnie [20 111] elementów. 
- // Zostaje tutaj pominięta zasada dwukrotności, czyli NIE zostanie 
- // zarezerwowane miejsce dla [40 000] elementów.
- 
- // __________________________________________________________
- // Nie można zarezerwować mniej miejsca niż obecnie jest zarezerwowane w vectorze.
- // Obecny stan naszego vectora to:
- Show(E);    // size: 20000
-             // capacity: 20111
- 
- // Podanie mniejszej wartości NIE zmodyfikuje
- // ilości obiektów, ani ilości zarezerwowanego miejsca. 
- 
- E.reserve(50);
- Show(E);    // size: 20000
-             // capacity: 20111
-```
+Niezależnie na ile elementów zostanie zarezerwowane miejsce w pamięci, po przekroczeniu limitu nastąpi automatyczna realokacja. \
+Automatyczna realokajca dwukrotnie zwiększa ostatnią ilość zarezerwowanego miejsca. \
+Przykładowo, jeżeli `(vector_A.capacity() == 233)`, i będziemy chcieli dodać 234 element, \
+to w wyniku automatycznej realokacji ilość miejsca w wektorze zostanie zwiększona do, (233 * 2), 466 elementów .
+
+**Unikamy automatycznych realokacji pamięci z powodów optymalizacyjnych** \
+Jest to czasochłonna operacja polegająca na wyszukaniu odpowiedniego miejsca w pamięci zdolnego do pomieszczenia \
+wszystkich elementów wektora w ciągłej, nieprzerwanej lini komórek pamięci. A następnie jeszcze przepisania element po elemencie w odpowiednie miejsce. \
+Operacja realokacji posiada własne usprawnienia zależne od systemu operacyjnego, \
+nie należy jednak zakładać że takowe usprawnienia zostaną zastosowane w każdym przypadku. \
+Dlatego zamiast wykonywać 26 lub więcej automatycznych realokacji zaleca się \
+wykonać jednokrotną, ręczną realokację przed wprowadzaniem nowych elementów.
+
+
+
+
+
+
 
 
 ###### [Program 2.1] `.push_back(TypDanych)`
