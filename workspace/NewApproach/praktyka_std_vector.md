@@ -124,28 +124,8 @@ wykonać jednokrotną, ręczną realokację przed wprowadzaniem nowych elementó
 <br/>
 
 
-###### [Program 2.1] `.push_back(TypDanych)`
-```cpp
-int someValue = 5;
-
- vector<int> vector_A;
-    // size: 0
-    // capacity: 0
-    // free space left: 0
- 
- vector_A.push_back(someValue);
-    // Gives vector_A one element at the end
-    // In this situation: Automate Memory Realocation Needed.
-    // size: 1
-    // capacity: 1
-    // free space left: 0
-```
-
-
-
-
       
-###### [Program 2.3] `Podejście 2 - .resize(int)`
+###### **`.resize(int)`**
 ```cpp
  vector<int> D;
  // _____________
@@ -201,6 +181,31 @@ int someValue = 5;
  Show(F);    // size: 112
              // capacity: 112
 ```
+
+
+
+
+
+###### [Program 2.1] `.push_back(TypDanych)`
+```cpp
+int someValue = 5;
+
+ vector<int> vector_A;
+    // size: 0
+    // capacity: 0
+    // free space left: 0
+ 
+ vector_A.push_back(someValue);
+    // Gives vector_A one element at the end
+    // In this situation: Automate Memory Realocation Needed.
+    // size: 1
+    // capacity: 1
+    // free space left: 0
+```
+
+
+
+
 
 <br/><br/>
 -------------
