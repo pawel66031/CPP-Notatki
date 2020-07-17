@@ -45,7 +45,7 @@ void showVector(const std::vector<T>& givenVector) {
 <br/><br/>
 -------------
 ### Rezerwowanie Pamięci  
-**`konstruktor(int)`**, **`konstruktor(int, TypDanych)`** \ 
+**`konstruktor(int)`**, **`konstruktor(int, TypDanych)`** \
 &nbsp;&nbsp;&nbsp;&nbsp; - Rezerwuje miejsce w pamięci na określoną ilość elementów, \
 &nbsp;&nbsp;&nbsp;&nbsp; - Tworzy określoną ilość elementów domyślnie nadając im początkową wartość zero. \
 &nbsp;&nbsp;&nbsp;&nbsp; - Pozwala na inicjalizacje wartością inną od zera, drugi argument.
@@ -64,7 +64,7 @@ vector<int> vector_AA(6, -12);
 ```
 
 
-<br/>
+<br/><br/>
 
 
 **`.reserve(int)`** \
