@@ -44,30 +44,72 @@ void showVector(const std::vector<T>& givenVector) {
 
 <br/><br/>
 -------------
-### 2. Rezerwowanie Pamięci
+### 2. Rezerwowanie Pamięci - `.reserve(int)`
+```cpp
+vector<int> vector_A;
+    // size: 0
+    // capacity: 0
+    // free space left: 0
+
+E.reserve(200);
+    // No elements were created.
+    // But now you can create two hundred elements without multiple reallocations.
+    // size: 0
+    // capacity: 200
+    // free space left: 200
+```
+
+Metoda `.reserve(int)` nie pozwala nam na zmniejszenie ilości zarezerwowanego miejsca. \
+W sytuacji podania mniejszej wartości niż obecna kontener nie jest modyfikowany.
+```cpp
+E.reserve(120);         // 120 is less than the current 200
+    // The method does nothing if it receives a smaller argument than the currently reserved space.
+    // It cannot reduce the reserved space of the vector.
+    // size: 0
+    // capacity: 200
+    // free space left: 200
+ 
+ 
+ 
+ // __________________________________________________________
+ // Argument metody [.reserve(int)] określa minimalną ilość elementów w vectorze.
+ // Nigdy nie ma problemu z zwiększeniem tej ilości.
+ E.reserve(20111);
+
+ // Zostanie wykonana realokacja do rozmiaru dokładnie [20 111] elementów. 
+ // Zostaje tutaj pominięta zasada dwukrotności, czyli NIE zostanie 
+ // zarezerwowane miejsce dla [40 000] elementów.
+ 
+ // __________________________________________________________
+ // Nie można zarezerwować mniej miejsca niż obecnie jest zarezerwowane w vectorze.
+ // Obecny stan naszego vectora to:
+ Show(E);    // size: 20000
+             // capacity: 20111
+ 
+ // Podanie mniejszej wartości NIE zmodyfikuje
+ // ilości obiektów, ani ilości zarezerwowanego miejsca. 
+ 
+ E.reserve(50);
+ Show(E);    // size: 20000
+             // capacity: 20111
+```
+
+
 ###### [Program 2.1] `.push_back(TypDanych)`
 ```cpp
- vector<int> B;
+int someValue = 5;
 
- // W tym momencie vector [B] jest pusty
- Show(B);    // size: 0
-             // capacity: 0
-
- // Dodajemy jeden nowy element do vectora [B] 
- // - nowy element zostanie dodany na końcu vectora.
- B.push_back(int(100));
- Show(B);    // size: 1
-             // capacity: 1
-
- // Dodajemy kolejny element do vectora [B] 
- B.push_back(-22);
- Show(B);    // size: 2
-             // capacity: 2
-
- // Dodajemy jeszcze kolejny element do vectora [B] 
- B.push_back(3);
- Show(B);    // size: 3  !!!
-             // capacity: 4  !!!
+ vector<int> vector_A;
+    // size: 0
+    // capacity: 0
+    // free space left: 0
+ 
+ vector_A.push_back(someValue);
+    // Gives vector_A one element at the end
+    // In this situation: Automate Memory Realocation Needed.
+    // size: 1
+    // capacity: 1
+    // free space left: 0
 ```
 
 
@@ -134,46 +176,6 @@ void showVector(const std::vector<T>& givenVector) {
        Jednocześnie będzie zarezerwowana ostatnia ilość pamięci - [capacity = 55 555]  */
 ```
 
-###### [Program 2.4] `Podejście 3 - .reserve(int)`
-```cpp
- vector<int> E;
-
- // Zaczynamy, Vector E jest pusty, [size=0], [capacity=0].
- E.reserve(20000);
- Show(E);    // size: 0
-             // capacity: 20000
- // Metoda [.reserve(int)] jedynie rezerwuje podaną ilość miejsca,
- // nie tworzy przy tym nowych elementów.
-
-// Dlatego w tym momencie możemy utworzyć nowe elementy metodą [.push_back(typDanych)]
- for (int i=0; i<E.capacity(); ++i)   // Pamiętaj że [size()] jest równe [zero].
-     E.push_back(i);
-
- Show(E);    // size: 20000
-             // capacity: 20000
-
- // __________________________________________________________
- // Argument metody [.reserve(int)] określa minimalną ilość elementów w vectorze.
- // Nigdy nie ma problemu z zwiększeniem tej ilości.
- E.reserve(20111);
-
- // Zostanie wykonana realokacja do rozmiaru dokładnie [20 111] elementów. 
- // Zostaje tutaj pominięta zasada dwukrotności, czyli NIE zostanie 
- // zarezerwowane miejsce dla [40 000] elementów.
- 
- // __________________________________________________________
- // Nie można zarezerwować mniej miejsca niż obecnie jest zarezerwowane w vectorze.
- // Obecny stan naszego vectora to:
- Show(E);    // size: 20000
-             // capacity: 20111
- 
- // Podanie mniejszej wartości NIE zmodyfikuje
- // ilości obiektów, ani ilości zarezerwowanego miejsca. 
- 
- E.reserve(50);
- Show(E);    // size: 20000
-             // capacity: 20111
-```
 
 ###### [Program 2.5] `.shrink_to_fit()`
 ```cpp
