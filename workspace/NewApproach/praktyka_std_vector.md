@@ -44,10 +44,30 @@ void showVector(const std::vector<T>& givenVector) {
 
 <br/><br/>
 -------------
-### 2. Rezerwowanie Pamięci  
-**`.reserve(int)`** \
-&nbsp;&nbsp;&nbsp;&nbsp; - Nie tworzy elementów, \
+### Rezerwowanie Pamięci  
 &nbsp;&nbsp;&nbsp;&nbsp; - Rezerwuje miejsce w pamięci na określoną ilość elementów, \
+&nbsp;&nbsp;&nbsp;&nbsp; - Tworzy określoną ilość elementów domyślnie nadając im początkową wartość zero. \
+&nbsp;&nbsp;&nbsp;&nbsp; - Pozwala na inicjalizacje wartością inną od zera, drugi argument.
+
+**`konstruktor(int)`**, **`konstruktor(int, TypDanych)`** \ 
+```cpp
+vector<int> vector_A(4);
+    // 0 0 0 0
+    // size: 4
+    // capacity: 4
+    // free space left: 0
+ 
+vector<int> vector_AA(6, -12);
+    // -12 -12 -12 -12 -12 -12
+    // size: 6
+    // capacity: 6
+    // free space left: 0
+```
+
+
+**`.reserve(int)`** \
+&nbsp;&nbsp;&nbsp;&nbsp; - Rezerwuje miejsce w pamięci na określoną ilość elementów, \
+&nbsp;&nbsp;&nbsp;&nbsp; - Nie tworzy elementów, \
 &nbsp;&nbsp;&nbsp;&nbsp; - Nie może zmniejszyć ilości zarezerwowanego miejsca, \
 &nbsp;&nbsp;&nbsp;&nbsp; - Pozwala uniknąć wielokrotnych automatycznych realokacji pamięci.
 ```cpp
@@ -92,18 +112,14 @@ to w wyniku automatycznej realokacji ilość miejsca w wektorze zostanie zwięks
 
 **Unikamy automatycznych realokacji pamięci z powodów optymalizacyjnych** \
 Jest to czasochłonna operacja polegająca na wyszukaniu odpowiedniego miejsca w pamięci zdolnego do pomieszczenia \
-wszystkich elementów wektora w ciągłej, nieprzerwanej lini komórek pamięci. A następnie jeszcze przepisania element po elemencie w odpowiednie miejsce. \
+wszystkich elementów wektora w ciągłej, nieprzerwanej lini komórek pamięci, \
+a następnie jeszcze przepisująca element po elemencie w takie odpowiednie miejsce. \
 Operacja realokacji posiada własne usprawnienia zależne od systemu operacyjnego, \
 nie należy jednak zakładać że takowe usprawnienia zostaną zastosowane w każdym przypadku. \
 Dlatego zamiast wykonywać 26 lub więcej automatycznych realokacji zaleca się \
 wykonać jednokrotną, ręczną realokację przed wprowadzaniem nowych elementów.
 
-
-
-
-
-
-
+<br/>
 
 ###### [Program 2.1] `.push_back(TypDanych)`
 ```cpp
@@ -124,28 +140,7 @@ int someValue = 5;
 
 
 
-###### [Program 2.2] `Podejście 1 - konstruktor(int)`
-```cpp
- vector<int> C(20000);
- Show(C);    // size: 20000
-             // capacity: 20000
- // Nie tylko zarezerwowaliśmy miejsce w pamięci dla [20 000] elementów,
- // jednocześnie utworzyliśmy te elementy, dlatego [size: 20000].
- // Wszystkie te elementy są równe zero.
- 
- // Elementy te możemy zmodyfikować, przykładowo, operatorem[].
- for (int i=0; i<C.size(); ++i)
-     C[i] = i;
- 
- // Inna wersja konstruktora pozwala nam na inicjalizację 
- // wszystkich elementów inną wartością niż [zero].  
- vector<int> CC(20000, -6);
- 
- // W tym momencie wszystkie utworzone elementy 
- // vectora [CC] posiadają wartość [-6]:
- for (int i=0; i<CC.size(); ++i)
-     std::cout << " " << CC[i];
-```
+
       
 ###### [Program 2.3] `Podejście 2 - .resize(int)`
 ```cpp
