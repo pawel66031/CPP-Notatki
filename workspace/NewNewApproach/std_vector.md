@@ -149,7 +149,7 @@ vector_C.resize(3000);
     // capacity: 3000
     // free space left: 0
 ```
-Obecnie `vector_C` posiada w sobie 3000 elementów. \
+Obecnie `vector_C` posiada 3000 elementów. \
 Ponowne wywołanie metody `resize(int)` z wartością **większą od obecnej ilości elementów spowoduje**: \
 &nbsp;&nbsp;&nbsp;&nbsp; - Obecnie isteniejące elementy nie zostaną zmodyfikowane. \
 &nbsp;&nbsp;&nbsp;&nbsp; - Na końcu wektora zostaną utworzone nowe elementy z wartością zero. \
@@ -197,28 +197,10 @@ vector_CC.resize(5);
 
 <br/><br/>
 -------------
-###### `.shrink_to_fit()`
-```cpp
- // Zwalnianie NADMIARU zarezerwowanej pamięci
- 
- vector<int> F(112,1);
- F.reserve(200);
- Show(F);    // size: 112
-             // capacity: 200
- 
- // Metoda [.shrink_to_fit()] realokuje pamięć do ilości jej elementów.
- // Nie usuwa elementów. Wartość [capacity] staje się równa wartości [size].
- 
- F.shrink_to_fit();
- Show(F);    // size: 112
-             // capacity: 112
-```
-
-
-
-
-
 ###### `.push_back(TypDanych)`
+&nbsp;&nbsp;&nbsp;&nbsp; - Dodaje element na koniec wektora. \
+&nbsp;&nbsp;&nbsp;&nbsp; - tworzy nowy element? \
+&nbsp;&nbsp;&nbsp;&nbsp; - wywołuje konstruktor kopiujący TypuDanych. `TypDanych(const TypDanych& td) {}` \
 ```cpp
 int someValue = 5;
 
@@ -234,6 +216,29 @@ int someValue = 5;
     // capacity: 1
     // free space left: 0
 ```
+
+
+<br/><br/>
+-------------
+###### `.shrink_to_fit()`
+&nbsp;&nbsp;&nbsp;&nbsp; - Zwalnia niewykorzystany nadmiar zarezerwowanej pamięci. \
+&nbsp;&nbsp;&nbsp;&nbsp; - Realokuje pamięć bez usuwania elementów. \
+&nbsp;&nbsp;&nbsp;&nbsp; - Wartość `capacity()` wektora staje się równa wartości `size()`.
+```cpp
+ vector<int> vector_D(112,1);
+ vector_D.reserve(200);
+    // size: 112
+    // capacity: 200
+    // free space left: 88
+ 
+ vector_D.shrink_to_fit();
+    // size: 112
+    // capacity: 112
+    // free space left: 0
+```
+
+
+
 
 
 
