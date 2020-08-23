@@ -10,10 +10,10 @@
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - [.size( )](#program-11-operator-size--capacity-) \
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - [.capacity( )](#program-11-operator-size--capacity-) \
 &nbsp;&nbsp;&nbsp;&nbsp; - [Rezerwowanie Pamięci](#2-Rezerwowanie-Pamięci) \
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - [.push_back(TypDanych)](#program-21-push_backtypdanych) \
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - [konstruktor(int)](#program-22-podejście-1---konstruktorint) \
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - [.resize(int)](#program-23-podejście-2---resizeint) \
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - [.reserve(int)](#program-24-podejście-3---reserveint) \
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - [.push_back(TypDanych)](#program-21-push_backtypdanych) \
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - [.shrink_to_fit( )](#program-25-shrink_to_fit)
 
 &nbsp;
@@ -28,7 +28,7 @@
 ### Wyświetlanie informacji o wybranym Vectorze
 ###### `operator[]`, `.size( )`, `.capacity( )`
 ```cpp
-// It prints all current values of givenVector, 
+// Prints all current values of givenVector, 
 // number of existing elements, 
 // the amount of reserved space,
 // the number of items that can be added before next realocation.
@@ -53,13 +53,13 @@ void showVector(const std::vector<T>& givenVector) {
 &nbsp;&nbsp;&nbsp;&nbsp; - Tworzy określoną ilość elementów domyślnie nadając im początkową wartość zero. \
 &nbsp;&nbsp;&nbsp;&nbsp; - Pozwala na inicjalizacje wartością inną od zera, drugi argument.
 ```cpp
-vector<int> vector_A(4);
+std::vector<int> vector_A(4);
     // 0 0 0 0
     // size: 4
     // capacity: 4
     // free space left: 0
  
-vector<int> vector_AA(6, -12);
+std::vector<int> vector_AA(6, -12);
     // -12 -12 -12 -12 -12 -12
     // size: 6
     // capacity: 6
@@ -75,12 +75,12 @@ vector<int> vector_AA(6, -12);
 &nbsp;&nbsp;&nbsp;&nbsp; - Nie może zmniejszyć ilości zarezerwowanego miejsca, \
 &nbsp;&nbsp;&nbsp;&nbsp; - Pozwala uniknąć wielokrotnych automatycznych realokacji pamięci.
 ```cpp
-vector<int> vector_A;
+std::vector<int> vector_B;
     // size: 0
     // capacity: 0
     // free space left: 0
 
-vector_A.reserve(200);
+vector_B.reserve(200);
     // No elements were created.
     // But now you can create two hundred elements without multiple reallocations.
     // size: 0
@@ -91,7 +91,7 @@ vector_A.reserve(200);
 Metoda `.reserve(int)` nie pozwala nam na zmniejszenie ilości zarezerwowanego miejsca. \
 W sytuacji podania mniejszej wartości niż obecna kontener nie jest modyfikowany.
 ```cpp
-vector_A.reserve(120);         // 120 is less than the current 200
+vector_B.reserve(120);         // 120 is less than the current 200
     // The method does nothing if it receives a smaller argument than the currently reserved space.
     // It cannot reduce the reserved space of the vector.
     // size: 0
@@ -102,7 +102,7 @@ vector_A.reserve(120);         // 120 is less than the current 200
 Metodą `.reserve(int)` możemy zwiększyć ilość zarezerwowanej pamięci do konkretnego rozmiaru, \
 który nie musi być wielokrotnością dwójki lub dwukrotnością poprzedzającego rozmiaru.
  ```cpp
- vector_A.reserve(233);  
+ vector_B.reserve(233);  
     // the reserved space will contain 233 elements. Not 256(2^8), Not 400(200*2).
     // size: 0
     // capacity: 233
@@ -128,21 +128,42 @@ wykonać jednokrotną, ręczną realokację przed wprowadzaniem nowych elementó
 
 
       
-###### `.resize(int)`
+      
+      
+      
+      
+      
+      
+      
+<br/><br/>
+-------------
+###### `.resize(int)` 
+&nbsp;&nbsp;&nbsp;&nbsp; - Rezerwuje miejsce w pamięci na określoną ilość elementów, \
+&nbsp;&nbsp;&nbsp;&nbsp; - Tworzy określoną liczbę elementów. \
+&nbsp;&nbsp;&nbsp;&nbsp; - Nie może zmniejszyć ilości zarezerwowanego miejsca, \
+&nbsp;&nbsp;&nbsp;&nbsp; - Pozwala uniknąć wielokrotnych automatycznych realokacji pamięci. \
+&nbsp;&nbsp;&nbsp;&nbsp; - Czas tworzenia elementów jest porównywalny do sposobu z wykorzystaniem konstruktora.
 ```cpp
- vector<int> D;
- // _____________
- // Scenariusz 1:   Vector D jest pusty, [size=0], [capacity=0].
- D.resize(20000);
- Show(D);    // size: 20000
-             // capacity: 20000
- // Ponownie, utworzyliśmy [20 000] elementów o wartości równej zero.
- // Powstałe elementy możemy zmodyfikować tak samo jak w podejściu pierwszym z konstruktorem.
- 
- // Te [20 000] elementów już teraz istnieje.
- // Oznacza to że użycie metody [.push_back(typDanych)] w tym 
- // momencie spowoduje utworzenie [20001] elementu, co spowoduje
- // ponowną realokacje do rozmiaru [20 000 * 2], czyli [40 000].
+std::vector<int> vector_C;
+    // size: 0
+    // capacity: 0
+    // free space left: 0
+
+vector_C.resize(30000);
+    // 30000 elements with value equal zero were created.
+    // size: 30000
+    // capacity: 30000
+    // free space left: 0
+```
+Obecnie `vector_C` posiada w sobie 30000 elementów. \
+Ponowne wywołanie metody `resize(int)` spowoduje: \
+&nbsp;&nbsp;&nbsp;&nbsp; - W razie potrzeby automatyczne zostanie wykonana kolejna realokacja. \
+&nbsp;&nbsp;&nbsp;&nbsp; - Nie zostaną zmodyfikowane już istniejące elementy. \
+&nbsp;&nbsp;&nbsp;&nbsp; - Gdy podana wartośc jest większa od obecnej ilości elementów utworzy nowe elementy. \
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Gdy mniejsza nie zrobi nic.
+      
+      
+
 
  // _____________
  // Scenariusz 2:   Vector D jest nie pusty, dodajemy do niego więcej miejsca
