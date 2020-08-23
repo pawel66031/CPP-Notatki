@@ -24,7 +24,7 @@
 &nbsp;
 -------------
 **Powiązane Strony**  
-&nbsp;&nbsp;&nbsp;&nbsp; - [cppreference.com/vector](https://en.cppreference.com/w/cpp/container/vector/vector) 
+&nbsp;&nbsp;&nbsp;&nbsp; - [cppreference.com/w/cpp/container/vector](https://en.cppreference.com/w/cpp/container/vector) 
 
 
 <br/><br/>
