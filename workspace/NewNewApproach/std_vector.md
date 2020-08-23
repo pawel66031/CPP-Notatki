@@ -28,13 +28,12 @@
 ### Wyświetlanie informacji o wybranym Vectorze
 ###### `operator[]`, `.size( )`, `.capacity( )`
 ```cpp
+// It prints all current values of givenVector, 
+// number of existing elements, 
+// the amount of reserved space,
+// the number of items that can be added before next realocation.
 template<typename T>
 void showVector(const std::vector<T>& givenVector) {
-    // It prints all current values of givenVector, 
-    // number of existing elements, 
-    // the amount of reserved space,
-    // the number of items that can be added before next realocation.
-
     for (const auto& element : givenVector) {
         std::cout << element << " ";
     }
