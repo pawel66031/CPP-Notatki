@@ -18,9 +18,13 @@
 
 &nbsp;
 -------------
-**Powiązane Strony**  
+**Powiązane Notatki**  
 &nbsp;&nbsp;&nbsp;&nbsp; - [Kontenery STL]() 
 
+&nbsp;
+-------------
+**Powiązane Strony**  
+&nbsp;&nbsp;&nbsp;&nbsp; - [cppreference.com/vector](https://en.cppreference.com/w/cpp/container/vector/vector) 
 
 
 <br/><br/>
@@ -123,8 +127,7 @@ nie należy jednak zakładać że takowe usprawnienia zostaną zastosowane w ka�
 Dlatego zamiast wykonywać 26 lub więcej automatycznych realokacji zaleca się \
 wykonać jednokrotną, ręczną realokację przed wprowadzaniem nowych elementów.
 
-<br/>
-   
+
 <br/><br/>
 -------------
 ###### `.resize(int)` 
@@ -141,7 +144,7 @@ std::vector<int> vector_C;
     // free space left: 0
 
 vector_C.resize(3000);
-    // 3 elements with value equal zero were created.
+    // 3000 elements with value equal zero were created.
     // size: 3000
     // capacity: 3000
     // free space left: 0
@@ -191,7 +194,6 @@ vector_CC.resize(5);
     // free space left: 5
 ```
 
-<br/>
 
 <br/><br/>
 -------------
