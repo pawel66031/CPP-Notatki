@@ -47,7 +47,7 @@ void showVector(const std::vector<T>& givenVector) {
 
 <br/><br/>
 -------------
-### Rezerwowanie Pamięci  
+### Rezerwowanie Pamięci, Tworzenie Elementów
 ###### `konstruktor(int)`, `konstruktor(int, TypDanych)` 
 &nbsp;&nbsp;&nbsp;&nbsp; - Rezerwuje miejsce w pamięci na określoną ilość elementów, \
 &nbsp;&nbsp;&nbsp;&nbsp; - Tworzy określoną ilość elementów domyślnie nadając im początkową wartość zero. \
@@ -123,24 +123,15 @@ nie należy jednak zakładać że takowe usprawnienia zostaną zastosowane w ka�
 Dlatego zamiast wykonywać 26 lub więcej automatycznych realokacji zaleca się \
 wykonać jednokrotną, ręczną realokację przed wprowadzaniem nowych elementów.
 
-
 <br/>
-
-
-      
-      
-      
-      
-      
-      
-      
-      
+   
 <br/><br/>
 -------------
 ###### `.resize(int)` 
 &nbsp;&nbsp;&nbsp;&nbsp; - Rezerwuje miejsce w pamięci na określoną ilość elementów, \
 &nbsp;&nbsp;&nbsp;&nbsp; - Tworzy określoną liczbę elementów. \
 &nbsp;&nbsp;&nbsp;&nbsp; - Nie może zmniejszyć ilości zarezerwowanego miejsca, \
+&nbsp;&nbsp;&nbsp;&nbsp; - Może zmeniejszyć ilość istniejących elementów, \
 &nbsp;&nbsp;&nbsp;&nbsp; - Pozwala uniknąć wielokrotnych automatycznych realokacji pamięci. \
 &nbsp;&nbsp;&nbsp;&nbsp; - Czas tworzenia elementów jest porównywalny do sposobu z wykorzystaniem konstruktora.
 ```cpp
@@ -149,46 +140,61 @@ std::vector<int> vector_C;
     // capacity: 0
     // free space left: 0
 
-vector_C.resize(30000);
-    // 30000 elements with value equal zero were created.
-    // size: 30000
-    // capacity: 30000
+vector_C.resize(3000);
+    // 3 elements with value equal zero were created.
+    // size: 3000
+    // capacity: 3000
     // free space left: 0
 ```
-Obecnie `vector_C` posiada w sobie 30000 elementów. \
-Ponowne wywołanie metody `resize(int)` spowoduje: \
-&nbsp;&nbsp;&nbsp;&nbsp; - W razie potrzeby automatyczne zostanie wykonana kolejna realokacja. \
-&nbsp;&nbsp;&nbsp;&nbsp; - Nie zostaną zmodyfikowane już istniejące elementy. \
-&nbsp;&nbsp;&nbsp;&nbsp; - Gdy podana wartośc jest większa od obecnej ilości elementów utworzy nowe elementy. \
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Gdy mniejsza nie zrobi nic.
-      
-      
-
-
- // _____________
- // Scenariusz 2:   Vector D jest nie pusty, dodajemy do niego więcej miejsca
- D.resize(55555);
- /*  - Nie zostaną zmodyfikowane już istniejące elementy.
-     - Zostanie wykonana potrzebna realokacja.
-       Wcześniejsza ilość zarezerwowanego miejsca to było [20 000]
-       Dwukrotność poprzednio zarezerwowanego miejsca wynosi [40 000]
-       Jeżeli chcemy zarezerwować więcej miejsca niż dana dwukrotność, 
-       wtedy zarezerwuje nam dokładnie tyle miejsca, o ile poprosiliśmy. Czyli [55 555].
-       Jeżeli jednak chcemy zarezerwować mniej niż [40 000], wtedy i tak zarezerwuje nam [40 000].
-       W ten sposób vektor minimalizuje ilość automatycznych realokacji w przyszłości.
-     - Nowe miejsce zostanie wypełnione nowymi elementami o wartości zero.  */
-
- // _____________
- // Scenariusz 3:   Vector D jest nie pusty, Zmniejszamy w nim ilość miejsca
- D.resize(100);
- /*  - Nie zostaną zmodyfikowane już istniejące, mieszczące się w przedziale elementy.
-     - Elementy nie mieszczące się w przedziale zostaną bez powrotnie skasowane.
-     - Nie zostanie wykonana realokacja pamięci.
-       Oznacza to że w vectorze będzie [100] elementów - [size = 100]
-       Jednocześnie będzie zarezerwowana ostatnia ilość pamięci - [capacity = 55 555]  */
+Obecnie `vector_C` posiada w sobie 3000 elementów. \
+Ponowne wywołanie metody `resize(int)` z wartością **większą od obecnej ilości elementów spowoduje**: \
+&nbsp;&nbsp;&nbsp;&nbsp; - Obecnie isteniejące elementy nie zostaną zmodyfikowane. \
+&nbsp;&nbsp;&nbsp;&nbsp; - Na końcu wektora zostaną utworzone nowe elementy z wartością zero. \
+&nbsp;&nbsp;&nbsp;&nbsp; - Wektor będzie posiadał tyle elementów ile podano w argumencie metody `resize(int)`. \
+&nbsp;&nbsp;&nbsp;&nbsp; - W razie potrzeby automatyczne zostanie wykonana kolejna realokacja.
+```cpp
+std::vector<int> vector_CC(3,24);
+    // 24 24 24 
+    // size: 3
+    // capacity: 3
+    // free space left: 0
+  
+vector_CC.resize(10);
+    // This resize(int) method creates 7 more elements.
+    // Now vector_CC has ten elements.
+    // 24 24 24 0 0 0 0 0 0 0 
+    // size: 10
+    // capacity: 10
+    // free space left: 0
+```
+Obecnie `vector_CC` posiada w sobie 10 elementów. \
+Ponowne wywołanie metody `resize(int)` z wartością **mniejszą od obecnej ilości elementów spowoduje**: \
+&nbsp;&nbsp;&nbsp;&nbsp; - Obecnie isteniejące elementy zostaną bezpowrotnie skasowane. \
+&nbsp;&nbsp;&nbsp;&nbsp; - Elementy wektora są kasowane od końca. \
+&nbsp;&nbsp;&nbsp;&nbsp; - Wektor będzie posiadał tyle elementów ile podano w argumencie metody `resize(int)`. \
+&nbsp;&nbsp;&nbsp;&nbsp; - Ilość zarezerwowanego miejsca nie zostanie zmniejszona. \
+&nbsp;&nbsp;&nbsp;&nbsp; - Ilość elementów wektora zostanie zmniejszona.
+```cpp
+vector_CC;
+    // 24 24 24 0 0 0 0 0 0 0 
+    // size: 10
+    // capacity: 10
+    // free space left: 0
+```
+```cpp
+vector_CC.resize(5);
+    // Argument value(5) is smaller than vector_CC.size().
+    // And so it erases last five elements.
+    // 24 24 24 0 0 
+    // size: 5
+    // capacity: 10
+    // free space left: 5
 ```
 
+<br/>
 
+<br/><br/>
+-------------
 ###### `.shrink_to_fit()`
 ```cpp
  // Zwalnianie NADMIARU zarezerwowanej pamięci
