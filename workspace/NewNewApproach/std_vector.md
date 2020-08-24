@@ -219,6 +219,8 @@ W powyższym przykładzie posiadamy jeden wektor oraz dwie niezależne zmienne t
 &nbsp;&nbsp;&nbsp;&nbsp; - `someValue == 5` \
 &nbsp;&nbsp;&nbsp;&nbsp; - `vector_D[1] == 5`
 
+<br/>
+
 Przykład pokazujący budowę konstruktora kopiująccego: 
 ```cpp
 class DataType {
@@ -252,6 +254,17 @@ Console Output:
 [DefaultConstructor]
 [CopyConstructor]
 ```
+Dodanie elementu do wektora polega na utworzeniu kopii tego obiektu w odpowiednim miejscu wektora. \
+W tym celu wywoływany jest konstruktor kopiujący obiektu umieszczanego w wektorze.
+
+Każde przesunięcie elementu w inne miejsce wektora wymaga utworzenia kopii tego elementu w szukanym miejscu, \
+a następnie skasowanie instancji tego elementu z poprzedniego miejsca. \
+Operacja przesuwania elementu po wektorze wymaga jednorazowego wywołania konstruktora kopiującego oraz destruktora przesuwanego elementu.
+
+Realokacja pamięci wektora polega na przemieszczeniu wszystkich elementów wektora w odpowiednie miejsce.
+Wymaga to wywołania algorytmu wyszukującego odpowiednio dużą ilość miejsca oraz
+wywołania konstruktora kopiującego i destruktora dla każdego elementu wektora.
+
 
 <br/><br/>
 -------------
@@ -261,17 +274,16 @@ Console Output:
 &nbsp;&nbsp;&nbsp;&nbsp; - Wartość `capacity()` wektora staje się równa wartości `size()`.
 ```cpp
  vector<int> vector_D(112,1);
- vector_D.reserve(200);
+ vector_E.reserve(200);
     // size: 112
     // capacity: 200
     // free space left: 88
  
- vector_D.shrink_to_fit();
+ vector_E.shrink_to_fit();
     // size: 112
     // capacity: 112
     // free space left: 0
 ```
-
 
 
 
