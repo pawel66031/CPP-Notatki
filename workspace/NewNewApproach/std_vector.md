@@ -1,4 +1,4 @@
-# std::vector< TypDanych >
+# std::vector< DataType >
 &nbsp;&nbsp;&nbsp;&nbsp; - [[Strona Teorii]](https://github.com/Ptysiek/CPP-Notatki/blob/master/workspace/NewApproach/std_vector.md) \
 &nbsp;&nbsp;&nbsp;&nbsp; - [Strona Praktyki]
 
@@ -13,7 +13,7 @@
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - [konstruktor(int)](#program-22-podejście-1---konstruktorint) \
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - [.resize(int)](#program-23-podejście-2---resizeint) \
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - [.reserve(int)](#program-24-podejście-3---reserveint) \
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - [.push_back(TypDanych)](#program-21-push_backtypdanych) \
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - [.push_back(DataType)](#program-21-push_backtypdanych) \
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - [.shrink_to_fit( )](#program-25-shrink_to_fit)
 
 &nbsp;
@@ -52,7 +52,7 @@ void showVector(const std::vector<T>& givenVector) {
 <br/><br/>
 -------------
 ### Rezerwowanie Pamięci, Tworzenie Elementów
-###### `konstruktor(int)`, `konstruktor(int, TypDanych)` 
+###### `konstruktor(int)`, `konstruktor(int, DataType)` 
 &nbsp;&nbsp;&nbsp;&nbsp; - Rezerwuje miejsce w pamięci na określoną ilość elementów, \
 &nbsp;&nbsp;&nbsp;&nbsp; - Tworzy określoną ilość elementów domyślnie nadając im początkową wartość zero. \
 &nbsp;&nbsp;&nbsp;&nbsp; - Pozwala na inicjalizacje wartością inną od zera, drugi argument.
@@ -197,26 +197,61 @@ vector_CC.resize(5);
 
 <br/><br/>
 -------------
-###### `.push_back(TypDanych)`
-&nbsp;&nbsp;&nbsp;&nbsp; - Dodaje element na koniec wektora. \
-&nbsp;&nbsp;&nbsp;&nbsp; - tworzy nowy element? \
-&nbsp;&nbsp;&nbsp;&nbsp; - wywołuje konstruktor kopiujący TypuDanych. `TypDanych(const TypDanych& td) {}` \
+###### `.push_back(DataType)`
+&nbsp;&nbsp;&nbsp;&nbsp; - Tworzy nowy element na końcu wektora. \
+&nbsp;&nbsp;&nbsp;&nbsp; - Wywołuje konstruktor kopiujący DataType. `DataType(const DataTypeF& td) {}` \
 ```cpp
 int someValue = 5;
 
- vector<int> vector_A;
+ vector<int> vector_D;
     // size: 0
     // capacity: 0
     // free space left: 0
  
- vector_A.push_back(someValue);
-    // Gives vector_A one element at the end
+ vector_D.push_back(someValue);
+    // Gives vector_D one element at the end
     // In this situation: Automate Memory Realocation Needed.
     // size: 1
     // capacity: 1
     // free space left: 0
 ```
+W powyższym przykładzie posiadamy jeden wektor oraz dwie niezależne zmienne trzymające wartość `5`. \
+&nbsp;&nbsp;&nbsp;&nbsp; - `someValue == 5` \
+&nbsp;&nbsp;&nbsp;&nbsp; - `vector_D[1] == 5`
 
+Przykład pokazujący budowę konstruktora kopiująccego: 
+```cpp
+class DataType {
+    std::string constructorLOG_;
+
+public:
+    // DEFAULT CONSTRUCTOR:
+    DataType(): constructorLOG_("[DefaultConstructor]") { }
+
+    // COPY CONSTRUCTOR:    
+    DataType(const DataType& dt): constructorLOG_("[CopyConstructor]") { }
+    
+    std::string getCLog() const { return constructorLOG_; }
+};
+
+
+int main() {
+    DataType obj_a;
+
+    std::vector<DataType> vctr;
+    vctr.push_back(obj_a);
+
+    std::cout << obj_a.getCLog() << "\n"        // [DefaultConstructor]
+              << vctr[0].getCLog() << "\n";     // [CopyConstructor]
+
+    return 0;
+}
+```
+Console Output:
+```
+[DefaultConstructor]
+[CopyConstructor]
+```
 
 <br/><br/>
 -------------
