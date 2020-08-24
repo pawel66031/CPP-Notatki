@@ -217,7 +217,11 @@ int someValue = 5;
 ```
 W powyższym przykładzie posiadamy jeden wektor oraz dwie niezależne zmienne trzymające wartość `5`. \
 &nbsp;&nbsp;&nbsp;&nbsp; - `someValue == 5` \
-&nbsp;&nbsp;&nbsp;&nbsp; - `vector_D[1] == 5`
+&nbsp;&nbsp;&nbsp;&nbsp; - `vector_D[1] == 5` \
+Zmienna będąca częścią wektora posiada skopiowaną wartość z zmiennej `someValue`, nie jest jednak \
+w żaden sposób powiązana z zmienną `someValue`. Zmienna będąca częścią wektora będzie istnieć \
+tak długo jak nie zostanie skasowana z wektora lub tak długo jak sam wektor istnieje. \
+Modyfikacja jednej nie ma wpływu na drugą.
 
 <br/>
 
