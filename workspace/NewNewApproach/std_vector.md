@@ -5,12 +5,13 @@
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - [operator[ ]](#wyświetlanie-informacji-o-wybranym-vectorze) \
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - [.size( )](#wyświetlanie-informacji-o-wybranym-vectorze) \
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - [.capacity( )](#wyświetlanie-informacji-o-wybranym-vectorze) \
-&nbsp;&nbsp;&nbsp;&nbsp; - [Rezerwowanie Pamięci](#rezerwowanie-pamięci-tworzenie-elementów) \
+&nbsp;&nbsp;&nbsp;&nbsp; - [Rezerwowanie Pamięci, Tworzenie Elementów](#rezerwowanie-pamięci-tworzenie-elementów) \
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - [konstruktor(int)](#rezerwowanie-pamięci-tworzenie-elementów) \
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - [.reserve(int)](#reserveint) \
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - [.resize(int)](#resizeint) \
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - [.push_back(DataType)](#push_backdatatype) \
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - [.shrink_to_fit( )](#shrink_to_fit)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - [.shrink_to_fit( )](#shrink_to_fit) \
+&nbsp;&nbsp;&nbsp;&nbsp; - [Usuwanie Elementów](#usuwanie-elementow) 
 
 &nbsp;
 -------------
@@ -44,6 +45,7 @@ void showVector(const std::vector<T>& givenVector) {
               << "free space left: " << givenVector.capacity() - givenVector.size();
  }
 ```
+
 
 <br/><br/>
 -------------
@@ -249,7 +251,6 @@ int main() {
     return 0;
 }
 ```
-Console Output:
 ```
 [DefaultConstructor]
 [CopyConstructor]
@@ -286,10 +287,19 @@ wywołania konstruktora kopiującego i destruktora dla każdego elementu wektora
 ```
 
 
+<br/><br/>
+-------------
+### Usuwanie Elementów
 
 
-
-
+<br/><br/>
+-------------
+### Teoria
+&nbsp;&nbsp;&nbsp;&nbsp; - Wektor przechowywuje obiekty obok siebie w jednym ogromnym obszarze pamięci. \
+&nbsp;&nbsp;&nbsp;&nbsp; - Należy go stosować zawsze zamiast zwykłej tablicy. \
+&nbsp;&nbsp;&nbsp;&nbsp; - Jest optymalny, oferuje zwiększony komfort i bezpiecczeństwo. \
+&nbsp;&nbsp;&nbsp;&nbsp; - Wektor posiada zmienną wielkość. \
+&nbsp;&nbsp;&nbsp;&nbsp; - Pozwala dodawać nowe elementy bez każdorazowej realokacji pamięci.
 
 <br/><br/>
 -------------
