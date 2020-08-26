@@ -11,7 +11,7 @@
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - [.resize(int)](#resizeint) \
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - [.push_back(DataType)](#push_backdatatype) \
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - [.shrink_to_fit( )](#shrink_to_fit) \
-&nbsp;&nbsp;&nbsp;&nbsp; - [Usuwanie Elementów](#usuwanie-elementow) 
+&nbsp;&nbsp;&nbsp;&nbsp; - [Usuwanie Elementów](#usuwanie-elementów) 
 
 &nbsp;
 -------------
@@ -43,7 +43,7 @@ void showVector(const std::vector<T>& givenVector) {
               << "size: "            << givenVector.size()      << "\n"
               << "capacity: "        << givenVector.capacity()  << "\n"
               << "free space left: " << givenVector.capacity() - givenVector.size();
- }
+}
 ```
 
 
@@ -274,13 +274,13 @@ wywołania konstruktora kopiującego i destruktora dla każdego elementu wektora
 &nbsp;&nbsp;&nbsp;&nbsp; - Realokuje pamięć bez usuwania elementów. \
 &nbsp;&nbsp;&nbsp;&nbsp; - Wartość `capacity()` wektora staje się równa wartości `size()`.
 ```cpp
- vector<int> vector_D(112,1);
- vector_E.reserve(200);
+vector<int> vector_E(112,1);
+vector_E.reserve(200);
     // size: 112
     // capacity: 200
     // free space left: 88
  
- vector_E.shrink_to_fit();
+vector_E.shrink_to_fit();
     // size: 112
     // capacity: 112
     // free space left: 0
@@ -290,6 +290,57 @@ wywołania konstruktora kopiującego i destruktora dla każdego elementu wektora
 <br/><br/>
 -------------
 ### Usuwanie Elementów
+###### Styl Usuń-Wymaż
+```cpp
+std::vector<int> vctr {1, 2, 3, 2, 5, 2, 6, 2, 4, 8};
+showVector(vctr);
+    // 1 2 3 2 5 2 6 2 4 8 
+    // size: 10
+    // capacity: 10
+    // free space left: 0
+
+// [Step1]
+const auto new_end (remove(begin(vctr), end(vctr), 2));    
+showVector(vctr);
+    // 1 3 5 6 4 8 6 2 4 8 
+    // size: 10
+    // capacity: 10
+    // free space left: 0
+    
+// [Step2]
+vctr.erase(new_end, end(vctr));
+showVector(vctr);
+    // 1 3 5 6 4 8 
+    // size: 6
+    // capacity: 10
+    // free space left: 4
+    
+// [Step3]
+vctr.shrink_to_fit();
+showVector(vctr);
+    // 1 3 5 6 4 8 
+    // size: 6
+    // capacity: 6
+    // free space left: 0
+```
+**[Step1]**  
+&nbsp;&nbsp;&nbsp;&nbsp; - Wywołujemy funkcję `std::remove(iterator, iterator, const DataType&)`. \
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Jako iteratory podajemy początek i koniec wektora `vctr`. \
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Obecnym `DataType` jest `int`, podajemy wartość którą chcemy skasować. \
+&nbsp;&nbsp;&nbsp;&nbsp; - Funkcja `std::remove()` przemieszcza wszystkie elementy nie będące dwójką na początek wektora. \
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Nie modyfikuje przy tym kolejności elementów. \
+&nbsp;&nbsp;&nbsp;&nbsp; - Na koniec `std::remove()` zwraca iterator będący nowym iteratorem końca. \
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Oznacza to że między iteratorami `begin(vctr)` a `new_end` znajdują się wszystkie \
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; oczekiwane elementy wektora poza tymi których wartość wyniosła podane w argumencie `2`. 
+
+**[Step2]**  
+&nbsp;&nbsp;&nbsp;&nbsp; - Wymazuje wszystkie elementy z przedziału iteratorów `new_end` oraz `end(vctr)`. \
+&nbsp;&nbsp;&nbsp;&nbsp; - W tym momencie elementy są kasowane, a iteratory `new_end  ==  end(vctr)`. \
+&nbsp;&nbsp;&nbsp;&nbsp; - Ilość zarezerwowanego miejsca przez wektor nie zostaje zmniejszona. `capacity() == 10`. 
+
+**[Step3]**  
+&nbsp;&nbsp;&nbsp;&nbsp; - Zmniejsza ilość zarezerwowanego przez wektor miejsca do minimum. `size()  ==  capacity()`. \
+&nbsp;&nbsp;&nbsp;&nbsp; - Może to wywołać realokacje pamięci.
 
 
 <br/><br/>
