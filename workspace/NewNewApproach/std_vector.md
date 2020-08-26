@@ -11,7 +11,7 @@
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - [.resize(int)](#resizeint) \
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - [.push_back(DataType)](#push_backdatatype) \
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - [.shrink_to_fit( )](#shrink_to_fit) \
-&nbsp;&nbsp;&nbsp;&nbsp; - [Usuwanie Elementów](#usuwanie-elementów) 
+&nbsp;&nbsp;&nbsp;&nbsp; - [Usuwanie Elementów](#usuwanie-elementów) \
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - [Styl Usuń-Wymaż](#styl-usuń-wymaż)
 
 
