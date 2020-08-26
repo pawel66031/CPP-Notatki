@@ -30,7 +30,7 @@
 <br/><br/>
 -------------
 ### Wyświetlanie informacji o wybranym Vectorze
-###### `operator[]`, `.size( )`, `.capacity( )` [[up]](#stdvector-datatype-)
+###### `operator[]`, `.size( )`, `.capacity( )` &nbsp;&nbsp;&nbsp;&nbsp; [[up]](#stdvector-datatype-)
 ```cpp
 // Prints all current values of givenVector, 
 // number of existing elements, 
@@ -53,7 +53,7 @@ void showVector(const std::vector<T>& givenVector) {
 <br/><br/>
 -------------
 ### Rezerwowanie Pamięci, Tworzenie Elementów
-###### `konstruktor(int)`, `konstruktor(int, DataType)` 
+###### `konstruktor(int)`, `konstruktor(int, DataType)` &nbsp;&nbsp;&nbsp;&nbsp; [[up]](#stdvector-datatype-)
 &nbsp;&nbsp;&nbsp;&nbsp; - Rezerwuje miejsce w pamięci na określoną ilość elementów, \
 &nbsp;&nbsp;&nbsp;&nbsp; - Tworzy określoną ilość elementów domyślnie nadając im początkową wartość zero. \
 &nbsp;&nbsp;&nbsp;&nbsp; - Pozwala na inicjalizacje wartością inną od zera, drugi argument.
