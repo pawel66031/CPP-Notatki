@@ -74,7 +74,7 @@ std::vector<int> vector_AA(6, -12);
 
 <br/><br/>
 -------------
-###### `.reserve(int)` 
+###### `.reserve(int)` &nbsp;&nbsp;&nbsp;&nbsp; [[up]](#stdvector-datatype-)
 &nbsp;&nbsp;&nbsp;&nbsp; - Rezerwuje miejsce w pamięci na określoną ilość elementów, \
 &nbsp;&nbsp;&nbsp;&nbsp; - Nie tworzy elementów, \
 &nbsp;&nbsp;&nbsp;&nbsp; - Nie może zmniejszyć ilości zarezerwowanego miejsca, \
