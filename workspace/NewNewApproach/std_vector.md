@@ -7,13 +7,13 @@
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - [.capacity( )](#wyświetlanie-informacji-o-wybranym-vectorze) \
 &nbsp;&nbsp;&nbsp;&nbsp; - [Rezerwowanie Pamięci, Tworzenie Elementów](#rezerwowanie-pamięci-tworzenie-elementów) \
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - [konstruktor(int)](#rezerwowanie-pamięci-tworzenie-elementów) \
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - [.reserve(int)](#reserveint) \
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - [.resize(int)](#resizeint) \
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - [.push_back(DataType)](#push_backdatatype) \
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - [.shrink_to_fit( )](#shrink_to_fit) \
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - [.reserve(int)](#reserveint--up) \
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - [.resize(int)](#resizeint--up) \
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - [.push_back(DataType)](#push_backdatatype--up) \
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - [.shrink_to_fit( )](#shrink_to_fit--up) \
 &nbsp;&nbsp;&nbsp;&nbsp; - [Usuwanie Elementów](#usuwanie-elementów) \
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - [Styl Usuń-Wymaż (dla konkretnej wartości)](#styl-usuń-wymaż-dla-konkretnej-wartości) \
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - [Styl Usuń-Wymaż (dla kryterium)](#styl-usuń-wymaż-dla-kryterium)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - [Styl Usuń-Wymaż (dla konkretnej wartości)](#usuwanie-elementów) \
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - [Styl Usuń-Wymaż (dla kryterium)](#styl-usuń-wymaż-dla-kryterium--up)
 
 
 &nbsp;
@@ -131,7 +131,7 @@ wykonać jednokrotną, ręczną realokację przed wprowadzaniem nowych elementó
 
 <br/><br/>
 -------------
-###### `.resize(int)` 
+###### `.resize(int)` &nbsp;&nbsp;&nbsp;&nbsp; [[up]](#stdvector-datatype-)
 &nbsp;&nbsp;&nbsp;&nbsp; - Rezerwuje miejsce w pamięci na określoną ilość elementów, \
 &nbsp;&nbsp;&nbsp;&nbsp; - Tworzy określoną liczbę elementów. \
 &nbsp;&nbsp;&nbsp;&nbsp; - Nie może zmniejszyć ilości zarezerwowanego miejsca, \
@@ -198,7 +198,7 @@ vector_CC.resize(5);
 
 <br/><br/>
 -------------
-###### `.push_back(DataType)`
+###### `.push_back(DataType)` &nbsp;&nbsp;&nbsp;&nbsp; [[up]](#stdvector-datatype-)
 &nbsp;&nbsp;&nbsp;&nbsp; - Tworzy nowy element na końcu wektora. \
 &nbsp;&nbsp;&nbsp;&nbsp; - Wywołuje konstruktor kopiujący DataType. `DataType(const DataTypeF& td) {}` \
 ```cpp
@@ -272,7 +272,7 @@ wywołania konstruktora kopiującego i destruktora dla każdego elementu wektora
 
 <br/><br/>
 -------------
-###### `.shrink_to_fit()`
+###### `.shrink_to_fit()` &nbsp;&nbsp;&nbsp;&nbsp; [[up]](#stdvector-datatype-)
 &nbsp;&nbsp;&nbsp;&nbsp; - Zwalnia niewykorzystany nadmiar zarezerwowanej pamięci. \
 &nbsp;&nbsp;&nbsp;&nbsp; - Realokuje pamięć bez usuwania elementów. \
 &nbsp;&nbsp;&nbsp;&nbsp; - Wartość `capacity()` wektora staje się równa wartości `size()`.
@@ -293,7 +293,7 @@ vector_E.shrink_to_fit();
 <br/><br/>
 -------------
 ### Usuwanie Elementów
-###### `Styl Usuń-Wymaż dla konkretnej wartości`
+###### `Styl Usuń-Wymaż dla konkretnej wartości` &nbsp;&nbsp;&nbsp;&nbsp; [[up]](#stdvector-datatype-)
 ```cpp
 std::vector<int> vctr {1, 2, 3, 2, 5, 2, 6, 2, 4, 8};
 showVector(vctr);
@@ -348,7 +348,7 @@ showVector(vctr);
 
 <br/><br/>
 -------------
-###### `Styl Usuń-Wymaż dla kryterium`
+###### `Styl Usuń-Wymaż dla kryterium` &nbsp;&nbsp;&nbsp;&nbsp; [[up]](#stdvector-datatype-)
 
 
 <br/><br/>
