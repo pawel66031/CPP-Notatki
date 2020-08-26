@@ -357,6 +357,63 @@ showVector(vctr);
 <br/><br/>
 -------------
 ###### `Styl Usuń-Wymaż dla kryterium` &nbsp;&nbsp;&nbsp;&nbsp; [[up]](#stdvector-datatype-)
+```
+value to erase: all even numbers
+1, 2, 3, 4, 5, 6, 7, 8, 9, 0        // Input
+1, 3, 5, 7, 9, 6, 7, 8, 9, 0        // Partial Result After [Step1]
+1, 3, 5, 7, 9                       // Final Result After [Step2]
+```
+```cpp
+std::vector<int> vctr {1, 2, 3, 4, 5, 6, 7, 8, 9, 0};
+showVector(vctr);
+    // 1 2 3 4 5 6 7 8 9 0 
+    // size: 10
+    // capacity: 10
+    // free space left: 0
+
+// [StepZero]
+const auto even ([](int i) { return (i % 2 == 0); });
+
+// [Step1]
+const auto new_end (remove_if(begin(vctr), end(vctr), even)); 
+showVector(vctr);
+    // 1 3 5 7 9 6 7 8 9 0 
+    // size: 10
+    // capacity: 10
+    // free space left: 0
+
+// [Step2]
+vctr.erase(new_end, end(vctr));    
+showVector(vctr);
+    // 1 3 5 7 9 
+    // size: 5
+    // capacity: 10
+    // free space left: 5
+    
+// [Step3]
+vctr.shrink_to_fit();
+showVector(vctr);
+    // 1 3 5 7 9 
+    // size: 5
+    // capacity: 5
+    // free space left: 0
+```
+**[StepZero]**  
+&nbsp;&nbsp;&nbsp;&nbsp; - Tworzymy wyrażenie lambda sprawdzające parzystość liczby.
+
+**[Step1]**  
+&nbsp;&nbsp;&nbsp;&nbsp; - Korzystamy z `std::remove_if()` pozwalające na użycie lambdy z poprzedniego kroku. \
+&nbsp;&nbsp;&nbsp;&nbsp; - Wynik jest taki sam jak przy wykorzystaniu `std::remove()`.
+
+**[Step2]**  
+&nbsp;&nbsp;&nbsp;&nbsp; - Wymazuje wszystkie elementy z przedziału iteratorów `new_end` oraz `end(vctr)`. \
+&nbsp;&nbsp;&nbsp;&nbsp; - W tym momencie elementy są kasowane, a iteratory `new_end  ==  end(vctr)`. \
+&nbsp;&nbsp;&nbsp;&nbsp; - Ilość zarezerwowanego miejsca przez wektor nie zostaje zmniejszona. `capacity() == 10`. 
+
+**[Step3]**  
+&nbsp;&nbsp;&nbsp;&nbsp; - Zmniejsza ilość zarezerwowanego przez wektor miejsca do minimum. `size()  ==  capacity()`. \
+&nbsp;&nbsp;&nbsp;&nbsp; - Może spowodować realokacje pamięci.
+
 
 
 <br/><br/>
