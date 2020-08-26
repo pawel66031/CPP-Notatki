@@ -340,7 +340,7 @@ showVector(vctr);
 
 **[Step3]**  
 &nbsp;&nbsp;&nbsp;&nbsp; - Zmniejsza ilość zarezerwowanego przez wektor miejsca do minimum. `size()  ==  capacity()`. \
-&nbsp;&nbsp;&nbsp;&nbsp; - Może to wywołać realokacje pamięci.
+&nbsp;&nbsp;&nbsp;&nbsp; - Może spowodować realokacje pamięci.
 
 
 <br/><br/>
