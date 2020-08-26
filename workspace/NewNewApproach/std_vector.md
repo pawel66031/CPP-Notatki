@@ -12,8 +12,8 @@
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - [.push_back(DataType)](#push_backdatatype) \
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - [.shrink_to_fit( )](#shrink_to_fit) \
 &nbsp;&nbsp;&nbsp;&nbsp; - [Usuwanie Elementów](#usuwanie-elementów) \
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - [Styl Usuń-Wymaż](#styl-usuń-wymaż)
-
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - [Styl Usuń-Wymaż (dla konkretnej wartości)](#styl-usuń-wymaż-dla-konkretnej-wartości) \
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - [Styl Usuń-Wymaż (dla kryterium)](#styl-usuń-wymaż-dla-kryterium)
 
 
 &nbsp;
@@ -293,7 +293,7 @@ vector_E.shrink_to_fit();
 <br/><br/>
 -------------
 ### Usuwanie Elementów
-###### Styl Usuń-Wymaż
+###### `Styl Usuń-Wymaż dla konkretnej wartości`
 ```cpp
 std::vector<int> vctr {1, 2, 3, 2, 5, 2, 6, 2, 4, 8};
 showVector(vctr);
@@ -344,6 +344,11 @@ showVector(vctr);
 **[Step3]**  
 &nbsp;&nbsp;&nbsp;&nbsp; - Zmniejsza ilość zarezerwowanego przez wektor miejsca do minimum. `size()  ==  capacity()`. \
 &nbsp;&nbsp;&nbsp;&nbsp; - Może spowodować realokacje pamięci.
+
+
+<br/><br/>
+-------------
+###### `Styl Usuń-Wymaż dla kryterium`
 
 
 <br/><br/>
