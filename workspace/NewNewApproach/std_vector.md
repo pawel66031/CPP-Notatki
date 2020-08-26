@@ -294,18 +294,26 @@ vector_E.shrink_to_fit();
 -------------
 ### Usuwanie Elementów
 ###### `Styl Usuń-Wymaż dla konkretnej wartości` &nbsp;&nbsp;&nbsp;&nbsp; [[up]](#stdvector-datatype-)
+```
+value to erase: 0
+1, 0, 2, 0, 3, 0, 0, 4, 0, 5        // Input
+1, 2, 3, 4, 5, 0, 0, 4, 0, 5        // Partial Result After [Step1]
+1, 2, 3, 4, 5                       // Final Result After [Step2]
+```
 ```cpp
-std::vector<int> vctr {1, 2, 3, 2, 5, 2, 6, 2, 4, 8};
+int valueToErase = 0;
+
+std::vector<int> vctr {1, 0, 2, 0, 3, 0, 0, 4, 0, 5};
 showVector(vctr);
-    // 1 2 3 2 5 2 6 2 4 8 
+    // 1 0 2 0 3 0 0 4 0 5
     // size: 10
     // capacity: 10
     // free space left: 0
 
 // [Step1]
-const auto new_end (remove(begin(vctr), end(vctr), 2));    
+const auto new_end (remove(begin(vctr), end(vctr), valueToErase));    
 showVector(vctr);
-    // 1 3 5 6 4 8 6 2 4 8 
+    // 1 2 3 4 5 0 0 4 0 5
     // size: 10
     // capacity: 10
     // free space left: 0
@@ -313,28 +321,28 @@ showVector(vctr);
 // [Step2]
 vctr.erase(new_end, end(vctr));
 showVector(vctr);
-    // 1 3 5 6 4 8 
-    // size: 6
+    // 1 2 3 4 5 
+    // size: 5
     // capacity: 10
-    // free space left: 4
+    // free space left: 5
     
 // [Step3]
 vctr.shrink_to_fit();
 showVector(vctr);
-    // 1 3 5 6 4 8 
-    // size: 6
-    // capacity: 6
+    // 1 2 3 4 5 
+    // size: 5
+    // capacity: 5
     // free space left: 0
 ```
 **[Step1]**  
 &nbsp;&nbsp;&nbsp;&nbsp; - Wywołujemy funkcję `std::remove(iterator, iterator, const DataType&)`. \
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Jako iteratory podajemy początek i koniec wektora `vctr`. \
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Obecnym `DataType` jest `int`, podajemy wartość którą chcemy skasować. \
-&nbsp;&nbsp;&nbsp;&nbsp; - Funkcja `std::remove()` przemieszcza wszystkie elementy nie będące dwójką na początek wektora. \
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Jako argumenty podajemy iteratory na początek i koniec wektora `vctr`. \
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Obecnym `DataType` jest `int`, podajemy wartość którą chcemy skasować. `0` `(zero)` \
+&nbsp;&nbsp;&nbsp;&nbsp; - Funkcja `std::remove()` przemieszcza wszystkie elementy niebędące zerem na początek wektora. \
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Nie modyfikuje przy tym kolejności elementów. \
 &nbsp;&nbsp;&nbsp;&nbsp; - Na koniec `std::remove()` zwraca iterator będący nowym iteratorem końca. \
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Oznacza to że między iteratorami `begin(vctr)` a `new_end` znajdują się wszystkie \
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; oczekiwane elementy wektora poza tymi których wartość wyniosła podane w argumencie `2`. 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; oczekiwane elementy wektora których wartość nie jest równa podanemu jako argument `0`. 
 
 **[Step2]**  
 &nbsp;&nbsp;&nbsp;&nbsp; - Wymazuje wszystkie elementy z przedziału iteratorów `new_end` oraz `end(vctr)`. \
