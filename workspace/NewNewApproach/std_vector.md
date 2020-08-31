@@ -12,8 +12,12 @@
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - [.push_back(DataType)](#push_backdatatype--up) \
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - [.shrink_to_fit( )](#shrink_to_fit--up) \
 &nbsp;&nbsp;&nbsp;&nbsp; - [Usuwanie Elementów](#usuwanie-elementów) \
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - [Styl Usuń-Wymaż (dla konkretnej wartości)](#usuwanie-elementów) \
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - [Usuwanie ostatniego elementu, .pop_back()](#usuwanie-elementów) \
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - [Usuwanie elementu w czasie O(1)]((#usuwanie-elementu-w-czasie-O1--up) \
+&nbsp;&nbsp;&nbsp;&nbsp; - [Usuwanie Wielu Elementów](#usuwanie-wielu-elementów) \
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - [Styl Usuń-Wymaż (dla konkretnej wartości)](#usuwanie-wielu-elementów) \
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - [Styl Usuń-Wymaż (dla kryterium)](#styl-usuń-wymaż-dla-kryterium--up)
+
 
 
 &nbsp;
@@ -289,10 +293,41 @@ vector_E.shrink_to_fit();
     // free space left: 0
 ```
 
-
 <br/><br/>
 -------------
 ### Usuwanie Elementów
+###### `Usuwanie ostatniego elementu`, `.pop_back()` &nbsp;&nbsp;&nbsp;&nbsp; [[up]](#stdvector-datatype-)
+```cpp
+std::vector<int> vctr {1, 2, 3, 4, 5, 6};
+showVector(vctr);
+    // 1 2 3 4 5 6
+    // size: 6
+    // capacity: 6
+    // free space left: 0
+
+if (!vctr.empty()) {
+    vctr.pop_back();
+}
+showVector(vctr);
+    // 1 2 3 4 5
+    // size: 5
+    // capacity: 6
+    // free space left: 1
+```
+Metoda `.pop_back()` służąca do usuwania ostatniego elementu kontenera. \
+**Należy sprawdzać czy kontener nie jest pusty**. \
+Wywołanie metody na pustym wektorze skutkuje niezdefiniowanym zachowaniem. \
+W najlepszym wypadku po wypisaniu `Segmentation fault (core dumped)` program zostanie przerwany. 
+
+
+<br/><br/>
+-------------
+###### `Usuwanie elementu w czasie O(1)` &nbsp;&nbsp;&nbsp;&nbsp; [[up]](#stdvector-datatype-)
+
+
+<br/><br/>
+-------------
+### Usuwanie Wielu Elementów
 ###### `Styl Usuń-Wymaż dla konkretnej wartości` &nbsp;&nbsp;&nbsp;&nbsp; [[up]](#stdvector-datatype-)
 ```
 value to erase: 0
