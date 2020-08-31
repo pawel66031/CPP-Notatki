@@ -323,6 +323,43 @@ W najlepszym wypadku po wypisaniu `Segmentation fault (core dumped)` program zos
 <br/><br/>
 -------------
 ###### `Usuwanie elementu w czasie O(1)` &nbsp;&nbsp;&nbsp;&nbsp; [[up]](#stdvector-datatype-)
+Możemy uniknąć przemieszczania `N` elementów wektora w lewo umieszczając w miejsce usuwanego elementu ostatni element kontenera. \
+Wiąże się to z utratą początkowej kolejności elementów.
+```
+index to erase: 3
+1, 2, 3, 4, 5, 6        // Input
+1, 2, 3, 6, 5, 6        // Partial Result After [Step1]
+1, 2, 3, 6, 5           // Final Result After [Step2]
+```
+```cpp
+std::vector<int> vctr {1, 2, 3, 4, 5, 6};
+showVector(vctr);
+    // 1 2 3 4 5 6 
+    // size: 6
+    // capacity: 6
+    // free space left: 0
+
+size_t indexToErase = 3;
+if (indexToErase > vctr.size()) {
+    return 0;
+}
+
+// [Step1] 
+vctr[indexToErase] = std::move(vctr.back());
+showVector(vctr);
+    // 1 2 3 6 5 6 
+    // size: 6
+    // capacity: 6
+    // free space left: 0
+
+// [Step2]
+vctr.pop_back();
+showVector(vctr);
+    // 1 2 3 6 5 
+    // size: 5
+    // capacity: 6
+    // free space left: 1
+```
 
 
 <br/><br/>
