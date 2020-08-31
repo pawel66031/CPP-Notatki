@@ -34,7 +34,7 @@
 <br/><br/>
 -------------
 ### Wyświetlanie informacji o wybranym Vectorze
-###### `operator[]`, `.size( )`, `.capacity( )` &nbsp;&nbsp;&nbsp;&nbsp; [[up]](#stdvector-datatype-)
+###### `operator[]`, `.size()`, `.capacity()` &nbsp;&nbsp;&nbsp;&nbsp; [[up]](#stdvector-datatype-)
 ```cpp
 // Prints all current values of givenVector, 
 // number of existing elements, 
