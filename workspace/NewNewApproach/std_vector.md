@@ -11,8 +11,8 @@
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - [.resize(int)](#resizeint--up) \
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - [.push_back(DataType)](#push_backdatatype--up) \
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - [.shrink_to_fit( )](#shrink_to_fit--up) \
-&nbsp;&nbsp;&nbsp;&nbsp; - [Usuwanie Elementów](#usuwanie-elementów) \
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - [Usuwanie ostatniego elementu, .pop_back( )](#usuwanie-elementów) \
+&nbsp;&nbsp;&nbsp;&nbsp; - [Usuwanie Elementu](#usuwanie-elementu) \
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - [.pop_back( )](#usuwanie-elementu) \
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - [Usuwanie elementu w czasie O(1)](#usuwanie-elementu-w-czasie-O1--up) \
 &nbsp;&nbsp;&nbsp;&nbsp; - [Usuwanie Wielu Elementów](#usuwanie-wielu-elementów) \
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - [Styl Usuń-Wymaż (dla konkretnej wartości)](#usuwanie-wielu-elementów) \
@@ -295,7 +295,7 @@ vector_E.shrink_to_fit();
 
 <br/><br/>
 -------------
-### Usuwanie Elementów
+### Usuwanie Elementu
 ###### `Usuwanie ostatniego elementu`, `.pop_back()` &nbsp;&nbsp;&nbsp;&nbsp; [[up]](#stdvector-datatype-)
 ```cpp
 std::vector<int> vctr {1, 2, 3, 4, 5, 6};
