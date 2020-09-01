@@ -57,7 +57,7 @@ void showVector(const std::vector<T>& givenVector) {
 
 <br/><br/>
 -------------
-### Rezerwowanie Pamięci, Tworzenie Elementów
+### Rezerwowanie Pamięci
 ###### `konstruktor(int)`, `konstruktor(int, DataType)` &nbsp;&nbsp;&nbsp;&nbsp; [[up]](#stdvector-datatype-)
 &nbsp;&nbsp;&nbsp;&nbsp; - Rezerwuje miejsce w pamięci na określoną ilość elementów, \
 &nbsp;&nbsp;&nbsp;&nbsp; - Tworzy określoną ilość elementów domyślnie nadając im początkową wartość zero. \
