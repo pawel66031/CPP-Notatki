@@ -5,13 +5,14 @@
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - [operator[ ]](#wyświetlanie-informacji-o-wybranym-vectorze) \
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - [.size( )](#wyświetlanie-informacji-o-wybranym-vectorze) \
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - [.capacity( )](#wyświetlanie-informacji-o-wybranym-vectorze) \
+&nbsp;&nbsp;&nbsp;&nbsp; - [Tworzenie Elementów](#tworzenie-elementów) \
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - [konstruktor(int)](#tworzenie-elementów) \
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - [konstruktor(int, DataType)](#tworzenie-elementów) \
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - [.push_back(DataType)](#push_backDataType--up) \
 &nbsp;&nbsp;&nbsp;&nbsp; - [Rezerwowanie Pamięci](#rezerwowanie-pamięci) \
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - [konstruktor(int)](#rezerwowanie-pamięci) \
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - [.reserve(int)](#reserveint--up) \
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - [.reserve(int)](#rezerwowanie-pamięci) \
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - [.resize(int)](#resizeint--up) \
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - [.shrink_to_fit( )](#shrink_to_fit--up) \
-&nbsp;&nbsp;&nbsp;&nbsp; - [Tworzenie Elementów](#tworzenie-elementów) \
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - [.push_back(DataType)](#tworzenie-elementów) \
 &nbsp;&nbsp;&nbsp;&nbsp; - [Usuwanie Elementu](#usuwanie-elementu) \
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - [.pop_back( )](#usuwanie-elementu) \
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - [Usuwanie elementu w czasie O(1)](#usuwanie-elementu-w-czasie-O1--up) \
@@ -54,10 +55,9 @@ void showVector(const std::vector<T>& givenVector) {
 }
 ```
 
-
 <br/><br/>
 -------------
-### Rezerwowanie Pamięci
+### Tworzenie Elementów
 ###### `konstruktor(int)`, `konstruktor(int, DataType)` &nbsp;&nbsp;&nbsp;&nbsp; [[up]](#stdvector-datatype-)
 &nbsp;&nbsp;&nbsp;&nbsp; - Rezerwuje miejsce w pamięci na określoną ilość elementów, \
 &nbsp;&nbsp;&nbsp;&nbsp; - Tworzy określoną ilość elementów domyślnie nadając im początkową wartość zero. \
@@ -69,7 +69,7 @@ std::vector<int> vector_A(4);
     // capacity: 4
     // free space left: 0
  
-std::vector<int> vector_AA(6, -12);
+std::vector<int> vector_B(6, -12);
     // -12 -12 -12 -12 -12 -12
     // size: 6
     // capacity: 6
@@ -79,164 +79,19 @@ std::vector<int> vector_AA(6, -12);
 
 <br/><br/>
 -------------
-###### `.reserve(int)` &nbsp;&nbsp;&nbsp;&nbsp; [[up]](#stdvector-datatype-)
-&nbsp;&nbsp;&nbsp;&nbsp; - Rezerwuje miejsce w pamięci na określoną ilość elementów, \
-&nbsp;&nbsp;&nbsp;&nbsp; - Nie tworzy elementów, \
-&nbsp;&nbsp;&nbsp;&nbsp; - Nie może zmniejszyć ilości zarezerwowanego miejsca, \
-&nbsp;&nbsp;&nbsp;&nbsp; - Pozwala uniknąć wielokrotnych automatycznych realokacji pamięci.
-```cpp
-std::vector<int> vector_B;
-    // size: 0
-    // capacity: 0
-    // free space left: 0
-
-vector_B.reserve(200);
-    // No elements were created.
-    // But now you can create two hundred elements without multiple reallocations.
-    // size: 0
-    // capacity: 200
-    // free space left: 200
-```
-
-Metoda `.reserve(int)` nie pozwala nam na zmniejszenie ilości zarezerwowanego miejsca. \
-W sytuacji podania mniejszej wartości niż obecna kontener nie jest modyfikowany.
-```cpp
-vector_B.reserve(120);         // 120 is less than the current 200
-    // The method does nothing if it receives a smaller argument than the currently reserved space.
-    // It cannot reduce the reserved space of the vector.
-    // size: 0
-    // capacity: 200
-    // free space left: 200
- ```
- 
-Metodą `.reserve(int)` możemy zwiększyć ilość zarezerwowanej pamięci do konkretnego rozmiaru, \
-który nie musi być wielokrotnością dwójki lub dwukrotnością poprzedzającego rozmiaru.
- ```cpp
- vector_B.reserve(233);  
-    // the reserved space will contain 233 elements. Not 256(2^8), Not 400(200*2).
-    // size: 0
-    // capacity: 233
-    // free space left: 233
-``` 
-
-Niezależnie na ile elementów zostanie zarezerwowane miejsce w pamięci, po przekroczeniu limitu nastąpi automatyczna realokacja. \
-Automatyczna realokajca dwukrotnie zwiększa ostatnią ilość zarezerwowanego miejsca. \
-Przykładowo, jeżeli `(vector_A.capacity() == 233)`, i będziemy chcieli dodać 234 element, \
-to w wyniku automatycznej realokacji ilość miejsca w wektorze zostanie zwiększona do, (233 * 2), 466 elementów .
-
-**Unikamy automatycznych realokacji pamięci z powodów optymalizacyjnych** \
-Jest to czasochłonna operacja polegająca na wyszukaniu odpowiedniego miejsca w pamięci zdolnego do pomieszczenia \
-wszystkich elementów wektora w ciągłej, nieprzerwanej lini komórek pamięci, \
-a następnie jeszcze przepisująca element po elemencie w takie odpowiednie miejsce. \
-Operacja realokacji posiada własne usprawnienia zależne od systemu operacyjnego, \
-nie należy jednak zakładać że takowe usprawnienia zostaną zastosowane w każdym przypadku. \
-Dlatego zamiast wykonywać 26 lub więcej automatycznych realokacji zaleca się \
-wykonać jednokrotną, ręczną realokację przed wprowadzaniem nowych elementów.
-
-
-<br/><br/>
--------------
-###### `.resize(int)` &nbsp;&nbsp;&nbsp;&nbsp; [[up]](#stdvector-datatype-)
-&nbsp;&nbsp;&nbsp;&nbsp; - Rezerwuje miejsce w pamięci na określoną ilość elementów, \
-&nbsp;&nbsp;&nbsp;&nbsp; - Tworzy określoną liczbę elementów. \
-&nbsp;&nbsp;&nbsp;&nbsp; - Nie może zmniejszyć ilości zarezerwowanego miejsca, \
-&nbsp;&nbsp;&nbsp;&nbsp; - Może zmeniejszyć ilość istniejących elementów, \
-&nbsp;&nbsp;&nbsp;&nbsp; - Pozwala uniknąć wielokrotnych automatycznych realokacji pamięci. \
-&nbsp;&nbsp;&nbsp;&nbsp; - Czas tworzenia elementów jest porównywalny do sposobu z wykorzystaniem konstruktora.
-```cpp
-std::vector<int> vector_C;
-    // size: 0
-    // capacity: 0
-    // free space left: 0
-
-vector_C.resize(3000);
-    // 3000 elements with value equal zero were created.
-    // size: 3000
-    // capacity: 3000
-    // free space left: 0
-```
-Obecnie `vector_C` posiada 3000 elementów. \
-Ponowne wywołanie metody `resize(int)` z wartością **większą od obecnej ilości elementów spowoduje**: \
-&nbsp;&nbsp;&nbsp;&nbsp; - Obecnie isteniejące elementy nie zostaną zmodyfikowane. \
-&nbsp;&nbsp;&nbsp;&nbsp; - Na końcu wektora zostaną utworzone nowe elementy z wartością zero. \
-&nbsp;&nbsp;&nbsp;&nbsp; - Wektor będzie posiadał tyle elementów ile podano w argumencie metody `resize(int)`. \
-&nbsp;&nbsp;&nbsp;&nbsp; - W razie potrzeby automatyczne zostanie wykonana kolejna realokacja.
-```cpp
-std::vector<int> vector_D(3,24);
-    // 24 24 24 
-    // size: 3
-    // capacity: 3
-    // free space left: 0
-  
-vector_D.resize(10);
-    // This resize(int) method creates 7 more elements.
-    // Now vector_D has ten elements.
-    // 24 24 24 0 0 0 0 0 0 0 
-    // size: 10
-    // capacity: 10
-    // free space left: 0
-```
-Obecnie `vector_D` posiada w sobie 10 elementów. \
-Ponowne wywołanie metody `resize(int)` z wartością **mniejszą od obecnej ilości elementów spowoduje**: \
-&nbsp;&nbsp;&nbsp;&nbsp; - Obecnie isteniejące elementy zostaną bezpowrotnie skasowane. \
-&nbsp;&nbsp;&nbsp;&nbsp; - Elementy wektora są kasowane od końca. \
-&nbsp;&nbsp;&nbsp;&nbsp; - Wektor będzie posiadał tyle elementów ile podano w argumencie metody `resize(int)`. \
-&nbsp;&nbsp;&nbsp;&nbsp; - Ilość zarezerwowanego miejsca nie zostanie zmniejszona. \
-&nbsp;&nbsp;&nbsp;&nbsp; - Ilość elementów wektora zostanie zmniejszona.
-```cpp
-vector_D;
-    // 24 24 24 0 0 0 0 0 0 0 
-    // size: 10
-    // capacity: 10
-    // free space left: 0
-```
-```cpp
-vector_D.resize(5);
-    // Argument value(5) is smaller than vector_D.size().
-    // And so it erases last five elements.
-    // 24 24 24 0 0 
-    // size: 5
-    // capacity: 10
-    // free space left: 5
-```
-
-
-<br/><br/>
--------------
-###### `.shrink_to_fit()` &nbsp;&nbsp;&nbsp;&nbsp; [[up]](#stdvector-datatype-)
-&nbsp;&nbsp;&nbsp;&nbsp; - Zwalnia niewykorzystany nadmiar zarezerwowanej pamięci. \
-&nbsp;&nbsp;&nbsp;&nbsp; - Realokuje pamięć bez usuwania elementów. \
-&nbsp;&nbsp;&nbsp;&nbsp; - Wartość `capacity()` wektora staje się równa wartości `size()`.
-```cpp
-vector<int> vector_E(112,1);
-vector_E.reserve(200);
-    // size: 112
-    // capacity: 200
-    // free space left: 88
- 
-vector_E.shrink_to_fit();
-    // size: 112
-    // capacity: 112
-    // free space left: 0
-```
-
-
-<br/><br/>
--------------
-### Tworzenie Elementów
 ###### `.push_back(DataType)` &nbsp;&nbsp;&nbsp;&nbsp; [[up]](#stdvector-datatype-)
 &nbsp;&nbsp;&nbsp;&nbsp; - Tworzy nowy element na końcu wektora. \
 &nbsp;&nbsp;&nbsp;&nbsp; - Wywołuje konstruktor kopiujący DataType. `DataType(const DataTypeF& td) {}` \
 ```cpp
 int someValue = 5;
 
- vector<int> vector_A;
+ vector<int> vector_C;
     // size: 0
     // capacity: 0
     // free space left: 0
  
- vector_A.push_back(someValue);
-    // Gives vector_A one element at the end
+ vector_C.push_back(someValue);
+    // Gives vector_C one element at the end
     // In this situation: Automate Memory Realocation Needed.
     // size: 1
     // capacity: 1
@@ -244,7 +99,7 @@ int someValue = 5;
 ```
 W powyższym przykładzie posiadamy jeden wektor oraz dwie niezależne zmienne trzymające wartość `5`. \
 &nbsp;&nbsp;&nbsp;&nbsp; - `someValue == 5` \
-&nbsp;&nbsp;&nbsp;&nbsp; - `vector_A[1] == 5` \
+&nbsp;&nbsp;&nbsp;&nbsp; - `vector_C[1] == 5` \
 Zmienna będąca częścią wektora posiada skopiowaną wartość z zmiennej `someValue`, nie jest jednak \
 w żaden sposób powiązana z zmienną `someValue`. Zmienna będąca częścią wektora będzie istnieć \
 tak długo jak nie zostanie skasowana z wektora lub tak długo jak sam wektor istnieje. \
@@ -294,6 +149,153 @@ Operacja przesuwania elementu po wektorze wymaga jednorazowego wywołania konstr
 Realokacja pamięci wektora polega na przemieszczeniu wszystkich elementów wektora w odpowiednie miejsce.
 Wymaga to wywołania algorytmu wyszukującego odpowiednio dużą ilość miejsca oraz
 wywołania konstruktora kopiującego i destruktora dla każdego elementu wektora.
+
+
+
+
+<br/><br/>
+-------------
+### Rezerwowanie Pamięci
+###### `.reserve(int)` &nbsp;&nbsp;&nbsp;&nbsp; [[up]](#stdvector-datatype-)
+&nbsp;&nbsp;&nbsp;&nbsp; - Rezerwuje miejsce w pamięci na określoną ilość elementów, \
+&nbsp;&nbsp;&nbsp;&nbsp; - Nie tworzy elementów, \
+&nbsp;&nbsp;&nbsp;&nbsp; - Nie może zmniejszyć ilości zarezerwowanego miejsca, \
+&nbsp;&nbsp;&nbsp;&nbsp; - Pozwala uniknąć wielokrotnych automatycznych realokacji pamięci.
+```cpp
+std::vector<int> vector_A;
+    // size: 0
+    // capacity: 0
+    // free space left: 0
+
+vector_A.reserve(200);
+    // No elements were created.
+    // But now you can create two hundred elements without multiple reallocations.
+    // size: 0
+    // capacity: 200
+    // free space left: 200
+```
+
+Metoda `.reserve(int)` nie pozwala nam na zmniejszenie ilości zarezerwowanego miejsca. \
+W sytuacji podania mniejszej wartości niż obecna kontener nie jest modyfikowany.
+```cpp
+vector_A.reserve(120);         // 120 is less than the current 200
+    // The method does nothing if it receives a smaller argument than the currently reserved space.
+    // It cannot reduce the reserved space of the vector.
+    // size: 0
+    // capacity: 200
+    // free space left: 200
+ ```
+ 
+Metodą `.reserve(int)` możemy zwiększyć ilość zarezerwowanej pamięci do konkretnego rozmiaru, \
+który nie musi być wielokrotnością dwójki lub dwukrotnością poprzedzającego rozmiaru.
+ ```cpp
+ vector_A.reserve(233);  
+    // the reserved space will contain 233 elements. Not 256(2^8), Not 400(200*2).
+    // size: 0
+    // capacity: 233
+    // free space left: 233
+``` 
+
+Niezależnie na ile elementów zostanie zarezerwowane miejsce w pamięci, po przekroczeniu limitu nastąpi automatyczna realokacja. \
+Automatyczna realokajca dwukrotnie zwiększa ostatnią ilość zarezerwowanego miejsca. \
+Przykładowo, jeżeli `(vector_A.capacity() == 233)`, i będziemy chcieli dodać 234 element, \
+to w wyniku automatycznej realokacji ilość miejsca w wektorze zostanie zwiększona do, (233 * 2), 466 elementów .
+
+**Unikamy automatycznych realokacji pamięci z powodów optymalizacyjnych** \
+Jest to czasochłonna operacja polegająca na wyszukaniu odpowiedniego miejsca w pamięci zdolnego do pomieszczenia \
+wszystkich elementów wektora w ciągłej, nieprzerwanej lini komórek pamięci, \
+a następnie jeszcze przepisująca element po elemencie w takie odpowiednie miejsce. \
+Operacja realokacji posiada własne usprawnienia zależne od systemu operacyjnego, \
+nie należy jednak zakładać że takowe usprawnienia zostaną zastosowane w każdym przypadku. \
+Dlatego zamiast wykonywać 26 lub więcej automatycznych realokacji zaleca się \
+wykonać jednokrotną, ręczną realokację przed wprowadzaniem nowych elementów.
+
+
+<br/><br/>
+-------------
+###### `.resize(int)` &nbsp;&nbsp;&nbsp;&nbsp; [[up]](#stdvector-datatype-)
+&nbsp;&nbsp;&nbsp;&nbsp; - Rezerwuje miejsce w pamięci na określoną ilość elementów, \
+&nbsp;&nbsp;&nbsp;&nbsp; - Tworzy określoną liczbę elementów. \
+&nbsp;&nbsp;&nbsp;&nbsp; - Nie może zmniejszyć ilości zarezerwowanego miejsca, \
+&nbsp;&nbsp;&nbsp;&nbsp; - Może zmeniejszyć ilość istniejących elementów, \
+&nbsp;&nbsp;&nbsp;&nbsp; - Pozwala uniknąć wielokrotnych automatycznych realokacji pamięci. \
+&nbsp;&nbsp;&nbsp;&nbsp; - Czas tworzenia elementów jest porównywalny do sposobu z wykorzystaniem konstruktora.
+```cpp
+std::vector<int> vector_B;
+    // size: 0
+    // capacity: 0
+    // free space left: 0
+
+vector_B.resize(3000);
+    // 3000 elements with value equal zero were created.
+    // size: 3000
+    // capacity: 3000
+    // free space left: 0
+```
+Obecnie `vector_B` posiada 3000 elementów. \
+Ponowne wywołanie metody `resize(int)` z wartością **większą od obecnej ilości elementów spowoduje**: \
+&nbsp;&nbsp;&nbsp;&nbsp; - Obecnie isteniejące elementy nie zostaną zmodyfikowane. \
+&nbsp;&nbsp;&nbsp;&nbsp; - Na końcu wektora zostaną utworzone nowe elementy z wartością zero. \
+&nbsp;&nbsp;&nbsp;&nbsp; - Wektor będzie posiadał tyle elementów ile podano w argumencie metody `resize(int)`. \
+&nbsp;&nbsp;&nbsp;&nbsp; - W razie potrzeby automatyczne zostanie wykonana kolejna realokacja.
+```cpp
+std::vector<int> vector_C(3,24);
+    // 24 24 24 
+    // size: 3
+    // capacity: 3
+    // free space left: 0
+  
+vector_C.resize(10);
+    // This resize(int) method creates 7 more elements.
+    // Now vector_C has ten elements.
+    // 24 24 24 0 0 0 0 0 0 0 
+    // size: 10
+    // capacity: 10
+    // free space left: 0
+```
+Obecnie `vector_C` posiada w sobie 10 elementów. \
+Ponowne wywołanie metody `resize(int)` z wartością **mniejszą od obecnej ilości elementów spowoduje**: \
+&nbsp;&nbsp;&nbsp;&nbsp; - Obecnie isteniejące elementy zostaną bezpowrotnie skasowane. \
+&nbsp;&nbsp;&nbsp;&nbsp; - Elementy wektora są kasowane od końca. \
+&nbsp;&nbsp;&nbsp;&nbsp; - Wektor będzie posiadał tyle elementów ile podano w argumencie metody `resize(int)`. \
+&nbsp;&nbsp;&nbsp;&nbsp; - Ilość zarezerwowanego miejsca nie zostanie zmniejszona. \
+&nbsp;&nbsp;&nbsp;&nbsp; - Ilość elementów wektora zostanie zmniejszona.
+```cpp
+vector_C;
+    // 24 24 24 0 0 0 0 0 0 0 
+    // size: 10
+    // capacity: 10
+    // free space left: 0
+```
+```cpp
+vector_C.resize(5);
+    // Argument value(5) is smaller than vector_C.size().
+    // And so it erases last five elements.
+    // 24 24 24 0 0 
+    // size: 5
+    // capacity: 10
+    // free space left: 5
+```
+
+
+<br/><br/>
+-------------
+###### `.shrink_to_fit()` &nbsp;&nbsp;&nbsp;&nbsp; [[up]](#stdvector-datatype-)
+&nbsp;&nbsp;&nbsp;&nbsp; - Zwalnia niewykorzystany nadmiar zarezerwowanej pamięci. \
+&nbsp;&nbsp;&nbsp;&nbsp; - Realokuje pamięć bez usuwania elementów. \
+&nbsp;&nbsp;&nbsp;&nbsp; - Wartość `capacity()` wektora staje się równa wartości `size()`.
+```cpp
+vector<int> vector_D(112,1);
+vector_D.reserve(200);
+    // size: 112
+    // capacity: 200
+    // free space left: 88
+ 
+vector_D.shrink_to_fit();
+    // size: 112
+    // capacity: 112
+    // free space left: 0
+```
 
 
 <br/><br/>
