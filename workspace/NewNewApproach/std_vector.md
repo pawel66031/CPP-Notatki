@@ -5,12 +5,13 @@
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - [operator[ ]](#wyświetlanie-informacji-o-wybranym-vectorze) \
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - [.size( )](#wyświetlanie-informacji-o-wybranym-vectorze) \
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - [.capacity( )](#wyświetlanie-informacji-o-wybranym-vectorze) \
-&nbsp;&nbsp;&nbsp;&nbsp; - [Rezerwowanie Pamięci, Tworzenie Elementów](#rezerwowanie-pamięci-tworzenie-elementów) \
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - [konstruktor(int)](#rezerwowanie-pamięci-tworzenie-elementów) \
+&nbsp;&nbsp;&nbsp;&nbsp; - [Rezerwowanie Pamięci](#rezerwowanie-pamięci) \
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - [konstruktor(int)](#rezerwowanie-pamięci) \
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - [.reserve(int)](#reserveint--up) \
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - [.resize(int)](#resizeint--up) \
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - [.push_back(DataType)](#push_backdatatype--up) \
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - [.shrink_to_fit( )](#shrink_to_fit--up) \
+&nbsp;&nbsp;&nbsp;&nbsp; - [Tworzenie Elementów](#tworzenie-elementów) \
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - [.push_back(DataType)](#tworzenie-elementów) \
 &nbsp;&nbsp;&nbsp;&nbsp; - [Usuwanie Elementu](#usuwanie-elementu) \
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - [.pop_back( )](#usuwanie-elementu) \
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - [Usuwanie elementu w czasie O(1)](#usuwanie-elementu-w-czasie-O1--up) \
@@ -161,21 +162,21 @@ Ponowne wywołanie metody `resize(int)` z wartością **większą od obecnej ilo
 &nbsp;&nbsp;&nbsp;&nbsp; - Wektor będzie posiadał tyle elementów ile podano w argumencie metody `resize(int)`. \
 &nbsp;&nbsp;&nbsp;&nbsp; - W razie potrzeby automatyczne zostanie wykonana kolejna realokacja.
 ```cpp
-std::vector<int> vector_CC(3,24);
+std::vector<int> vector_D(3,24);
     // 24 24 24 
     // size: 3
     // capacity: 3
     // free space left: 0
   
-vector_CC.resize(10);
+vector_D.resize(10);
     // This resize(int) method creates 7 more elements.
-    // Now vector_CC has ten elements.
+    // Now vector_D has ten elements.
     // 24 24 24 0 0 0 0 0 0 0 
     // size: 10
     // capacity: 10
     // free space left: 0
 ```
-Obecnie `vector_CC` posiada w sobie 10 elementów. \
+Obecnie `vector_D` posiada w sobie 10 elementów. \
 Ponowne wywołanie metody `resize(int)` z wartością **mniejszą od obecnej ilości elementów spowoduje**: \
 &nbsp;&nbsp;&nbsp;&nbsp; - Obecnie isteniejące elementy zostaną bezpowrotnie skasowane. \
 &nbsp;&nbsp;&nbsp;&nbsp; - Elementy wektora są kasowane od końca. \
@@ -183,15 +184,15 @@ Ponowne wywołanie metody `resize(int)` z wartością **mniejszą od obecnej ilo
 &nbsp;&nbsp;&nbsp;&nbsp; - Ilość zarezerwowanego miejsca nie zostanie zmniejszona. \
 &nbsp;&nbsp;&nbsp;&nbsp; - Ilość elementów wektora zostanie zmniejszona.
 ```cpp
-vector_CC;
+vector_D;
     // 24 24 24 0 0 0 0 0 0 0 
     // size: 10
     // capacity: 10
     // free space left: 0
 ```
 ```cpp
-vector_CC.resize(5);
-    // Argument value(5) is smaller than vector_CC.size().
+vector_D.resize(5);
+    // Argument value(5) is smaller than vector_D.size().
     // And so it erases last five elements.
     // 24 24 24 0 0 
     // size: 5
@@ -202,19 +203,40 @@ vector_CC.resize(5);
 
 <br/><br/>
 -------------
+###### `.shrink_to_fit()` &nbsp;&nbsp;&nbsp;&nbsp; [[up]](#stdvector-datatype-)
+&nbsp;&nbsp;&nbsp;&nbsp; - Zwalnia niewykorzystany nadmiar zarezerwowanej pamięci. \
+&nbsp;&nbsp;&nbsp;&nbsp; - Realokuje pamięć bez usuwania elementów. \
+&nbsp;&nbsp;&nbsp;&nbsp; - Wartość `capacity()` wektora staje się równa wartości `size()`.
+```cpp
+vector<int> vector_E(112,1);
+vector_E.reserve(200);
+    // size: 112
+    // capacity: 200
+    // free space left: 88
+ 
+vector_E.shrink_to_fit();
+    // size: 112
+    // capacity: 112
+    // free space left: 0
+```
+
+
+<br/><br/>
+-------------
+### Tworzenie Elementów
 ###### `.push_back(DataType)` &nbsp;&nbsp;&nbsp;&nbsp; [[up]](#stdvector-datatype-)
 &nbsp;&nbsp;&nbsp;&nbsp; - Tworzy nowy element na końcu wektora. \
 &nbsp;&nbsp;&nbsp;&nbsp; - Wywołuje konstruktor kopiujący DataType. `DataType(const DataTypeF& td) {}` \
 ```cpp
 int someValue = 5;
 
- vector<int> vector_D;
+ vector<int> vector_A;
     // size: 0
     // capacity: 0
     // free space left: 0
  
- vector_D.push_back(someValue);
-    // Gives vector_D one element at the end
+ vector_A.push_back(someValue);
+    // Gives vector_A one element at the end
     // In this situation: Automate Memory Realocation Needed.
     // size: 1
     // capacity: 1
@@ -222,7 +244,7 @@ int someValue = 5;
 ```
 W powyższym przykładzie posiadamy jeden wektor oraz dwie niezależne zmienne trzymające wartość `5`. \
 &nbsp;&nbsp;&nbsp;&nbsp; - `someValue == 5` \
-&nbsp;&nbsp;&nbsp;&nbsp; - `vector_D[1] == 5` \
+&nbsp;&nbsp;&nbsp;&nbsp; - `vector_A[1] == 5` \
 Zmienna będąca częścią wektora posiada skopiowaną wartość z zmiennej `someValue`, nie jest jednak \
 w żaden sposób powiązana z zmienną `someValue`. Zmienna będąca częścią wektora będzie istnieć \
 tak długo jak nie zostanie skasowana z wektora lub tak długo jak sam wektor istnieje. \
@@ -273,25 +295,6 @@ Realokacja pamięci wektora polega na przemieszczeniu wszystkich elementów wekt
 Wymaga to wywołania algorytmu wyszukującego odpowiednio dużą ilość miejsca oraz
 wywołania konstruktora kopiującego i destruktora dla każdego elementu wektora.
 
-
-<br/><br/>
--------------
-###### `.shrink_to_fit()` &nbsp;&nbsp;&nbsp;&nbsp; [[up]](#stdvector-datatype-)
-&nbsp;&nbsp;&nbsp;&nbsp; - Zwalnia niewykorzystany nadmiar zarezerwowanej pamięci. \
-&nbsp;&nbsp;&nbsp;&nbsp; - Realokuje pamięć bez usuwania elementów. \
-&nbsp;&nbsp;&nbsp;&nbsp; - Wartość `capacity()` wektora staje się równa wartości `size()`.
-```cpp
-vector<int> vector_E(112,1);
-vector_E.reserve(200);
-    // size: 112
-    // capacity: 200
-    // free space left: 88
- 
-vector_E.shrink_to_fit();
-    // size: 112
-    // capacity: 112
-    // free space left: 0
-```
 
 <br/><br/>
 -------------
