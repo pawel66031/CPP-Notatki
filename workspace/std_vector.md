@@ -58,24 +58,33 @@ void showVector(const std::vector<T>& givenVector) {
 <br/><br/>
 -------------
 ### Tworzenie Elementów
-###### `konstruktor(int)`, `konstruktor(int, DataType)` &nbsp;&nbsp;&nbsp;&nbsp; [[up]](#stdvector-datatype-)
-&nbsp;&nbsp;&nbsp;&nbsp; - Rezerwuje miejsce w pamięci na określoną ilość elementów, \
-&nbsp;&nbsp;&nbsp;&nbsp; - Tworzy określoną ilość elementów domyślnie nadając im początkową wartość zero. \
-&nbsp;&nbsp;&nbsp;&nbsp; - Pozwala na inicjalizacje wartością inną od zera, drugi argument.
+###### `konstruktor(int)` &nbsp;&nbsp;&nbsp;&nbsp; [[up]](#stdvector-datatype-)
+&nbsp;&nbsp;&nbsp;&nbsp; - Jednokrotnie rezerwuje wystarczającą ilość pamięci. \
+&nbsp;&nbsp;&nbsp;&nbsp; - Tworzy określoną ilość elementów za pomocą konstruktora domyślnego. \
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; W przypadku `int` jest to wartość zero. \
+&nbsp;&nbsp;&nbsp;&nbsp; - **DataType musi posiadać konstruktor domyślny.**
 ```cpp
 std::vector<int> vector_A(4);
     // 0 0 0 0
     // size: 4
     // capacity: 4
     // free space left: 0
- 
+```
+
+<br/><br/>
+-------------
+###### `konstruktor(int, DataType)` &nbsp;&nbsp;&nbsp;&nbsp; [[up]](#stdvector-datatype-)
+&nbsp;&nbsp;&nbsp;&nbsp; - Jednokrotnie rezerwuje wystarczającą ilość pamięci. \
+&nbsp;&nbsp;&nbsp;&nbsp; - Tworzy określoną ilość elementów. \
+&nbsp;&nbsp;&nbsp;&nbsp; - Inicjalizacje elementy wartością z drugiego argumentu. \
+&nbsp;&nbsp;&nbsp;&nbsp; - Elementy są budowane za pomocą konstruktorów kopiujących.
+```cpp
 std::vector<int> vector_B(6, -12);
     // -12 -12 -12 -12 -12 -12
     // size: 6
     // capacity: 6
     // free space left: 0
 ```
-
 
 <br/><br/>
 -------------
