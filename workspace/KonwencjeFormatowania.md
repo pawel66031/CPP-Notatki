@@ -24,12 +24,6 @@
 
 <br/>
 
-### Budowa Strony Praktyki
-&nbsp;&nbsp;&nbsp;&nbsp; - Poprzedzamy nazwę pliku słowem:  `praktyka_`. \
-&nbsp;&nbsp;&nbsp;&nbsp; - Przykład:  [praktyka_PustySzablon.md]()
-
-<br/>
-
 ### Formatowanie Kodu
 **&nbsp;&nbsp;&nbsp;&nbsp; - Język pisany:** &nbsp; Angielski 
 
