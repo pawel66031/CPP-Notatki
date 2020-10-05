@@ -23,6 +23,3 @@
 ### Akapit 3
 
 
-<br/><br/>
--------------
-![](https://github.com/Ptysiek/resources/blob/master/Ver2.PNG)
