@@ -12,7 +12,7 @@
 ### Tłumaczenia
 &nbsp;&nbsp;&nbsp;&nbsp; - Poprzedzamy nawiasami kwadratowymi. \
 &nbsp;&nbsp;&nbsp;&nbsp; - Umieszczamy odniesienie do strony: [AlternatywyNazewnicze](/workspace/AlternatywyNazewnicze.md) \
-&nbsp;&nbsp;&nbsp;&nbsp; - Przykład: nawiasy klamrowe [ang. [braces](/workspacce/AlternatywyNazewnicze.md#ang-braces)]
+&nbsp;&nbsp;&nbsp;&nbsp; - Przykład: nawiasy klamrowe [ang. [braces](/workspace/AlternatywyNazewnicze.md#ang-braces)]
 
 <br/>
 
