@@ -282,8 +282,8 @@ vector_C.resize(5);
 -------------
 ###### `.shrink_to_fit()` &nbsp;&nbsp;&nbsp;&nbsp; [[up]](#stdvector-datatype-)
 &nbsp;&nbsp;&nbsp;&nbsp; - Zwalnia niewykorzystany nadmiar zarezerwowanej pamięci. \
-&nbsp;&nbsp;&nbsp;&nbsp; - Realokuje pamięć bez usuwania elementów. \
-&nbsp;&nbsp;&nbsp;&nbsp; - Wartość `capacity()` wektora staje się równa wartości `size()`.
+&nbsp;&nbsp;&nbsp;&nbsp; - Wartość `capacity()` wektora staje się równa wartości `size()`. \
+&nbsp;&nbsp;&nbsp;&nbsp; - Nie usuwa elementów. 
 ```cpp
 vector<int> vector_D(112,1);
 vector_D.reserve(200);
