@@ -57,17 +57,17 @@
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; stuff \
 &nbsp;&nbsp;&nbsp;&nbsp; - stuff 2 \
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; stuff stuff \
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; stuff stuff \
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; stuff stuff 
 
 **[Step2]**  
 &nbsp;&nbsp;&nbsp;&nbsp; - stuff 1 \
 &nbsp;&nbsp;&nbsp;&nbsp; - stuff 2 \
-&nbsp;&nbsp;&nbsp;&nbsp; - stuff 3 \
+&nbsp;&nbsp;&nbsp;&nbsp; - stuff 3 
 
 **[Step3]**  
 &nbsp;&nbsp;&nbsp;&nbsp; - stuff 1 \
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; stuff \
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; stuff \
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; stuff 
 
 
 
