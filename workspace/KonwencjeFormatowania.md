@@ -20,7 +20,7 @@
 &nbsp;&nbsp;&nbsp;&nbsp; - Akapity rozpoczynamy tytułem z potrójnym hashem `###`. \
 &nbsp;&nbsp;&nbsp;&nbsp; - Tytuł akapitu piszemy w Camel_spacja_Case. Rozpoczynamy każde słowo wielką literą. \
 &nbsp;&nbsp;&nbsp;&nbsp; - Unikamy pod-akapitów, pod-tytułów, rozbudowywania hierarchii pliku. \
-&nbsp;&nbsp;&nbsp;&nbsp; - Przykład:  [PustySzablon.md](/PustySzablon.md)
+&nbsp;&nbsp;&nbsp;&nbsp; - Przykład:  [PustySzablon.md](/workspace/PustySzablon.md)
 
 <br/>
 
