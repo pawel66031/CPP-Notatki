@@ -337,7 +337,7 @@ W najlepszym wypadku po wypisaniu `Segmentation fault (core dumped)` program zos
 <br/><br/>
 -------------
 ###### `Usuwanie elementu w czasie O(1)` &nbsp;&nbsp;&nbsp;&nbsp; [[up]](#stdvector-datatype-)
-Możemy uniknąć przemieszczania `N` elementów wektora w lewo umieszczając w miejsce usuwanego elementu ostatni element kontenera. \
+Możemy uniknąć przemieszczania `N` elementów wektora w lewo zamieniając miejscem usuwany element z ostatnim elementem kontenera. \
 Wiąże się to z utratą początkowej kolejności elementów.
 ```
 index to erase: 3
@@ -504,11 +504,11 @@ showVector(vctr);
 
 <br/><br/>
 -------------
-### Teoria
-&nbsp;&nbsp;&nbsp;&nbsp; - Wektor przechowywuje obiekty obok siebie w jednym ogromnym obszarze pamięci. \
+### Podsumowanie
+&nbsp;&nbsp;&nbsp;&nbsp; - Wektor przechowywuje obiekty obok siebie w jednym, ciągłym obszarze pamięci. \
 &nbsp;&nbsp;&nbsp;&nbsp; - Należy go stosować zawsze zamiast zwykłej tablicy. \
-&nbsp;&nbsp;&nbsp;&nbsp; - Jest optymalny, oferuje zwiększony komfort i bezpiecczeństwo. \
-&nbsp;&nbsp;&nbsp;&nbsp; - Wektor posiada zmienną wielkość. \
+&nbsp;&nbsp;&nbsp;&nbsp; - Oferuje zwiększony komfort i bezpieczeństwo. \
+&nbsp;&nbsp;&nbsp;&nbsp; - Posiada zmienną wielkość. \
 &nbsp;&nbsp;&nbsp;&nbsp; - Pozwala dodawać nowe elementy bez każdorazowej realokacji pamięci.
 
 <br/><br/>
