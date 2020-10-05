@@ -1,6 +1,4 @@
 # Pusty Szablon
-&nbsp;&nbsp;&nbsp;&nbsp; - [[Strona Teorii]](#podsumowanie-classic-builder) \
-&nbsp;&nbsp;&nbsp;&nbsp; - [[Strona Praktyki]](#program-11--productfile--guitar) 
 
 **Alternatywna Nawigacja:**  
 &nbsp;&nbsp;&nbsp;&nbsp; - [link 1]() \
