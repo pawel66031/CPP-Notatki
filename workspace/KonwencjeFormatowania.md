@@ -11,8 +11,8 @@
 
 ### Tłumaczenia
 &nbsp;&nbsp;&nbsp;&nbsp; - Poprzedzamy nawiasami kwadratowymi. \
-&nbsp;&nbsp;&nbsp;&nbsp; - Umieszczamy odniesienie do strony: [AlternatywyNazewnicze](https://github.com/Ptysiek/CPP-Notatki/blob/master/workspace/NewApproach/AlternatywyNazewnicze.md) \
-&nbsp;&nbsp;&nbsp;&nbsp; - Przykład: nawiasy klamrowe [ang. [braces](https://github.com/Ptysiek/CPP-Notatki/blob/master/workspace/NewApproach/AlternatywyNazewnicze.md#ang-braces)]
+&nbsp;&nbsp;&nbsp;&nbsp; - Umieszczamy odniesienie do strony: [AlternatywyNazewnicze](/workspace/AlternatywyNazewnicze.md) \
+&nbsp;&nbsp;&nbsp;&nbsp; - Przykład: nawiasy klamrowe [ang. [braces](/workspacce/AlternatywyNazewnicze.md#ang-braces)]
 
 <br/>
 
