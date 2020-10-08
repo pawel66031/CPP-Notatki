@@ -99,7 +99,7 @@ Obecnie, zastosowanie specyfikatora __register__ ograniczyło się do podkreśle
 
 <br/><br/>
 -------------
-### Pamięć statyczna &nbsp;&nbsp;&nbsp;&nbsp; [[up]](#stdvector-datatype-)
+### Pamięć statyczna
 Obiekty statyczne istnieją w specjalnie przygotowanym bloku pamięci o stałym rozmiarze. \
 Liczba obiektów statycznych nie zmienia się w trakcie działania programu. 
 
