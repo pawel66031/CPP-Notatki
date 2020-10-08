@@ -10,7 +10,9 @@
 &nbsp;
 -------------
 **Powiązane Notatki**  
-&nbsp;&nbsp;&nbsp;&nbsp; - [Lista Specyfikatorów]() 
+&nbsp;&nbsp;&nbsp;&nbsp; - [Lista Specyfikatorów]() \
+&nbsp;&nbsp;&nbsp;&nbsp; - [Teoria O Rodzajach Pamięci](/CPP-Notatki/blob/master/workspace/Teoria/ModelPamięci.md) 
+
 
 &nbsp;
 -------------
