@@ -57,17 +57,17 @@ int main() {
 #include <iostream>
 
 void incrementValue() {
-	int value = 1;
-	++value;
-	std::cout << value << '\n';
+    int value = 1;
+    ++value;
+    std::cout << value << '\n';
 }
 
 int main() {
-	incrementValue();
-	incrementValue();
-	incrementValue();
+    incrementValue();
+    incrementValue();
+    incrementValue();
 
-	return 0;
+    return 0;
 }
 ```
 ```
