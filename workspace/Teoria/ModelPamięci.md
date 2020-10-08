@@ -1,22 +1,37 @@
 # Rodzaje Pamięci - Kategoryzacja Obiektów
 
-&nbsp;&nbsp;&nbsp;&nbsp; - Rozróżniamy cztery sposoby trzymania danych przez program: \
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - [Pamięć automatyczna](#1-pamięć-automatyczna) \
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - [Pamięć statyczna](#2-pamięć-statyczna) \
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - [Pamięć wątku](#3-pamięć-wątku) \
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - [Pamięć dynamiczna](#4-pamięć-dynamiczna) 
+**Wewnętrzna Nawigacja:**  
+&nbsp;&nbsp;&nbsp;&nbsp; - [Wstęp](#wstęp) \
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - [Tworzenie i niszczenie obiektów](#tworzenie-i-niszczenie-obiektów-w-modelu-pamięci) \
+&nbsp;&nbsp;&nbsp;&nbsp; - [Pamięć automatyczna](#pamięć-automatyczna--up) \
+&nbsp;&nbsp;&nbsp;&nbsp; - [Pamięć statyczna](#pamięć-statyczna--up) \
+&nbsp;&nbsp;&nbsp;&nbsp; - [Pamięć wątku](#pamięć-wątku--up) \
+&nbsp;&nbsp;&nbsp;&nbsp; - [Pamięć dynamiczna](#pamięć-dynamiczna--up) 
 
-&nbsp;&nbsp;&nbsp;&nbsp; - Od sposobu trzymania danych zależy: \
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - czas życia danych [ang. lifetime] \
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - sposób współużytkowania [ang. linkage] \
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - zasięg nazwy [ang. scope]
 
-<br/>
-<br/>
-<br/>
 
-![](https://github.com/Ptysiek/resources/blob/master/Orn.png)
-### Tworzenie i Niszczenie Obiektów w Modelu Pamięci 
+&nbsp;
+-------------
+**Powiązane Notatki**  
+&nbsp;&nbsp;&nbsp;&nbsp; - [Specyfikator static](/workspace/Praktyka/static.md) 
+
+
+
+<br/><br/>
+-------------
+### Wstęp
+W zależności od sposobu definiowania obiektów rozróżniamy cztery sposoby \
+trzymania danych przez program. Pamięć automatyczna, Pamięć statyczna, \
+Pamięć wątku oraz Pamięć dynamiczna. \
+Od sposobu trzymania danych zależy: \
+&nbsp;&nbsp;&nbsp;&nbsp; - czas życia danych [ang. lifetime] \
+&nbsp;&nbsp;&nbsp;&nbsp; - sposób współużytkowania [ang. linkage] \
+&nbsp;&nbsp;&nbsp;&nbsp; - zasięg nazwy [ang. scope]
+
+
+<br/><br/>
+-------------
+### Tworzenie i niszczenie obiektów w modelu pamięci
 Tworząc nowy obiekt program rezerwuje dla niego przedział pamięci \
 o określonym rozmiarze. Rozmiar przedziału zależy od __Typu__ obiektu. \
 W danym przedziale trzymana jest obecna wartość danego obiektu. 
@@ -25,19 +40,16 @@ Zniszczenie obiektu polega na zwolnieniu przez program zarezerwowanej dla tego o
 Oznacza to że w danym przedziale pamięci, albo w jego fragmencie, program może tworzyć nowe obiekty. \
 Wartości trzymane w danym miejscu nie są modyfikowane podczas jej zwalaniania - niszczenia obiektu. 
 
-Dlatego tworzenie nowych obiektów bez inicjalizacji ich wartości \
-skutkuje trzymaniem przez nie starych wartości już nie istniejących obiektów. \
+Dlatego tworzenie nowych obiektów bez inicjalizacji, czyli nadania początkowej wartości, \
+skutkuje trzymaniem przez nie pozostałości po starych danych już nie istniejących obiektów. \
 Przy czym program dobiera przedziały na nowe obiekty bez naszej wiedzy. \
 __Zakładamy że obiekty bez zainicjalizowanej wartości trzymają \
 w sobie nieprzewidywalne dane z których nie ma sensu korzystać.__
 
 
-<br/>
-<br/>
-<br/>
-
-![](https://github.com/Ptysiek/resources/blob/master/Orn.png)
-### 1. Pamięć automatyczna
+<br/><br/>
+-------------
+### Pamięć automatyczna &nbsp;&nbsp;&nbsp;&nbsp; [[up]](#stdvector-datatype-)
 Pamięć automatyczna dotyczy obiektów powstających wewnątrz **bloku instrukcji**, \
 czyli fragmentu kodu zamkniętego klamrami [ang. brackets]. Funkcje, pętle, samodzielny blok, etc. \
 Dotyczy to również argumentów funkcji. Wszystkie argumenty zawsze są obiektami automatycznymi.
@@ -84,12 +96,10 @@ Obecnie, zastosowanie specyfikatora __register__ ograniczyło się do podkreśle
 &nbsp;&nbsp;&nbsp;&nbsp; - istnieje inny obiekt zewnętrzny(nie lokalny) o takiej samej nazwie. \
 &nbsp;&nbsp;&nbsp;&nbsp; - ten obiekt jest, pod względem optymalności, punktem krytycznym danego bloku instrukcji.
 
-<br/>
-<br/>
-<br/>
 
-![](https://github.com/Ptysiek/resources/blob/master/Orn.png)
-### 2. Pamięć statyczna
+<br/><br/>
+-------------
+### Pamięć statyczna &nbsp;&nbsp;&nbsp;&nbsp; [[up]](#stdvector-datatype-)
 Obiekty statyczne istnieją w specjalnie przygotowanym bloku pamięci o stałym rozmiarze. \
 Liczba obiektów statycznych nie zmienia się w trakcie działania programu. 
 
@@ -119,12 +129,12 @@ Obiekty z każdej z odmian posiadają inny ***zasięg nazwy [scope]***.
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; która _przesłania_ nam nazwę naszego globalnego obiektu, \
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; wtedy możemy wskazać jawnie na obiekt globalny. &nbsp;&nbsp;&nbsp;&nbsp; [*operator zasięgu : :*]()
 ``` cpp
-    int val = -1;
+    int value = -1;
     // ... more code
 
-    void Fun(int val){    
-        val *= 2;       // Local object modification
-        ::val += 10;    // Global object modification
+    void Function(int val){    
+        value *= 2;       // Local object modification
+        ::value += 10;    // Global object modification
     }
 ```
 
@@ -142,35 +152,29 @@ dostęp między plikami \
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; inkrementująca swoją wartość ilekroć wywołamy funkcję w której się znajduje, \
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; będzie zwiększać o jeden wartość zachowaną z poprzedniego wywołania funkcji. \
 ``` cpp
-    void Fun(){
+    void Function(){
         static int counter = 0;     // Initialization with zero value occurs only 
                                     // once while starting the program. 
         // ... more code
 
         // COUNTER stores the number of times that 
-        // this Fun() function has been completed to the end: 
+        // this Function() has been completed to the end: 
         ++counter;
         return;
     }
 ```
-<br/>
-<br/>
-<br/>
 
-![](https://github.com/Ptysiek/resources/blob/master/Orn.png)
-### 3. Pamięć wątku
+<br/><br/>
+-------------
+### Pamięć wątku &nbsp;&nbsp;&nbsp;&nbsp; [[up]](#stdvector-datatype-)
 
-<br/>
-<br/>
-<br/>
 
-![](https://github.com/Ptysiek/resources/blob/master/Orn.png)
-### 4. Pamięć dynamiczna
+<br/><br/>
+-------------
+### Pamięć dynamiczna &nbsp;&nbsp;&nbsp;&nbsp; [[up]](#stdvector-datatype-)
 
-<br/>
 
-------------
-<br/>
-
+<br/><br/>
+-------------
 ![](https://github.com/Ptysiek/resources/blob/master/Ver2.PNG)
 
