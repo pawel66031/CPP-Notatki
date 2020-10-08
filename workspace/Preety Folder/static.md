@@ -33,17 +33,17 @@ Róznica między zmienną ze *static* a bez niej:
 #include <iostream>
 
 void incrementValue() {
-	static int value = 1;
-	++value;
-	std::cout << value << '\n';
+    static int value = 1;
+    ++value;
+    std::cout << value << '\n';
 }
 
 int main() {
-	incrementValue();
-	incrementValue();
-	incrementValue();
+    incrementValue();
+    incrementValue();
+    incrementValue();
 
-	return 0;
+    return 0;
 }
 ```
 ```
