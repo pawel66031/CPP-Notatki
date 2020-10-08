@@ -32,53 +32,49 @@ Róznica między zmienną ze *static* a bez niej:
 ```cpp
 #include <iostream>
 
-void zwiekszWartosc()
-{
-	static int wartosc = 1; // Zmienna ze staticem
-	++wartosc;
-	std::cout << wartosc << '\n';
+void incrementValue() {
+	static int value = 1;
+	++value;
+	std::cout << value << '\n';
 }
 
-int main()
-{
-	zwiekszWartosc();
-	zwiekszWartosc();
-	zwiekszWartosc();
+int main() {
+	incrementValue();
+	incrementValue();
+	incrementValue();
 
 	return 0;
 }
 ```
-W konsoli wypisze wartości:
-
-2  
-3  
-4  
+```
+    2  
+    3  
+    4  
+```
 
 ***Bez statica***
 ```cpp
 #include <iostream>
 
-void zwiekszWartosc()
-{
-	int wartosc = 1; // Zwykła zmienna
-	++wartosc;
-	std::cout << wartosc << '\n';
+void incrementValue() {
+	int value = 1;
+	++value;
+	std::cout << value << '\n';
 }
 
-int main()
-{
-	zwiekszWartosc();
-	zwiekszWartosc();
-	zwiekszWartosc();
+int main() {
+	incrementValue();
+	incrementValue();
+	incrementValue();
 
 	return 0;
 }
 ```
-W konsoli wypisze wartości:
-
-2  
-2  
-2  
+```
+    2  
+    2  
+    2  
+```
 
 Jak można dostrzec: program w momencie gdy dochodzi do deklaracji zmiennej z *static* w trakcie działania, gdy dostaje się po raz drugi do konstruktora *wartosc*, wtedy nie dochodzi do jej ponownej deklaracji z tego powodu, że jego wartość ze zmiennej *wartosc* została zapamiętana w pamięci, która zostanie ponownie wykorzystana. Gdyby nie było *static*, wtedy automatycznie po zakończeniu funkcji zmienna *wartosc* zostałaby zapomniana i nie byłoby możliwe wykonanie funkcji sumuj dla liczb w pamięci funkcji.
 
