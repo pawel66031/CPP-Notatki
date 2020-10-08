@@ -2,11 +2,11 @@
 
 **Wewnętrzna Nawigacja:**  
 &nbsp;&nbsp;&nbsp;&nbsp; - [Wstęp](#wstęp) \
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - [Tworzenie i niszczenie obiektów](#tworzenie-i-niszczenie-obiektów-w-modelu-pamięci) \
-&nbsp;&nbsp;&nbsp;&nbsp; - [Pamięć automatyczna](#pamięć-automatyczna--up) \
-&nbsp;&nbsp;&nbsp;&nbsp; - [Pamięć statyczna](#pamięć-statyczna--up) \
-&nbsp;&nbsp;&nbsp;&nbsp; - [Pamięć wątku](#pamięć-wątku--up) \
-&nbsp;&nbsp;&nbsp;&nbsp; - [Pamięć dynamiczna](#pamięć-dynamiczna--up) 
+&nbsp;&nbsp;&nbsp;&nbsp; - [Tworzenie i niszczenie obiektów](#tworzenie-i-niszczenie-obiektów-w-modelu-pamięci) \
+&nbsp;&nbsp;&nbsp;&nbsp; - [Pamięć automatyczna](#pamięć-automatyczna) \
+&nbsp;&nbsp;&nbsp;&nbsp; - [Pamięć statyczna](#pamięć-statyczna) \
+&nbsp;&nbsp;&nbsp;&nbsp; - [Pamięć wątku](#pamięć-wątku) \
+&nbsp;&nbsp;&nbsp;&nbsp; - [Pamięć dynamiczna](#pamięć-dynamiczna) 
 
 
 
@@ -49,7 +49,7 @@ w sobie nieprzewidywalne dane z których nie ma sensu korzystać.__
 
 <br/><br/>
 -------------
-### Pamięć automatyczna &nbsp;&nbsp;&nbsp;&nbsp; [[up]](#stdvector-datatype-)
+### Pamięć automatyczna 
 Pamięć automatyczna dotyczy obiektów powstających wewnątrz **bloku instrukcji**, \
 czyli fragmentu kodu zamkniętego klamrami [ang. brackets]. Funkcje, pętle, samodzielny blok, etc. \
 Dotyczy to również argumentów funkcji. Wszystkie argumenty zawsze są obiektami automatycznymi.
@@ -166,12 +166,12 @@ dostęp między plikami \
 
 <br/><br/>
 -------------
-### Pamięć wątku &nbsp;&nbsp;&nbsp;&nbsp; [[up]](#stdvector-datatype-)
+### Pamięć wątku
 
 
 <br/><br/>
 -------------
-### Pamięć dynamiczna &nbsp;&nbsp;&nbsp;&nbsp; [[up]](#stdvector-datatype-)
+### Pamięć dynamiczna
 
 
 <br/><br/>
