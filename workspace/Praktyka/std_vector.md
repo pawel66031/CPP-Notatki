@@ -1,4 +1,4 @@
-# std::vector<DataType>
+# std::vector< DataType >
 
 **Wewnętrzna Nawigacja:**  
 &nbsp;&nbsp;&nbsp;&nbsp; - [Wyświetlanie informacji o wybranym Vectorze](#wyświetlanie-informacji-o-wybranym-vectorze) \
